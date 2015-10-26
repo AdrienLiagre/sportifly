@@ -7,13 +7,19 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 
+
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'uglifier'
-gem 'bootstrap-sass'
-gem 'font-awesome-sass'
+
+
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'font-awesome-sass', '~> 4.2.0'
 gem 'simple_form'
-gem 'autoprefixer-rails'
+gem "autoprefixer-rails"
 
 group :development, :test do
   gem 'binding_of_caller'
