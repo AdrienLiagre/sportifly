@@ -5,7 +5,7 @@ class CreateActivities < ActiveRecord::Migration
       t.text :description
       t.integer :number_of_players
       t.date :date
-      t.boolean :open
+      t.boolean :open, default: true
       t.float :price
 
       t.timestamps null: false
