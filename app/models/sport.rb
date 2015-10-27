@@ -3,4 +3,6 @@ class Sport < ActiveRecord::Base
   has_many :location_sports
   has_many :activities
 
+  validates :name, presence: true
+
 end

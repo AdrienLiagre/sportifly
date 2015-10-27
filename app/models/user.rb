@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
   has_many :newsfeeds, dependent: :destroy
   has_many :activities, dependent: :destroy
   belongs_to :group
+
+  validates :name, presence: true
+  validates :phone_number, uniqueness: true
 end
