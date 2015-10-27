@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027100724) do
+ActiveRecord::Schema.define(version: 20151027102450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,14 @@ ActiveRecord::Schema.define(version: 20151027100724) do
     t.float    "price"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "location_id"
+    t.integer  "sport_id"
+    t.integer  "user_id"
   end
+
+  add_index "activities", ["location_id"], name: "index_activities_on_location_id", using: :btree
+  add_index "activities", ["sport_id"], name: "index_activities_on_sport_id", using: :btree
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "activity_id"
@@ -123,11 +130,16 @@ ActiveRecord::Schema.define(version: 20151027100724) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["group_id"], name: "index_users_on_group_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "activities", "locations"
+  add_foreign_key "activities", "sports"
+  add_foreign_key "activities", "users"
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
   add_foreign_key "comments", "bookings"
@@ -138,4 +150,5 @@ ActiveRecord::Schema.define(version: 20151027100724) do
   add_foreign_key "location_sports", "locations"
   add_foreign_key "location_sports", "sports"
   add_foreign_key "newsfeeds", "users"
+  add_foreign_key "users", "groups"
 end
