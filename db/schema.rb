@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027100255) do
+ActiveRecord::Schema.define(version: 20151027100519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,16 @@ ActiveRecord::Schema.define(version: 20151027100255) do
   add_index "location_reviews", ["location_id"], name: "index_location_reviews_on_location_id", using: :btree
   add_index "location_reviews", ["user_id"], name: "index_location_reviews_on_user_id", using: :btree
 
+  create_table "location_sports", force: :cascade do |t|
+    t.integer  "location_id"
+    t.integer  "sport_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "location_sports", ["location_id"], name: "index_location_sports_on_location_id", using: :btree
+  add_index "location_sports", ["sport_id"], name: "index_location_sports_on_sport_id", using: :btree
+
   create_table "locations", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -113,5 +123,7 @@ ActiveRecord::Schema.define(version: 20151027100255) do
   add_foreign_key "comments", "bookings"
   add_foreign_key "location_reviews", "locations"
   add_foreign_key "location_reviews", "users"
+  add_foreign_key "location_sports", "locations"
+  add_foreign_key "location_sports", "sports"
   add_foreign_key "newsfeeds", "users"
 end
