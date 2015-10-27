@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :favorite_sports
   has_many :location_reviews
   has_many :newsfeeds
+  has_many :activities
+  belongs_to :group
 end
