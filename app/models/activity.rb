@@ -4,4 +4,6 @@ class Activity < ActiveRecord::Base
   belongs_to :sport
   belongs_to :user
 
+  validates :name, :number_of_players, :date, :open, :sport, presence: true
+
 end
