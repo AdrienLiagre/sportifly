@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     resource :dashboard, only: :show, controller: 'dashboard'
   end
 
-  namespace :group do
+  namespace :group, module: 'groups' do
     scope ':group' do
-      resource :home, only: :show
+      root to: 'home#show'
 
       resources :activities do
         resources :bookings, only: [:new, :create, :destroy]
