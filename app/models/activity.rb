@@ -4,6 +4,7 @@ class Activity < ActiveRecord::Base
   belongs_to :sport
   belongs_to :user
 
-  validates :name, :number_of_players, :date, :open, :sport, presence: true
+  validates :name, :number_of_players, :date, :sport, presence: true
+  validates_inclusion_of :open, :in => [true, false]
 
 end
