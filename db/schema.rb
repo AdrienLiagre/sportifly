@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027171437) do
+ActiveRecord::Schema.define(version: 20151028174904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,12 @@ ActiveRecord::Schema.define(version: 20151027171437) do
     t.integer  "location_id"
     t.integer  "sport_id"
     t.integer  "user_id"
+    t.integer  "captain_id"
+    t.integer  "group_id"
   end
 
+  add_index "activities", ["captain_id"], name: "index_activities_on_captain_id", using: :btree
+  add_index "activities", ["group_id"], name: "index_activities_on_group_id", using: :btree
   add_index "activities", ["location_id"], name: "index_activities_on_location_id", using: :btree
   add_index "activities", ["sport_id"], name: "index_activities_on_sport_id", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
@@ -173,6 +177,7 @@ ActiveRecord::Schema.define(version: 20151027171437) do
   add_index "users", ["group_id"], name: "index_users_on_group_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "activities", "groups"
   add_foreign_key "activities", "locations"
   add_foreign_key "activities", "sports"
   add_foreign_key "activities", "users"

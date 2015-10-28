@@ -23,7 +23,6 @@ Rails.application.routes.draw do
       resources :bookings, only: [] do
         resources :comments, only: [:create]
       end
-
     end
   end
 end
