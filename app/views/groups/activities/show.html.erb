@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row col-xs-12 col-md-3">
+      <%= image_tag @activity.user.picture(:medium) %>
+      <br>
+      <%= @activity.user.name %>
+      <%= @activity.number_of_players %>
+      <br>
+      <br>
+      <%= @activity.open %>
+
+  </div>
+
+  <div class="row col-sm-12 col-md-9">
+    <img src="//placehold.it/300x120/77CCDD/66BBCC" class="img-responsive">
+
+    <div class="row col-sm-8">
+      <div class="row col-sm-6">
+      <ul>
+        <li><%= @activity.name %></li>
+        <li><%= @activity.sport %></li>
+        <li><%= @activity.date %></li>
+        <li><%= @activity.description %></li>
+        <li><%= @activity.sport.name %></li>
+      </ul>
+      </div>
+    </div>
+
+
+    <div class="row col-sm-6">
+      <h3>comments</h3>
+    </div>
+
+    <div class="row col-sm-4">
+      MAPS
+    </div>
+
+
+  </div>
+</div>
+
+

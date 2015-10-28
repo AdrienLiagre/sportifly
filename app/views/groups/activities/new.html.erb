@@ -1,0 +1,19 @@
+<%= simple_form_for([:group, @activity], html: { multipart: true }) do |f| %>
+  <%= f.error_notification %>
+  <div class="container">
+    <div class="row">
+      <%= f.input :name %>
+      <%= f.association :sport %>
+      <%= f.association :location %>
+      <%= f.input :description %>
+      <%= f.input :open %>
+
+
+      <%= f.button :submit %>
+    </div>
+  </div>
+<% end %>
+
+
+
+

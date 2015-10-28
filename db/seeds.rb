@@ -15,7 +15,7 @@ end
 
 edhec = Group.create!(name: 'Edhec', description: "Groupe des étudiants de l'Edhec Grande Ecole et Msc, pour plus de fun et de sport !", email_domain_name: 'edhec.com')
 
-User.create!(name: "Samir Benflouka", group: edhec, phone_number: '0675847374', age: 22, crew: "Ad’lib", email: "samir.benflouka@edhec.com", password: 'kikoulol')
+samir = User.create!(name: "Samir Benflouka", group: edhec, phone_number: '0675847374', age: 22, crew: "Ad’lib", email: "samir.benflouka@edhec.com", password: 'kikoulol')
 User.create!(name: "Olivia Legrand", group: edhec, phone_number: '0675847355', age: 20, crew: "OJO", email: "olivia.legrand@edhec.com", password: 'kikoulol')
 User.create!(name: "Mathieu Plus", group: edhec, phone_number: '0675847322', age: 20, crew: "OJO", email: "mathieu.plus@edhec.com", password: 'kikoulol')
 User.create!(name: "Paul Franco", group: edhec, phone_number: '0675847333', age: 23, crew: "CCE", email: "paul.franco@edhec.com", password: 'kikoulol')
@@ -30,7 +30,7 @@ football = Sport.create!(name: "Football")
 handball = Sport.create!(name: "Handball")
 
 
-Activity.create!(name: "foot", number_of_players: 5, date: Date.today, open: true, sport: football)
-Activity.create!(name: "yolo", number_of_players: 10, date: Date.today, open: true, sport: football)
-Activity.create!(name: "On se détend", number_of_players: 4, date: Date.today, open: true, sport: handball)
-Activity.create!(name: "foot", number_of_players: 5, date: Date.today, open: false, sport: handball)
+Activity.create!(name: "foot", number_of_players: 5, date: Date.today, open: true, sport: football, user: samir)
+Activity.create!(name: "yolo", number_of_players: 10, date: Date.today, open: true, sport: football, user: samir)
+Activity.create!(name: "On se détend", number_of_players: 4, date: Date.today, open: true, sport: handball, user: samir)
+Activity.create!(name: "foot", number_of_players: 5, date: Date.today, open: false, sport: handball, user: samir)
