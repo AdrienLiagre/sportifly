@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :favorite_sports, dependent: :destroy
   has_many :location_reviews, dependent: :destroy
   has_many :newsfeeds, dependent: :destroy
-  has_many :activities, dependent: :destroy
+  has_many :activities, dependent: :destroy, foreign_key: 'captain_id'
   belongs_to :group
 
   validates :name, presence: true
