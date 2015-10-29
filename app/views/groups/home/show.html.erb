@@ -36,8 +36,19 @@
                         <span class="label label-default text-left"><%= activity.date %></span>
                           <br>
                         <span class="label label-success"><%= activity.open %></span>
+                        <br>
+                        <%= activity.number_of_players %>
                           <br>
-                        <button class="btn btn-default">Détails</button>
+                        <% end %>
+
+                              <style>
+                                .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+                                .toggle.ios .toggle-handle { border-radius: 20px; }
+                              </style>
+                            <input type="checkbox" checked data-toggle="toggle" data-style="ios" data-onstyle="info">
+
+
+
                     </div>
                     <div class="col-sm-4 text-center">
                       <br>
@@ -46,15 +57,10 @@
                     </div>
                     <%= activity.captain.name %>
                   </div>
-               <% end %>
 
                 </div>
               <% end %>
           </div>
-
-          <hr>
-          <h4><a href="http://bootply.com/69913">Edit on Bootply</a></h4>
-          <hr>
 
         </div><!--/panel-body-->
       </div><!--/panel-->

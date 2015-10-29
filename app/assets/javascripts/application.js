@@ -1,5 +1,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require_tree .
 //= require script
+//= require bootstrap-toggle.min
