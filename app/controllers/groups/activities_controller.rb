@@ -2,9 +2,12 @@ module Groups
   class ActivitiesController < ApplicationController
     before_action :set_group
 
+    def index
+      @activities = @group.activities.all
+    end
+
     def show
       @activity = @group.activities.find(params[:id])
-      # redirect_to group_activity_path(activity)
     end
 
     def new

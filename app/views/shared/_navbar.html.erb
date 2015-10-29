@@ -1,51 +1,80 @@
-<nav class="navbar navbar-static">
-   <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="http://www.bootply.com" target="ext"><b>Sportifly</b></a>
-      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="glyphicon glyphicon-chevron-down"></span>
-      </a>
-    </div>
+<% if current_user %>
+  <nav class="navbar navbar-static">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to group_root_path(current_user.group), class: 'navbar-brand' do%>
+          <b> Sportifly </b>
+        <% end %>
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+      </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Channels</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activités</a>
             <ul class="dropdown-menu">
-              <li><a href="#">Sub-link</a></li>
-              <li><a href="#">Sub-link</a></li>
-              <li><a href="#">Sub-link</a></li>
-              <li><a href="#">Sub-link</a></li>
-
+              <li><%= link_to 'Créer une activité', new_group_activity_path(current_user.group) %></li>
+              <li><%= link_to group_activities_path(current_user.group) do%>
+              Activités <%= current_user.group.name %>
+              <% end %>
+              </li>
             </ul>
           </li>
         </ul>
+
         <ul class="nav navbar-right navbar-nav">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
             <ul class="dropdown-menu" style="padding:12px;">
-                <form class="form-inline">
-            <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-                </form>
-             </ul>
+              <form class="form-inline">
+                <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+              </form>
+            </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i   class="glyphicon glyphicon-chevron-down"></i></a>
             <ul class="dropdown-menu">
-
               <li><% if user_signed_in? %>
                     <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>
                   <% else %>
-                    <%= link_to 'Me connecter', new_user_session_path %>
+                    <%= link_to 'Log in', new_user_session_path %>
                   <% end %></li>
 
               <li><%= link_to 'Profil', account_dashboard_path %></li>
               <li class="divider"></li>
               <li><a href="#">About</a></li>
-             </ul>
+            </ul>
           </li>
         </ul>
       </div>
     </div>
-</nav><!-- /.navbar -->
+  </nav>
+
+<% else %> <!-- /.navbar if not signed-in-->
+
+  <nav class="navbar navbar-static">
+    <div class="container">
+      <div class="navbar-header navbar-brand">
+          <b> Sportifly </b>
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+
+        <ul class="nav navbar-right navbar-nav">
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i   class="glyphicon glyphicon-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Log in', new_user_session_path %></li>
+              <li class="divider"></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<% end %>
