@@ -1,8 +1,10 @@
 <div class="container">
   <div class="row col-xs-12 col-md-3">
-      <%= image_tag @activity.user.picture(:thumb) %>
+
+      <%= image_tag @activity.captain.picture(:thumb) %>
         <br>
-      <%= @activity.user.name %>
+      <%= @activity.captain.name %>
+
       <%= @activity.number_of_players %>
         <br>
         <br>

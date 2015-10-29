@@ -4,14 +4,17 @@ module Groups
 
     def show
       @activity = @group.activities.find(params[:id])
+
     end
 
     def new
-     @activity = @group.activities.new
+      @activity = @group.activities.new
+      @activity.captain = current_user
     end
 
     def create
       @activity = @group.activities.new(activity_params)
+      @activity.captain = current_user
 
       if @activity.save
         redirect_to group_root_path
