@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   namespace :account do
-    resource :dashboard, only: :show, controller: 'dashboard'
+    resource :dashboard, only: :show, controller: 'dashboard' do
+      resource :users, only: [:edit, :update]
+    end
   end
 
   namespace :group, module: 'groups' do
@@ -27,3 +29,4 @@ Rails.application.routes.draw do
     end
   end
 end
+
