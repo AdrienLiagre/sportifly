@@ -3,8 +3,8 @@ class Group < ActiveRecord::Base
 
   friendly_id :name, use: :slugged
 
+  has_many :activities
   has_many :users
-  has_many :activities, through: :users
   has_many :newsfeeds, through: :users
 
   has_attached_file :picture,
@@ -12,5 +12,7 @@ class Group < ActiveRecord::Base
 
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
+
+  validates :email_domain_name, presence: true, uniqueness: true
 end
 
