@@ -4,6 +4,7 @@ module Groups
       @group      = Group.friendly.find(params[:group])
       @activities = @group.activities
       @newsfeeds  = @group.newsfeeds
+
     end
   end
 end
