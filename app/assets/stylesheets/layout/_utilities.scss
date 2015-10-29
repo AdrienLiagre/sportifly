@@ -9,6 +9,9 @@
   padding-top: 5em;
   padding-bottom: 5em;
 }
+.right-btn {
+  right: 0px;
+}
 
 // Backgrounds
 .bg-black {
@@ -16,6 +19,9 @@
 }
 .bg-grey {
   background: #aeaeae;
+}
+.bg-white {
+  background: white;
 }
 .bg-blue {
   background: #00a3e1;
@@ -29,4 +35,9 @@
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.title-grey {
+  background-color:#555;
+  color:#eee;
 }
