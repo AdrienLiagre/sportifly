@@ -45,6 +45,10 @@
                             <% else %>
                               <%= button_to "Je m'inscris", group_activity_bookings_path(@group, activity) %>
                             <% end %>
+
+                            <% if activity.current_user_booked? == current_user.id %>
+                            <%= button_to "Je me desinscris", group_activity_booking_path(@group, activity, activity.bookings), method: :delete %>
+                            <% end %>
                     </div>
                     <div class="col-sm-4 text-center">
                       <br>

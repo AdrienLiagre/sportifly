@@ -13,4 +13,10 @@ class Activity < ActiveRecord::Base
     def full?
       self.bookings.count >= self.number_of_players
     end
+
+    def current_user_booked?
+      self.bookings.each do |booking|
+      return booking.user_id
+      end
+    end
 end
