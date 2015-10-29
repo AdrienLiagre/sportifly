@@ -1,12 +1,12 @@
 <header class="masthead">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 text-center col-sm-6 text-left">
+      <div class="col-xs-12 col-sm-6 text-left">
         <h1><a href="#" title="Scroll down for your viewing pleasure"><%= @group.name %></a>
           <p class="lead">The best school ever</p>
         </h1>
       </div>
-      <div class="col-xs-12 text-center col-sm-6 text-right">
+      <div class="col-xs-12 col-sm-6 text-right">
 
         <div class="well pull-right">
           <%= image_tag @group.picture(:thumb) %>
@@ -25,79 +25,29 @@
         <div class="panel-body">
 
           <div class="row">
-            <div class="col-md-8">
               <% @activities.each do |activity| %>
-              <h2><%= activity.sport.name %></h2>
-              <%= activity.name %>
-
-
+                <div class="col-sm-12 activity">
+                  <div class="row">
+                    <div class="col-sm-8 ">
+                      <h2><%= activity.sport.name %></h2>
+                        <li class="list-group-item list-group-item-info"><%= activity.name %></li>
+                          <br>
+                        <span class="label label-default text-left"><%= activity.date %></span>
+                          <br>
+                        <span class="label label-success"><%= activity.open %></span>
+                          <br>
+                        <button class="btn btn-default">Détails</button>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                      <br>
+                      <br>
+                      <a href="#"><%= image_tag activity.sport.picture(:thumb)%></a>
+                        <p><%= activity.user.name %></p>
+                    </div>
+                  </div>
+                </div>
               <% end %>
-              <h2>Football</h2>
-              lieu: boulogne
-              date: 10/05/2016
-              <br><br>
-              <button class="btn btn-default">Détails</button>
-            </div>
-            <div class="col col-sm-4">
-              <a href="#"><img src="//placehold.it/300x120/77CCDD/66BBCC" class="img-responsive"></a>
-              <div class="text-muted"><small>Aug 15 /Adrien Liagre</small></div>
-              <p>
-                Le mot du coach: Venez comme vous êtes
-              </p>
-            </div>
           </div>
-          <hr>
-          <div class="row">
-            <div class="col-md-8">
-              <h2>Football</h2>
-              lieu: boulogne
-              date: 10/05/2016
-              <br><br>
-              <button class="btn btn-default">Détails</button>
-            </div>
-            <div class="col col-sm-4">
-              <a href="#"><img src="//placehold.it/300x120/77CCDD/66BBCC" class="img-responsive"></a>
-              <div class="text-muted"><small>Aug 15 /Adrien Liagre</small></div>
-              <p>
-                Le mot du coach: Venez comme vous êtes
-              </p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-md-8">
-              <h2>Football</h2>
-              lieu: boulogne
-              date: 10/05/2016
-              <br><br>
-              <button class="btn btn-default">Détails</button>
-            </div>
-            <div class="col col-sm-4">
-              <a href="#"><img src="//placehold.it/300x120/77CCDD/66BBCC" class="img-responsive"></a>
-              <div class="text-muted"><small>Aug 15 /Adrien Liagre</small></div>
-              <p>
-                Le mot du coach: Venez comme vous êtes
-              </p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-md-8">
-              <h2>Football</h2>
-              lieu: boulogne
-              date: 10/05/2016
-              <br><br>
-              <button class="btn btn-default">Détails</button>
-            </div>
-            <div class="col col-sm-4">
-              <a href="#"><img src="//placehold.it/300x120/77CCDD/66BBCC" class="img-responsive"></a>
-              <div class="text-muted"><small>Aug 15 /Adrien Liagre</small></div>
-              <p>
-                Le mot du coach: Venez comme vous êtes
-              </p>
-            </div>
-          </div>
-
 
           <hr>
           <h4><a href="http://bootply.com/69913">Edit on Bootply</a></h4>

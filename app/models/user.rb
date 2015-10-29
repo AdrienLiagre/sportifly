@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   has_many :newsfeeds, dependent: :destroy
   has_many :activities, dependent: :destroy
 
+
   validates :email, :presence => true, :email => true
 
   has_attached_file :picture,
