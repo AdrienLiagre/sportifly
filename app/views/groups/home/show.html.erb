@@ -23,9 +23,10 @@
       <div class="panel">
         <div class="panel-heading text-center" style="background-color:#111;color:#fff;">Prochains sports</div>
         <div class="panel-body">
-
           <div class="row">
+
               <% @activities.each do |activity| %>
+              <%= link_to group_activity_path(@group, activity) do %>
                 <div class="col-sm-12 activity">
                   <div class="row">
                     <div class="col-sm-8 ">
@@ -45,6 +46,8 @@
                     </div>
                     <%= activity.captain.name %>
                   </div>
+               <% end %>
+
                 </div>
               <% end %>
           </div>
