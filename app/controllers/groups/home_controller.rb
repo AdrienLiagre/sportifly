@@ -5,6 +5,7 @@ module Groups
       @activities = @group.activities
       @newsfeeds  = @group.newsfeeds
 
+
     end
   end
 end

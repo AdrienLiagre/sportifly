@@ -4,7 +4,7 @@ module Groups
 
     def show
       @activity = @group.activities.find(params[:id])
-
+      # redirect_to group_activity_path(activity)
     end
 
     def new
