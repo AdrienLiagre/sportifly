@@ -31,7 +31,10 @@
 }
 
 .bg-image {
-  background-image: image_url('backgroundpic.jpeg');
+  background: url(image_path('backgroundpic.jpeg')) no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 90vh;
 }
 
 .sign-class{
