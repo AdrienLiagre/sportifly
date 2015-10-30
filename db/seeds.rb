@@ -31,12 +31,12 @@ patrick = User.create!(name: "Patrick Sebastien", group: edhec_lille, phone_numb
 football = Sport.create!(name: "Football")
 handball = Sport.create!(name: "Handball")
 
-Activity.create!(captain: samir, group: samir.group, name: "foot", number_of_players: 5, date: Date.today, open: true, sport: football)
-Activity.create!(captain: paul, group: paul.group, name: "yolo", number_of_players: 10, date: Date.today, open: true, sport: football)
-Activity.create!(captain: franck, group: franck.group, name: "On se détend", number_of_players: 4, date: Date.today, open: true, sport: handball)
-Activity.create!(captain: patrick, group: patrick.group, name: "foot", number_of_players: 5, date: Date.today, open: false, sport: handball)
-
-
 Location.create!(address: "18 rue massena", city: "lille", postcode: "59000", name: "club machin")
 Location.create!(address: "104 rue nationale", city: "lille", postcode: "59000", name: "club de wazemmes")
 Location.create!(address: "place rihour", city: "lille", postcode: "59000", name: "Tennis club de rihour")
+
+Activity.create!(location: Location.all.sample, captain: samir, group: samir.group, name: "foot", number_of_players: 5, date: Date.today, open: true, sport: football)
+Activity.create!(location: Location.all.sample, captain: paul, group: paul.group, name: "yolo", number_of_players: 10, date: Date.today, open: true, sport: football)
+Activity.create!(location: Location.all.sample, captain: franck, group: franck.group, name: "On se détend", number_of_players: 4, date: Date.today, open: true, sport: handball)
+Activity.create!(location: Location.all.sample, captain: patrick, group: patrick.group, name: "foot", number_of_players: 5, date: Date.today, open: false, sport: handball)
+

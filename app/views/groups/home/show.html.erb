@@ -76,7 +76,12 @@
             <%= javascript_tag do %>
               $(document).on('ready', function() {
                 handler = Gmaps.build('Google');
-                handler.buildMap({ internal: { id: 'map' } }, function(){
+                handler.buildMap({
+                  internal: { id: 'map' },
+                  provider: {
+                    scrollwheel: false
+                  }
+                }, function(){
                   markers = handler.addMarkers(<%= raw @hash.to_json %>);
                   handler.bounds.extendWith(markers);
                   handler.fitMapToBounds();
@@ -99,7 +104,6 @@
 
 
           <div class="well">
-            <img src="http://s.bootply.com/assets/example/bg_iphone.png" class="img-responsive">
             <h3><a href="http://getbootstrap.com">Bootstrap 3 is Here.</a></h3>
             <p>
               In simple terms, a responsive web design figures out what resolution of
