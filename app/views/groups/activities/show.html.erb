@@ -31,6 +31,11 @@
       <div class="row col-sm-6 text-center">
         MAPS
       </div>
+
+      <% if @activity.captain == current_user %>
+      <%= link_to "supprimer l'activité", group_activity_path(@group, @activity), method: :delete, class: "btn btn-primary" %>
+      <% end %>
+
     </div>
   </div>
 
