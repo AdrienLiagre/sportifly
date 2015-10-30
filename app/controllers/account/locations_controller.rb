@@ -1,11 +1,7 @@
-module Groups
-  class HomeController < ApplicationController
+module Account
+  class LocationsController < ApplicationController
 
-    def show
-      @group      = Group.friendly.find(params[:group])
-      @activities = @group.activities
-      @newsfeeds  = @group.newsfeeds
-
+    def index
       @locations = Location.all
       # Let's DYNAMICALLY build the markers for the view.
       @hash = Gmaps4rails.build_markers(@locations) do |location, marker|

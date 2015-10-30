@@ -1,9 +1,18 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
+
+gem 'coffee-rails', '~> 4.1.0'
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 gem 'rails', '4.2.3'
 gem 'pg'
 gem 'figaro'
+gem 'geocoder'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'friendly_id', '~> 5.1.0'
