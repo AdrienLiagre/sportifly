@@ -4,7 +4,6 @@ class Booking < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
 
-
 # créer un model boolean, initializer à 0 , et quand dans la vue on change, on passe la valeur, et on la stocke"
 
 end
