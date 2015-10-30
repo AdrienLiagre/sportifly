@@ -29,7 +29,9 @@
         </div>
       </div>
       <div class="row col-sm-6 text-center">
-        MAPS
+        <% if @activity.location %>
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=2000x200&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}", class: "img-responsive center-block" %>
+        <% end %>
       </div>
 
       <% if @activity.captain == current_user %>
