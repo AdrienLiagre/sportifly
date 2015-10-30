@@ -1,10 +1,10 @@
 
+
+
 <div class='row'>
   <div class='text-center'>
-    <h2> Ton profil </h2>
+    <h1><%= @user.name %></h1>
   </div>
-  <%= link_to "Mettre à jour", edit_account_dashboard_users_path, class: "right-btn navbar-wagon-button"  %>
-
 </div>
 
 <div class="container">
@@ -13,8 +13,6 @@
       <div class='avatar-large'>
         <% if @user.picture %>
           <%= image_tag @user.picture(:thumb) %>
-        <% else %>
-
         <% end %>
       </div>
     </div>
@@ -23,16 +21,11 @@
       <div class='col-xs-6 col-xs-offset-3'>
         <div class='panel-heading text-center'>
           <div class='title-grey'>
-            <% if @user.name %>
-              <h2> <%= @user.name %> </h2>
-            <% else %>
               <p> <%= @user.email %> </p>
-            <% end %>
           </div>
           <h4> Team: <%= @user.group.name %> </h4>
           <h4> Age: <%= @user.age %> </h4>
           <h4> #: <%= @user.phone_number %> </h4>
-          <h4> Je fly en: </h4>
         </div>
       </div>
     </div>
@@ -40,9 +33,8 @@
 
   <div class="col-xs-12 col-sm-6">
     <div class='panel-heading text-center title-grey' >
-      <h4> Mes statistiques </h4>
+      <h4> Ses statistiques </h4>
     </div>
-    <p> form to update the profil </p>
   </div>
 </div>
 
@@ -50,7 +42,7 @@
 
 <div class="container">
   <div class='panel-heading text-center title-grey'>
-    <h4> Tes prochaines activités avec la team <%= @user.group.name %> </h4>
+    <h4> Ses prochaines activités avec la team <%= @user.group.name %> </h4>
   </div>
   <% if @user.bookings.any? %>
     <% @user.bookings.each do |booking| %>
@@ -59,19 +51,14 @@
           <% if booking.activity.date > Date.today %>
             <ul style="list-style: none;">
               <li><%= booking.activity.date %></li>
-              <li><%= appointment.girlfriend.name %> </li>
-              <li> Tu fly avec </li>
               <li><p> <%= link_to 'Détails', group_activity_path(@user.group) %></li>
-              <%= link_to "Annuler", account_dashboard_path, method: :delete, class: "btn btn-warning" %>
             </ul>
           <% end %>
         </div>
       </div>
     <% end %>
   <% else %>
-    <p> Tu n'as pas encore prévu d'activité.</p>
-    <p> Créer une activité </p>
-    <p> Chercher une activité </p>
+    <p> Elle n'a pas encore prévu d'activité soon</p>
   <% end %>
 </div>
 
