@@ -15,9 +15,13 @@ module Groups
       if @activity.full?
         flash[:error] = 'Activity is full!'
         redirect_to group_root_path(params[:group])
+      elsif @activity.current_user_booked
+        flash[:notice] = 'You have already subsribed'
+        redirect_to group_root_path(params[:group])
       elsif @activity.save
         flash[:notice] = 'You successfully subscribed'
         redirect_to group_root_path(params[:group])
+
        else
         flash[:error] = 'An error occured'
         redirect_to group_root_path(params[:group])
@@ -29,13 +33,9 @@ module Groups
     def destroy
       @activity = @group.activities.find(params[:activity_id])
       @booking = @activity.bookings.where(user: current_user)
-      @booking.destroy(booking)
+      # @booking = Booking.where(user: current_user)
+      @booking.first.destroy
       redirect_to group_root_path
-
-
-      # normalement ca marche, mais dans la logique, ou un user, beut booker une seule fois.
-      # or a ce stade un meme user peut booker plein de fois une meme activité
-      # donc cette methode destroy ne marche pas encore
 
     end
 
