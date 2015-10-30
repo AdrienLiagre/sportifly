@@ -9,12 +9,8 @@
 
 <div class="container">
   <div class="col-xs-12 col-sm-6">
-    <div class='row'>
-      <div class='avatar-large'>
-        <% if @user.picture %>
-          <%= image_tag @user.picture(:thumb) %>
-        <% end %>
-      </div>
+    <div class='row text-center'>
+           <%= user_picture(@user) %>
     </div>
 
     <div class='row'>

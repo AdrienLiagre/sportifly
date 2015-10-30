@@ -3,20 +3,15 @@
   <div class='text-center'>
     <h2> Ton profil </h2>
   </div>
+  <div class='pull-right'>
   <%= link_to "Mettre à jour", edit_account_dashboard_users_path, class: "right-btn navbar-wagon-button"  %>
-
+  </div>
 </div>
 
 <div class="container">
   <div class="col-xs-12 col-sm-6">
-    <div class='row'>
-      <div class='avatar-large'>
-        <% if @user.picture %>
-          <%= image_tag @user.picture(:thumb) %>
-        <% else %>
-
-        <% end %>
-      </div>
+    <div class='row text-center'>
+        <%= user_picture(@user) %>
     </div>
 
     <div class='row'>
