@@ -25,7 +25,9 @@
         <div class="panel-body">
           <div class="row">
 
+
               <% @activities.each do |activity| %>
+              <% if activity.date > Date.today %>
               <%= link_to group_activity_path(@group, activity) do %>
                 <div class="col-sm-12 activity">
                   <div class="row">
@@ -65,6 +67,7 @@
                   </div>
                 </div>
               <% end %>
+            <% end %>
           </div>
         </div><!--/panel-body-->
       </div><!--/panel-->
