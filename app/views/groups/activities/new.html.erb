@@ -6,7 +6,7 @@
 
       <%= f.input :name %>
       <%= f.association :sport %>
-      <%= f.association :location %>
+      <%= f.association :location, label_method: :name, value_method: :id %>
       <%= f.input :description %>
       <%= f.input :number_of_players %>
       <%= f.input :date %>

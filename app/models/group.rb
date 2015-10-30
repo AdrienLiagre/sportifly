@@ -3,8 +3,8 @@ class Group < ActiveRecord::Base
 
   friendly_id :name, use: :slugged
 
-  has_many :activities
-  has_many :users
+  has_many :activities, dependent: :destroy
+  has_many :users,      dependent: :nullify
   has_many :newsfeeds, through: :users
 
   has_attached_file :picture,
