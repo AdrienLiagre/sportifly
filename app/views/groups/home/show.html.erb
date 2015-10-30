@@ -27,7 +27,7 @@
 
 
               <% @activities.each do |activity| %>
-              <% if activity.date > Date.today %>
+              <% if activity.date > Date.yesterday %>
               <%= link_to group_activity_path(@group, activity) do %>
                 <div class="col-sm-12 activity">
                   <div class="row">
