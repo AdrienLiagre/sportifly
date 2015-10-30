@@ -59,7 +59,9 @@
                       <br>
                         <a href="#"><%= image_tag activity.sport.picture(:thumb)%></a>
                     </div>
+                    <%= link_to group_user_path(@group, activity.captain) do %>
                     <%= activity.captain.name %>
+                    <% end %>
                   </div>
                 </div>
               <% end %>

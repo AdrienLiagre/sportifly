@@ -33,7 +33,6 @@ module Groups
     def destroy
       @activity = @group.activities.find(params[:activity_id])
       @booking = @activity.bookings.where(user: current_user)
-      # @booking = Booking.where(user: current_user)
       @booking.first.destroy
       redirect_to group_root_path
 
