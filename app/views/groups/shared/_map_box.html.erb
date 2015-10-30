@@ -1,1 +1,13 @@
-<h1> It works </h1>
+
+<div class="text-center">
+    <% location.activities.each do |activity| %>
+      <% if activity.group == current_user.group %>
+        <div class='panel-heading'>
+          <%= link_to group_activity_path(current_user.group, activity) do%>
+            <h3> <%= activity.name %> </h3>
+          <% end %>
+          <p> <%= activity.bookings.count %> / <%= activity.number_of_players %> </p>
+        </div>
+      <% end %>
+    <% end %>
+</div>

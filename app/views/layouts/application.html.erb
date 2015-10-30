@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   </head>
   <body>
+
+    <div class='bg-image'>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
@@ -19,6 +21,7 @@
     <%= yield(:after_js) %>
 
     <%= render 'shared/footer' %>
+  </div>
 
   </body>
 </html>
