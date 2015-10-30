@@ -6,7 +6,12 @@ module Groups
       @activities = @group.activities
       @newsfeeds  = @group.newsfeeds
 
-      @locations = @activities.map { |a| a.location }
+      @locations = []
+
+      @activities.map do |a|
+         @locations << a.location if a.location != nil
+      end
+
       # Let's DYNAMICALLY build the markers for the view.
       @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
         marker.lat location.latitude
