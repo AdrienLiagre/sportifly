@@ -37,6 +37,13 @@
   min-height: 90vh;
 }
 
+.bg-football {
+  background: url(image_path('football2.png')) no-repeat center center fixed;
+  background-size: cover;
+  position: bottom;
+  height: 255px;
+}
+
 .sign-class{
   margin-right: auto;
   margin-left: auto;
@@ -47,4 +54,12 @@
 .title-grey {
   background-color:#555;
   color:#eee;
+}
+
+.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
 }

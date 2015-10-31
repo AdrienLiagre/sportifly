@@ -12,30 +12,45 @@ module Groups
       @activity = @group.activities.find(params[:activity_id])
       @booking = @activity.bookings.create(user: current_user)
 
-      if @activity.full?
-        flash[:error] = 'Activity is full!'
-        redirect_to group_root_path(params[:group])
-      elsif @activity.current_user_booked
-        flash[:notice] = 'You have already subsribed'
-        redirect_to group_root_path(params[:group])
-      elsif @activity.save
-        flash[:notice] = 'You successfully subscribed'
-        redirect_to group_root_path(params[:group])
+      if params[:from]=='description'
+        if @activity.full?
+          flash[:error] = 'Activity is full!'
+          redirect_to group_activity_path(@group, @activity)
+        elsif @activity.current_user_booked
+          redirect_to group_activity_path(@group, @activity)
+        elsif @activity.save
+          flash[:notice] = 'You successfully subscribed'
+          redirect_to group_activity_path(@group, @activity)
+        else
+          flash[:error] = 'An error occured'
+          redirect_to group_activity_path(@group, @activity)
+        end
 
-       else
-        flash[:error] = 'An error occured'
-        redirect_to group_root_path(params[:group])
-
+      else
+        if @activity.full?
+          flash[:error] = 'Activity is full!'
+          redirect_to group_root_path(params[:group])
+        elsif @activity.current_user_booked
+          redirect_to group_root_path(params[:group])
+        elsif @activity.save
+          flash[:notice] = 'You successfully subscribed'
+          redirect_to group_root_path(params[:group])
+        else
+          flash[:error] = 'An error occured'
+          redirect_to group_root_path(params[:group])
+        end
       end
     end
-
 
     def destroy
       @activity = @group.activities.find(params[:activity_id])
       @booking = @activity.bookings.where(user: current_user)
       @booking.first.destroy
-      redirect_to group_root_path
-
+      if params[:from]=='description'
+        redirect_to group_activity_path(@group, @activity)
+      else
+        redirect_to group_root_path
+      end
     end
 
   private

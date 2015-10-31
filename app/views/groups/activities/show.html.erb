@@ -1,46 +1,108 @@
 <div class="container">
-  <div class="row col-xs-12 col-md-3">
-
-      <%= image_tag @activity.captain.picture(:thumb) %>
-        <br>
-      <%= @activity.captain.name %>
-
-      <%= @activity.number_of_players %>
-        <br>
-        <br>
-      <%= @activity.open %>
-  </div>
-
-  <div class="row col-sm-12 col-md-9">
-    <div class="col-xs-12">
-      <%= image_tag @activity.sport.picture(:large) %>
+  <div class="col-xs-12 col-md-3">
+    <div class="row" >
+      <%= user_picture(@activity.captain) %>
+    <br>
+    <div class="text-center">
+      <p>captain</p><%= @activity.captain.name %>
     </div>
-    <div class="row col-xs-12">
-      <div class="row col-sm-6">
-        <div class="row col-sm-6">
-          <ul>
-            <li><%= @activity.name %></li>
-            <li><%= @activity.sport.name %></li>
-            <li><%= @activity.date %></li>
-          </ul>
-        </div>
-        <div class="row col-sm-6">
-          <h3>commentaires</h3>
+    <br>
+      <div class="row col-xs-12 col-sm-6 pull-right">
+        <%= @activity.bookings.count %> / <%= @activity.number_of_players %>
+      </div>
+      <div class="row col-xs-12 col-sm-6">
+        <div class='pull-right'>
+          <% if @activity.current_user_booked == current_user.id  %>
+            <%= button_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings, :from=>"description"), method: :delete %>
+          <% elsif @activity.full? %>
+            <p> Complet, mais reste la si desistement il y a ! </p>
+          <% else %>
+            <%= button_to "Je fly", group_activity_bookings_path(@group, @activity, :from=>"description") %>
+          <% end %>
         </div>
       </div>
-      <div class="row col-sm-6 text-center">
+    <br>
+    <br>
+    <div class="text-center">
+      <% if @activity.open %>
+        <div class="btn btn-default btn-circle"></div>
+      <% else %>
+        <div class="btn btn-default btn-circle btn-warning"></div>
+      <% end %>
+      <% if @activity.captain == current_user %>
+      <br>
+        <%= link_to "supprimer l'activité", group_activity_path(@group, @activity), method: :delete, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-md-9">
+    <div class="row" >
+      <div class="col-xs-12">
+        <div class="banner bg-football">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <div class="row" >
+        <div class="detailBox transbox">
+          <div class="titleBox">
+            <ul>
+              <li><%= @activity.name %></li>
+              <li><%= @activity.date %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6 text-center">
+      <div class="row" >
+        <div class="detailBox">
+          <div class="titleBox">
+            <label>Comment Box</label>
+              <button type="button" class="close" aria-hidden="true">&times;</button>
+          </div>
+          <div class="commentBox">
+            <p class="taskDescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+            <div class="actionBox">
+              <ul class="commentList">
+                <li>
+                  <div class="commenterImage">
+                    <img src="http://lorempixel.com/50/50/people/6" />
+                  </div>
+                  <div class="commentText">
+                    <% if @comments %>
+                      <% @comments.each do |comment| %>
+                        <p class=""><%= comment.content %></p> <span class="date sub-text"><%= Time.now %></span>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </li>
+              </ul>
+              <form class="form-inline" role="form">
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Your comments" />
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-default">
+                  <%= button_to "Add", group_booking_comments_path(@group, @booking) %>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row" >
+      <div class="col-xs-12 text-center pull-right">
         <% if @activity.location %>
-          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=2000x200&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}", class: "img-responsive center-block" %>
+        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=2000x200&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}", class: "img-responsive center-block" %>
         <% end %>
       </div>
-
-      <% if @activity.captain == current_user %>
-      <%= link_to "supprimer l'activité", group_activity_path(@group, @activity), method: :delete, class: "btn btn-primary" %>
-      <% end %>
-
     </div>
   </div>
-
 </div>
-
-
