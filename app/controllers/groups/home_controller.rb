@@ -3,13 +3,23 @@ module Groups
 
     def show
       @group      = Group.friendly.find(params[:group])
-      @activities = @group.activities
       @newsfeeds  = @group.newsfeeds
+
+      if params[:user_input_city]
+        @dbactivities = @group.activities
+        @dbactivities.map do |a|
+        @activities = @group.activities.locations.near(params[:user_input_city], 10)
+        end
+      else
+        @activities = @group.activities
+      end
 
       @locations = []
 
       @activities.map do |a|
-         @locations << a.location if a.location != nil
+        if a.date > Date.yesterday
+          @locations << a.location if a.location != nil
+        end
       end
 
       # Let's DYNAMICALLY build the markers for the view.
