@@ -1,7 +1,29 @@
 .activity h2 {
-  color: red;
+  color: green;
 }
 
 .activity {
   margin: 10px 0;
+}
+
+
+.box-activity {
+  border: 2px solid transparent;
+  border-radius: 1px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  background: $gray-background;
+
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+.home-sport-avatar {
+  margin: auto;
+  border-radius: 50%;
 }

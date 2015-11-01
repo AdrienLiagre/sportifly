@@ -47,7 +47,7 @@
           <% if booking.activity.date > Date.today %>
             <ul style="list-style: none;">
               <li><%= booking.activity.date %></li>
-              <li><p> <%= link_to 'Détails', group_activity_path(@user.group) %></li>
+              <li><p> <%= link_to 'Détails', group_activity_path(@user.group, booking.activity) %></li>
             </ul>
           <% end %>
         </div>
