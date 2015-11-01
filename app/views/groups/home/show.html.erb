@@ -1,17 +1,21 @@
 <header class="masthead">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 text-left">
+      <div class="col-xs-12 col-sm-4 text-left">
         <h1><a href="#" title="Scroll down for your viewing pleasure"><%= @group.name %></a>
-          <p class="lead">The best school ever</p>
         </h1>
       </div>
-      <div class="col-xs-12 col-sm-6 text-right">
-
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <%= form_tag group_root_path(current_user.group), :method => :get do %>
+          <%= text_field_tag :city, nil, class: "form-control", name: "user_input_city", id: "user_input_city", placeholder: 'Où veux-tu flyer ?' %>
+          <%= submit_tag "Search", class: 'btn navbar-wagon-button' %>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-4 text-right">
         <div class="well pull-right">
           <%= image_tag @group.picture(:thumb) %>
         </div>
-     </div>
+      </div>
     </div>
   </div>
 </header>
@@ -75,10 +79,8 @@
                 handler = Gmaps.build('Google');
                 handler.buildMap({
                   internal: { id: 'map' },
-                  provider: {
-                    scrollwheel: false
-                  }
-                }, function(){
+                  provider: { scrollwheel: false }},
+                function(){
                   markers = handler.addMarkers(<%= raw @hash.to_json %>);
                   handler.bounds.extendWith(markers);
                   handler.fitMapToBounds();
@@ -101,7 +103,7 @@
 
 
           <div class="well">
-            <h3><a href="http://getbootstrap.com">Bootstrap 3 is Here.</a></h3>
+            <h3> Dernières nouvelle de la team <%= %> </h3>
             <p>
               In simple terms, a responsive web design figures out what resolution of
               device it's being served on. Flexible grids then size correctly to fit
