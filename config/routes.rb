@@ -14,7 +14,9 @@ Rails.application.routes.draw do
       root to: 'home#show'
 
       resources :activities do
-        resources :bookings, only: [:new, :create, :destroy]
+        resources :bookings, only: [:new, :create, :destroy] do
+          resources :comments, only: [:create]
+        end
       end
 
       resources :newsfeeds, only: [:new, :create]
@@ -22,10 +24,6 @@ Rails.application.routes.draw do
 
       resources :locations, only: [:new, :create, :edit, :update, :destroy]
       resources :location_reviews, only: [:create]
-
-      resources :bookings, only: [] do
-        resources :comments, only: [:create]
-      end
     end
   end
 end
