@@ -8,15 +8,17 @@ class Activity < ActiveRecord::Base
   has_many :users
 
   validates :name, :number_of_players, :date, :sport, presence: true
-  validates_inclusion_of :open, :in => [true, false]
+  validates_inclusion_of :open, in: [true, false]
 
-    def full?
-      self.bookings.count >= self.number_of_players
-    end
+  scope :planned, -> { where("date >= :today", today: Date.current) }
 
-    def current_user_booked
-      self.bookings.each do |booking|
+  def full?
+    self.bookings.count >= self.number_of_players
+  end
+
+  def current_user_booked
+    self.bookings.each do |booking|
       return booking.user_id
-      end
     end
+  end
 end

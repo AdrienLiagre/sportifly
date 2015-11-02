@@ -5,10 +5,10 @@
         <h1><a href="#" title="Scroll down for your viewing pleasure"><%= @group.name %></a>
         </h1>
       </div>
-      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="col-xs-12 col-sm-4 text-center">
         <%= form_tag group_root_path(current_user.group), :method => :get do %>
-          <%= text_field_tag :city, nil, class: "form-control", name: "user_input_city", id: "user_input_city", placeholder: 'Où veux-tu flyer ?' %>
-          <%= submit_tag "Search", class: 'btn navbar-wagon-button' %>
+          <%= text_field_tag :city, params[:city], class: "form-control", placeholder: 'Où veux-tu flyer ?' %>
+          <%= submit_tag "Search", class: 'btn' %>
         <% end %>
       </div>
       <div class="col-xs-12 col-sm-4 text-right">
@@ -28,7 +28,6 @@
         <div class="panel-heading text-center" style="background-color:#111;color:#fff;">Prochains sports</div>
         <div class="panel-body">
           <div class="row">
-
 
               <% @activities.each do |activity| %>
                 <% if activity.date > Date.yesterday %>
@@ -114,7 +113,7 @@
 
           <hr>
 
-          <h3>Top Members</h3>
+          <h3>Top Team Members</h3>
 
           <h5><a href="#"><i class="glyphicon glyphicon-user"></i> John Chapman</a></h5>
           <h5><a href="#"><i class="glyphicon glyphicon-user"></i> Max Axleton</a></h5>
@@ -172,7 +171,6 @@
         </div>
       </div><!--/panel-->
     </div><!--/end mid column-->
-
     <!-- right content column-->
   </div>
 
