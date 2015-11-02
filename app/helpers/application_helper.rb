@@ -7,7 +7,7 @@ module ApplicationHelper
      if @user.picture.exists?
        image_tag @user.picture(:medium), class: "dashboard-avatar img-responsive"
      else
-       image_tag 'jcdusse.png', class: "dashboard-avatar img-responsive"
+       image_tag 'avatar.png', class: "dashboard-avatar img-responsive"
      end
   end
 
@@ -15,7 +15,7 @@ module ApplicationHelper
     if @sport.picture.exists?
        image_tag @sport.picture(:medium), class: "dashboard-sport-picture img-responsive"
      else
-       image_tag 'jcdusse.png', class: "dashboard-sport-picture img-responsive"
+       image_tag 'avatar.png', class: "dashboard-sport-picture img-responsive"
      end
   end
 end
