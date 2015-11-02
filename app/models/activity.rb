@@ -6,6 +6,7 @@ class Activity < ActiveRecord::Base
 
   has_many :bookings
   has_many :users
+  has_many :comments, through: :bookings
 
   validates :name, :number_of_players, :date, :sport, presence: true
   validates_inclusion_of :open, in: [true, false]
