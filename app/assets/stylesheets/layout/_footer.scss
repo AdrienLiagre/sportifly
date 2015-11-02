@@ -2,16 +2,78 @@
 
 .footer {
   background-color:#77CCDD;
-  color:#ffffff;
   border-radius:0;
   bottom: 20px;
   padding-top: 20px;
+  padding-bottom: 20px;
+
 }
 
 .footer .social-links a {
-  color: #FFF;
+  color: #F5F5F5;
   .fa {
   font-size: 30px;
 }
 }
 
+.footer .footer-right{
+  float: right;
+}
+
+
+.footer .footer-distributed form{
+  display: inline-block;
+}
+
+.footer .footer-distributed form input,
+.footer .footer-distributed form textarea{
+  display: block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color:  #FFFFFF;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  border: none;
+  resize: none;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  color:  #d1d2d2;
+
+  width: 400px;
+  padding: 18px;
+}
+
+.footer .footer-distributed ::-webkit-input-placeholder {
+  color:  #5c666b;
+}
+
+.footer .footer-distributed ::-moz-placeholder {
+  color:  #5c666b;
+  opacity: 1;
+}
+
+.footer .footer-distributed :-ms-input-placeholder{
+  color:  #5c666b;
+}
+
+
+.footer .footer-distributed form input{
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+.footer .footer-distributed form textarea{
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.footer .footer-distributed form button{
+  border-radius: 3px;
+  background-color:  #FFFFFF;
+  color: #AAAAAA;
+  border: 0;
+  padding: 15px 50px;
+  font-weight: bold;
+  float: right;
+}
