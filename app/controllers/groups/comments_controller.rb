@@ -4,21 +4,20 @@ module Groups
 
     def new
       @activity = Activity.find(params[:activity_id])
-      @booking = Booking.find(params[:booking_id])
-      @comment = Comment.new
+      @booking  = Booking.find(params[:booking_id])
+      @comment  = Comment.new
     end
 
     def create
-      @activity = @group.activities.find(params[:id])
-      @booking = @activity.bookings.find(params[:id])
-      @comment = @booking.comments.create(booking_params)
-      @comment.save
+      @activity = @group.activities.find(params[:activity_id])
+      @booking  = @activity.bookings.for_user(current_user).first
+      @comment  = @booking.comments.new(booking_params)
 
-      # if @comment.save
-      #   redirect_to group_activity_path
-      # else
-      #   render :new
-      # end
+      if @comment.save
+        redirect_to group_activity_path(params[:group], @activity)
+      else
+        render :new
+      end
     end
 
   private
@@ -28,7 +27,7 @@ module Groups
     end
 
     def booking_params
-      params.require(:booking).permit(:booking_id, :current_user, :content)
+      params.require(:comment).permit(:content)
     end
   end
 end

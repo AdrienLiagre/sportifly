@@ -14,9 +14,8 @@ Rails.application.routes.draw do
       root to: 'home#show'
 
       resources :activities do
-        resources :bookings, only: [:new, :create, :destroy] do
-          resources :comments, only: [:create]
-        end
+        resources :bookings, only: [:new, :create, :destroy]
+        resources :comments, only: [:create]
       end
 
       resources :newsfeeds, only: [:new, :create]

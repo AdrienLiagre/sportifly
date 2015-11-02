@@ -8,8 +8,10 @@ module Groups
 
     def show
       @activity = @group.activities.find(params[:id])
+      @comments = @activity.comments
 
       @locations = Location.all
+
       # Let's DYNAMICALLY build the markers for the view.
       @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
         marker.lat location.latitude
