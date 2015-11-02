@@ -36,6 +36,8 @@ module Groups
 
       if params[:referral] == 'activity-page'
         redirect_to group_activity_path(@group, @activity)
+      elsif params[:referral] == 'dashboard-page'
+        redirect_to account_dashboard_path
       else
         redirect_to group_root_path
       end

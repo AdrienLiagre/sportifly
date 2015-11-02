@@ -55,7 +55,7 @@
             <li><%= booking.activity.date %></li>
             <li> Tu fly avec </li>
             <li><p> <%= link_to 'Détails', group_activity_path(@user.group, booking.activity ) %></li>
-            <%= link_to "Annuler", account_dashboard_path, method: :delete, class: "btn btn-warning" %>
+            <%= link_to "Annuler",  group_activity_booking_path(@user.group, booking.activity, booking, referral: 'dashboard-page'), method: :delete, class: "btn btn-warning" %>
           </ul>
         </div>
       </div>

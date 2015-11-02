@@ -4,7 +4,7 @@ class Activity < ActiveRecord::Base
   belongs_to :group
   belongs_to :captain, class_name: 'User', foreign_key: 'captain_id'
 
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :users
   has_many :comments, through: :bookings
 
