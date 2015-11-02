@@ -1,5 +1,5 @@
 .activity h2 {
-  color: green;
+  color: $blue-theme;
 }
 
 .activity {
@@ -14,6 +14,7 @@
   margin-bottom: 15px;
   padding-bottom: 10px;
   background: $gray-background;
+  box-shadow: 8px 8px 12px #aaa;
 
 }
 
