@@ -12,12 +12,11 @@ class User < ActiveRecord::Base
   before_create :assign_to_group
   after_create :send_welcome_email
 
-  has_many :bookings, dependent: :destroy
-  has_many :favorite_sports, dependent: :destroy
+  has_many :activities,       dependent: :destroy
+  has_many :bookings,         dependent: :destroy
+  has_many :favorite_sports,  dependent: :destroy
   has_many :location_reviews, dependent: :destroy
-  has_many :newsfeeds, dependent: :destroy
-  has_many :activities, dependent: :destroy
-
+  has_many :newsfeeds,        dependent: :destroy
 
   validates :email, :presence => true, :email => true
 
