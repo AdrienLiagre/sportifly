@@ -1,49 +1,44 @@
-
-<div class='row'>
-  <div class='text-center'>
-    <h2> Ton profil </h2>
-  </div>
-  <div class='pull-right'>
-  <%= link_to "Mettre à jour", edit_account_dashboard_users_path, class: "right-btn navbar-wagon-button"  %>
-  </div>
-</div>
-
 <div class="container">
   <div class="col-xs-12 col-sm-6">
     <div class='row text-center'>
+      <div class='box-header-dash'>
+       <h2> Ton profil </h2>
+      </div>
+
       <%= user_picture(@user) %>
-    </div>
-    <div class='row'>
+    <br>
+    <div class='row box-header-dash'>
       <div class='col-xs-6 col-xs-offset-3'>
-        <div class='panel-heading text-center'>
-          <div class='title-grey'>
-            <% if @user.name %>
-              <h2> <%= @user.name %> </h2>
-            <% else %>
-              <p> <%= @user.email %> </p>
-            <% end %>
-          </div>
-          <h4> Team: <%= @user.group.name %> </h4>
-          <h4> Age: <%= @user.age %> </h4>
-          <h4> #: <%= @user.phone_number %> </h4>
-          <h4> Je fly en: </h4>
-        </div>
+          <ul>
+            <li><% if @user.name %><%= @user.name %>
+                <% else %> <%= @user.email %>
+                <% end %></li>
+            <li> Team: <%= @user.group.name %> </li>
+            <li><%= @user.age %> ans </li>
+            <li><%= @user.phone_number %></li>
+            <%= link_to "Mettre à jour", edit_account_dashboard_users_path, class: "btn btn-mise-a-jour"  %>
+          </ul>
       </div>
     </div>
   </div>
+  </div>
 
   <div class="col-xs-12 col-sm-6">
-    <div class='panel-heading text-center title-grey' >
-      <h4> Mes statistiques </h4>
+    <div class='box-header-dash text-center' >
+      <h2> Tes statistiques </h2>
     </div>
+    <div class='box-header-dash' >
     <p> form to update the profil </p>
+  </div>
   </div>
 </div>
 
 <br>
 
 <div class="container">
-  <div class='panel-heading text-center bg-blue'>
+    <div class="col-xs-12">
+
+  <div class=' row box-header-dash text-center'>
     <h4> Tes prochaines activités avec la team <%= @user.group.name %> </h4>
   </div>
 
@@ -65,13 +60,12 @@
     <p> Créer une activité </p>
     <p> Chercher une activité </p>
   <% end %>
-</div>
 
 <% if @bookings_passed.exists? %>
-  <div class="container">
-    <div class='panel-heading text-center bg-blue'>
+    <div class='box-header-dash text-center'>
       <h4> Tes activités passées avec la team <%= @user.group.name %> </h4>
     </div>
+
 
     <% @bookings_passed.each do |booking| %>
       <div class="container">
@@ -84,5 +78,6 @@
         </div>
       </div>
     <% end %>
-  </div>
-<% end %>
+  <% end %>
+</div>
+</div>

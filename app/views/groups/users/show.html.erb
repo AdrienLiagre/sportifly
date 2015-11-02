@@ -1,61 +1,63 @@
-
-
-
-<div class='row'>
-  <div class='text-center'>
-    <h1><%= @user.name %></h1>
-  </div>
-</div>
-
 <div class="container">
   <div class="col-xs-12 col-sm-6">
     <div class='row text-center'>
-           <%= user_picture(@user) %>
-    </div>
+      <div class='box-header-dash'>
+       <h2>Profil de <%= @user.name %></h2>
+      </div>
 
-    <div class='row'>
+      <%= user_picture(@user) %>
+    <br>
+    <div class='row box-header-dash'>
       <div class='col-xs-6 col-xs-offset-3'>
-        <div class='panel-heading text-center'>
-          <div class='title-grey'>
-              <p> <%= @user.email %> </p>
-          </div>
-          <h4> Team: <%= @user.group.name %> </h4>
-          <h4> Age: <%= @user.age %> </h4>
-          <h4> #: <%= @user.phone_number %> </h4>
-        </div>
+          <ul>
+            <li><%= @user.email %></li>
+            <li> Team: <%= @user.group.name %> </li>
+            <li><%= @user.age %> ans </li>
+            <li><%= @user.phone_number %></li>
+          </ul>
       </div>
     </div>
   </div>
+  </div>
 
   <div class="col-xs-12 col-sm-6">
-    <div class='panel-heading text-center title-grey' >
-      <h4> Ses statistiques </h4>
+    <div class='box-header-dash text-center' >
+      <h2> Ses statistiques </h2>
     </div>
+    <div class='box-header-dash' >
+    <p> form to update the profil </p>
+  </div>
   </div>
 </div>
 
 <br>
 
 <div class="container">
-  <div class='panel-heading text-center title-grey'>
+    <div class="col-xs-12">
+
+  <div class=' row box-header-dash text-center'>
     <h4> Ses prochaines activités avec la team <%= @user.group.name %> </h4>
   </div>
-  <% if @user.bookings.any? %>
-    <% @user.bookings.each do |booking| %>
+
+  <% if @user.bookings.planned.exists? %>
+    <% @user.bookings.planned.each do |booking| %>
       <div class="container">
         <div class="col-md-6 col-lg-4">
-          <% if booking.activity.date > Date.today %>
-            <ul style="list-style: none;">
-              <li><%= booking.activity.date %></li>
-              <li><p> <%= link_to 'Détails', group_activity_path(@user.group, booking.activity) %></li>
-            </ul>
-          <% end %>
+          <ul style="list-style: none;">
+            <li><%= booking.activity.date %></li>
+            <li> Elle fly avec </li>
+            <li><p> <%= link_to 'Détails', group_activity_path(@user.group, booking.activity ) %></li>
+          </ul>
         </div>
       </div>
     <% end %>
   <% else %>
-    <p> Elle n'a pas encore prévu d'activité soon</p>
+    <p> Elle n'a pas encore prévu d'activité soon </p>
   <% end %>
 </div>
+</div>
 
-<br>
+
+
+
+
