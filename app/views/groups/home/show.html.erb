@@ -1,16 +1,19 @@
 <header class="masthead">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4 text-right">
-        <div class="well img-responsive">
-          <%= image_tag @group.picture(:thumb) %>
-        </div>
+    <div class="row box-header">
+      <div class="col-xs-12 col-sm-4">
+          <%= image_tag @group.picture(:medium), class: "img-responsive group-pic" %>
       </div>
-      <div class="col-xs-12 col-sm-8 text-center">
+      <br>
+      <br>
+      <div class="col-xs-6 col-sm-4">
         <%= form_tag group_root_path(current_user.group), :method => :get do %>
           <%= text_field_tag :city, params[:city], class: "form-control", placeholder: 'Où veux-tu flyer ?' %>
           <br>
-          <%= submit_tag "Search", class: 'btn' %>
+      </div>
+      <div class="col-xs-6 col-sm-4">
+        <%= submit_tag "Search", class: 'btn' %>
+
         <% end %>
       </div>
     </div>
