@@ -4,50 +4,37 @@ module Groups
 
     def new
       @activity = Activity.find(params[:activity_id])
-      @booking = Booking.new
+      @booking  = Booking.new
     end
 
     def create
-
       @activity = @group.activities.find(params[:activity_id])
-      @booking = @activity.bookings.create(user: current_user)
+      @booking  = @activity.bookings.new(user: current_user)
 
-      if params[:from]=='description'
-        if @activity.full?
-          flash[:error] = 'Activity is full!'
-          redirect_to group_activity_path(@group, @activity)
-        elsif @activity.current_user_booked
-          redirect_to group_activity_path(@group, @activity)
-        elsif @activity.save
-          flash[:notice] = 'You successfully subscribed'
-          redirect_to group_activity_path(@group, @activity)
-        else
-          flash[:error] = 'An error occured'
-          redirect_to group_activity_path(@group, @activity)
-        end
-
-
+      if @activity.full?
+        flash[:error] = 'Activity is full!'
+      elsif @activity.user_booked?(current_user)
+        flash[:error] = 'You already booked'
+      elsif @activity.save
+        flash[:notice] = 'You successfully subscribed'
       else
-        if @activity.full?
-          flash[:error] = 'Activity is full!'
-          redirect_to group_root_path(params[:group])
-        elsif @activity.current_user_booked
-          redirect_to group_root_path(params[:group])
-        elsif @activity.save
-          flash[:notice] = 'You successfully subscribed'
-          redirect_to group_root_path(params[:group])
-        else
-          flash[:error] = 'An error occured'
-          redirect_to group_root_path(params[:group])
-        end
+        flash[:error] = 'An error occured'
+      end
+
+      if params[:referral] == 'activity-page'
+        redirect_to group_activity_path(@group, @activity)
+      else
+        redirect_to group_root_path(params[:group])
       end
     end
 
     def destroy
       @activity = @group.activities.find(params[:activity_id])
-      @booking = @activity.bookings.where(user: current_user)
-      @booking.first.destroy
-      if params[:from]=='description'
+      @booking  = @activity.bookings.for_user(current_user).first
+
+      @booking.destroy
+
+      if params[:referral] == 'activity-page'
         redirect_to group_activity_path(@group, @activity)
       else
         redirect_to group_root_path

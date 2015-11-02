@@ -12,12 +12,12 @@
       </div>
       <div class="row col-xs-12 col-sm-6">
         <div class='pull-right'>
-          <% if @activity.current_user_booked == current_user.id  %>
-            <%= button_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings, :from=>"description"), method: :delete %>
+          <% if @activity.user_booked?(current_user) %>
+            <%= button_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete %>
           <% elsif @activity.full? %>
             <p> Complet, mais reste la si desistement il y a ! </p>
           <% else %>
-            <%= button_to "Je fly", group_activity_bookings_path(@group, @activity, :from=>"description") %>
+            <%= button_to "Je fly", group_activity_bookings_path(@group, @activity, referral: 'activity-page') %>
           <% end %>
         </div>
       </div>
