@@ -40,3 +40,4 @@ Activity.create!(location: Location.all.sample, captain: paul, group: paul.group
 Activity.create!(location: Location.all.sample, captain: franck, group: franck.group, name: "On se détend", number_of_players: 4, date: Date.today, open: true, sport: handball)
 Activity.create!(location: Location.all.sample, captain: patrick, group: patrick.group, name: "foot", number_of_players: 5, date: Date.today, open: false, sport: handball)
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
