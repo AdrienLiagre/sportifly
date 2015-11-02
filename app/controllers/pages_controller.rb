@@ -1,5 +1,11 @@
 class PagesController < ApplicationController
 
+  def home
+    if user_signed_in?
+      redirect_to group_root_path(current_user.group)
+    end
+  end
+
   def show
     @locations = Location.all
       # Let's DYNAMICALLY build the markers for the view.
