@@ -9,8 +9,10 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 
+gem 'activeadmin', github: 'activeadmin'
 gem 'rails', '4.2.3'
 gem 'pg'
+gem 'pundit'
 gem 'figaro'
 gem 'geocoder'
 gem 'jbuilder', '~> 2.0'
