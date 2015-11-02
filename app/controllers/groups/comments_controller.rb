@@ -11,14 +11,18 @@ module Groups
     def create
       @activity = @group.activities.find(params[:activity_id])
       @booking  = @activity.bookings.for_user(current_user).first
-      @comment  = @booking.comments.new(booking_params)
 
-      if @comment.save
+      if @activity.user_booked?(current_user)
+        @comment  = @booking.comments.new(booking_params)
+        @comment.save
         redirect_to group_activity_path(params[:group], @activity)
-      else
-        render :new
+      elsif
+        flash[:notice] = 'Tu dois flyer cette activité si tu veux la commenter'
+        redirect_to group_activity_path(params[:group], @activity)
       end
     end
+
+
 
   private
 
