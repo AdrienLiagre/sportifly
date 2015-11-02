@@ -11,9 +11,8 @@
 <div class="container">
   <div class="col-xs-12 col-sm-6">
     <div class='row text-center'>
-        <%= user_picture(@user) %>
+      <%= user_picture(@user) %>
     </div>
-
     <div class='row'>
       <div class='col-xs-6 col-xs-offset-3'>
         <div class='panel-heading text-center'>
@@ -44,9 +43,10 @@
 <br>
 
 <div class="container">
-  <div class='panel-heading text-center title-grey'>
+  <div class='panel-heading text-center bg-blue'>
     <h4> Tes prochaines activités avec la team <%= @user.group.name %> </h4>
   </div>
+
   <% if @user.bookings.any? %>
     <% @user.bookings.each do |booking| %>
       <div class="container">
@@ -58,6 +58,10 @@
               <li><p> <%= link_to 'Détails', group_activity_path(@user.group, booking.activity ) %></li>
               <%= link_to "Annuler", account_dashboard_path, method: :delete, class: "btn btn-warning" %>
             </ul>
+          <% else %>
+            <p> Tu n'as pas encore prévu d'activité.</p>
+            <p> Créer une activité </p>
+            <p> Chercher une activité </p>
           <% end %>
         </div>
       </div>
