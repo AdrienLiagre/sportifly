@@ -11,12 +11,14 @@ end
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'rails', '4.2.3'
+gem 'rails-i18n'
 gem 'pg'
 gem 'pundit'
 gem 'figaro'
 gem 'geocoder'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
+gem 'devise-i18n'
 gem 'friendly_id', '~> 5.1.0'
 
 gem 'aws-sdk', '< 2.0'
