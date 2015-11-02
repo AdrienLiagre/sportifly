@@ -26,6 +26,7 @@ module Groups
           redirect_to group_activity_path(@group, @activity)
         end
 
+
       else
         if @activity.full?
           flash[:error] = 'Activity is full!'
