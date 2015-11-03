@@ -38,7 +38,7 @@
                           <h2><%= activity.sport.name %></h2>
                             <%= activity.name %>
                             <br>
-                            <%= activity.date %>
+                            <%= l(activity.date, format: :short) %>
                             <br>
                             <% if activity.open %>
                               <div class="btn btn-default btn-circle"></div>

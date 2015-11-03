@@ -50,7 +50,7 @@
           <div class="titleBox">
             <ul>
               <li><%= @activity.name %></li>
-              <li><%= @activity.date %></li>
+              <li><%= l(@activity.date, format: :short) %></li>
             </ul>
           </div>
         </div>
