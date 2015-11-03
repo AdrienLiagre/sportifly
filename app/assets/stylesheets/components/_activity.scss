@@ -41,3 +41,28 @@
   box-shadow: 1px 1px 1px #aaa;
 
 }
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // background: rgba(0, 0, 0, 0,8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-activity {
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  height: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+

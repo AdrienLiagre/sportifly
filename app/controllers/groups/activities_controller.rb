@@ -43,6 +43,10 @@ module Groups
       redirect_to group_root_path(@group.slug)
     end
 
+    def activitycreation
+      @activity = Activity.new
+    end
+
   private
 
     def set_group

@@ -1,0 +1,27 @@
+<div class="container panel-heading text-center">
+  <%= @activity = Activity.new %>
+  <%= simple_form_for([:group, @activity], html: { multipart: true }) do |f| %>
+    <%= f.error_notification %>
+    <div class="row">`
+      <div class="col-sm-4 col-sm-offset-4">
+
+      <%= f.input :name %>
+      <%= f.association :sport %>
+      <%= f.association :location, label_method: :name, value_method: :id %>
+      <%= f.input :description %>
+      <%= f.input :number_of_players %>
+      <%= f.input :date %>
+      <%= f.input :price %>
+      <%= f.input :open %>
+
+
+      <%= f.button :submit %>
+
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
