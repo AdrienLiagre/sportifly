@@ -1,0 +1,33 @@
+.banner {
+  background-image: image_url("backgroundhome.png");
+  background-size: cover;
+  background-position: 0px 550px;
+  position: relative;
+  z-index: 0;
+  margin-top: -22px;
+}
+
+.banner-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.content {
+  padding: 0px;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.banner-bottom {
+  background-color: $gray-background;
+  background-size: cover;
+  background-position: 0px 550px;
+  position: relative;
+  z-index: 0;
+
+}
