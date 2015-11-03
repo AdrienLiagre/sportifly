@@ -6,6 +6,7 @@ module Groups
       @activities = @group.activities.planned
       @city       = params[:city]
 
+
       if @city.present?
         @locations  = Location.near(@city)
         @activities = @activities.joins(:location).where(locations: { id: @locations.map(&:id) })
