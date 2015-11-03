@@ -1,8 +1,9 @@
 module Groups
   class HomeController < ApplicationController
     def show
+      @newsfeed   = Newsfeed.new
       @group      = Group.friendly.find(params[:group])
-      @newsfeeds  = @group.newsfeeds
+      @newsfeeds  = @group.newsfeeds.order(created_at: :desc).limit(100)
       @activities = @group.activities.planned
       @city       = params[:city]
 

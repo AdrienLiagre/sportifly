@@ -1,0 +1,41 @@
+<div class="panel-body">
+  <ul class="commentList">
+    <% if @newsfeeds.exists? %>
+      <% @newsfeeds.each do |newsfeed| %>
+        <li>
+          <div class="commenterImage">
+            <%= link_to group_user_path(@group, newsfeed.user) do %>
+            <% if newsfeed.user.picture.exists? %>
+            <%= image_tag newsfeed.user.picture(:thumb) %>
+            <% else %>
+            <%= image_tag "avatarnewsfeed.png" %>
+            <% end %>
+            <% end %>
+          </div>
+          <div class="commentText">
+            <% if newsfeed.picture.presence %>
+              <p><%= image_tag(newsfeed.picture, width: "100%") %></p>
+            <% end %>
+            <% if newsfeed.content.presence %>
+              <p><%= newsfeed.content %></p>
+            <% end %>
+            <span class="date sub-text"><%= l(newsfeed.created_at, format: :short) %></span>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <%= simple_form_for @newsfeed, url: group_newsfeeds_path(@group), class: 'form-inline' do |f| %>
+    <%= f.input :content %>
+    <%= f.input :picture %>
+    <div class="text-center">
+    <%= f.button :button do %>
+    <div class="btn btn-newsfeed">je veux partager cette folie</div>
+    </div>
+    <% end %>
+
+  <% end %>
+
+
+
+</div>
