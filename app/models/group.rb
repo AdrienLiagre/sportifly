@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
 
   has_many :activities, dependent: :destroy
   has_many :users,      dependent: :nullify
-  has_many :newsfeeds, through: :users
+  has_many :newsfeeds, through: :users, dependent: :destroy
 
   has_attached_file :picture,
     styles: { medium: "300x300>", thumb: "100x100>" }

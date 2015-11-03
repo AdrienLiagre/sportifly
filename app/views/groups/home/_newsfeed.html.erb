@@ -1,0 +1,30 @@
+<div class="panel-body">
+   <%= simple_form_for @newsfeed, url: group_newsfeeds_path(@group), class: 'form-inline' do |f| %>
+    <%= f.input :content, as: :text %>
+    <%= f.input :picture %>
+
+    <p class="btn btn-primary" ><%= f.submit %></p>
+
+  <% end %>
+  <ul class="commentList">
+    <% if @newsfeeds.exists? %>
+      <% @newsfeeds.each do |newsfeed| %>
+        <li>
+          <div class="commenterImage">
+            <% image_tag(current_user.picture) %>
+          </div>
+          <div class="commentText">
+            <% if newsfeed.picture.presence %>
+              <p><%= image_tag(newsfeed.picture) %></p>
+            <% end %>
+            <% if newsfeed.content.presence %>
+              <p><%= newsfeed.content %></p>
+            <% end %>
+            <span class="date sub-text"><%= l(newsfeed.created_at, format: :short) %></span>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+</div>

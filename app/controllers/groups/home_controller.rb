@@ -1,6 +1,7 @@
 module Groups
   class HomeController < ApplicationController
     def show
+      @newsfeed   = Newsfeed.new
       @group      = Group.friendly.find(params[:group])
       @newsfeeds  = @group.newsfeeds
       @activities = @group.activities.planned
