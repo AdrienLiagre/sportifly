@@ -27,10 +27,6 @@ class User < ActiveRecord::Base
 
   private
 
-  def send_welcome_email
-    UserMailer.welcome(self).deliver_now
-  end
-
   def assign_to_group
     self.group = Group.find_by(email_domain_name: Mail::Address.new(self.email).domain)
   end

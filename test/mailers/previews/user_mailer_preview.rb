@@ -1,6 +1,6 @@
 class UserMailerPreview < ActionMailer::Preview
-  def welcome
+  def reminder
     user = User.first
-    UserMailer.welcome(user)
+    UserMailer.reminder(user)
   end
 end
