@@ -4,16 +4,27 @@
   background-color:#77CCDD;
   border-radius:0;
   bottom: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
-.footer .social-links a {
+.footer .logo-footer {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.footer .text-footer {
+  margin-top: 0px;
+  margin-bottom: 13px;
+}
+
+
+
+ .footer .social-links a {
   color: #F5F5F5;
   .fa {
   font-size: 30px;
-}
+  }
 }
 
 .footer .footer-right{
@@ -40,7 +51,6 @@
   font-weight: normal;
   color:  #d1d2d2;
 
-  width: 400px;
   padding: 18px;
 }
 
@@ -59,13 +69,16 @@
 
 
 .footer .footer-distributed form input{
-  height: 55px;
-  margin-bottom: 15px;
+  height: 30px;
+  width: 300px;
+  margin-bottom: 5px;
 }
 
 .footer .footer-distributed form textarea{
-  height: 100px;
-  margin-bottom: 20px;
+  height: 80px;
+  width: 300px;
+  right: 0px;
+  margin-bottom: 5px;
 }
 
 .footer .footer-distributed form button{
@@ -73,7 +86,7 @@
   background-color:  #FFFFFF;
   color: #AAAAAA;
   border: 0;
-  padding: 15px 50px;
+  padding: 7px 30px;
   font-weight: bold;
   float: right;
 }

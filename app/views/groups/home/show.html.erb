@@ -19,7 +19,6 @@
   </div>
 </header>
 
-<!-- Begin Body -->
 <div class="container">
   <div class="no-gutter row">
     <div class="col-md-8" id="content">
@@ -27,10 +26,8 @@
         <div class="panel-heading text-center" style="background-color:#111;color:#fff;">Prochains sports</div>
         <div class="panel-body">
           <div class="row">
-
               <% @activities.each do |activity| %>
                 <% if activity.date > Date.yesterday %>
-
                   <div class="col-sm-12 activity box-activity">
                     <div class="row" >
                       <div class="col-sm-8" >
@@ -38,7 +35,7 @@
                           <h2><%= activity.sport.name %></h2>
                             <%= activity.name %>
                             <br>
-                            <%= activity.date %>
+                            <%= l(activity.date, format: :short) %>
                             <br>
                             <% if activity.open %>
                               <div class="btn btn-default btn-circle"></div>
@@ -53,14 +50,11 @@
                       <div class="col-sm-4 text-center">
                         <br>
                         <br>
-                          <% @sport = activity.sport %>
-                          <%= sport_picture(@sport) %>
-                          <%= link_to group_user_path(@group, activity.captain) do %>
-                            <%= activity.captain.name %>
-                          <% end %>
+                        <%= link_to group_user_path(@group, activity.captain) do %>
+                          <%= captain_picture(activity.captain) %>
+                          <%= activity.captain.name %>
+                        <% end %>
                       </div>
-
-
                     </div>
                      <div class="text-center">
                         <% if activity.user_booked?(current_user) %>
@@ -77,10 +71,9 @@
             <% end %>
           </div>
         </div>
-        <!--/panel-body-->
       </div>
       <br>
-      <div class="panel"><!--/panel-->
+      <div class="panel">
         <div id="map" style="width: 100%; height: 300px;"></div>
           <% content_for(:after_js) do %>
             <%= javascript_tag do %>
@@ -98,81 +91,15 @@
             <% end %>
           <% end %>
         </div>
-      <!--/end right column-->
     </div>
-    <!-- left side column -->
-
-
-    <!--mid column-->
     <div class="col-md-4">
       <div class="panel" id="">
         <div class="panel-heading text-center" style="background-color:#555;color:#eee;">Newsfeed</div>
           <%= render 'newsfeed' %>
-
-
-
-          <hr>
-
-          <h3>Top Group Members</h3>
-
-          <h5><a href="#"><i class="glyphicon glyphicon-user"></i><%= @group %></a></h5>
-          <h5><a href="#"><i class="glyphicon glyphicon-user"></i> Max Axleton</a></h5>
-          <h5><a href="#"><i class="glyphicon glyphicon-user"></i> Devin Skelly</a></h5>
-          <h5><a href="#"><i class="glyphicon glyphicon-user"></i> Katie Kowalski</a></h5>
-          <h5><a href="#"><i class="glyphicon glyphicon-user"></i> Amet Deberge</a></h5>
-
-          <hr>
-
-          <img class="img-responsive" src="//placehold.it/300x200/FFF">
-
-          <h4>Best feeds</h4>
-
-          <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placehold.it/80/F0F0F0">
-            </a>
-            <div class="media-body">
-              <h5 class="media-heading"><a href="/tagged/modal" target="ext" class="pull-right"><i class="glyphicon glyphicon-share"></i></a> <a href="#"><strong>Modal</strong></a></h5>
-              <small>Examples using the Bootstrap modal.</small><br>
-              <span class="badge">87</span>
-            </div>
-          </div>
-          <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placehold.it/80/F0F0F0">
-            </a>
-            <div class="media-body">
-              <h5 class="media-heading"><a href="/tagged/slider" target="ext" class="pull-right"><i class="glyphicon glyphicon-share"></i></a> <a href="#"><strong>Carousel</strong></a></h5>
-              <small>How to use the Bootstrap slider.</small><br>
-              <span class="badge">322</span>
-            </div>
-          </div>
-          <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placehold.it/80/F0F0F0">
-            </a>
-            <div class="media-body">
-              <h5 class="media-heading"><a href="/tagged/typography" target="ext" class="pull-right"><i class="glyphicon glyphicon-share"></i></a> <a href="#"><strong>Typography</strong></a></h5>
-              <small>See the various textual elements and options.</small><br>
-              <span class="badge">44</span>
-            </div>
-          </div>
-          <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placehold.it/80/F0F0F0">
-            </a>
-            <div class="media-body">
-              <h5 class="media-heading"><a href="/tagged/media" target="ext" class="pull-right"><i class="glyphicon glyphicon-share"></i></a> <a href="#"><strong>@Media</strong></a></h5>
-              <small>Use @media queries to get the layout you want.</small><br>
-              <span class="badge">119</span>
-            </div>
-          </div>
-
-        </div>
-      </div><!--/panel-->
-    </div><!--/end mid column-->
-    <!-- right content column-->
+      </div>
+    </div>
   </div>
+</div>
 
 
 
