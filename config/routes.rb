@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  require "sidekiq/web"
+  authenticate :admin_user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   namespace :account do
     resource :dashboard, only: :show, controller: 'dashboard' do
       resource :users, only: [:edit, :update]
