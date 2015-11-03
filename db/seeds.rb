@@ -17,16 +17,45 @@ end
 edhec_lille = Group.create!(name: 'Edhec', description: "Groupe des étudiants de l'Edhec Grande Ecole et Msc, pour plus de fun et de sport !", email_domain_name: 'edhec.com')
 hec = Group.create!(name: 'HEC', description: "Groupe des étudiants de HEC", email_domain_name: 'hec.com')
 
-samir = User.create!(name: "Samir Benflouka", group: edhec_lille, phone_number: '0675847374', age: 22, crew: "Ad’lib", email: "samir.benflouka@edhec.com", password: 'kikoulol')
-User.create!(name: "Olivia Legrand", group: edhec_lille, phone_number: '0675847355', age: 20, crew: "OJO", email: "olivia.legrand@edhec.com", password: 'kikoulol')
-User.create!(name: "Mathieu Plus", group: hec, phone_number: '0675847322', age: 20, crew: "OJO", email: "mathieu.plus@hec.com", password: 'kikoulol')
-paul = User.create!(name: "Paul Franco", group: edhec_lille, phone_number: '0675847333', age: 23, crew: "CCE", email: "paul.franco@edhec.com", password: 'kikoulol')
-User.create!(name: "Christine Adou", group: hec, phone_number: '0675847334', age: 22, crew: "SBC", email: "christine.adou@hec.com", password: 'kikoulol')
-User.create!(name: "Aurélie Nakeseizan", group: edhec_lille, phone_number: '0675841174', age: 22, crew: "SBC", email: "aurelie.nakeseizan@edhec.com", password: 'kikoulol')
-franck = User.create!(name: "Frank Saucisse", group: hec, phone_number: '0675846674', age: 23, crew: "Chti", email: "frank.saucisse@hec.com", password: 'kikoulol')
-User.create!(name: "Arthur Mathias", group: edhec_lille, phone_number: '0675657374', age: 22, crew: "Chti", email: "arthur.mathias@edhec.com", password: 'kikoulol')
-User.create!(name: "Francine Blanche", group: hec, phone_number: '0648847374', age: 22, crew: "Raid", email: "francine.blanche@hec.com", password: 'kikoulol')
-patrick = User.create!(name: "Patrick Sebastien", group: edhec_lille, phone_number: '0675245374', age: 21, crew: "Musicall", email: "patrick.sebastien@edhec.com", password: 'kikoulol')
+samir = User.new(name: "Samir Benflouka", group: edhec_lille, phone_number: '0675847374', age: 22, crew: "Ad’lib", email: "samir.benflouka@edhec.com", password: 'kikoulol')
+samir.skip_confirmation!
+samir.save!
+
+user = User.new(name: "Olivia Legrand", group: edhec_lille, phone_number: '0675847355', age: 20, crew: "OJO", email: "olivia.legrand@edhec.com", password: 'kikoulol')
+user.skip_confirmation!
+user.save!
+
+user = User.new(name: "Mathieu Plus", group: hec, phone_number: '0675847322', age: 20, crew: "OJO", email: "mathieu.plus@hec.com", password: 'kikoulol')
+user.skip_confirmation!
+user.save!
+
+paul = User.new(name: "Paul Franco", group: edhec_lille, phone_number: '0675847333', age: 23, crew: "CCE", email: "paul.franco@edhec.com", password: 'kikoulol')
+paul.skip_confirmation!
+paul.save!
+
+user = User.new(name: "Christine Adou", group: hec, phone_number: '0675847334', age: 22, crew: "SBC", email: "christine.adou@hec.com", password: 'kikoulol')
+user.skip_confirmation!
+user.save!
+
+user = User.new(name: "Aurélie Nakeseizan", group: edhec_lille, phone_number: '0675841174', age: 22, crew: "SBC", email: "aurelie.nakeseizan@edhec.com", password: 'kikoulol')
+user.skip_confirmation!
+user.save!
+
+franck = User.new(name: "Frank Saucisse", group: hec, phone_number: '0675846674', age: 23, crew: "Chti", email: "frank.saucisse@hec.com", password: 'kikoulol')
+franck.skip_confirmation!
+franck.save!
+
+user = User.new(name: "Arthur Mathias", group: edhec_lille, phone_number: '0675657374', age: 22, crew: "Chti", email: "arthur.mathias@edhec.com", password: 'kikoulol')
+user.skip_confirmation!
+user.save!
+
+user = User.new(name: "Francine Blanche", group: hec, phone_number: '0648847374', age: 22, crew: "Raid", email: "francine.blanche@hec.com", password: 'kikoulol')
+user.skip_confirmation!
+user.save!
+
+patrick = User.new(name: "Patrick Sebastien", group: edhec_lille, phone_number: '0675245374', age: 21, crew: "Musicall", email: "patrick.sebastien@edhec.com", password: 'kikoulol')
+patrick.skip_confirmation!
+patrick.save!
 
 football = Sport.create!(name: "Football")
 handball = Sport.create!(name: "Handball")

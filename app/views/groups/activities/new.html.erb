@@ -12,9 +12,9 @@
       <%= f.input :date, :minute_step => 15, label: :'Date et heure' %>
       <%= f.input :price, label: :'Prix par personne'  %>
       <%= f.input :open, label: :'Privé ou Public ?' %>
-
-      <%= f.button :submit %>
-
+      <%= f.button :button do %>
+      <div class="btn btn-activity-creation">Je crée l'activité</div>
+      <% end %>
       </div>
     </div>
   <% end %>
