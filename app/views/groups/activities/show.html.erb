@@ -4,36 +4,34 @@
       <%= user_picture(@activity.captain) %>
     <br>
     <div class="text-center">
-      <p>captain</p><%= @activity.captain.name %>
+      <h2>Captain</h2><%= @activity.captain.name %>
     </div>
     <br>
+    <div class="row col-xs-12 col-sm-6 pull-right">
+      <%= @activity.bookings.count %> / <%= @activity.number_of_players %>
+    </div>
       <div class="row col-xs-12 col-sm-6 pull-right">
-        <%= @activity.bookings.count %> / <%= @activity.number_of_players %>
+        <% if @activity.user_booked?(current_user) %>
+          <%= button_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete %>
+        <% elsif @activity.full? %>
+          <p> Complet, mais reste là en cas de désistement ! </p>
+        <% else %>
+          <%= button_to "Je fly", group_activity_bookings_path(@group, @activity, referral: 'activity-page') %>
+        <% end %>
       </div>
-      <div class="row col-xs-12 col-sm-6">
-        <div class='pull-right'>
-          <% if @activity.user_booked?(current_user) %>
-            <%= button_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete %>
-          <% elsif @activity.full? %>
-            <p> Complet, mais reste la si desistement il y a ! </p>
-          <% else %>
-            <%= button_to "Je fly", group_activity_bookings_path(@group, @activity, referral: 'activity-page') %>
-          <% end %>
-        </div>
-      </div>
-    <br>
-    <br>
-    <div class="text-center">
-      <% if @activity.open %>
-        <div class="btn btn-default btn-circle"></div>
-      <% else %>
-        <div class="btn btn-default btn-circle btn-warning"></div>
-      <% end %>
-      <% if @activity.captain == current_user %>
       <br>
-        <%= link_to "supprimer l'activité", group_activity_path(@group, @activity), method: :delete, class: "btn btn-primary" %>
-      <% end %>
-    </div>
+      <br>
+      <div class="text-center">
+        <% if @activity.open %>
+          <div class="btn btn-default btn-circle"></div>
+        <% else %>
+          <div class="btn btn-default btn-circle btn-warning"></div>
+        <% end %>
+        <br>
+        <% if @activity.captain == current_user %>
+          <%= link_to "supprimer l'activité", group_activity_path(@group, @activity), method: :delete, class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
 
@@ -48,10 +46,8 @@
       <div class="row" >
         <div class="detailBox transbox">
           <div class="titleBox">
-            <ul>
-              <li><%= @activity.name %></li>
-              <li><%= l(@activity.date, format: :short) %></li>
-            </ul>
+            <h3><%= @activity.name %></h3>
+            <p><%= l(@activity.date, format: :short) %></p>
           </div>
         </div>
       </div>
@@ -62,41 +58,41 @@
         <div class="detailBox">
           <div class="titleBox">
             <label>Comment Box</label>
-              <button type="button" class="close" aria-hidden="true">&times;</button>
+            <button type="button" class="close" aria-hidden="true">&times;</button>
           </div>
           <div class="commentBox">
             <p class="taskDescription">
               Lache toi !</p>
           </div>
-            <div class="actionBox">
-              <ul class="commentList">
-                <% if @comments.exists? %>
-                  <% @comments.each do |comment| %>
-                    <li>
-                      <div class="commenterImage">
-                        <%= image_tag comment.booking.user.picture(:thumb) %>
-                      </div>
-                      <div class="commentText">
-                        <p><%= comment.content %></p>
-                        <span class="date sub-text"><%= l(comment.created_at, format: :short) %></span>
-                      </div>
-                    </li>
-                  <% end %>
+          <div class="actionBox">
+            <ul class="commentList">
+              <% if @comments.exists? %>
+                <% @comments.each do |comment| %>
+                  <li>
+                    <div class="commenterImage">
+                      <%= image_tag comment.booking.user.picture(:thumb) %>
+                    </div>
+                    <div class="commentText">
+                      <p><%= comment.content %></p>
+                      <span class="date sub-text"><%= l(comment.created_at, format: :short) %></span>
+                    </div>
+                  </li>
                 <% end %>
-              </ul>
-              <%= simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline' do |f| %>
-                <%= f.input :content, as: :text %>
-                <%= f.submit %>
               <% end %>
-            </div>
+            </ul>
+            <%= simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline' do |f| %>
+              <%= f.input :content, as: :text %>
+              <%= f.submit %>
+            <% end %>
           </div>
         </div>
+      </div>
     </div>
 
     <div class="row" >
-      <div class="col-xs-12 text-center pull-right">
+      <div class="col-xs-12 text-center">
         <% if @activity.location %>
-        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=2000x200&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}", class: "img-responsive center-block" %>
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=2000x200&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}", class: "img-responsive center-block" %>
         <% end %>
       </div>
     </div>
