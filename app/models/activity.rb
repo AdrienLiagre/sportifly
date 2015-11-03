@@ -11,8 +11,8 @@ class Activity < ActiveRecord::Base
   validates :name, :number_of_players, :date, :sport, presence: true
   validates_inclusion_of :open, in: [true, false]
 
-  scope :passed,  -> { where("date < :today", today: Date.current) }
-  scope :planned, -> { where("date >= :today", today: Date.current) }
+  scope :passed,  -> { where("date < :today", today: DateTime.current) }
+  scope :planned, -> { where("date >= :today", today: DateTime.current) }
 
   def full?
     self.bookings.count >= self.number_of_players

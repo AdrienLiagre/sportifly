@@ -15,5 +15,4 @@ class Booking < ActiveRecord::Base
   def send_reminder_email
     UserMailer.reminder(self.id).deliver_later(wait_until: self.activity.date - 1800 )
   end
-
 end
