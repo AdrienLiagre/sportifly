@@ -35,7 +35,7 @@
               p = l(@activity.date, format: :short)
               p = @activity.description
               - if @activity.location
-                p @activity.location.full_address
+                p = @activity.location.full_address
               - else
                 p
                   'Lieu de rendez-vous,

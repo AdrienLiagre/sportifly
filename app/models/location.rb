@@ -5,7 +5,7 @@ class Location < ActiveRecord::Base
   has_many :location_reviews, dependent: :destroy
   has_many :location_sports,  dependent: :destroy
 
-  has_many :reviews, through: :location_sports
+  has_many :reviews,  through: :location_sports
   has_many :sports,   through: :location_sports
 
   validates :address, :city, :name, presence: true

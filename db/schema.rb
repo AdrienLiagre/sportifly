@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20151103112527) do
     t.string   "slug"
   end
 
+
   add_index "groups", ["slug"], name: "index_groups_on_slug", unique: true, using: :btree
 
   create_table "location_reviews", force: :cascade do |t|
