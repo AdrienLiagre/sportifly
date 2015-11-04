@@ -1,9 +1,0 @@
-<li>
-  <div class="commenterImage">
-    <%= image_tag comment.booking.user.picture(:thumb) %>
-  </div>
-  <div class="commentText">
-    <p><%= comment.content %></p>
-    <span class="date sub-text"><%= l(comment.created_at, format: :short) %></span>
-  </div>
-</li>

@@ -4,7 +4,7 @@ li
       - if newsfeed.user.picture.exists?
         = image_tag newsfeed.user.picture(:thumb)
       - else
-        = image_tag "avatarnewsfeed.png"
+        = image_tag "default_profile_300.png"
   .commentText
     - if newsfeed.picture.presence
       = image_tag(newsfeed.picture, width: "100%")

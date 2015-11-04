@@ -7,7 +7,7 @@ module ApplicationHelper
      if @user.picture.exists?
        image_tag @user.picture(:medium), class: "dashboard-avatar img-responsive"
      else
-       image_tag 'avatarprofile.png', class: "dashboard-avatar img-responsive"
+       image_tag 'default_profile_300.png', class: "dashboard-avatar img-responsive"
      end
   end
 
@@ -16,7 +16,7 @@ module ApplicationHelper
      if @user.picture.exists?
        image_tag @user.picture(:thumb), class: "dashboard-avatar img-responsive"
      else
-       image_tag 'avatarcaptain.png', class: "dashboard-avatar img-responsive"
+       image_tag 'default_profile_100.png', class: "dashboard-avatar img-responsive"
      end
   end
 
