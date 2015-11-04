@@ -1,0 +1,15 @@
+<% if @newsfeed.errors.any? %>
+  // Render new review form with errors
+  $('#new_newsfeed').html("<%= j render 'groups/home/shownews', group: @group, newsfeed: @newsfeed %>");
+<% else %>
+
+var new_newsfeed = $("<%= j render 'groups/home/shownews', newsfeed: @newsfeed %>").hide();
+  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+  $('#newsfeedsajax').prepend(new_newsfeed);
+  // Show the new review with an animation!
+  new_newsfeed.slideDown();
+  // Remove the text from the content textarea.
+  $('#newsfeed_content').val('');
+<% end %>
+
+
