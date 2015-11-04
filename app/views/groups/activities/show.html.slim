@@ -44,14 +44,10 @@
                 | Lache toi !
             .actionBox
               ul.commentList
+                #commentsajax
                 - if @comments.exists?
                   - @comments.each do |comment|
-                    li
-                      .commenterImage
-                        = image_tag comment.booking.user.picture(:thumb)
-                      .commentText
-                        p = comment.content
-                        span.date.sub-text = l(comment.created_at, format: :short)
+                    = render 'showcomments', comment: comment
                 = simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f|
                   = f.input :content, as: :text
                   = f.submit class: 'btn btn-primary btn-block'
