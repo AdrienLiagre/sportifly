@@ -1,7 +1,7 @@
 li
   .commenterImage
       - if comment.booking.user.picture.exists?
-        = image_tag newsfeed.user.picture(:thumb)
+        = image_tag comment.booking.user.picture(:thumb)
       - else
         = image_tag "default_profile_300.png"
   .commentText
