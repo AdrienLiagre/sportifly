@@ -3,6 +3,8 @@ class Sport < ActiveRecord::Base
   has_many :location_sports
   has_many :activities
 
+  has_many :locations, through: :location_sports
+
   validates :name, presence: true
 
   has_attached_file :picture,

@@ -1,0 +1,10 @@
+<div class="container panel-heading text-center">
+  <div class="row">`
+    <div class="col-sm-5 col-sm-offset-3">
+      <%= simple_form_for(@location, url: group_activity_locations_path(current_user.group, @activity), html: { multipart: true }) do |f| %>
+        <h1>Ajoute un club pour l'activité <%= @activity.name %></h1>
+        <%= render 'groups/locations/form', form: f %>
+      <% end %>
+    </div>
+  </div>
+</div>

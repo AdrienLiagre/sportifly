@@ -28,6 +28,7 @@ module Groups
       end
     end
 
+
     def destroy
       @activity = @group.activities.find(params[:activity_id])
       @booking  = @activity.bookings.for_user(current_user).first
