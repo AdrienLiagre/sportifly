@@ -11,7 +11,7 @@
         = f.error_notification
         = f.input :name, label: :'Le ptit nom'
         = f.association :sport
-        = f.association :location, label: :'A quel endroit ?', label_method: :name, value_method: :id
+        / = f.association :location, label: :'A quel endroit ?', label_method: :name, value_method: :id
         = f.input :description
         = f.input :number_of_players, label: :'Combien de joueurs'
         = f.input :date, :minute_step => 15, label: :'Date et heure'

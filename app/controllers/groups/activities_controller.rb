@@ -1,6 +1,7 @@
 module Groups
   class ActivitiesController < ApplicationController
     before_action :set_group
+    before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
     def index
       @activities = @group.activities.all
@@ -37,13 +38,24 @@ module Groups
       end
     end
 
+    def edit
+      @locations = @activity.sport.locations
+    end
+
+    def update
+      @locations = @activity.sport.locations
+    end
+
     def destroy
-      @activity = @group.activities.find(params[:id])
       @activity.destroy
       redirect_to group_root_path(@group.slug)
     end
 
   private
+
+    def set_activity
+      @activity = @group.activities.find(params[:id])
+    end
 
     def set_group
       @group = Group.friendly.find(params[:group])

@@ -1,0 +1,28 @@
+
+<div class='panel-heading'>
+<%= simple_form_for(@activity, url: group_activity_path(current_user.group, @activity), html: { multipart: true }) do |f| %>
+  <%= f.error_notification %>
+  <div class="container">
+    <div class="row">`
+      <div class="col-sm-4 col-sm-offset-4">
+      <h3> Modification des infos de l'activité </h3>
+
+      <div>
+        Sport :
+        <%= @activity.sport.name %>
+      </div>
+
+      <%= f.association :location, collection: @locations %>
+      <%= f.input :number_of_players %>
+      <%= f.input :price %>
+
+      <div class='text-center'>
+        <%= f.button :button do %>
+        <div class="btn btn-activity-creation">Mettre à jour</div>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
