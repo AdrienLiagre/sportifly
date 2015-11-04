@@ -47,11 +47,11 @@ header.masthead
                   .row
                     .activity-item--actions
                       - if activity.user_booked?(current_user)
-                        = link_to "Je defly", group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'btn btn-block btn-red'
+                        = button_to "Je defly", group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'btn btn-block btn-red'
                       - elsif activity.full?
                         p Complet, mais reste la si desistement il y a !
                       - else
-                        = link_to "Je fly", group_activity_bookings_path(@group, activity), class: 'btn btn-block btn-primary-inverted'
+                        = button_to "Je fly", group_activity_bookings_path(@group, activity), class: 'btn btn-block btn-primary-inverted'
                 .col-xs-12
                   hr
       .panel
