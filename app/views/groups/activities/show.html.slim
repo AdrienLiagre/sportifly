@@ -37,11 +37,11 @@
               - if @activity.location
                 p @activity.location.full_address
               - else
-                p Lieu de rendez-vous,
-                  = link_to "Choisir", edit_group_activity_path(@group, @activity)
-                p ou
-                  = link_to 'Créer', new_group_activity_location_path(@group, @activity)
-              - end
+                p
+                  'Lieu de rendez-vous,
+                  => link_to "Choisir", edit_group_activity_path(@group, @activity)
+                  'ou
+                  => link_to 'Créer', new_group_activity_location_path(@group, @activity)
         .col-sm-6
           .detailBox
             .titleBox
