@@ -1,0 +1,60 @@
+.container.main-content
+  .row
+    .col-xs-12.col-sm-3
+      = user_picture(@activity.captain)
+      .text-center
+        h2
+          'Captain
+          = @activity.captain.name
+
+      - if @activity.open
+        .btn.btn-default.btn-circle
+      - else
+        .btn.btn-default.btn-circle.btn-warning
+      = @activity.bookings.count
+      '/
+      = @activity.number_of_players
+
+      - if @activity.user_booked?(current_user)
+        = link_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete, class: 'btn btn-block btn-red'
+      - elsif @activity.full?
+        p Complet, mais reste là en cas de désistement !
+      - else
+        = link_to "Je fly", group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'btn btn-block btn-primary-inverted'
+      hr
+      - if @activity.captain == current_user
+        = link_to "supprimer l'activité", group_activity_path(@group, @activity), method: :delete, class: "btn btn-red btn-block"
+    .col-xs-12.col-sm-9
+      .banner.bg-football
+      .row
+        .col-sm-6
+          .panel.panel-second
+            .panel-heading
+              h3 = @activity.name
+            .panel-content
+              p = l(@activity.date, format: :short)
+              p = @activity.description
+        .col-sm-6
+          .detailBox
+            .titleBox
+              label Comment Box
+              button.close aria-hidden="true" type="button"  &times;
+            .commentBox
+              p.taskDescription
+                | Lache toi !
+            .actionBox
+              ul.commentList
+                - if @comments.exists?
+                  - @comments.each do |comment|
+                    li
+                      .commenterImage
+                        = image_tag comment.booking.user.picture(:thumb)
+                      .commentText
+                        p = comment.content
+                        span.date.sub-text = l(comment.created_at, format: :short)
+                = simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f|
+                  = f.input :content, as: :text
+                  = f.submit class: 'btn btn-primary btn-block'
+        .col-sm-12
+          - if @activity.location
+            = image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=1000x200&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}", class: "activity-map"
