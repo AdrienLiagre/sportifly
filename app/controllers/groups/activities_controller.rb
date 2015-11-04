@@ -12,14 +12,12 @@ module Groups
       @comments = @activity.comments
 
       @locations = Location.all
-
       # Let's DYNAMICALLY build the markers for the view.
       @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
         marker.lat location.latitude
         marker.lng location.longitude
         marker.infowindow render_to_string(:partial => "/groups/shared/map_box", locals: {location: location})
       end
-
     end
 
     def new
@@ -32,18 +30,22 @@ module Groups
       @activity.captain = current_user
 
       if @activity.save
-        redirect_to group_root_path
+        redirect_to group_activity_path(@group, @activity)
+        flash[:notice] = "C'est fait ! Ajoute un lieu de rendez-vous !"
       else
         render :new
       end
     end
 
     def edit
-      @locations = @activity.sport.locations
+      @activity = @group.activities.find(params[:id])
     end
 
     def update
-      @locations = @activity.sport.locations
+      @activity = @group.activities.find(params[:id])
+      # authorize @user
+      @activity.update(activity_params)
+      redirect_to group_activity_path(@group, @activity)
     end
 
     def destroy
@@ -53,16 +55,16 @@ module Groups
 
   private
 
-    def set_activity
-      @activity = @group.activities.find(params[:id])
-    end
-
     def set_group
       @group = Group.friendly.find(params[:group])
     end
 
+    def set_activity
+      @activity = @group.activities.find(params[:id])
+    end
+
     def activity_params
-      params.require(:activity).permit(:name, :description, :number_of_players, :date, :open, :price, :location_id, :sport_id)
+      params.require(:activity).permit(:name, :number_of_players, :date, :open, :price, :location_id, :sport_id)
     end
   end
 end

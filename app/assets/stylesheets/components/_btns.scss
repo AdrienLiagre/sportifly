@@ -33,6 +33,19 @@
   }
 }
 
+.btn-green {
+  background-color: #32b796;
+  border-color: #32b796;
+  color: #FFF;
+
+  &:hover,
+  &:focus {
+    background-color: $theme-color-2;
+    border-color: $theme-color-2;
+  }
+}
+
+
 .btn + .btn {
   margin-left: 5px;
 }
