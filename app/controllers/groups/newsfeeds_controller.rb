@@ -11,10 +11,21 @@ module Groups
       @user = current_user
       @newsfeed = @group.newsfeeds.new(newsfeed_params)
       @newsfeed.user = current_user
+      # @newsfeed = @group.newsfeeds.select do |newsfeed|
+      #   newsfeed.persisted?
+      # end
+
+
       if @newsfeed.save
-        redirect_to group_root_path(params[:group])
-      elsif
-        redirect_to group_root_path(params[:group])
+        respond_to do |format|
+          format.html { redirect_to group_root_path(params[:group]) }
+          format.js  { }
+        end
+      else
+        respond_to do |format|
+          format.html { 'render groups/home/shownews' }
+          format.js  # <-- idem
+        end
       end
     end
 
