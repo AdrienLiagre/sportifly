@@ -1,0 +1,10 @@
+li
+  .commenterImage
+      - if comment.booking.user.picture.exists?
+        = image_tag newsfeed.user.picture(:thumb)
+      - else
+        = image_tag "default_profile_300.png"
+  .commentText
+    - if comment.content.presence
+      p = comment.content
+    span.date.sub-text = l(comment.created_at, format: :short)

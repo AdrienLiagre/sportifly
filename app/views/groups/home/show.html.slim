@@ -29,7 +29,7 @@ header.masthead
                           - if activity.captain.picture.exists?
                             = image_tag activity.captain.picture(:thumb), class: "activity-item--captain-avatar"
                           - else
-                            = image_tag 'avatarcaptain.png', class: "activity-item--captain-avatar"
+                            = image_tag 'default_profile_300.png', class: "activity-item--captain-avatar"
                           = activity.name
                           span.label.label-default.pull-right = activity.sport.name
                 .col-xs-8
