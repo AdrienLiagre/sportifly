@@ -1,50 +1,30 @@
-.connexion {
-
+.sign-in-reinsurrance-container {
+  background-color: $theme-color-2;
+  color: #FFF;
+  padding: 30px 0;
+  margin-top: 30px;
 }
 
-
-.connexion .form-group {
-  margin-bottom: 5px;
-
+.sign-in-reinsurrance-container .divider {
+  width: 140px;
+  border-bottom: 1px solid #FFF;
+  margin: 10px auto;
 }
 
+.sign-in-reinsurrance-container .reinssurance-item {
+  margin-top: 30px;
 
-.connexion .new-one {
-    position: relative;
-    display: inline-block;
-    margin-left: 0px;
-    margin-top: 90px;
-}
-
-.connexion .new-two {
-    position: absolute;
-    margin-left:192px;
-}
-
-.connexion .new-three {
-    position: absolute;
-    display: inline-block;
-    margin-left: 0px;
-}
-
-.connexion .remember-me {
-  position: absolute;
-  display: inline-block;
-  margin-top: 56px;
-  margin-left: -71px;
-
-}
-
-.connexion .new {
-    background-color: lightgrey;
-    padding: 20px;
- }
-
-.connexion .new-texte {
-    position: absolute;
-    margin-left:0px;
-}
-
-.connexion .log-in {
-    margin-left:0px;
+  .icon-container {
+    background-color: #FFF;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    padding-top: 20px;
+    margin-bottom: 10px;
+  }
+  .icon-container i {
+    font-size: 55px;
+    color: $theme-color-2;
+  }
 }

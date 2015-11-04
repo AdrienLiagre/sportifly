@@ -1,0 +1,15 @@
+.container.main-content
+  .row
+    .col-xs-12
+      .text-center
+        h1 Mets à jour ton profil
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      = simple_form_for([:account, :dashboard, @user], url: account_dashboard_users_path, html: { multipart: true }) do |f|
+        = f.error_notification
+        = f.input :name
+        = f.input :crew
+        = f.input :age
+        = f.input :phone_number
+        = f.input :picture
+        .form-actions
+          = f.submit class: 'btn btn-primary btn-block', value: 'Mettre à jour'

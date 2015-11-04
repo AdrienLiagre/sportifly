@@ -1,0 +1,38 @@
+.btn-primary {
+  background-color: $theme-color-2;
+  border-color: $theme-color-2;
+
+  &:hover,
+  &:focus {
+    background-color: $theme-color-4;
+    border-color: $theme-color-4;
+  }
+}
+
+.btn-primary-inverted {
+  background-color: $theme-color-4;
+  border-color: $theme-color-4;
+  color: #FFF;
+
+  &:hover,
+  &:focus {
+    background-color: $theme-color-2;
+    border-color: $theme-color-2;
+  }
+}
+
+.btn-red {
+  background-color: $theme-color-5;
+  border-color: $theme-color-5;
+  color: #FFF;
+
+  &:hover,
+  &:focus {
+    background-color: $theme-color-5;
+    border-color: $theme-color-5;
+  }
+}
+
+.btn + .btn {
+  margin-left: 5px;
+}

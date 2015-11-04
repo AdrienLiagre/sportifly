@@ -45,3 +45,15 @@
 .btn-activity-creation {
   color: $blue-theme;
 }
+
+.activity-item--captain-avatar {
+  display: inline-block;
+  border-radius: 50%;
+  height: auto;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.activity-map {
+  width: 100%;
+}
