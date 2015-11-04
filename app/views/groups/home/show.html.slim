@@ -1,0 +1,76 @@
+header.masthead
+  .container
+    .row
+      .col-xs-12.col-sm-6
+        = image_tag @group.picture(:medium), class: "img-responsive group-pic"
+      .col-xs-6.col-sm-6
+        = form_tag group_root_path(current_user.group), :method => :get
+          .input-group
+            = text_field_tag :city, params[:city], class: "form-control", placeholder: 'Où veux-tu flyer ?'
+            span.input-group-btn
+              = submit_tag "Search", class: 'btn'
+
+
+.container.main-content
+  .no-gutter.row
+    #content.col-md-8
+      .panel.panel-first
+        .panel-heading.text-center
+          h4 Prochains sports
+        .panel-body
+          .row
+            - @activities.each do |activity|
+              - if activity.date > Date.yesterday
+                .col-xs-12
+                  .activity-item
+                    .activity-item--title
+                      = link_to group_activity_path(@group, activity)
+                        h2
+                          - if activity.captain.picture.exists?
+                            = image_tag activity.captain.picture(:thumb), class: "activity-item--captain-avatar"
+                          - else
+                            = image_tag 'avatarcaptain.png', class: "activity-item--captain-avatar"
+                          = activity.name
+                          span.label.label-default.pull-right = activity.sport.name
+                .col-xs-8
+                    .activity-item--date
+                      = l(activity.date, format: :short)
+                    .activity-item--info
+                      - if activity.open
+                        .btn.btn-default.btn-circle
+                      - else
+                        .btn.btn-default.btn-circle.btn-warning
+                      => activity.bookings.count
+                      '/
+                      => activity.number_of_players
+                .col-xs-4
+                  .row
+                    .activity-item--actions
+                      - if activity.user_booked?(current_user)
+                        = button_to "Je defly", group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'btn btn-block btn-red'
+                      - elsif activity.full?
+                        p Complet, mais reste la si desistement il y a !
+                      - else
+                        = button_to "Je fly", group_activity_bookings_path(@group, activity), class: 'btn btn-block btn-primary-inverted'
+                .col-xs-12
+                  hr
+      .panel
+        #map style=("width: 100%; height: 300px;")
+        - content_for(:after_js)
+          javascript:
+            $(document).on('ready', function() {
+              handler = Gmaps.build('Google');
+              handler.buildMap({
+                internal: { id: 'map' },
+                provider: { scrollwheel: false }},
+              function(){
+                markers = handler.addMarkers(#{raw @hash.to_json});
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+              });
+            })
+    .col-md-4
+      .panel.panel-second
+        .panel-heading.text-center
+          h4 Newsfeed
+        = render 'newsfeed'

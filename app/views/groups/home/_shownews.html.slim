@@ -1,0 +1,13 @@
+li
+  .commenterImage
+    = link_to group_user_path(@group, newsfeed.user) do
+      - if newsfeed.user.picture.exists?
+        = image_tag newsfeed.user.picture(:thumb)
+      - else
+        = image_tag "avatarnewsfeed.png"
+  .commentText
+    - if newsfeed.picture.presence
+      = image_tag(newsfeed.picture, width: "100%")
+    - if newsfeed.content.presence
+      p = newsfeed.content
+    span.date.sub-text = l(newsfeed.created_at, format: :short)
