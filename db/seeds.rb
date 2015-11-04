@@ -7,9 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 if Rails.env.development?
+  AdminUser.destroy_all
   Group.destroy_all
   User.destroy_all
   Activity.destroy_all
+  LocationSport.destroy_all
   Sport.destroy_all
   Location.destroy_all
 end
@@ -57,12 +59,17 @@ patrick = User.new(name: "Patrick Sebastien", group: edhec_lille, phone_number: 
 patrick.skip_confirmation!
 patrick.save!
 
-football = Sport.create!(name: "Football")
-handball = Sport.create!(name: "Handball")
+football  = Sport.create!(name: "Football")
+handball  = Sport.create!(name: "Handball")
+tennis    = Sport.create!(name: "Tennis")
 
-Location.create!(address: "18 rue massena", city: "lille", postcode: "59000", name: "club machin")
-Location.create!(address: "104 rue nationale", city: "lille", postcode: "59000", name: "club de wazemmes")
-Location.create!(address: "place rihour", city: "lille", postcode: "59000", name: "Tennis club de rihour")
+foot_club_machin  = Location.create!(address: "18 rue massena", city: "lille", postcode: "59000", name: "club machin")
+foot_club_wzm     = Location.create!(address: "104 rue nationale", city: "lille", postcode: "59000", name: "club de wazemmes")
+tennis_club       = Location.create!(address: "place rihour", city: "lille", postcode: "59000", name: "Tennis club de rihour")
+
+foot_club_machin.location_sports.create(sport: football)
+foot_club_wzm.location_sports.create(sport: football)
+tennis_club.location_sports.create(sport: tennis)
 
 Activity.create!(location: Location.all.sample, captain: samir, group: samir.group, name: "foot", number_of_players: 5, date: Date.today, open: true, sport: football)
 Activity.create!(location: Location.all.sample, captain: paul, group: paul.group, name: "yolo", number_of_players: 10, date: Date.today, open: true, sport: football)
