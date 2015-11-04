@@ -1,0 +1,15 @@
+<% if @comment.errors.any? %>
+  // Render new review form with errors
+  $('#new_comment').html("<%= j render 'groups/activities/showcomments', comment: @comment %>");
+<% else %>
+
+var new_comment = $("<%= j render 'groups/activities/showcomments', comment: @comment %>").hide();
+  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+  $('#commentsajax').prepend(new_comment);
+  // Show the new review with an animation!
+  new_comment.slideDown();
+  // Remove the text from the content textarea.
+  $('#comment_content').val('');
+<% end %>
+
+

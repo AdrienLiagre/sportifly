@@ -66,21 +66,16 @@
           </div>
           <div class="actionBox">
             <ul class="commentList">
+              <div id="commentsajax">
+
               <% if @comments.exists? %>
                 <% @comments.each do |comment| %>
-                  <li>
-                    <div class="commenterImage">
-                      <%= image_tag comment.booking.user.picture(:thumb) %>
-                    </div>
-                    <div class="commentText">
-                      <p><%= comment.content %></p>
-                      <span class="date sub-text"><%= l(comment.created_at, format: :short) %></span>
-                    </div>
-                  </li>
+                  <%= render 'showcomments', comment: comment %>
                 <% end %>
               <% end %>
+              </div>
             </ul>
-            <%= simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline' do |f| %>
+            <%= simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f| %>
               <%= f.input :content, as: :text %>
               <%= f.submit %>
             <% end %>
