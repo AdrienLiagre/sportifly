@@ -33,11 +33,23 @@
           h2 Tes statistiques
         .panel-content
           - if @user.bookings.any?
-            p
-              'Nombre de fly :
-              => @user.bookings.count
+            ul.dashboard--list
+              li
+                strong
+                  'Nombre de fly :
+                => @user.bookings.count
+              - stats_per_user(@user).each do |key, value|
+                li
+                  strong
+                    = key
+                    ':
+                  = value
+            p Fais monter tes stats !!
+            => link_to "Fly again !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
+            =>
           - else
             p Pas encore de statistiques disponibles
+            => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
 
   .row
     .col-xs-12
@@ -50,7 +62,7 @@
           - if @bookings_planned.exists?
             - @bookings_planned.each do |booking|
               ul.dashboard--list
-                li = booking.activity.date
+                li = l(booking.activity.date, format: :short)
                 li
                   'Tu fly avec
                   => booking.activity.captain.name
@@ -79,9 +91,12 @@
               .row
                 .col-xs-12.col-sm-4
                   ul.dashboard--list
-                    li = booking.activity.date
+                    li = l(booking.activity.date, format: :date)
                     li
                       'Tu as flyé avec
                       => booking.activity.captain.name
 
                   = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+          - else
+            p Tu n'as pas encore flyé ??? Dépêche-toi !
+            => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'

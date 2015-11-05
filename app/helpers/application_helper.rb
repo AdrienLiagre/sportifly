@@ -28,5 +28,16 @@ module ApplicationHelper
      end
   end
 
+  def stats_per_user(user)
+    stats = {}
+    user.bookings.each do |booking|
+      if stats[booking.activity.sport.name]
+        stats[booking.activity.sport.name] += 1
+      else
+        stats[booking.activity.sport.name] = 1
+      end
+    end
+    return stats
+  end
 end
 
