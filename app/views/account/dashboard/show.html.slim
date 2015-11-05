@@ -80,5 +80,8 @@
                 .col-xs-12.col-sm-4
                   ul.dashboard--list
                     li = booking.activity.date
-                    li Tu as flyé avec
-                      = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+                    li
+                      'Tu as flyé avec
+                      => booking.activity.captain.name
+
+                  = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
