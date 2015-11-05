@@ -28,6 +28,7 @@ gem 'simple_form'
 gem 'sinatra'
 gem 'slim'
 gem 'uglifier'
+gem 'postmark-rails'
 
 group :development, :test do
   gem 'binding_of_caller'
