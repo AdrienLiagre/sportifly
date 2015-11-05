@@ -12,13 +12,11 @@
             - if booking.user.name
               p = booking.user.name
 
-      - if @activity.open
-        .btn.btn-default.btn-circle
-      - else
-        .btn.btn-default.btn-circle.btn-warning
-      = @activity.bookings.count
-      '/
-      = @activity.number_of_players
+      .text-center
+        = @activity.bookings.count
+        '/
+        = @activity.number_of_players
+      br
 
       - if @activity.user_booked?(current_user)
         = button_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete, class: 'btn btn-block btn-red'

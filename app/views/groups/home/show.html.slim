@@ -36,10 +36,6 @@ header.masthead
                     .activity-item--date
                       = l(activity.date, format: :short)
                     .activity-item--info
-                      - if activity.open
-                        .btn.btn-default.btn-circle
-                      - else
-                        .btn.btn-default.btn-circle.btn-warning
                       => activity.bookings.count
                       '/
                       => activity.number_of_players
