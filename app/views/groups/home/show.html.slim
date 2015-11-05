@@ -3,7 +3,7 @@ header.masthead
     .row
       .col-xs-12.col-sm-6
         = image_tag @group.picture(:medium), class: "img-responsive group-pic"
-      .col-xs-6.col-sm-6
+      .col-xs-12.col-sm-6
         = form_tag group_root_path(current_user.group), :method => :get
           .input-group
             = text_field_tag :city, params[:city], class: "form-control", placeholder: 'Où veux-tu flyer ?'
