@@ -11,7 +11,8 @@
   margin: 10px auto;
 }
 
-.sign-in-reinsurrance-container .reinssurance-item {
+.sign-in-reinsurrance-container .reinssurance-item,
+.home-incentive {
   margin-top: 30px;
 
   .icon-container {
@@ -27,4 +28,8 @@
     font-size: 55px;
     color: $theme-color-2;
   }
+}
+
+.home-incentive .icon-container i {
+  color: #676767;
 }

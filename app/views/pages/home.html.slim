@@ -7,24 +7,27 @@
           'Sportifly
   .main-banner--shadow
 
-.container.main-content
-  .row
-    .col-xs-12.col-md-12.text-center
-      h2 Plateforme de sport et de fun pour votre entreprise
-      hr
-    .col-xs-12.col-md-12
-      .fa.fa-futbol-o   Créez des évènements sportifs en interne, et faites meilleur connaissance avec vos collègues !
-      br
-      br
-      .fa.fa-lock   Notre plateforme est sécurisée. Seuls vos collaborateurs peuvent rejoindre une session sportive.
-      br
-      br
-      .fa.fa-globe   Accédez aux sessions sportives de la team n'importe où dans le monde !
-      hr
-
-    .col-xs-12.col-sm-12.text-center
-      = link_to "Ok, je rejoins ma team !", new_user_registration_path, class: "btn btn-green text-center"
-
+.container.main-content.home-incentive
+    .row
+      .col-xs-12
+        .text-center
+          h1 Plateforme de sport et de fun pour votre entreprise
+    .row
+      .col-xs-12.col-sm-4.text-center.reinssurance-item
+        .icon-container
+          i.fa.fa-futbol-o
+        p Créez des évènements sportifs en interne, et faites meilleur connaissance avec vos collègues !
+      .col-xs-12.col-sm-4.text-center.reinssurance-item
+        .icon-container
+          i.fa.fa-lock
+        p Notre plateforme est sécurisée. Seuls vos collaborateurs peuvent rejoindre une session sportive.
+      .col-xs-12.col-sm-4.text-center.reinssurance-item
+        .icon-container
+          i.fa.fa-globe
+        p Accédez aux sessions sportives de la team n'importe où dans le monde !
+    .row
+      .col-xs-12.text-center
+        = link_to "Ok, je rejoins ma team !", new_user_registration_path, class: "btn btn-green text-center"
 
 .sign-in-reinsurrance-container
   .container
