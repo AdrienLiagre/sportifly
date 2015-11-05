@@ -9,29 +9,22 @@
 
 .container.main-content
   .row
-    .col-xs-12.col-md-5
-      h2 Sign up
+    .col-xs-12.col-md-12.text-center
+      h2 Plateforme de sport et de fun pour votre entreprise
       hr
-      = simple_form_for(:user, url: registration_path(:user)) do |f|
-        = f.error_notification
-        .form-inputs
-          = f.input :email, required: true, autofocus: true
-          = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-          = f.input :password_confirmation, required: true
-        .form-actions
-          = f.submit class: 'btn btn-primary btn-block', value: 'Sign up'
-    .col-xs-12.col-md-5.col-md-offset-2
-      .log-in
-        h2 Log in
-        hr
-        = simple_form_for(:user, url: session_path(:user)) do |f|
-          .form-inputs
-              = f.input :email, required: false, autofocus: true
-              = f.input :password, required: false
-          .remember-me
-            = f.input :remember_me, as: :boolean
-          .form-actions
-            = f.submit class: 'btn btn-primary btn-block', value: 'Log in'
+    .col-xs-12.col-md-12
+      .fa.fa-futbol-o   Créez des évènements sportifs en interne, et faites meilleur connaissance avec vos collègues !
+      br
+      br
+      .fa.fa-lock   Notre plateforme est sécurisée. Seuls vos collaborateurs peuvent rejoindre une session sportive.
+      br
+      br
+      .fa.fa-globe   Accédez aux sessions sportives de la team n'importe où dans le monde !
+      hr
+
+    .col-xs-12.col-sm-12.text-center
+      = link_to "Ok, je rejoins ma team !", new_user_registration_path, class: "btn btn-green text-center"
+
 
 .sign-in-reinsurrance-container
   .container
@@ -43,7 +36,7 @@
           p
             'Faites de votre entreprise un de nos partenaires et rejoignez la communauté.
             br
-            'Proposez une activité, son lieu et son horaire, invitez vos amis et nous bookons pour vous ! On raconte que Jeanne du service RH est imbattable au tennis...
+            'Proposez une activité, son lieu, son horaire et invitez vos amis ! On raconte que Jeanne du service RH est imbattable au tennis...
     .row
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
