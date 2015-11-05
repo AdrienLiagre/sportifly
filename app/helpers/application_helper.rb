@@ -28,5 +28,14 @@ module ApplicationHelper
      end
   end
 
+  def user_picture_nav(current_user)
+    @user = current_user
+     if @user.picture.exists?
+       image_tag @user.picture(:thumb), class: "dashboard-avatar img-responsive"
+     else
+       image_tag 'default_profile_30.png', class: "dashboard-avatar img-responsive"
+     end
+  end
+
 end
 
