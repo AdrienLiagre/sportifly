@@ -1,70 +1,78 @@
+.main-banner.main-banner--small
+  .main-banner--content.text-center
+    h1 = @activity.name
+    .divider
+    p.baseline = @activity.sport.name
+  .main-banner--shadow
+
 .container.main-content
   .row
-    .col-xs-12.col-sm-3
-      = user_picture(@activity.captain)
-      .text-center
-        h2
-          'Captain
-          = @activity.captain.name
-        hr
-        - if @activity.bookings.any?
-          - @activity.bookings.each do |booking|
-            - if booking.user.name
-              p = booking.user.name
-
-      .text-center
-        = @activity.bookings.count
-        '/
-        = @activity.number_of_players
-      br
-
-      - if @activity.user_booked?(current_user)
-        = button_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete, class: 'btn btn-block btn-red'
-      - elsif @activity.full?
-        p Complet, mais reste là en cas de désistement !
-      - else
-        = button_to "Je fly", group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'btn btn-block btn-primary-inverted'
+    .col-xs-12.col-sm-6
+      h2 On parle de quoi ?
       hr
-      - if @activity.captain == current_user
-        = link_to "supprimer l'activité", group_activity_path(@group, @activity), method: :delete, class: "btn btn-red btn-block"
-        hr
-        = link_to "Editer l'activité", edit_group_activity_path(@group, @activity), class: "btn btn-green btn-block"
-
-    .col-xs-12.col-sm-9
-      .banner.bg-football
-      .row
-        .col-sm-6
-          .panel.panel-second
-            .panel-heading
-              h3 = @activity.name
-            .panel-content
-              p = l(@activity.date, format: :short)
-              p = @activity.description
-              - if @activity.location
-                p = @activity.location.full_address
-              - else
-                p
-                  'Lieu de rendez-vous,
-                  => link_to "Choisir", edit_group_activity_path(@group, @activity)
-                  'ou
-                  => link_to 'Créer', new_group_activity_location_path(@group, @activity)
-        .col-sm-6
-          .detailBox
-            .titleBox
-              label Comment Box
-              button.close aria-hidden="true" type="button"  &times;
-            .commentBox
-              p.taskDescription
-                | Lache toi !
-            .actionBox
-              ul.commentList
-                #commentsajax
-                - if @comments.exists?
-                  - @comments.each do |comment|
-                    = render 'showcomments', comment: comment
-                = simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f|
-                  = f.input :content, as: :text
-                  = f.submit class: 'btn btn-primary btn-block'
-        .col-sm-12
+      p = @activity.description
+      ul.activity-info-list
+        li
+          strong
+            'Horaires :
+          => l(@activity.date, format: :short)
+        li
+          strong
+            'Lieu :
           - if @activity.location
-            = image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=1000x200&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}", class: "activity-map"
+            => @activity.location.full_address
+          - else
+            => link_to "Choisir", edit_group_activity_path(@group, @activity)
+            'ou
+            => link_to 'Créer', new_group_activity_location_path(@group, @activity)
+        li
+          strong
+            'Prix par personne :
+          => number_to_currency(@activity.price)
+      - if @activity.location
+        = image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=1000x600&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}", class: "activity-map"
+    .col-xs-12.col-sm-6
+      h2 Qui participe ?
+      hr
+      - if @activity.bookings.any?
+        - @activity.bookings.each do |booking|
+          .activity-player
+            = captain_picture(booking.user)
+            - if @activity.captain == booking.user
+              .badge-captain
+                i.fa.fa-star
+      - (@activity.number_of_players - @activity.bookings.count).times
+        .activity-player
+          = image_tag('default_profile_100_anonymous.png', class: "dashboard-avatar img-responsive")
+
+      hr
+      p
+        'Il reste
+        = pluralize(@activity.number_of_players - @activity.bookings.count, 'place disponible')
+      .form-actions
+        - if @activity.user_booked?(current_user)
+          .activity-presence-action
+            = button_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete, class: 'btn btn-red'
+        - elsif @activity.full?
+          p Complet, mais reste là en cas de désistement !
+        - else
+          .activity-presence-action
+            = button_to "Je fly", group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'btn btn-primary-inverted'
+        - if @activity.captain == current_user
+          = link_to "Editer l'activité", edit_group_activity_path(@group, @activity), class: "btn btn-green"
+          = link_to "supprimer l'activité", group_activity_path(@group, @activity), method: :delete, class: "btn btn-red"
+
+      hr
+      .detailBox.activity-detailBox
+        .commentBox
+          p.taskDescription
+            | Lache toi !
+        .actionBox
+          ul.commentList
+            #commentsajax
+            - if @comments.exists?
+              - @comments.each do |comment|
+                = render 'showcomments', comment: comment
+            = simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f|
+              = f.input :content, as: :text
+              = f.submit class: 'btn btn-primary btn-block'

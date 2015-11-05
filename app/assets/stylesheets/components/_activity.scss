@@ -57,3 +57,38 @@
 .activity-map {
   width: 100%;
 }
+
+.activity-player {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+
+  .badge-captain {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+
+    i {
+      color: $theme-color-1;
+      font-size: 30px;
+
+    }
+  }
+}
+
+.activity-presence-action {
+  width: auto;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.activity-detailBox {
+  width: 100% !important;
+}
+
+.activity-info-list {
+  padding-left: 0;
+  list-style: none;
+}
