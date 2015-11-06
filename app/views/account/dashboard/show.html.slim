@@ -91,7 +91,7 @@
               .row
                 .col-xs-12.col-sm-4
                   ul.dashboard--list
-                    li = l(booking.activity.date, format: :date)
+                    li = l(booking.activity.date, format: :short)
                     li
                       'Tu as flyé avec
                       => booking.activity.captain.name

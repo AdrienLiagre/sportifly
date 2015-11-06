@@ -12,9 +12,9 @@
         <%= @activity.sport.name %>
       </div>
 
-      <%= f.association :location, collection: @activity.sport.locations %>
-      <%= f.input :number_of_players %>
-      <%= f.input :price %>
+      <%= f.association :location, label: :'Club', collection: @activity.sport.locations %>
+      <%= f.input :number_of_players, label: :'Nombre de joueurs' %>
+      <%= f.input :price, label: :'Prix par personne' %>
       <%= f.input :date, :minute_step => 15, label: :'Date et heure' %>
 
       <div class='text-center'>

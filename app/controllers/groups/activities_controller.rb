@@ -64,7 +64,7 @@ module Groups
     end
 
     def activity_params
-      params.require(:activity).permit(:name, :number_of_players, :date, :description, :open, :price, :location_id)
+      params.require(:activity).permit(:name, :sport_id, :number_of_players, :date, :description, :open, :price, :location_id)
     end
   end
 end
