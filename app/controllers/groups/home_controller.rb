@@ -19,7 +19,6 @@ module Groups
       end
 
       @locations = Location.joins(:activities).where(activities: { id: @activities.pluck(:id) })
-
       # Let's DYNAMICALLY build the markers for the view.
       @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
         marker.lat location.latitude
