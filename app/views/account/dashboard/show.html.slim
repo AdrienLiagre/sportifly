@@ -50,6 +50,12 @@
           - else
             p Pas encore de statistiques disponibles
             => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
+        li
+          strong
+            'badges :
+            - @user.badges.each do |badge|
+              => badge.name
+
 
   .row
     .col-xs-12

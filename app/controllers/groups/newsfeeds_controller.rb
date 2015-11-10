@@ -11,10 +11,6 @@ module Groups
       @user = current_user
       @newsfeed = @group.newsfeeds.new(newsfeed_params)
       @newsfeed.user = current_user
-      # @newsfeed = @group.newsfeeds.select do |newsfeed|
-      #   newsfeed.persisted?
-      # end
-
 
       if @newsfeed.save
         respond_to do |format|
