@@ -2,9 +2,9 @@ li
   .commenterImage
     = link_to group_user_path(@group, newsfeed.user) do
       - if newsfeed.user.picture.exists?
-        = image_tag newsfeed.user.picture(:thumb)
+        = image_tag newsfeed.user.picture(:thumb), class: "newsfeed-item--user-avatar"
       - else
-        = image_tag "default_profile_300.png"
+        = image_tag "default_profile_300.png",  class: "newsfeed-item--user-avatar"
   .commentText
     - if newsfeed.picture.presence
       = image_tag(newsfeed.picture, width: "100%")
