@@ -44,11 +44,11 @@ module Merit
       #
       #   user.name.length > 4
       # end
-      grant_on 'groups/newsfeeds#create', model_name: 'Newsfeed', badge_id: 1, to: :user do |newsfeed|
-        newsfeed.user.newsfeeds.count >= 5 &&  newsfeed.user.newsfeeds.count < 10
+      grant_on 'groups/newsfeeds#create', model_name: 'Newsfeed', badge_id: 1, temporary: true, to: :user do |newsfeed|
+        newsfeed.user.newsfeeds.count >= 5 && newsfeed.user.newsfeeds.count < 10
       end
 
-      grant_on 'groups/newsfeeds#create', model_name: 'Newsfeed', badge_id: 2, to: :user do |newsfeed|
+      grant_on 'groups/newsfeeds#create', model_name: 'Newsfeed', badge_id: 2, temporary: true, to: :user do |newsfeed|
         newsfeed.user.newsfeeds.count >= 10
       end
 
