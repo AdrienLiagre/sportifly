@@ -30,6 +30,8 @@ Merit.setup do |config|
     description: "Over 10 feeds",
     custom_fields: { img_url: 'badges/cup.png' }
   )
+
+
 end
 
 # Create application badges (uses https://github.com/norman/ambry)

@@ -11,7 +11,7 @@ module ApplicationHelper
   def captain_picture(user)
     @user = user
      if @user.picture.exists?
-       image_tag @user.picture(:thumb), class: "dashboard-avatar img-responsive"
+       image_tag @user.picture(:thumb), class: "dashboard-avatar img-responsive activity-page--participants-avatar "
      else
        image_tag 'default_profile_100.png', class: "dashboard-avatar img-responsive"
      end
