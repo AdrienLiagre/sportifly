@@ -50,12 +50,14 @@
           - else
             p Pas encore de statistiques disponibles
             => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
-        li
-          strong
-            'badges :
-            - @user.badges.each do |badge|
-              => badge.name
-              => image_tag (badge.custom_fields[:img_url])
+          li
+            strong
+              => @user.points(category: 'newsfeed_points')
+              - @user.badges.each do |badge|
+                => badge.name
+                => image_tag (badge.custom_fields[:img_url])
+
+
 
 
 

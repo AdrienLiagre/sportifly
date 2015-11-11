@@ -25,6 +25,17 @@ module Merit
       # ]
       #
       # score -10, :on => 'comments#destroy'
+
+      score 1, on: 'groups/newsfeeds#create', model_name: 'Newsfeed', category: 'newsfeed_points' do |newsfeed|
+        newsfeed.content.present?
+      end
+      score 5, on: 'groups/newsfeeds#create', model_name: 'Newsfeed', category: 'newsfeed_points' do |newsfeed|
+        newsfeed.picture.present?
+      end
+
+
+
+
     end
   end
 end
