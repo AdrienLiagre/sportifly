@@ -21,18 +21,14 @@ Merit.setup do |config|
   Merit::Badge.create!(
     id: 1,
     name: "Jr.Critic",
-    description: "Over 5 feeds"
+    description: "Over 5 feeds",
+    custom_fields: { img_url: 'badges/cup.png' }
   )
   Merit::Badge.create!(
     id: 2,
     name: "Sr.Critic",
-    description: "Over 10 feeds"
-  )
-  Merit::Badge.create!(
-    id: 3,
-    name: "autobiographer",
-    description: "Active member for a year",
-    custom_fields: { difficulty: :silver }
+    description: "Over 10 feeds",
+    custom_fields: { img_url: 'badges/cup.png' }
   )
 end
 

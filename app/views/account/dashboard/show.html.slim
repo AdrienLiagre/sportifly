@@ -55,6 +55,9 @@
             'badges :
             - @user.badges.each do |badge|
               => badge.name
+              => image_tag (badge.custom_fields[:img_url])
+
+
 
 
   .row
