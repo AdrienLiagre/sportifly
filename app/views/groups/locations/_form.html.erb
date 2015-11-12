@@ -1,3 +1,24 @@
+ <!-- form.error_notification %>
+
+ form.input :address, label: :'Nom et adresse du club', id: :user_input_autocomplete_address, name: :user_input_autocomplete_address %>
+ form.input :name, id: :premise, name: :premise, type: :hidden %>
+ form.input :route, value_method: :id, id: :route, name: :route, as: :hidden %>
+ form.input :city, id: :locality, name: :locality, as: :hidden %>
+ form.input :postcode, id: :postal_code, name: :postal_code, as: :hidden %>
+
+ form.simple_fields_for :location_sports do |sport_form| %>
+   sport_form.association :sport %>
+ end %>
+
+ form.button :button do %>
+  <div class="btn btn-activity-creation">Référencer</div>
+ end %> -->
+
+ <!-- form.input :address, label: :'Nom et adresse du club', id: :user_input_autocomplete_address, name: :user_input_autocomplete_address %>
+ form.input :name, label: :'Nom du club' %>
+ form.input :address, value_method: :id, label_method: :name %>
+ form.input :city, label: :'Ville' %>
+ form.input :postcode %> -->
 <%= form.error_notification %>
 
 <%= form.input :name, label: :'Nom du club' %>
@@ -6,9 +27,9 @@
 <%= form.input :postcode %>
 
 <%= form.simple_fields_for :location_sports do |sport_form| %>
-  <%= sport_form.association :sport %>
+ <%= sport_form.association :sport %>
 <% end %>
 
 <%= form.button :button do %>
-  <div class="btn btn-activity-creation">Référencer</div>
+ <div class="btn btn-activity-creation">Référencer</div>
 <% end %>
