@@ -23,3 +23,4 @@ class Location < ActiveRecord::Base
     address_changed? || postcode_changed?  || city_changed?
   end
 end
+

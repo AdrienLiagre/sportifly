@@ -5,3 +5,4 @@
 //= require bootstrap-toggle.min
 //= require underscore
 //= require gmaps/google
+//= require autocomplete
