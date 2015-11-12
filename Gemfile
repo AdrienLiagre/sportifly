@@ -30,6 +30,8 @@ gem 'slim'
 gem 'uglifier'
 gem 'postmark-rails'
 
+gem 'merit'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
