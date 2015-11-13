@@ -1,0 +1,75 @@
+.container.main-content
+  .row
+    .col-xs-12.col-sm-6
+      .panel.panel-first
+        .panel-heading
+          - if @user.name
+            h2
+              'Profil de
+              = @user.name
+          - else
+            h2
+              'Profil de
+              = @user.email
+        .panel-content
+          .row
+            .col-xs-6
+              = user_picture(@user)
+            .col-xs-6
+              ul.dashboard--list
+                li
+                  strong
+                    - if @user.name
+                      = @user.name
+                    - else
+                      = @user.email
+                li
+                  'Team:
+                  = @user.group.name
+                li
+                  = @user.age
+                  'ans
+
+    .col-xs-12.col-sm-6
+      .panel.panel-second
+        .panel-heading
+          h2 Ses statistiques
+        .panel-content
+          p soon
+
+  .row
+    .col-xs-12
+      .panel.panel-third
+        .panel-heading
+          h4
+            'Ses prochaines activités avec la team
+            = @user.group.name
+        .panel-content
+          - if @user.bookings.planned.exists?
+            - @user.bookings.planned.each do |booking|
+              ul.dashboard--list
+                li = booking.activity.date
+                li fly avec
+
+              = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+
+          - else
+            p Pas d'activité prévue.
+
+  .row
+    .col-xs-12
+      .panel.panel-third
+        .panel-heading
+          h4
+            'Ses activités passées avec la team
+            = @user.group.name
+      .panel-content
+        - if @user.bookings.passed.exists?
+          - @user.bookings.passed.each do |booking|
+            ul.dashboard--list
+              li = booking.activity.date
+              li  fly avec
+            = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+
+
+

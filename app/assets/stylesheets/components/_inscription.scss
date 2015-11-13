@@ -1,0 +1,35 @@
+.sign-in-reinsurrance-container {
+  background-color: $theme-color-2;
+  color: #FFF;
+  padding: 30px 0;
+  margin-top: 30px;
+}
+
+.sign-in-reinsurrance-container .divider {
+  width: 140px;
+  border-bottom: 1px solid #FFF;
+  margin: 10px auto;
+}
+
+.sign-in-reinsurrance-container .reinssurance-item,
+.home-incentive {
+  margin-top: 30px;
+
+  .icon-container {
+    background-color: #FFF;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    padding-top: 20px;
+    margin-bottom: 10px;
+  }
+  .icon-container i {
+    font-size: 55px;
+    color: $theme-color-2;
+  }
+}
+
+.home-incentive .icon-container i {
+  color: #676767;
+}

@@ -6,3 +6,4 @@
 //= require underscore
 //= require gmaps/google
 //= require activity
+//= require autocomplete

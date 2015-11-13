@@ -2,15 +2,16 @@ require 'email_validator'
 require 'mail'
 
 class User < ActiveRecord::Base
+  has_merit
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable #, :confirmable
 
   belongs_to :group
 
   before_create :assign_to_group
-  after_create :send_welcome_email
 
   has_many :activities,       dependent: :destroy
   has_many :bookings,         dependent: :destroy
@@ -27,10 +28,6 @@ class User < ActiveRecord::Base
     content_type: /\Aimage\/.*\z/
 
   private
-
-  def send_welcome_email
-    UserMailer.welcome(self).deliver_now
-  end
 
   def assign_to_group
     self.group = Group.find_by(email_domain_name: Mail::Address.new(self.email).domain)

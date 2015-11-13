@@ -1,0 +1,69 @@
+.banner {
+  background-image: image_url("backgroundhome.png");
+  background-size: cover;
+  background-position: 0px 550px;
+  position: relative;
+  z-index: 0;
+  margin-top: -22px;
+}
+
+.banner-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.content {
+  padding: 0px;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.banner-bottom {
+  background-color: $gray-background;
+  background-size: cover;
+  background-position: 0px 550px;
+  position: relative;
+  z-index: 0;
+}
+
+
+.main-banner {
+  position: relative;
+  width: 100%;
+  padding: 150px 0;
+  background-image: image-url('backgroundhome.png');
+  background-size: cover;
+  background-position: 20% 75%;
+  z-index: 1;
+}
+
+.main-banner--content {
+  color: #FFF;
+  position: relative;
+  z-index: 3;
+}
+
+.main-banner--shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+
+.main-banner--small {
+  background-image: image-url('cover-basket.jpeg');
+  padding: 85px 0;
+
+  .main-banner--shadow {
+    background-color: rgba(0,0,0,0.3);
+  }
+}
