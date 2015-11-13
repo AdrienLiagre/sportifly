@@ -6,7 +6,7 @@ header.masthead
       .col-xs-12.col-sm-6
         = form_tag group_root_path(current_user.group), :method => :get
           .input-group
-            = text_field_tag :city, params[:city], class: "form-control", placeholder: 'Où veux-tu flyer ?'
+            = text_field_tag :city, params[:city], id: "user_input_autocomplete_address", class: "form-control", placeholder: 'Où veux-tu flyer ?'
             span.input-group-btn
               = submit_tag "Search", class: 'btn btn-primary-inverted'
 
