@@ -27,4 +27,13 @@ module Groups
       end
     end
   end
+
+    def activitycreation
+      @activity = Activity.new
+    end
+
+
+    def activity_params
+      params.require(:activity).permit(:name, :description, :number_of_players, :date, :open, :price, :location_id, :sport_id)
+    end
 end
