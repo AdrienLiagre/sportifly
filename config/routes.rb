@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       end
 
       resources :newsfeeds, only: [:new, :create]
-      resources :users,     only: [:show]
+      resources :users,     only: [:show, :index]
 
       resources :locations,         only: [:new, :create, :edit, :update, :destroy]
       resources :location_reviews,  only: [:create]
