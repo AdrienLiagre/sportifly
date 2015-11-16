@@ -26,5 +26,6 @@ module Groups
         marker.infowindow render_to_string(partial: 'groups/shared/map_box', locals: { location: location })
       end
     end
+
   end
 end

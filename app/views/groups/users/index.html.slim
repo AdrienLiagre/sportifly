@@ -1,0 +1,20 @@
+
+
+.text-center
+  h2 Recherche des team mates pour le prochain fly
+
+= form_tag group_root_path(current_user.group), :method => :get
+  .input-group
+      = text_field_tag :city, params[:city], id: "user_input_autocomplete_address", class: "form-control", placeholder: "Recherche des membres de la Team #{current_user.group.name} !"
+      span.input-group-btn
+        = submit_tag "Search", class: 'btn btn-primary-inverted'
+
+
+.text-center
+  h3
+    'Invite tes amis de la Team
+    => current_user.group.name
+    ' à s'inscrire sur Sportifly !
+
+.text-center
+  h2 Sportifly, qui sommes-nous ?

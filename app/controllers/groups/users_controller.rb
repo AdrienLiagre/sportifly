@@ -6,6 +6,10 @@ module Groups
       @user = @group.users.find(params[:id])
     end
 
+    def index
+      @users = @group.users.all
+    end
+
   private
 
     def set_group
