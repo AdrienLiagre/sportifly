@@ -18,14 +18,19 @@ module Groups
           flash[:notice] = "Désolé, il n'y a rien de prévu à #{@city} pour le moment !"
           redirect_to group_root_path(current_user.group)
         end
-      end
-
-      # @sport_name = params[:group][:location_sport]
-        # @sport_name = params[:product][:product_contexts]
-
-        # if @sports.present?
+        # if @sport.present?
         #   @activities = @activities.joins(:location).where(locations: { id: @locations.map(&:id) }) && @activities.join(:sports).where(sports: { id: @sports.map(&:id) })
         # end
+      end
+
+      if @sport.present?
+        @activities = @activities.where(sport: @sport)
+      else
+        flash[:notice] = "Désolé, il n'y a pas de #{@sport} pour le moment !"
+        @activities
+      end
+
+
 
 
       @locations = Location.joins(:activities).where(activities: { id: @activities.pluck(:id) }) &&

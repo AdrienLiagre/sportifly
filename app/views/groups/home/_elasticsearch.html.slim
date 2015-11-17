@@ -5,4 +5,4 @@
       = submit_tag "Search", class: 'btn btn-primary-inverted'
 
   h3 Affinez votre recherche
-  = select_tag "sport", options_from_collection_for_select(@sports, "name", "name"), prompt: 'Choisis ton sport', include_blank: true, :onchange => "this.form.submit()"
+  = select_tag "sport", options_from_collection_for_select(@sports, "id", "name"), prompt: 'Choisis ton sport', include_blank: true, :onchange => "this.form.submit()"
