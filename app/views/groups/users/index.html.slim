@@ -6,16 +6,24 @@
 
     = form_tag group_users_path(current_user.group), :method => :get
       .input-group
-        = text_field_tag :city, params[:city], id: "user_input_autocomplete_address", class: "form-control", placeholder: "Recherche des membres de la Team #{current_user.group.name} !"
+        = text_field_tag :name, params[:name], class: "form-control", placeholder: "Recherche des membres de la Team #{current_user.group.name} !"
         span.input-group-btn
-          = submit_tag "Search", class: 'btn btn-primary-inverted'
+          = submit_tag "Rechercher", class: 'btn btn-primary-inverted'
 
-.text-center
-  h3
-    'Invite tes amis de la Team
-    => current_user.group.name
-    ' à s'inscrire sur Sportifly !
+.row
+  .col-xs-12
+    .text-center
+      h2
+        'Invite tes amis de la Team
+        => current_user.group.name
+        ' à s'inscrire sur Sportifly !
+    = form_tag group_users_path(current_user.group), :method => :get
+        .input-group
+          = text_field_tag :email, params[:email], class: "form-control", placeholder: "Entre le mail de ton ami(e)"
+          span.input-group-btn
+            = submit_tag "Inviter", class: 'btn btn-primary-inverted'
 
+br
 .row
   .col-xs-12
     .panel.panel-first
