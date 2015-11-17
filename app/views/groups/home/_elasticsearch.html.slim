@@ -1,0 +1,8 @@
+= simple_form_for group_root_path(current_user.group), :method => :get
+  .input-group
+    = text_field_tag :city, params[:city], id: "user_input_autocomplete_address", class: "form-control", placeholder: 'Où veux-tu flyer ?'
+    span.input-group-btn
+      = submit_tag "Search", class: 'btn btn-primary-inverted'
+
+  h3 Affinez votre recherche
+  = select_tag "sport", options_from_collection_for_select(@sports, "name", "name"), prompt: 'Choisis ton sport', include_blank: true, :onchange => "this.form.submit()"
