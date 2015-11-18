@@ -1,4 +1,5 @@
 class Sport < ActiveRecord::Base
+  searchkick
   has_many :favorite_sports
   has_many :location_sports
   has_many :activities
@@ -13,4 +14,11 @@ class Sport < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
+
+
+    def search_data
+      {
+        sport_names: sports.map(&:id)
+      }
+    end
 end

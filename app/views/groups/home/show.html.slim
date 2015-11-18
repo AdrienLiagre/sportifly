@@ -4,11 +4,7 @@ header.masthead
       .col-xs-12.col-sm-6
         = image_tag @group.picture(:medium), class: "img-responsive group-pic"
       .col-xs-12.col-sm-6
-        = form_tag group_root_path(current_user.group), :method => :get
-          .input-group
-            = text_field_tag :city, params[:city], id: "user_input_autocomplete_address", class: "form-control", placeholder: 'Où veux-tu flyer ?'
-            span.input-group-btn
-              = submit_tag "Search", class: 'btn btn-primary-inverted'
+        = render 'elasticsearch'
 
 
 .container.main-content

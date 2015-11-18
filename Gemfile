@@ -31,6 +31,9 @@ gem 'uglifier'
 gem 'postmark-rails'
 
 gem 'merit'
+gem 'searchkick'
+gem 'kaminari'
+gem 'pg_search'
 
 group :development, :test do
   gem 'binding_of_caller'
