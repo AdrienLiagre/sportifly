@@ -4,6 +4,7 @@
     - if @newsfeeds.exists?
       - @newsfeeds.each do |newsfeed|
         = render 'shownews', newsfeed: newsfeed
+        = render 'voting', newsfeed: newsfeed
   = simple_form_for @newsfeed, url: group_newsfeeds_path(@group), class: 'form-inline', remote: true do |f|
     = f.input :content
     = f.input :picture

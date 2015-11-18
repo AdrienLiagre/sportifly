@@ -39,7 +39,7 @@ module Groups
         flash[:danger] = 'You allready voted this entry'
         format.html { redirect_to :back }
         format.json { head :no_content }
-        format.js
+        format.js { }
       end
      end
     end
@@ -58,7 +58,7 @@ module Groups
         flash[:danger] = 'You allready voted this entry'
         format.html { redirect_to :back }
         format.json { head :no_content }
-        format.js
+        format.js {  }
       end
      end
     end
