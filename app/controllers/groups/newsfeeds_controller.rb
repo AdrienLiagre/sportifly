@@ -25,6 +25,23 @@ module Groups
       end
     end
 
+    def upvote
+      @newsfeed = Newsfeed.find(params[:id])
+
+      @newsfeed.upvote_from current_user
+      @newsfeed.save
+
+      redirect_to group_root_path(params[:group])
+    end
+
+    def downvote
+      @newsfeed = Newsfeed.find(params[:id])
+      @newsfeed.downvote_from current_user
+      @newsfeed.save
+
+      redirect_to group_root_path(params[:group])
+    end
+
   private
 
     def set_group

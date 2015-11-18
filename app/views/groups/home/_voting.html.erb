@@ -1,0 +1,15 @@
+<div class="caption" style="text-align:center;">
+  <%= link_to like_group_newsfeed_path(@group, newsfeed),  class: "like", method: :put do %>
+     <button type="button" class="btn btn-info" aria-label="Left Align">
+       <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+       <span class="badge"><%= newsfeed.votes_for.size %></span>
+     </button>
+  <% end %>
+
+
+  <%= link_to unlike_group_newsfeed_path(@group, newsfeed), class: "like", method: :put do %>
+    <button type="button" class="btn btn-info" aria-label="Left Align">
+     <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+     <span class="badge"><%= newsfeed.get_downvotes.size %></span>
+    </button>
+  <% end %>

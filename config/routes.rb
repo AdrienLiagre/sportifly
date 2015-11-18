@@ -26,7 +26,12 @@ Rails.application.routes.draw do
         resources :locations, only: [:new, :create], module: 'activities'
       end
 
-      resources :newsfeeds, only: [:new, :create]
+      resources :newsfeeds, only: [:new, :create, :upvote, :downvote] do
+        member do
+          put "like" => "newsfeeds#upvote"
+          put "unlike" => "newsfeeds#downvote"
+        end
+      end
       resources :users,     only: [:show]
 
       resources :locations,         only: [:new, :create, :edit, :update, :destroy]

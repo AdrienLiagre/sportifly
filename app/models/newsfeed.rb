@@ -1,5 +1,7 @@
 class Newsfeed < ActiveRecord::Base
   belongs_to :user
+  acts_as_votable
+
 
   has_attached_file :picture,
     styles: { medium: "300x300>", thumb: "100x100>" }
