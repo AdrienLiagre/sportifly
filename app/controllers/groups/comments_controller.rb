@@ -12,25 +12,19 @@ module Groups
       @activity = @group.activities.find(params[:activity_id])
       @booking  = @activity.bookings.for_user(current_user).first
 
-      if @activity.user_booked?(current_user)
-         @comment  = @booking.comments.new(booking_params)
-        if @comment.save
-          respond_to do |format|
-            format.html { redirect_to group_activity_path(params[:group], @activity) }
-            format.js  {  }
-          end
-        else
-          respond_to do |format|
-            format.html { 'render groups/activities/showcomments' }
-            format.js  # <-- idem
-          end
+      @comment  = @booking.comments.new(booking_params)
+      if @comment.save
+        respond_to do |format|
+          format.html { redirect_to group_activity_path(params[:group], @activity) }
+          format.js  {  }
         end
       else
-        flash[:error] = 'Tu dois flyer cette activité si tu veux la commenter'
-        redirect_to group_activity_path(params[:group], @activity)
+        respond_to do |format|
+          format.html { 'render groups/activities/showcomments' }
+          format.js  # <-- idem
+        end
       end
     end
-
 
 
   private
