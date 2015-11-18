@@ -2,13 +2,13 @@
 .row
   .col-xs-12.col-sm-6.col-sm-offset-3
     .text-center
-      h2 Recherche des team mates pour le prochain fly
+    /   h2 Recherche des team mates pour le prochain fly
 
-    = form_tag group_users_path(current_user.group), :method => :get
-      .input-group
-        = text_field_tag :name, params[:name], class: "form-control", placeholder: "Recherche des membres de la Team #{current_user.group.name} !"
-        span.input-group-btn
-          = submit_tag "Rechercher", class: 'btn btn-primary-inverted'
+    / = form_tag group_users_path(current_user.group), :method => :get
+    /   .input-group
+    /     = text_field_tag :name, params[:name], class: "form-control", placeholder: "Recherche des membres de la Team #{current_user.group.name} !"
+    /     span.input-group-btn
+    /       = submit_tag "Rechercher", class: 'btn btn-primary-inverted'
 
 br
 .row
@@ -41,6 +41,20 @@ br
         h2 Nous contacter
       .panel-body
         h3 bonjour@sportifly.fr
-        h3 Ouaip ma gueule
+        h1
+          ul.list-inline
+            li
+              = link_to 'http://twitter.com/TheoLemaitre', target: 'blank'
+                i.fa.fa-twitter
+            li
+              = link_to 'http://facebook.com/Sportifly-926740550696609/?ref=br_rs',     target: 'blank'
+                i.fa.fa-facebook
+            li
+              = link_to 'http://linkedin.com/company/5046700?trk=tyah&trkInfo=clickedVer    tical%3Acompany%2CclickedEnti%3A5046700%2Cidx%3A1-1-    1%2CtarId%3A1445418556586%2Ctas%3Ale%20wagon', target: 'blank'
+                i.fa.fa-linkedin
+            li
+              = link_to 'http://youtube.com/watch?v=AfiINIrFMRM', target: 'blank'
+                i.fa.fa-youtube
+
 
 
