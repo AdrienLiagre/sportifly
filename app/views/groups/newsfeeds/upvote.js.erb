@@ -1,0 +1,7 @@
+$('.vpos').bind('ajax:success', function() {
+ $('.vcount-<%= @newsfeed.id %>').html('<%=escape_javascript @newsfeed.get_upvotes.size.to_s %>');
+ $('.ncount-<%= @newsfeed.id %>').html('0');
+
+});
+
+

@@ -11,3 +11,19 @@ li
     - if newsfeed.content.presence
       p = newsfeed.content
     span.date.sub-text = l(newsfeed.created_at, format: :short)
+
+    = render 'voting', newsfeed: newsfeed
+
+  / .caption style="text-align:center;"
+  /   = link_to like_group_newsfeed_path(@group, newsfeed), class: "vpos", method: :put, remote: true do
+  /     button.btn.btn-info aria-label=("Left Align") type="button"
+  /       span.glyphicon.glyphicon-thumbs-up.glyphicon-align-center aria-hidden="true"
+  /       span class="vcount-<%=newsfeed.id%>"
+  /         = newsfeed.get_upvotes.size
+
+
+  /   = link_to unlike_group_newsfeed_path(@group, newsfeed), class: "npos", method: :put, remote: true do
+  /     button.btn.btn-info aria-label=("Left Align") type="button"
+  /       span.glyphicon.glyphicon-thumbs-down.glyphicon-align-center aria-hidden="true"
+  /       span class="ncount-<%=newsfeed.id%>"
+  /         = newsfeed.get_downvotes.size

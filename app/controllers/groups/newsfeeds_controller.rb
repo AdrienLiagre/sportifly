@@ -27,19 +27,40 @@ module Groups
 
     def upvote
       @newsfeed = Newsfeed.find(params[:id])
-
-      @newsfeed.upvote_from current_user
-      @newsfeed.save
-
-      redirect_to group_root_path(params[:group])
+      respond_to do |format|
+      unless @newsfeed.upvote_from current_user
+        format.html { redirect_to :back }
+        format.json { head :no_content }
+        format.js { render :layout => false }
+        @newsfeed.vote_total = @newsfeed.vote_total + 1
+        @newsfeed.save
+        @newsfeed.upvote_by current_user
+      else
+        flash[:danger] = 'You allready voted this entry'
+        format.html { redirect_to :back }
+        format.json { head :no_content }
+        format.js
+      end
+     end
     end
 
     def downvote
       @newsfeed = Newsfeed.find(params[:id])
-      @newsfeed.downvote_from current_user
-      @newsfeed.save
-
-      redirect_to group_root_path(params[:group])
+      respond_to do |format|
+      unless @newsfeed.downvote_from current_user
+        format.html { redirect_to :back }
+        format.json { head :no_content }
+        format.js { render :layout => false }
+        @newsfeed.vote_total = @newsfeed.vote_total + 1
+        @newsfeed.save
+        @newsfeed.downvote_by current_user
+      else
+        flash[:danger] = 'You allready voted this entry'
+        format.html { redirect_to :back }
+        format.json { head :no_content }
+        format.js
+      end
+     end
     end
 
   private
