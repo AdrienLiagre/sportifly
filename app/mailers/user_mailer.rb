@@ -11,6 +11,11 @@ class UserMailer < ApplicationMailer
 
     mail to: @user.email, subject: "C'est l'heure du Sportifly !"
   end
+
+  def invitation(email, user)
+    @greeting = "Hello !"
+    @user = user
+
+    mail to: email, subject: "Invitation à rejoindre Sportifly !"
+  end
 end
-
-

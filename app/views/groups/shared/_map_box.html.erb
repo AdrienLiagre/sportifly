@@ -1,13 +1,21 @@
+<% location.activities.planned.each do |activity| %>
+  <% if activity.group == current_user.group %>
+    <div class='panel-heading'>
+      <h3> <%= activity.name %> </h3>
+      <div class='row'>
+        <div class='col-xs-6'>
+          <p> <%= activity.sport.name %> <p>
 
-<div class="text-center">
-  <% location.activities.planned.each do |activity| %>
-    <% if activity.group == current_user.group %>
-      <div class='panel-heading'>
-        <%= link_to group_activity_path(current_user.group, activity) do%>
-          <h3> <%= activity.name %> </h3>
-        <% end %>
-        <p> <%= activity.bookings.count %> / <%= activity.number_of_players %> </p>
+          <% if activity.bookings.count == activity.number_of_players %>
+            <p> Complet pour le moment ! <p>
+          <% else %>
+            <p> <%= activity.bookings.count %> / <%= activity.number_of_players %> flyers ! </p>
+          <% end %>
+        </div>
+        <div class='col-xs-6'>
+          <%= link_to 'Détails', group_activity_path(current_user.group, activity), class: 'btn btn-primary-inverted' %>
+        </div>
       </div>
-    <% end %>
+    </div>
   <% end %>
-</div>
+<% end %>

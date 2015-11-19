@@ -22,7 +22,8 @@
               <%= link_to 'Log in', new_user_session_path %>
               <% end %></li>
           <li class="divider"></li>
-          <li class='visible-xs'><a href="#">About</a></li>
+          <li class='visible-xs'>
+            <%= link_to "Invitations et Infos", group_users_path(current_user.group) %></li>
         </ul>
 
         <ul class="nav navbar-right navbar-nav hidden-xs">
@@ -36,7 +37,7 @@
                     <%= link_to 'Log in', new_user_session_path %>
                   <% end %></li>
               <li class="divider"></li>
-              <li><a href="#">About</a></li>
+              <li><%= link_to "Invitations et Infos", group_users_path(current_user.group) %></li>
             </ul>
           </li>
         </ul>

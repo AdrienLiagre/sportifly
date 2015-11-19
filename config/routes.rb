@@ -32,7 +32,7 @@ Rails.application.routes.draw do
           put "unlike" => "newsfeeds#downvote"
         end
       end
-      resources :users, only: [:show]
+      resources :users,     only: [:show, :index]
 
       resources :locations,         only: [:new, :create, :edit, :update, :destroy]
       resources :location_reviews,  only: [:create]

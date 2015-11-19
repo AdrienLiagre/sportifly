@@ -4,6 +4,7 @@ require 'mail'
 class User < ActiveRecord::Base
   has_merit
   acts_as_voter
+  searchkick
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -33,4 +34,5 @@ class User < ActiveRecord::Base
   def assign_to_group
     self.group = Group.find_by(email_domain_name: Mail::Address.new(self.email).domain)
   end
+
 end
