@@ -39,8 +39,18 @@ br
     .panel.panel-first
       .panel-heading
         h2 Nous contacter
-      .panel-body
+      .panel-body.text-center
         h3 bonjour@sportifly.fr
+        br
+        .row
+          .col-xs-6.text-center
+            #photo-group1
+              = image_tag 'adri-1.png', class: 'contact-picture', id: 'picture1'
+              = image_tag 'adri-2.png', class: 'contact-picture hidden', id: 'picture1b'
+          .col-xs-6.text-center
+            #photo-group2
+              = image_tag 'theo-1.png', class: 'contact-picture', id: 'picture2'
+              = image_tag 'theo-2.png', class: 'contact-picture hidden', id: 'picture2b'
         h1
           ul.list-inline
             li
@@ -55,6 +65,9 @@ br
             li
               = link_to 'http://youtube.com/watch?v=AfiINIrFMRM', target: 'blank'
                 i.fa.fa-youtube
+
+
+
 
 
 
