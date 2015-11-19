@@ -3,6 +3,7 @@ require 'mail'
 
 class User < ActiveRecord::Base
   has_merit
+  acts_as_voter
   searchkick
 
   # Include default devise modules. Others available are:

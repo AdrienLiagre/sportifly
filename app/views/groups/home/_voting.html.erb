@@ -1,0 +1,16 @@
+<div class="caption" >
+  <%= link_to like_group_newsfeed_path(@group, newsfeed), class: "vpos", method: :put, remote: true do %>
+       <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+       <span class="vcount-<%=newsfeed.id%>"><%= newsfeed.get_upvotes.size %></span>
+     </button>
+  <% end %>
+
+
+  <%= link_to unlike_group_newsfeed_path(@group, newsfeed), class: "npos", method: :put, remote: true do %>
+     <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+     <span class="ncount-<%=newsfeed.id%>"><%= newsfeed.get_downvotes.size %></span>
+    </button>
+  <% end %>
+
+
+

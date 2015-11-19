@@ -31,6 +31,7 @@ gem 'uglifier'
 gem 'postmark-rails'
 
 gem 'merit'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'searchkick'
 gem 'kaminari'
 gem 'pg_search'
