@@ -21,4 +21,6 @@ class Activity < ActiveRecord::Base
   def user_booked?(user)
     bookings.where(user: user).exists?
   end
+
+
 end

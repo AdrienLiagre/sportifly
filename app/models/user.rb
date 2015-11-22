@@ -4,7 +4,7 @@ require 'mail'
 class User < ActiveRecord::Base
   has_merit
   acts_as_voter
-  searchkick
+  searchkick autocomplete: ['name']
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

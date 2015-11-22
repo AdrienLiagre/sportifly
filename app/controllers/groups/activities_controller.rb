@@ -18,6 +18,13 @@ module Groups
         marker.lng location.longitude
         marker.infowindow render_to_string(:partial => "/groups/shared/map_box", locals: {location: location})
       end
+
+      if params[:query].present?
+        @users = User.search(params[:query], page: params[:page])
+      else
+        @users = User.all.page params[:page]
+      end
+
     end
 
     def new

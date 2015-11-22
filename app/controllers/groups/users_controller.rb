@@ -4,6 +4,12 @@ module Groups
 
     def show
       @user = @group.users.find(params[:id])
+
+      if params[:query].present?
+        @users = User.search(params[:query], page: params[:page])
+      else
+        @users = User.all.page params[:page]
+      end
     end
 
     def index
