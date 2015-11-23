@@ -22,10 +22,12 @@ module Groups
 
       if params[:query].present?
 
-        @user = User.search(params[:query]).first
+        @number_of_results = User.search(params[:query]).hits.length
+        @users = User.search(params[:query]).first(@number_of_results)
         # redirect_to group_user_path(@group, @user)
         # render :json => @user.to_json
       else
+
         puts 'find someone'
       end
 

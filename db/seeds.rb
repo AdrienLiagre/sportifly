@@ -23,6 +23,10 @@ samir = User.new(name: "Samir Benflouka", group: edhec_lille, phone_number: '067
 samir.skip_confirmation!
 samir.save!
 
+samir2 = User.new(name: "Samir Abed", group: edhec_lille, phone_number: '0675337374', age: 32, crew: "Ad’leeib", email: "samir.abed@edhec.com", password: 'kikoulol')
+samir.skip_confirmation!
+samir.save!
+
 user = User.new(name: "Olivia Legrand", group: edhec_lille, phone_number: '0675847355', age: 20, crew: "OJO", email: "olivia.legrand@edhec.com", password: 'kikoulol')
 user.skip_confirmation!
 user.save!
