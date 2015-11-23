@@ -21,6 +21,9 @@ Rails.application.routes.draw do
       root to: 'home#show'
 
       resources :activities do
+        collection do
+          get :autocomplete
+        end
         resources :bookings,  only: [:new, :create, :destroy]
         resources :comments,  only: [:create]
         resources :locations, only: [:new, :create], module: 'activities'
@@ -33,7 +36,9 @@ Rails.application.routes.draw do
         end
       end
       resources :users,     only: [:show, :index] do
-         get :autocomplete
+        collection do
+          get :autocomplete
+        end
       end
 
       resources :locations,         only: [:new, :create, :edit, :update, :destroy]

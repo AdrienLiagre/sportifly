@@ -16,9 +16,6 @@ module Account
       @user.update(user_params)
       redirect_to account_dashboard_path
     end
-    def autocomplete
-      render json: User.search(params[:query], autocomplete: true).map(&:name)
-    end
 
 
 

@@ -19,10 +19,14 @@ module Groups
         marker.infowindow render_to_string(:partial => "/groups/shared/map_box", locals: {location: location})
       end
 
+
       if params[:query].present?
-        @users = User.search(params[:query], page: params[:page])
+
+        @user = User.search(params[:query]).first
+        # redirect_to group_user_path(@group, @user)
+        # render :json => @user.to_json
       else
-        @users = User.all.page params[:page]
+        puts 'find someone'
       end
 
     end
@@ -61,6 +65,9 @@ module Groups
     end
 
   private
+    def autocomplete
+      render json: User.search(params[:query], autocomplete: true).map(&:name)
+    end
 
     def set_group
       @group = Group.friendly.find(params[:group])

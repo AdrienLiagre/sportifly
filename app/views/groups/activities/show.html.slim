@@ -11,14 +11,23 @@
       h2 On parle de quoi ?
       hr
       p = @activity.description
-      = form_tag group_user_path, class: "form-inline", method: :get do
-        .input-group.input-group-lg
-          - if params[:query].present?
-            .input-group-btn
-              = link_to "clear", group_user_path, class: "btn btn-default"
-          = text_field_tag :query, params[:query], class: "form-control", id: "user_search", autocomplete: "off"
-          .input-group-btn
-            = submit_tag "Search", class: "btn btn-primary"
+
+      = form_tag group_activity_path(@group, @activity), class: "form-inline", method: :get do
+
+        = text_field_tag :query, params[:query], class: "form-control"
+      '
+      = submit_tag "Search", class: "btn btn-primary"
+      - if params[:query].present?
+        br
+        = @user.name
+        '
+        = link_to "clear", group_activity_path(@group, @activity)
+
+      / - @user.each do |user|
+      /   = user.name
+      br
+      br
+
 
       ul.activity-info-list
         li
