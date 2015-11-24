@@ -1,6 +1,7 @@
 module Account
   class UsersController < ApplicationController
 
+
     def show
       @user = current_user
     end
@@ -15,6 +16,8 @@ module Account
       @user.update(user_params)
       redirect_to account_dashboard_path
     end
+
+
 
     private
 

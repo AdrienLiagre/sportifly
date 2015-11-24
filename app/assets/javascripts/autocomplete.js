@@ -27,3 +27,8 @@
     }
 
 
+$('#user_search').typeahead ({
+    name: "user",
+    displayKey: 'user',
+    remote: "/activities/autocomplete?query=%QUERY"
+});

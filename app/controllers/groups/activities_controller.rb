@@ -18,6 +18,19 @@ module Groups
         marker.lng location.longitude
         marker.infowindow render_to_string(:partial => "/groups/shared/map_box", locals: {location: location})
       end
+
+
+      if params[:query].present?
+
+        @number_of_results = User.search(params[:query]).hits.length
+        @users = User.search(params[:query]).first(@number_of_results)
+        # redirect_to group_user_path(@group, @user)
+        # render :json => @user.to_json
+      else
+
+        puts 'find someone'
+      end
+
     end
 
     def new
@@ -37,6 +50,10 @@ module Groups
       end
     end
 
+    def autocomplete
+      render json: User.search(params[:query], autocomplete: true, limit: 10).map(&:name)
+    end
+
     def edit
       @activity = @group.activities.find(params[:id])
     end
@@ -54,6 +71,7 @@ module Groups
     end
 
   private
+
 
     def set_group
       @group = Group.friendly.find(params[:group])

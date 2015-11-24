@@ -21,6 +21,9 @@ Rails.application.routes.draw do
       root to: 'home#show'
 
       resources :activities do
+        collection do
+          get :autocomplete
+        end
         resources :bookings,  only: [:new, :create, :destroy]
         resources :comments,  only: [:create]
         resources :locations, only: [:new, :create], module: 'activities'
@@ -32,7 +35,11 @@ Rails.application.routes.draw do
           put "unlike" => "newsfeeds#downvote"
         end
       end
-      resources :users,     only: [:show, :index]
+      resources :users,     only: [:show, :index] do
+        collection do
+          get :autocomplete
+        end
+      end
 
       resources :locations,         only: [:new, :create, :edit, :update, :destroy]
       resources :location_reviews,  only: [:create]

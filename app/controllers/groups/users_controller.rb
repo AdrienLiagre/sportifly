@@ -16,6 +16,9 @@ module Groups
       end
     end
 
+   def autocomplete
+      render json: User.search(params[:query], autocomplete: true, limit: 10).map(&:name)
+   end
   private
 
     def set_group
