@@ -11,22 +11,6 @@
       h2 On parle de quoi ?
       hr
       p = @activity.description
-
-
-
-      = form_tag group_activity_path(@group, @activity), class: "form-inline", method: :get do
-        .input-group.input-group-lg
-          - if params[:query].present?
-            .input-group-btn
-              = link_to "clear", group_activity_path(@group, @activity), class: "btn btn-default"
-          = text_field_tag :query, params[:query], class: "form-control", id: "user_search", autocomplete: "off", placeholder: 'invite des amis'
-          .input-group-btn
-            = submit_tag "Search", class: "btn btn-primary"
-
-      - if @users
-        - @users.each do |user|
-          = user.name
-
       ul.activity-info-list
         li
           strong
@@ -55,6 +39,21 @@
         = image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=1000x600&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}", class: "activity-map"
     .col-xs-12.col-sm-6
       h2 Qui participe ?
+      hr
+      = form_tag group_activity_path(@group, @activity), class: "form-inline", method: :get do
+        .input-group.input-group-lg
+          - if params[:query].present?
+            .input-group-btn
+              = link_to "clear", group_activity_path(@group, @activity), class: "btn btn-default"
+          = text_field_tag :query, params[:query], class: "form-control", id: "user_search", autocomplete: "off", placeholder: 'inviter des amis'
+          .input-group-btn
+            = submit_tag "Search", class: "btn btn-primary"
+
+      - if @users
+        - @users.each do |user|
+          = user.name
+          br
+
       hr
       - if @activity.bookings.any?
         - @activity.bookings.each do |booking|
