@@ -29,5 +29,6 @@
 
 $('#user_search').typeahead ({
     name: "user",
-    remote: "/users/autocomplete?query=%QUERY"
+    displayKey: 'user',
+    remote: "/activities/autocomplete?query=%QUERY"
 });

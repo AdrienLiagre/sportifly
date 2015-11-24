@@ -3,13 +3,7 @@ module Groups
     before_action :set_group
 
     def show
-
-
-      if params[:query].present?
-        @user = User.search(params[:query])
-      else
-        @user = @group.users.find(params[:id])
-      end
+      @user = @group.users.find(params[:id])
     end
 
     def index
@@ -22,11 +16,10 @@ module Groups
       end
     end
 
+   def autocomplete
+      render json: User.search(params[:query], autocomplete: true, limit: 10).map(&:name)
+   end
   private
-    def autocomplete
-      render json: User.search(params[:query], autocomplete: true).map(&:name)
-    end
-
 
     def set_group
       @group = Group.friendly.find(params[:group])

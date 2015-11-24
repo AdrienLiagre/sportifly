@@ -50,6 +50,10 @@ module Groups
       end
     end
 
+    def autocomplete
+      render json: User.search(params[:query], autocomplete: true, limit: 10).map(&:name)
+    end
+
     def edit
       @activity = @group.activities.find(params[:id])
     end
@@ -67,9 +71,7 @@ module Groups
     end
 
   private
-    def autocomplete
-      render json: User.search(params[:query], autocomplete: true).map(&:name)
-    end
+
 
     def set_group
       @group = Group.friendly.find(params[:group])
