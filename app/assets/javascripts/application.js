@@ -7,3 +7,4 @@
 //= require gmaps/google
 //= require autocomplete
 //= require activity
+//= require contact

@@ -58,10 +58,11 @@
       - if @activity.bookings.any?
         - @activity.bookings.each do |booking|
           .activity-player
-            = captain_picture(booking.user)
-            - if @activity.captain == booking.user
-              .badge-captain
-                i.fa.fa-star
+            = link_to group_user_path(@group, booking.user)
+              = captain_picture(booking.user)
+              - if @activity.captain == booking.user
+                .badge-captain
+                  i.fa.fa-star
       - (@activity.number_of_players - @activity.bookings.count).times
         .activity-player
           = image_tag('default_profile_100_anonymous.png', class: "dashboard-avatar img-responsive")

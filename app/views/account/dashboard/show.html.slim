@@ -20,17 +20,17 @@
                   'Team:
                   = @user.group.name
                 li
-                  - if @user.crew
+                  - if @user.crew != ""
                     'Crew:
                     = @user.crew
                   - else
-                  'non renseigné
+                    'Crew non renseigné
                 li
                   - if @user.age
                     => @user.age
                     ' ans
                   - else
-                  'Tu n'as pas encore indiqué ton âge
+                    'Tu n'as pas encore indiqué ton âge
                 li = @user.phone_number
               = link_to "Mettre à jour", edit_account_dashboard_users_path, class: "btn btn-primary-inverted btn-block"
     .col-xs-12.col-sm-6
