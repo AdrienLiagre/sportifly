@@ -22,13 +22,13 @@ Merit.setup do |config|
     id: 1,
     name: "Arsene Wenger",
     description: "Over 5 feeds",
-    custom_fields: { img_url: 'badges/volume-down.png' }
+    custom_fields: { img_url: 'badges/suiveur.png' }
   )
   Merit::Badge.create!(
     id: 2,
     name: "Pierre Menes",
     description: "Over 10 feeds",
-    custom_fields: { img_url: 'badges/volume-up.png' }
+    custom_fields: { img_url: 'badges/participant.png' }
   )
 
   Merit::Badge.create!(
