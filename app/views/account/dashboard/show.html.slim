@@ -67,16 +67,16 @@
               / ' Tu as
               / => @user.points(category: 'newsfeed_points')
               / ' points
+              hr
               .text-center
-                .badge.badge-color
-                  h4 Badges
+                = render 'modal'
               - @user.badges.each do |badge|
-                hr
-                => badge.name
+                br
                 => image_tag (badge.custom_fields[:img_url])
+                => badge.name
           hr
           .text-center
-            p En apprendre plus sur le système de badges
+
 
 
 
