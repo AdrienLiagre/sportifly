@@ -35,35 +35,35 @@ Merit.setup do |config|
     id: 3,
     name: "Sportif de canapé",
     description: "sans fly",
-    custom_fields: { img_url: 'badges/cup.png' }
+    custom_fields: { img_url: 'badges/pecheur.png' }
   )
 
   Merit::Badge.create!(
     id: 4,
     name: "Sportif du dimanche",
     description: "Over 1 fly",
-    custom_fields: { img_url: 'badges/cup.png' }
+    custom_fields: { img_url: 'badges/planche.png' }
   )
 
   Merit::Badge.create!(
     id: 5,
     name: "Sportif amateur",
     description: "Over 5 fly",
-    custom_fields: { img_url: 'badges/cup.png' }
+    custom_fields: { img_url: 'badges/kawak.png' }
   )
 
   Merit::Badge.create!(
     id: 6,
     name: "Sportif professionnel",
     description: "Over 10 fly",
-    custom_fields: { img_url: 'badges/cup.png' }
+    custom_fields: { img_url: 'badges/canoe.png' }
   )
 
   Merit::Badge.create!(
     id: 7,
     name: "Chris Froome",
     description: "Over 25 fly",
-    custom_fields: { img_url: 'badges/cup.png' }
+    custom_fields: { img_url: 'badges/froome.png' }
   )
 end
 
