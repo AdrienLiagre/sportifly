@@ -67,6 +67,9 @@
               ' Tu as
               => @user.points(category: 'newsfeed_points')
               ' points
+              .text-center
+                .badge.badge-color
+                  h4 Badges
               - @user.badges.each do |badge|
                 hr
                 => badge.name

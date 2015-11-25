@@ -20,15 +20,15 @@ Merit.setup do |config|
 
   Merit::Badge.create!(
     id: 1,
-    name: "Jr.Critic",
+    name: "Arsene Wenger",
     description: "Over 5 feeds",
-    custom_fields: { img_url: 'badges/cup.png' }
+    custom_fields: { img_url: 'badges/volume-down.png' }
   )
   Merit::Badge.create!(
     id: 2,
-    name: "Sr.Critic",
+    name: "Pierre Menes",
     description: "Over 10 feeds",
-    custom_fields: { img_url: 'badges/cup.png' }
+    custom_fields: { img_url: 'badges/volume-up.png' }
   )
 
   Merit::Badge.create!(
