@@ -14,9 +14,24 @@
 .dashboard-avatar {
   margin: auto;
   border-radius: 50%;
-
-
+  display: inline-block;
+  position: relative;
 }
+
+.badge-fly {
+  margin-top: 25px;
+
+  i {
+    color: $theme-color-1;
+    font-size: 30px;
+
+  }
+}
+
+
+
+
+
 
 .dashboard-sport-picture {
   margin: auto;

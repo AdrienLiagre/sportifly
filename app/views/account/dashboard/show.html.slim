@@ -3,11 +3,18 @@
     .col-xs-12.col-sm-6
       .panel.panel-first
         .panel-heading
-          h2 Ton profil
+          .row
+            .col-xs-8
+              h2 Ton profil
+            .col-xs-4
+                / .badge-fly.pull-right
+                /   - @user.badges.each do |badge|
+                /     => image_tag (badge.custom_fields[:img_url])
         .panel-content
           .row
             .col-xs-6
-              = user_picture(@user)
+              .dashboard-avatar
+                = user_picture(@user)
             .col-xs-6
               ul.dashboard--list
                 li
@@ -50,18 +57,25 @@
                     = key
                     ':
                   = value
-            p Fais monter tes stats !!
-            => link_to "Fly again !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
-            =>
+            .text-center
+              => link_to "Fais monter tes stats!", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
           - else
             p Pas encore de statistiques disponibles
             => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
-          li
+          li.dashboard--list
             strong
-              => @user.points(category: 'newsfeed_points')
+              / ' Tu as
+              / => @user.points(category: 'newsfeed_points')
+              / ' points
+              hr
+              .text-center
+                = render 'badgedashboardmodal'
               - @user.badges.each do |badge|
-                => badge.name
+                br
                 => image_tag (badge.custom_fields[:img_url])
+                => badge.name
+          hr
+          .text-center
 
 
 

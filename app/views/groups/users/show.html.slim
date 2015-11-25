@@ -35,7 +35,35 @@
         .panel-heading
           h2 Ses statistiques
         .panel-content
-          p soon
+          - if @user.bookings.any?
+            ul.dashboard--list
+              li
+                strong
+                  'Nombre de fly :
+                => @user.bookings.count
+              - stats_per_user(@user).each do |key, value|
+                li
+                  strong
+                    = key
+                    ':
+                  = value
+          - else
+            p Pas encore de statistiques disponibles
+            => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
+          li.dashboard--list
+            strong
+              / ' Tu as
+              / => @user.points(category: 'newsfeed_points')
+              / ' points
+              hr
+              .text-center
+                = render 'badgeprofilmodal'
+              - @user.badges.each do |badge|
+                br
+                => image_tag (badge.custom_fields[:img_url])
+                => badge.name
+          hr
+          .text-center
 
   .row
     .col-xs-12
