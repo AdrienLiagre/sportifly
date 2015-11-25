@@ -7,9 +7,9 @@
             .col-xs-8
               h2 Ton profil
             .col-xs-4
-                .badge-fly.pull-right
-                  - @user.badges.each do |badge|
-                    => image_tag (badge.custom_fields[:img_url])
+                / .badge-fly.pull-right
+                /   - @user.badges.each do |badge|
+                /     => image_tag (badge.custom_fields[:img_url])
         .panel-content
           .row
             .col-xs-6
@@ -64,9 +64,9 @@
             => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
           li.dashboard--list
             strong
-              ' Tu as
-              => @user.points(category: 'newsfeed_points')
-              ' points
+              / ' Tu as
+              / => @user.points(category: 'newsfeed_points')
+              / ' points
               .text-center
                 .badge.badge-color
                   h4 Badges
