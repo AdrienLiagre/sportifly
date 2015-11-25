@@ -69,7 +69,7 @@
               / ' points
               hr
               .text-center
-                = render 'modal'
+                = render 'badgedashboardmodal'
               - @user.badges.each do |badge|
                 br
                 => image_tag (badge.custom_fields[:img_url])
