@@ -14,12 +14,11 @@ li
 
     / = render 'voting', newsfeed: newsfeed
 
-  / .caption
-  /   = link_to like_group_newsfeed_path(@group, newsfeed), class: "vpos", method: :put, remote: true do
-  /       span.glyphicon.glyphicon-thumbs-up.glyphicon-align-center aria-hidden="true"
-  /       / span class="vcount = newsfeed.id "
-  /        span.ncount#{newsfeed.id}
-  /         = newsfeed.get_upvotes.size
+.caption
+  = link_to like_group_newsfeed_path(@group, newsfeed), class: "vpos link-voting", method: :put, remote: true
+    span.glyphicon.glyphicon-thumbs-up.glyphicon-align-center aria-hidden="true"
+    span class="vcount-#{newsfeed.id}" = newsfeed.get_upvotes.size
+
 
 
   /   = link_to unlike_group_newsfeed_path(@group, newsfeed), class: "npos", method: :put, remote: true do
