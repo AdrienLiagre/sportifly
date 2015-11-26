@@ -1,9 +1,9 @@
 li
   .commenterImage
       - if comment.booking.user.picture.exists?
-        = image_tag comment.booking.user.picture(:thumb)
+        = image_tag comment.booking.user.picture(:thumb), class: "newsfeed-item--user-avatar"
       - else
-        = image_tag "default_profile_300.png"
+        = image_tag "default_profile_300.png", class: "newsfeed-item--user-avatar"
   .commentText
     - if comment.content.presence
       p = comment.content
