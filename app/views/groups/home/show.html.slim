@@ -32,7 +32,7 @@ header.masthead
                     .activity-item--date
                       = l(activity.date, format: :short)
                     .activity-item--info
-                      => activity.bookings.count
+                      => activity.bookings.confirmed.count
                       '/
                       => activity.number_of_players
                 .col-xs-4

@@ -8,15 +8,21 @@ module Groups
     end
 
     def create
-      @activity = @group.activities.find(params[:activity_id])
-      @booking  = @activity.bookings.new(user: current_user)
+      @activity   = @group.activities.find(params[:activity_id])
+
+      if params[:user]
+        @invited  = User.find(params[:user].to_i)
+        @booking  = @activity.bookings.new(user: @invited).update(status: :pending)
+      else
+        @booking  = @activity.bookings.new(user: current_user)
+      end
 
       if @activity.full?
-        flash[:error] = 'Activity is full!'
+        flash[:error] = 'Activité complète!'
       elsif @activity.user_booked?(current_user)
-        flash[:error] = 'You already booked'
+        flash[:error] = "Tu fly déjà cette activité"
       elsif @activity.save
-        flash[:notice] = 'You successfully subscribed'
+        flash[:notice] = "Tu t'es bien inscrit"
       else
         flash[:error] = 'An error occured'
       end
@@ -28,6 +34,13 @@ module Groups
       end
     end
 
+    def update
+      @booking = Booking.find(params[:edit])
+      change(@booking)
+      @activity = @booking.activity
+
+      redirect_to group_activity_path(@activity.group, @activity)
+    end
 
     def destroy
       @activity = @group.activities.find(params[:activity_id])
@@ -52,6 +65,10 @@ module Groups
 
     def appoint_params
       params.require(:booking).permit(:activity_id, :current_user)
+    end
+
+    def change(booking)
+      booking.update(status: :confirmed)
     end
   end
 end

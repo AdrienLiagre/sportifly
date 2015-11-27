@@ -15,7 +15,7 @@ class Activity < ActiveRecord::Base
   scope :planned, -> { where("date >= :today", today: DateTime.current) }
 
   def full?
-    self.bookings.count >= self.number_of_players
+    self.bookings.confirmed.count >= self.number_of_players
   end
 
   def user_booked?(user)

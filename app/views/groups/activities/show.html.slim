@@ -51,26 +51,27 @@
 
       - if @users
         - @users.each do |user|
-          = user.name
+          = button_to group_activity_bookings_path(@group, @activity, referral: 'activity-page', user: user)
+            = user.name
           br
 
       hr
-      - if @activity.bookings.any?
-        - @activity.bookings.each do |booking|
+      - if @activity.bookings.confirmed.any?
+        - @activity.bookings.confirmed.each do |booking|
           .activity-player
             = link_to group_user_path(@group, booking.user)
               = captain_picture(booking.user)
               - if @activity.captain == booking.user
                 .badge-captain
                   i.fa.fa-star
-      - (@activity.number_of_players - @activity.bookings.count).times
+      - (@activity.number_of_players - @activity.bookings.confirmed.count).times
         .activity-player
           = image_tag('default_profile_100_anonymous.png', class: "dashboard-avatar img-responsive")
 
       hr
       p
         'Il reste
-        = pluralize(@activity.number_of_players - @activity.bookings.count, 'place disponible')
+        = pluralize(@activity.number_of_players - @activity.bookings.confirmed.count, 'place disponible')
       .form-actions
         - if @activity.user_booked?(current_user)
           .activity-presence-action

@@ -24,7 +24,7 @@ Rails.application.routes.draw do
         collection do
           get :autocomplete
         end
-        resources :bookings,  only: [:new, :create, :destroy]
+        resources :bookings,  only: [:new, :create, :edit, :update, :destroy]
         resources :comments,  only: [:create]
         resources :locations, only: [:new, :create], module: 'activities'
       end
