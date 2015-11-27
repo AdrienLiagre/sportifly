@@ -64,6 +64,25 @@
                 => image_tag (badge.custom_fields[:img_url])
 
 
+  - if @bookings_planned.pending.exists?
+    .row
+      .col-xs-12
+        .panel.panel-third
+          .panel-heading
+            h4
+              'Tes invitations
+          .panel-content
+            .row
+              - @bookings_planned.pending.each do |booking|
+                .col-xs-6.col-sm-4.col-lg-3
+                  ul.dashboard--list
+                    li = l(booking.activity.date, format: :short)
+                       = l(booking.activity.sport)
+                    li
+                      'Invité par
+                      => booking.activity.captain.name
+                  = button_to "Accepter", group_activity_booking_path(@user.group, booking.activity, booking, edit: booking ), method: :patch, class: 'btn btn-default'
+                  = button_to "Décliner",  group_activity_booking_path(@user.group, booking.activity, booking, referral: 'dashboard-page'), method: :delete, class: "btn btn-red"
 
 
   .row
@@ -74,9 +93,9 @@
             'Tes prochaines activités avec la team
             = @user.group.name
         .panel-content
-          - if @bookings_planned.exists?
+          - if @bookings_planned.confirmed.exists?
             .row
-              - @bookings_planned.each do |booking|
+              - @bookings_planned.confirmed.each do |booking|
                 .col-xs-6.col-sm-4.col-lg-3
                   ul.dashboard--list
                     li = l(booking.activity.date, format: :short)

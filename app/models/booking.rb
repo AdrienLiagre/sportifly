@@ -9,6 +9,12 @@ class Booking < ActiveRecord::Base
   scope :for_user,  -> (user) { where(user: user) }
   scope :passed,    -> { joins(:activity).merge(Activity.passed) }
   scope :planned,   -> { joins(:activity).merge(Activity.planned) }
+  scope :confirmed, -> { where(status: :confirmed)}
+  scope :pending, -> { where(status: :pending)}
+
+  extend Enumerize
+
+  enumerize :status, in: [:pending, :confirmed], default: :confirmed
 
   private
 
