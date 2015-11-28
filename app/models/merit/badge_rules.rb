@@ -71,7 +71,6 @@ module Merit
       grant_on 'groups/bookings#create', model_name: 'Booking', badge_id: 7, temporary: true, to: :user do |booking|
         booking.user.bookings.count >= 25
       end
-
       # grant_on ['users#create', 'users#update'], badge: 'autobiographer', temporary: true do |user|
       #   user.name? && user.email?
       # end
