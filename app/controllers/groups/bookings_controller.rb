@@ -12,7 +12,7 @@ module Groups
 
       if params[:user]
         @invited  = User.find(params[:user].to_i)
-        @booking  = @activity.bookings.new(user: @invited).update(status: :pending)
+        @booking  = @activity.bookings.new(user: @invited, status: :pending)
       else
         @booking  = @activity.bookings.new(user: current_user)
       end
