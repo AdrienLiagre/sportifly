@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
   acts_as_voter
   searchkick autocomplete: ['name']
 
+  def search_data
+    {
+      name: name,
+      }
+  end
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
