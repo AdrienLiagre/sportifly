@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require script
 //= require bootstrap-toggle.min
@@ -8,3 +9,4 @@
 //= require autocomplete
 //= require activity
 //= require contact
+//= require typeahead.bundle
