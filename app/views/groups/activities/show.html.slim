@@ -45,7 +45,7 @@
           - if params[:query].present?
             .input-group-btn
               = link_to "clear", group_activity_path(@group, @activity), class: "btn btn-default"
-          = text_field_tag :query, params[:query], class: "form-control", id: "user_search", autocomplete: "off", placeholder: 'inviter des amis'
+          = text_field_tag :query, params[:query], class: "form-control", id: "user_search", autocomplete: "off", data: {autocomplete_source: group_users_path(@group)}, placeholder: 'inviter des amis'
           .input-group-btn
             = submit_tag "Search", class: "btn btn-primary"
 
