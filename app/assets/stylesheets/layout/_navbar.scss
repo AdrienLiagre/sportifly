@@ -119,3 +119,27 @@
     margin-right: 10px;
   }
 }
+
+.badge-notif {
+    position: absolute;
+    top: 3px;
+    right: 1px;
+    width: 15px;
+    height: 15px;
+    i {
+      color: red;
+      font-size: 18px;
+    }
+  }
+
+.badge-notif-bis {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 15px;
+  height: 15px;
+  i {
+    color: red;
+    font-size: 18px;
+  }
+}
