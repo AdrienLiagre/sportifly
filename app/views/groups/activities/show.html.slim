@@ -52,10 +52,12 @@
       .row
         - if @users
           - @users.each do |user|
-            .col-xs-3
-              ul.dashboard--list
-                li  = button_to group_activity_bookings_path(@group, @activity, referral: 'activity-page', user: user)
+            .col-xs-12
+              ul.dashboard--list.wrapper
+                li  = link_to group_activity_bookings_path(@group, @activity, referral: 'activity-page', user: user), method: :post
                   = user.name
+                  .text
+                    p invite cette charmante personne !
           br
 
       hr
