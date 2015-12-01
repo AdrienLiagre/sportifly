@@ -44,15 +44,18 @@
         .input-group.input-group-lg
           - if params[:query].present?
             .input-group-btn
-              = link_to "clear", group_activity_path(@group, @activity), class: "btn btn-default"
-          = text_field_tag :query, params[:query], class: "form-control", id: "user_search", autocomplete: "off", data: {autocomplete_source: group_users_path(@group)}, placeholder: 'inviter des amis'
+              = link_to "X", group_activity_path(@group, @activity), class: "btn btn-default"
+          = text_field_tag :query, params[:query], class: "form-control", id: "user_search", autocomplete: "off", placeholder: 'inviter des amis'
           .input-group-btn
             = submit_tag "Search", class: "btn btn-primary"
-
-      - if @users
-        - @users.each do |user|
-          = button_to group_activity_bookings_path(@group, @activity, referral: 'activity-page', user: user)
-            = user.name
+      br
+      .row
+        - if @users
+          - @users.each do |user|
+            .col-xs-3
+              ul.dashboard--list
+                li  = button_to group_activity_bookings_path(@group, @activity, referral: 'activity-page', user: user)
+                  = user.name
           br
 
       hr
