@@ -1,5 +1,4 @@
 class Sport < ActiveRecord::Base
-  searchkick
   has_many :favorite_sports
   has_many :location_sports
   has_many :activities
