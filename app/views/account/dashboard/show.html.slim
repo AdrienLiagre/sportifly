@@ -96,8 +96,9 @@
                     li
                       'Invité par
                       => booking.activity.captain.name
-                  = button_to "Accepter", group_activity_booking_path(@user.group, booking.activity, booking, edit: booking ), method: :patch, class: 'btn btn-default'
-                  = button_to "Décliner",  group_activity_booking_path(@user.group, booking.activity, booking, referral: 'dashboard-page'), method: :delete, class: "btn btn-red"
+                  = link_to "Accepter", group_activity_booking_path(@user.group, booking.activity, booking, edit: booking ), method: :patch, class: 'btn btn-default'
+
+                  = link_to "Décliner",  group_activity_booking_path(@user.group, booking.activity, booking, referral: 'dashboard-page'), method: :delete, class: "btn btn-red"
 
 
   .row

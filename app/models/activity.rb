@@ -19,7 +19,7 @@ class Activity < ActiveRecord::Base
   end
 
   def user_booked?(user)
-    bookings.where(user: user).exists?
+    bookings.confirmed.where(user: user).exists?
   end
 
 
