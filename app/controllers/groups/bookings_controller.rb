@@ -22,9 +22,13 @@ module Groups
       elsif @activity.user_booked?(current_user)
         flash[:error] = "Tu fly déjà cette activité"
       elsif @activity.save
-        flash[:notice] = "Tu t'es bien inscrit"
+        if params[:user]
+          flash[:notice] = "Invitation envoyée"
+        else
+          flash[:notice] = "Booking confirmé"
+        end
       else
-        flash[:error] = 'An error occured'
+        flash[:error] = 'Un problème a été détecté'
       end
 
       if params[:referral] == 'activity-page'

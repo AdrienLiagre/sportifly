@@ -2,11 +2,11 @@
     google.maps.event.addDomListener(window, 'load', function() {
       initializeAutocomplete('user_input_autocomplete_address');
     });
-    $('#user_search').typeahead ({
-    name: "user",
-    displayKey: 'user',
-    remote: "/activities/autocomplete?query=%QUERY"
-});
+//     $('#user_search').typeahead ({
+//     name: "user",
+//     displayKey: 'user',
+//     remote: "/activities/autocomplete?query=%QUERY"
+// });
 
   });
 
