@@ -34,13 +34,4 @@
   color: red;
 }
 
-.wrapper .text {
-position:relative;
-visibility:hidden;
-color: #FF0000;
-font-style: italic;
-}
 
-.wrapper:hover .text {
-visibility:visible;
-}

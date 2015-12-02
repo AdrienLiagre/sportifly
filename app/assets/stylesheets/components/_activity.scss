@@ -99,3 +99,14 @@
   height: 100px;
 }
 
+.wrapper .text {
+position:relative;
+visibility:hidden;
+color: #FBBC05;
+font-family: "Courier New", Courier, monospace;
+}
+
+.wrapper:hover .text {
+visibility:visible;
+}
+

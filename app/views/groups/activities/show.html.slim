@@ -52,7 +52,7 @@
       .row
         - if @users
           - @users.each do |user|
-            .col-xs-12
+            .col-xs-6
               ul.dashboard--list.wrapper
                 li  = link_to group_activity_bookings_path(@group, @activity, referral: 'activity-page', user: user), method: :post
                   = user.name
