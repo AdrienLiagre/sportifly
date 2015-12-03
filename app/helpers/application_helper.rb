@@ -18,10 +18,10 @@ module ApplicationHelper
   end
 
   def sport_picture(sport)
-    if @sport.picture.exists?
-       image_tag @sport.picture(:medium), class: "dashboard-sport-picture img-responsive"
+    if @activity.sport.picture.exists?
+       image_tag @activity.sport.picture, class: "main-banner-sport"
      else
-       image_tag 'avatar.png', class: "dashboard-sport-picture img-responsive"
+       # image_tag 'avatar.png', class: "dashboard-sport-picture img-responsive"
      end
   end
 
