@@ -1,9 +1,10 @@
-.main-banner.main-banner--small
-  .main-banner--content.text-center
-    h1 = @activity.name
-    .divider
-    p.baseline = @activity.sport.name
-  .main-banner--shadow
+.main-banner-sport--small
+  = sport_picture(@activity.sport)
+  .main-banner-sport--content
+    .text-center
+      h1 = @activity.name
+      .divider
+      p.baseline = @activity.sport.name
 
 .container.main-content
   .row
