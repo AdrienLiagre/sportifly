@@ -55,10 +55,15 @@
           - @users.each do |user|
             .col-xs-6
               ul.dashboard--list.wrapper
-                li  = link_to group_activity_bookings_path(@group, @activity, referral: 'activity-page', user: user), method: :post
+                - if user.bookings.select { |booking| booking.activity == @activity} == []
+                  li  = link_to group_activity_bookings_path(@group, @activity, referral: 'activity-page', user: user), method: :post
+                    = user.name
+                    .text
+                      p invite cette charmante personne !
+                - else
                   = user.name
                   .text
-                    p invite cette charmante personne !
+                    p Cette charmante personne est déja invitée à l'activité !
           br
 
       hr
