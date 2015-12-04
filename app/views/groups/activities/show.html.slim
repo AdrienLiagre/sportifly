@@ -84,6 +84,12 @@
             = button_to "Je defly", group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete, class: 'btn btn-red'
         - elsif @activity.full?
           p Complet, mais reste là en cas de désistement !
+
+        - elsif @activity.bookings.find{|booking| booking[:user_id] == current_user.id }.present?
+            p Tu es invité(e)
+            = link_to "Accepter", group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-default'
+
+            = link_to "Décliner",  group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id), referral: 'activity-page'), method: :delete, class: "btn btn-red"
         - else
           .activity-presence-action
             = button_to "Je fly", group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'btn btn-primary-inverted'

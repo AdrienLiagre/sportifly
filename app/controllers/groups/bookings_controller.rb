@@ -39,7 +39,7 @@ module Groups
     end
 
     def update
-      @booking = Booking.find(params[:edit])
+      @booking = Booking.find(params[:id])
       change(@booking)
       @activity = @booking.activity
 
