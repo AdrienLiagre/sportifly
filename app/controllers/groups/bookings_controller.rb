@@ -9,10 +9,16 @@ module Groups
 
     def create
       @activity   = @group.activities.find(params[:activity_id])
+      @user       = current_user
+      @group      = Group.friendly.find(params[:group])
+
 
       if params[:user]
         @invited  = User.find(params[:user].to_i)
+        @email = @invited.email
         @booking  = @activity.bookings.new(user: @invited, status: :pending, inviter: current_user.name)
+        UserMailer.activity(@email, @user, @activity, @group).deliver_now
+
       else
         @booking  = @activity.bookings.new(user: current_user)
       end

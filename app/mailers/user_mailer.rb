@@ -18,4 +18,13 @@ class UserMailer < ApplicationMailer
 
     mail to: email, subject: "Invitation à rejoindre Sportifly !"
   end
+
+  def activity(email, user, activity, group)
+    @greeting = "Chanceux !"
+    @user = user
+    @activity = activity
+    @group = group
+
+    mail to: email, subject: "Tu es invité(e) à flyer une activité sur Sportifly!"
+  end
 end
