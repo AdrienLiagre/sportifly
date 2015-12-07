@@ -10,6 +10,9 @@ module Groups
     def show
       @activity = @group.activities.find(params[:id])
       @comments = @activity.comments
+      @user             = current_user
+      @bookings_planned = @user.bookings.planned
+      @bookings_passed  = @user.bookings.passed
 
       @locations = Location.all
       # Let's DYNAMICALLY build the markers for the view.
