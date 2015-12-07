@@ -94,8 +94,9 @@
                     li = l(booking.activity.date, format: :short)
                        = l(booking.activity.sport)
                     li
-                      'Invité par
-                      => booking.activity.captain.name
+                      = link_to group_activity_path(@user.group, booking.activity)
+                        'Invité par
+                        => booking.activity.captain.name
                   = link_to "Accepter", group_activity_booking_path(@user.group, booking.activity, booking, edit: booking ), method: :patch, class: 'btn btn-default'
 
                   = link_to "Décliner",  group_activity_booking_path(@user.group, booking.activity, booking, referral: 'dashboard-page'), method: :delete, class: "btn btn-red"

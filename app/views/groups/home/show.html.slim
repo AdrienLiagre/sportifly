@@ -42,6 +42,12 @@ header.masthead
                         = button_to "Je defly", group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'btn btn-block btn-red'
                       - elsif activity.full?
                         p Complet, mais reste là en cas de désistement !
+                      - elsif activity.bookings.find{|booking| booking[:user_id] == current_user.id }.present?
+                        .text-center
+                          p Vous êtes invité(e)!
+                        .badge-notif-home
+                          .i.fa.fa-bell.fa-2x
+                        = link_to "Accepter", group_activity_booking_path(@group, activity, activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-block btn-primary-inverted'
                       - else
                         = button_to "Je fly", group_activity_bookings_path(@group, activity), class: 'btn btn-block btn-primary-inverted'
                 .col-xs-12
