@@ -27,8 +27,17 @@
                   'Team:
                   = @user.group.name
                 li
-                  = @user.age
-                  'ans
+                  - if @user.crew != ""
+                    'Crew:
+                    = @user.crew
+                  - else
+                    'Crew non renseigné
+                li
+                  - if @user.age
+                    => @user.age
+                    ' ans
+                  - else
+                    'Age non indiqué
 
     .col-xs-12.col-sm-6
       .panel.panel-second
