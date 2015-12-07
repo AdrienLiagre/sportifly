@@ -18,37 +18,37 @@
               <tbody>
 
                 <tr class="noBorder">
-                  <td class="td-remove-border"><img src="../../../assets/badges/pecheur.png" alt="image"/></td>
+                  <td class="td-remove-border"><%= image_tag (Merit::Badge.find(3).custom_fields[:img_url])%></td>
                   <td class="pull-left td-remove-border"> Sportif de canapé </td>
                   <td>0 fly</td>
                 </tr>
                 <tr class="noBorder">
-                  <td class="td-remove-border"><img src="../../../assets/badges/planche.png" alt="image"/></td>
+                  <td class="td-remove-border"><%= image_tag (Merit::Badge.find(4).custom_fields[:img_url])%></td>
                   <td class="pull-left td-remove-border"> Sportif du dimanche </td>
                   <td>1-5 fly</td>
                 </tr>
                 <tr>
-                  <td class="td-remove-border"><img src="../../../assets/badges/kawak.png" alt="image"/></td>
+                  <td class="td-remove-border"><%= image_tag (Merit::Badge.find(5).custom_fields[:img_url])%></td>
                   <td class="pull-left td-remove-border"> Sportif amateur </td>
                   <td>5-10 fly</td>
                 </tr>
                 <tr>
-                  <td class="td-remove-border"><img src="../../../assets/badges/canoe.png" alt="image"/></td>
+                  <td class="td-remove-border"><%= image_tag (Merit::Badge.find(6).custom_fields[:img_url])%></td>
                   <td class="pull-left td-remove-border"> Sportif acharné</td>
                   <td>10-25 fly</td>
                 </tr>
                 <tr>
-                  <td class="td-remove-border"><img src="../../../assets/badges/froome.png" alt="image"/></td>
+                  <td class="td-remove-border"><%= image_tag (Merit::Badge.find(7).custom_fields[:img_url])%></td>
                   <td class="pull-left td-remove-border"> Christopher Froome </td>
                   <td>+25 fly</td>
                 </tr>
                 <tr>
-                  <td class="td-remove-border"><img src="../../../assets/badges/suiveur.png" alt="image"/></td>
+                  <td class="td-remove-border"><%= image_tag (Merit::Badge.find(1).custom_fields[:img_url])%></td>
                   <td class="pull-left td-remove-border"> Arsene Wenger </td>
                   <td>+5 newsfeeds</td>
                 </tr>
                 <tr>
-                  <td class="td-remove-border"><img src="../../../assets/badges/participant.png" alt="image"/></td>
+                  <td class="td-remove-border"><%= image_tag (Merit::Badge.find(2).custom_fields[:img_url])%></td>
                   <td class="pull-left td-remove-border"> Pierre Menes </td>
                   <td>+10 newsfeeds</td>
                 </tr>
