@@ -9,4 +9,3 @@
 //= require autocomplete
 //= require activity
 //= require contact
-//= require_tree
