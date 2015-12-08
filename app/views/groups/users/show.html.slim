@@ -108,8 +108,13 @@
         - if @user.bookings.passed.exists?
           .row
             - @user.bookings.passed.each do |booking|
-              .col-xs-6.col-sm-4.col-lg-3
-                ul.dashboard--list
-                  li = booking.activity.date
-                  li  fly avec
-                = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+              .col-xs-12.col-sm-4.col-lg-3
+                  ul.dashboard--list
+                    li = l(booking.activity.date, format: :short)
+                    li
+                      'A flyé avec
+                      => booking.activity.captain.name
+
+                  = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+
+
