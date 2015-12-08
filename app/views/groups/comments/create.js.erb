@@ -5,7 +5,7 @@
 
 var new_comment = $("<%= j render 'groups/activities/showcomments', comment: @comment %>").hide();
   // Add it to the DOM, at the end of the existing reviews. It's still hidden.
-  $('#commentsajax').append(new_comment);
+  $('#commentsajax').prepend(new_comment);
   // Show the new review with an animation!
   new_comment.slideDown();
   // Remove the text from the content textarea.
