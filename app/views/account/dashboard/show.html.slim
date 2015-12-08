@@ -50,7 +50,7 @@
               li
                 strong
                   'Nombre de fly :
-                => @user.bookings.count
+                => @user.bookings.where(status: :confirmed).count
               - stats_per_user(@user).each do |key, value|
                 li
                   strong

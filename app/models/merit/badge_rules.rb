@@ -55,21 +55,20 @@ module Merit
       grant_on 'groups/bookings#create', model_name: 'Booking', badge_id: 3, temporary: true, to: :user do |booking|
         booking.user.bookings.count == 0
       end
-
       grant_on 'groups/bookings#create', model_name: 'Booking', badge_id: 4, temporary: true, to: :user do |booking|
-        booking.user.bookings.count >= 1 && booking.user.bookings.count < 5
+        booking.user.bookings.where(status: :confirmed).count >= 1 && booking.user.bookings.count < 5
       end
 
       grant_on 'groups/bookings#create', model_name: 'Booking', badge_id: 5, temporary: true, to: :user do |booking|
-        booking.user.bookings.count >= 5 && booking.user.bookings.count < 10
+        booking.user.bookings.where(status: :confirmed).count >= 5 && booking.user.bookings.count < 10
       end
 
       grant_on 'groups/bookings#create', model_name: 'Booking', badge_id: 6, temporary: true, to: :user do |booking|
-        booking.user.bookings.count >= 10 && booking.user.bookings.count < 25
+        booking.user.bookings.where(status: :confirmed).count >= 10 && booking.user.bookings.count < 25
       end
 
       grant_on 'groups/bookings#create', model_name: 'Booking', badge_id: 7, temporary: true, to: :user do |booking|
-        booking.user.bookings.count >= 25
+        booking.user.bookings.where(status: :confirmed).count >= 25
       end
       # grant_on ['users#create', 'users#update'], badge: 'autobiographer', temporary: true do |user|
       #   user.name? && user.email?

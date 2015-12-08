@@ -9,7 +9,7 @@
     .col-xs-12.col-sm-6.col-sm-offset-3
       = simple_form_for([:group, @activity], html: { multipart: true }) do |f|
         = f.error_notification
-        = f.input :name, label: :'Le ptit nom'
+        = f.input :name, label: :'Le ptit nom', input_html: {maxlength: 20}
         = f.association :sport
         / = f.association :location, label: :'A quel endroit ?', label_method: :name, value_method: :id
         = f.input :description

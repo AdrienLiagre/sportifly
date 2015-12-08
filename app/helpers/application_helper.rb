@@ -28,7 +28,7 @@ module ApplicationHelper
   def stats_per_user(user)
     stats = {}
 
-    user.bookings.each do |booking|
+    user.bookings.where(status: :confirmed).each do |booking|
       if stats[booking.activity.sport.name]
         stats[booking.activity.sport.name] += 1
       else
