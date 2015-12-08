@@ -9,7 +9,7 @@ module Groups
 
     def show
       @activity = @group.activities.find(params[:id])
-      @comments = @activity.comments
+      @comments = @activity.comments.order(created_at: :desc).limit(15)
       @user             = current_user
       @bookings_planned = @user.bookings.planned
       @bookings_passed  = @user.bookings.passed
