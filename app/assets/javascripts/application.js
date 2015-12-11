@@ -3,7 +3,6 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require script
-//= require bootstrap-toggle.min
 //= require underscore
 //= require gmaps/google
 //= require autocomplete
