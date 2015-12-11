@@ -2,7 +2,7 @@ header.masthead
   .container
     .row
       .col-xs-12.col-sm-6
-        = image_tag @group.picture(:medium), class: "img-responsive group-pic text-center-xs"
+        = image_tag @group.picture(:medium), class: "img-responsive group-pic text-center-xs (max-width: 767px)"
       .col-xs-12.col-sm-6
         = render 'elasticsearch'
 
