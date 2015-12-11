@@ -24,9 +24,9 @@ module Groups
 
 
       if params[:query].present?
-
         @number_of_results = User.search(params[:query]).hits.length
-        @users = User.search(params[:query]).first(@number_of_results)
+        @users_all = User.search(params[:query]).first(@number_of_results)
+        @users = @users_all.select { |user| user.group_id == @group.id}
         # redirect_to group_user_path(@group, @user)
         # render :json => @user.to_json
       else
