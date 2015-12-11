@@ -7,12 +7,22 @@ module Groups
     end
 
     def index
-      @users = @group.users.all
-      @email = params[:email]
-      @user = current_user
+      @users   = @group.users.all
+      @email   = params[:email]
+      @user    = current_user
+      @group   = Group.friendly.find(params[:group])
 
       if @email
-        UserMailer.invitation(@email, @user).deliver_now
+        if @email.include?(@group.name.downcase)
+          UserMailer.invitation(@email, @user).deliver_now
+          flash[:notice] = "Invitation envoyée"
+          redirect_to group_users_path(@group)
+
+        else
+          flash[:alert] = "Erreur, vérifiez l'adresse email"
+          redirect_to group_users_path(@group)
+        end
+
       end
     end
 

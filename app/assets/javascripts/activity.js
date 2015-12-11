@@ -7,3 +7,7 @@ $('#selectElementId').change(
          $('#formElementId').submit();
          */
 });
+
+
+
+$('#email').val('');
