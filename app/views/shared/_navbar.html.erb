@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-header">
         <%= link_to group_root_path(current_user.group), class: 'navbar-brand hover' do%>
-          <img src="../../assets/logoofficielinversecolorblueoff.png" class= "size-logo"/>
+          <%= image_tag 'logoofficielinversecolorblueoff.png', class: "size-logo"%>
         <%end%>
         <%= link_to group_root_path(current_user.group), class: 'navbar-brand hover' do%>
           <b> Sportifly </b>
@@ -81,7 +81,7 @@
       <div class="navbar-header">
         <div class="navbar-header">
           <%= link_to root_path, class: 'navbar-brand hover' do%>
-            <img src="../../assets/logoofficielinversecolorblueoff.png" class= "size-logo"/>
+            <%= image_tag 'logoofficielinversecolorblueoff.png', class: "size-logo"%>
           <%end%>
           <%= link_to root_path, class: 'navbar-brand hover' do%>
             <b> Sportifly </b>
