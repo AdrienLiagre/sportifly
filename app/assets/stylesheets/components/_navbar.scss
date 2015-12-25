@@ -1,11 +1,18 @@
 .hover {
   color: #FFFFFF;
   &:hover {
-  color: #000000;
+  color: #0075A2;
   }
 }
 
 
 .navbar {
   margin-bottom: 0;
+}
+
+
+.size-logo {
+  width: 30px;
+  height: 30px;
+  margin-top: -3px;
 }

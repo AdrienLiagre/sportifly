@@ -3,6 +3,9 @@
     <div class="container">
       <div class="navbar-header">
         <%= link_to group_root_path(current_user.group), class: 'navbar-brand hover' do%>
+          <img src="../../assets/logoofficielinversecolorblueoff.png" class= "size-logo"/>
+        <%end%>
+        <%= link_to group_root_path(current_user.group), class: 'navbar-brand hover' do%>
           <b> Sportifly </b>
         <% end %>
         <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -78,6 +81,9 @@
       <div class="navbar-header">
         <div class="navbar-header">
           <%= link_to root_path, class: 'navbar-brand hover' do%>
+            <img src="../../assets/logoofficielinversecolorblueoff.png" class= "size-logo"/>
+          <%end%>
+          <%= link_to root_path, class: 'navbar-brand hover' do%>
             <b> Sportifly </b>
           <% end %>
         </div>
@@ -88,7 +94,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <%= link_to 'Log in', new_user_session_path %>
+            <%= link_to 'Log in', new_user_session_path, class: 'hover' %>
           </li>
         </ul>
       </div>
