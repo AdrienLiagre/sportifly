@@ -4,7 +4,7 @@ class Booking < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
 
-  after_create :send_reminder_email
+  # after_create :send_reminder_email
 
   scope :for_user,  -> (user) { where(user: user) }
   scope :passed,    -> { joins(:activity).merge(Activity.passed) }
