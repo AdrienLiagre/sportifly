@@ -39,18 +39,20 @@
     <%= yield %>
     <%= render 'shared/footer' %>
 
-    <%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false" %>
-    <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+
+
     <%= javascript_include_tag 'application' %>
-    <%= yield(:after_js) %>
+
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC-Ugr5CLM31RnMsQb4om2p9M4ajl1UTBs" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
 
     <!-- Include Google Maps JS API -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDvGzF2lS1aVyD8Ky1M8jrv-1_pYnQHRAo" src="autocomplete.js">
-    </script>
+
     <!-- Custom JS code to bind to Autocomplete API -->
     <!-- find it here: https://github.com/lewagon/google-place-autocomplete/blob/gh-pages/autocomplete.js -->
     <!-- We'll detail this file in the article -->
-
+    <%= yield(:after_js) %>
 
   </body>
 </html>
