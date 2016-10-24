@@ -2,7 +2,7 @@
   .main-banner--content
     .text-center
       h1
-        'Bienvenue sur
+        = t 'home.welcome'
         span.lobster-style
           'Sportifly
   .main-banner--shadow
@@ -11,7 +11,8 @@
     .row
       .col-xs-12
         .text-center
-          h1 La plateforme de sport qui démystifie les relations professionnelles
+          h1
+            = t 'home.sub_title'
     .row
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
@@ -27,25 +28,29 @@
         p Accédez à des activités n'importe où dans le monde, rencontrez des expatriés lors de vos déplacements !
     .row
       .col-xs-12.text-center
-        = link_to "Ok, je m'inscris !", new_user_registration_path, class: "btn btn-green text-center"
+        = link_to t('home.button_subscription'), new_user_registration_path, class: "btn btn-green text-center"
 
 .sign-in-reinsurrance-container
   .container
     .row
       .col-xs-12
         .text-center
-          h1 Créez du lien et défoulez vous après ce meeting !
+          h1
+            = t 'home.sub_title_two'
           .divider
     .row
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
           i.fa.fa-sign-in
-        p 1. Je m'inscris et suis redirigé sur le groupe associé à mon entreprise ou école
+        p
+          = t 'home.sub_title_two_firstbloc'
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
           i.fa.fa-bicycle
-        p 2. Je rejoins ou propose une activité sportive
+        p
+          = t 'home.sub_title_two_secondbloc'
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
           i.fa.fa-comments-o
-        p 3. Je trouve de nouveaux partenaires et fais connaissance avec Régis de la compta
+        p
+          = t 'home.sub_title_two_thirdbloc'

@@ -2,3 +2,13 @@ fr:
   devise:
     sessions:
       signed_in: Nous sommes ravis de te revoir
+
+  hello: "Hello world"
+  home:
+    welcome: "Bienvenu sur"
+    sub_title: "La plateforme de sport qui démystifie les relations professionnelles"
+    sub_title_two: "Créez du lien et défoulez vous après ce meeting !"
+    button_subscription: "Ok, je m'inscris!"
+    sub_title_two_firstbloc: "1. Je m'inscris et suis redirigé sur le groupe associé à mon entreprise ou école"
+    sub_title_two_secondbloc: "2. Je rejoins ou propose une activité sportive"
+    sub_title_two_thirdbloc: "3. Je trouve de nouveaux partenaires et fais connaissance avec Régis de la compta"
