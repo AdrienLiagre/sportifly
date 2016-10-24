@@ -43,8 +43,14 @@
 
         <ul class="nav navbar-right navbar-nav hidden-xs">
 
-          <%= link_to_unless I18n.locale == :en, "English", locale: :en %>
-          <%= link_to_unless I18n.locale == :fr, "French", locale: :fr %>
+          <%= link_to url_for( :locale => 'en' ) do %>
+            <%= image_tag 'united-kingdom.png'%>
+          <%end%>
+
+          <%= link_to url_for( :locale => 'fr' ) do %>
+            <%= image_tag 'france.png'%>
+          <%end%>
+
           <li class="dropdown">
             <a href="#" class="dropdown-toggle hover" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i>
               <% if current_user.bookings.planned.pending.any? %>
