@@ -19,7 +19,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <%= link_to 'Créer une activité', new_group_activity_path(current_user.group), class: 'hover' %>
+            <%= link_to t('group.creation'), new_group_activity_path(current_user.group), class: 'hover' %>
           </li>
           <li class='visible-xs'>
             <%= link_to account_dashboard_path do %>

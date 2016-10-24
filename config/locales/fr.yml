@@ -12,3 +12,16 @@ fr:
     sub_title_two_firstbloc: "1. Je m'inscris et suis redirigé sur le groupe associé à mon entreprise ou école"
     sub_title_two_secondbloc: "2. Je rejoins ou propose une activité sportive"
     sub_title_two_thirdbloc: "3. Je trouve de nouveaux partenaires et fais connaissance avec Régis de la compta"
+
+
+  group:
+    creation: "Créer une activité"
+
+  activity:
+    new:
+      title: "Créer une activité"
+      name: "Le pti nom"
+      players: "Combien de joueurs"
+      time: "Date et heure"
+      price: "Prix par personne"
+      creation: "Je crée l'activité"

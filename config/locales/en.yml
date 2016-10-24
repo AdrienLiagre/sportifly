@@ -29,3 +29,15 @@ en:
     sub_title_two_firstbloc: "1. I sign in and i am being redirected to the group of my company or school"
     sub_title_two_secondbloc: "2. I join or suggest a sport activity"
     sub_title_two_thirdbloc: "3. I find new patners and get know John from comptability"
+
+  group:
+    creation: "Create an activity"
+
+  activity:
+    new:
+      title: "Create an activity"
+      name: "The little name"
+      players: "Number of players"
+      time: "Day and time"
+      price: "Price per person"
+      creation: "I create the activity"
