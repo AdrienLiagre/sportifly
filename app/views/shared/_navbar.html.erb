@@ -19,7 +19,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <%= link_to 'Créer une activité', new_group_activity_path(current_user.group), class: 'hover' %>
+            <%= link_to t('group.creation'), new_group_activity_path(current_user.group), class: 'hover' %>
           </li>
           <li class='visible-xs'>
             <%= link_to account_dashboard_path do %>
@@ -39,6 +39,21 @@
           <li class="divider"></li>
           <li class='visible-xs'>
             <%= link_to "Invitations et Infos", group_users_path(current_user.group) %></li>
+          <li class='visible-xs'>
+            <% if params[:locale] == "en"%>
+              <%= link_to url_for( :locale => 'fr' ) do %>
+                <%= image_tag 'united-kingdom.png'%>
+              <%end%>
+            <% elsif params[:locale] == "fr" %>
+              <%= link_to url_for( :locale => 'en' ) do %>
+                <%= image_tag 'france.png'%>
+              <%end%>
+            <% else %>
+              <%= link_to url_for( :locale => 'fr' ) do %>
+                <%= image_tag 'united-kingdom.png'%>
+              <%end%>
+            <%end%>
+          </li>
         </ul>
 
         <ul class="nav navbar-right navbar-nav hidden-xs">
@@ -68,6 +83,22 @@
               <li class="divider"></li>
               <li><%= link_to "Invitations et Infos", group_users_path(current_user.group) %></li>
             </ul>
+
+          </li>
+            <li>
+            <% if params[:locale] == "en"%>
+              <%= link_to url_for( :locale => 'fr' ) do %>
+                <%= image_tag 'united-kingdom.png'%>
+              <%end%>
+            <% elsif params[:locale] == "fr" %>
+              <%= link_to url_for( :locale => 'en' ) do %>
+                <%= image_tag 'france.png'%>
+              <%end%>
+            <% else %>
+              <%= link_to url_for( :locale => 'fr' ) do %>
+                <%= image_tag 'united-kingdom.png'%>
+              <%end%>
+            <%end%>
           </li>
         </ul>
       </div>
@@ -89,10 +120,26 @@
           <span class="glyphicon glyphicon-chevron-down"></span>
         </a>
       </div>
+
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
             <%= link_to 'Log in', new_user_session_path, class: 'hover' %>
+          </li>
+          <li>
+            <% if params[:locale] == "en"%>
+              <%= link_to url_for( :locale => 'fr' ) do %>
+                <%= image_tag 'united-kingdom.png'%>
+              <%end%>
+            <% elsif params[:locale] == "fr" %>
+              <%= link_to url_for( :locale => 'en' ) do %>
+                <%= image_tag 'france.png'%>
+              <%end%>
+            <% else %>
+              <%= link_to url_for( :locale => 'fr' ) do %>
+                <%= image_tag 'united-kingdom.png'%>
+              <%end%>
+            <%end%>
           </li>
         </ul>
       </div>
