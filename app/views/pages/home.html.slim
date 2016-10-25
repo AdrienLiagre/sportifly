@@ -17,15 +17,18 @@
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
           i.fa.fa-futbol-o
-        p Pratiquez votre activité sportive, trouvez des partenaires au sein de l'entreprise et réunissez-les en quelques clics
+        p
+          = t 'home.sub_title_firstbloc'
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
           i.fa.fa-lock
-        p Notre plateforme est sécurisée, nous vous identifions avec votre adresse mail. Seuls les membres de votre communauté ont accès à vos propositions et peuvent vous inviter
+        p
+          = t 'home.sub_title_secondbloc'
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
           i.fa.fa-globe
-        p Accédez à des activités n'importe où dans le monde, rencontrez des expatriés lors de vos déplacements !
+        p
+          = t 'home.sub_title_thirdbloc'
     .row
       .col-xs-12.text-center
         = link_to t('home.button_subscription'), new_user_registration_path, class: "btn btn-green text-center"

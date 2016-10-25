@@ -12,7 +12,8 @@ header.masthead
     #content.col-md-8
       .panel.panel-first
         .panel-heading.text-center
-          h4 Prochains sports
+          h4
+            = t 'group.next_sport_title'
         .panel-body
           .row
             - @activities.each do |activity|
@@ -39,7 +40,7 @@ header.masthead
                   .row
                     .activity-item--actions
                       - if activity.user_booked?(current_user)
-                        = button_to "Je defly", group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'btn btn-block btn-red'
+                        = button_to t('group.unfly'), group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'btn btn-block btn-red'
                       - elsif activity.full?
                         p Complet, mais reste là en cas de désistement !
                       - elsif activity.bookings.find{|booking| booking[:user_id] == current_user.id }.present?
@@ -49,7 +50,7 @@ header.masthead
                           .i.fa.fa-bell.fa-2x
                         = link_to "Accepter", group_activity_booking_path(@group, activity, activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-block btn-primary-inverted'
                       - else
-                        = button_to "Je fly", group_activity_bookings_path(@group, activity), class: 'btn btn-block btn-primary-inverted'
+                        = button_to t('group.fly'), group_activity_bookings_path(@group, activity), class: 'btn btn-block btn-primary-inverted'
                 .col-xs-12
                   hr
       .panel

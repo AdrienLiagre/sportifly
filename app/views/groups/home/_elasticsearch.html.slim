@@ -1,7 +1,7 @@
 = simple_form_for group_root_path(current_user.group), :method => :get
   .input-group
-    = text_field_tag :city, params[:city], id: "user_input_autocomplete_address", class: "form-control", placeholder: 'Où veux-tu flyer ?'
+    = text_field_tag :city, params[:city], id: "user_input_autocomplete_address", class: "form-control", placeholder: t('group.searchbar')
     span.input-group-btn
       = submit_tag "Search", class: 'btn btn-primary-inverted'
   br
-  = select_tag "sport", options_from_collection_for_select(@sports, "id", "name"), class: "form-control", label: false, prompt: "Tu peux trier par sport", include_blank: "Tous les sports", :onchange => "this.form.submit()"
+  = select_tag "sport", options_from_collection_for_select(@sports, "id", "name"), class: "form-control", label: false, prompt: t('group.filter'), include_blank: t('group.allsports'), :onchange => "this.form.submit()"

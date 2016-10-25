@@ -7,6 +7,9 @@ fr:
   home:
     welcome: "Bienvenu sur"
     sub_title: "La plateforme de sport qui démystifie les relations professionnelles"
+    sub_title_firstbloc: "Pratiquez votre activité sportive, trouvez des partenaires au sein de l'entreprise et réunissez-les en quelques clics!"
+    sub_title_secondbloc: "Notre plateforme est sécurisée, nous vous identifions avec votre adresse mail. Seuls les membres de votre communauté ont accès à vos propositions et peuvent vous inviter"
+    sub_title_thirdbloc: "Accédez à des activités n'importe où dans le monde, rencontrez des expatriés lors de vos déplacements !"
     sub_title_two: "Créez du lien et défoulez vous après ce meeting !"
     button_subscription: "Ok, je m'inscris!"
     sub_title_two_firstbloc: "1. Je m'inscris et suis redirigé sur le groupe associé à mon entreprise ou école"
@@ -16,6 +19,13 @@ fr:
 
   group:
     creation: "Créer une activité"
+    next_sport_title: "Prochains sports"
+    fly: "Je fly"
+    unfly: "Je defly"
+    searchbar: "Où veux-tu flyer ?"
+    filter: "Tu peux trier par sport"
+    allsports: "Tous les sports"
+    button_newsfeed: "Je veux partager cette folie"
 
   activity:
     new:
@@ -25,3 +35,9 @@ fr:
       time: "Date et heure"
       price: "Prix par personne"
       creation: "Je crée l'activité"
+
+
+  navbar:
+    logout: "Déconnexion"
+    profile: "Profil"
+    invit: "Invitations et infos"

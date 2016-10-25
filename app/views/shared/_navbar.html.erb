@@ -24,21 +24,21 @@
           <li class='visible-xs'>
             <%= link_to account_dashboard_path do %>
               <% if current_user.bookings.planned.pending.any? %>
-                <p> Profil   <i class="fa fa-bell"></i></p>
+                <p><%= t('navbar.profile')%><i class="fa fa-bell"></i></p>
               <% else %>
-                <p> Profil </p>
+                <p><%= t('navbar.profile')%></p>
               <% end %>
             <% end %>
           </li>
           <li class='visible-xs'>
             <% if user_signed_in? %>
-              <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>
+              <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete %>
             <% else %>
               <%= link_to 'Log in', new_user_session_path %>
             <% end %></li>
           <li class="divider"></li>
           <li class='visible-xs'>
-            <%= link_to "Invitations et Infos", group_users_path(current_user.group) %></li>
+            <%= link_to t('navbar.invit'), group_users_path(current_user.group) %></li>
           <li class='visible-xs'>
             <% if params[:locale] == "en"%>
               <%= link_to url_for( :locale => 'fr' ) do %>
@@ -69,19 +69,19 @@
               <li>
                 <%= link_to account_dashboard_path do %>
                   <% if current_user.bookings.planned.pending.any? %>
-                    <p> Profil   <i class="fa fa-bell"></i></p>
+                    <p><%= t('navbar.profile')%>   <i class="fa fa-bell"></i></p>
                   <% else %>
-                    <p> Profil </p>
+                    <p> <%= t('navbar.profile')%> </p>
                   <% end %>
                 <% end %>
               </li>
               <li><% if user_signed_in? %>
-                    <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>
+                    <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete %>
                   <% else %>
                     <%= link_to 'Log in', new_user_session_path %>
                   <% end %></li>
               <li class="divider"></li>
-              <li><%= link_to "Invitations et Infos", group_users_path(current_user.group) %></li>
+              <li><%= link_to t('navbar.invit'), group_users_path(current_user.group) %></li>
             </ul>
 
           </li>

@@ -24,6 +24,9 @@ en:
   home:
     welcome: "Welcome on"
     sub_title: "The sport plateform that demystifies professional relationships"
+    sub_title_firstbloc: "Practice your favorite sport, find partners within your company or school, and meet them for some fun!"
+    sub_title_secondbloc: "Our platform is totally secured. Your identified with your email address. Only members of your community have access to your meeting proposals or can invite you"
+    sub_title_thirdbloc: "Have a worldwide access to sport activities from your community! Meet expatriates during your trips!"
     sub_title_two: "Create connections and unwind yourself !"
     button_subscription: "Great, i sign in!"
     sub_title_two_firstbloc: "1. I sign in and i am being redirected to the group of my company or school"
@@ -32,6 +35,13 @@ en:
 
   group:
     creation: "Create an activity"
+    next_sport_title: "Next sport activities"
+    fly: "I fly"
+    unfly: "I unfly"
+    searchbar: "Where do you to fly?"
+    filter: "You can sort by sports"
+    allsports: "All sports"
+    button_newsfeed: "I want to share this dope"
 
   activity:
     new:
@@ -41,3 +51,8 @@ en:
       time: "Day and time"
       price: "Price per person"
       creation: "I create the activity"
+
+  navbar:
+    logout: "Log out"
+    profile: "Profile"
+    invit: "Invitation and info"
