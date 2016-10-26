@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  devise:
+    sessions:
+      signed_in: We are happy to see you again
+
   hello: "Hello world"
   home:
     welcome: "Welcome on"
@@ -51,6 +55,18 @@ en:
       time: "Day and time"
       price: "Price per person"
       creation: "I create the activity"
+    show:
+      info: "What is it about?"
+      people: "Who is joining?"
+      invite: "Invite some friends"
+      time: "Schedule"
+      fly_comment: "Fly and comment this activity !"
+      choose_location: "Choose"
+      create_location: "Create"
+      location: "Location"
+      or: "or"
+      no_location: "No location chosen yet by"
+      price: "Price per person : "
 
   navbar:
     logout: "Log out"
