@@ -35,7 +35,18 @@ fr:
       time: "Date et heure"
       price: "Prix par personne"
       creation: "Je crée l'activité"
-
+    show:
+      info: "On parle de quoi?"
+      people: "Qui participe?"
+      invite: "Inviter des amis"
+      time: "Horaire"
+      fly_comment: "Fly et commente cette activité !"
+      choose_location: "Choisir"
+      create_location: "Créer"
+      location: "Lieu"
+      or: "ou"
+      no_location: "Pas encore de lieu prévu par"
+      price: "Prix par personne : "
 
   navbar:
     logout: "Déconnexion"
