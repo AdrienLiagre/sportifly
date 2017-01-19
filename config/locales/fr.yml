@@ -3,9 +3,14 @@ fr:
     sessions:
       signed_in: Nous sommes ravis de te revoir
 
+  users:
+    sign_in:
+      welcome: "Bienvenue sur "
+      log_in: "Se connecter"
+
   hello: "Hello world"
   home:
-    welcome: "Bienvenu sur"
+    welcome: "Bienvenue sur"
     sub_title: "La plateforme de sport qui démystifie les relations professionnelles"
     sub_title_firstbloc: "Pratiquez votre activité sportive, trouvez des partenaires au sein de l'entreprise et réunissez-les en quelques clics!"
     sub_title_secondbloc: "Notre plateforme est sécurisée, nous vous identifions avec votre adresse mail. Seuls les membres de votre communauté ont accès à vos propositions et peuvent vous inviter"
@@ -26,6 +31,8 @@ fr:
     filter: "Tu peux trier par sport"
     allsports: "Tous les sports"
     button_newsfeed: "Je veux partager cette folie"
+    picture: "Photo"
+    content: "Contenu"
 
   activity:
     new:
@@ -47,6 +54,29 @@ fr:
       or: "ou"
       no_location: "Pas encore de lieu prévu par"
       price: "Prix par personne : "
+
+  profil:
+    title: "Your profile"
+    age: "ans"
+    age_not_present: "Age non indiqué"
+    update: "Mettre à jour"
+    statistic: "Tes statistiques"
+    number_of_fly: "Nombre de fly : "
+    improve: "Fais monter tes stats ! "
+    no_stat: "Pas encore de statistiques disponibles"
+    check_the_fly: "Voir les fly !"
+    invitation: "Tes invitations"
+    invit_by: "Invité par "
+    accept_invit: "Accepter"
+    refuse_invit: "Refuser"
+    next_activities: "Tes prochaines activités avec la team "
+    fly_with: "Tu fly avec "
+    detail: "Détails"
+    cancel: "Annuler"
+    no_activity: "Tu n'as pas encore prévu d'activité !"
+    create: "Créer"
+    search: "Chercher"
+
 
   navbar:
     logout: "Déconnexion"

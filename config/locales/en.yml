@@ -1,28 +1,14 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   devise:
     sessions:
       signed_in: We are happy to see you again
+
+  users:
+    sign_in:
+      welcome: "Welcome on "
+      log_in: "Log in"
+
+
 
   hello: "Hello world"
   home:
@@ -46,6 +32,8 @@ en:
     filter: "You can sort by sports"
     allsports: "All sports"
     button_newsfeed: "I want to share this dope"
+    picture: "Picture"
+    content: "Content"
 
   activity:
     new:
@@ -68,7 +56,32 @@ en:
       no_location: "No location chosen yet by"
       price: "Price per person : "
 
+  profil:
+    title: "Your profile"
+    age: "years old"
+    age_not_present: "Age missing"
+    update: "Update profile"
+    statistic: "Your statistics"
+    number_of_fly: "Number of fly : "
+    improve: "Improve your stats ! "
+    no_stat: "No statistics available yet"
+    check_the_fly: "Check it !"
+    invitation: "Your invitations"
+    invit_by: "Invited by "
+    accept_invit: "Accept"
+    refuse_invit: "Decline"
+    next_activities: "Your next activities with team "
+    fly_with: "You fly with "
+    detail: "Details"
+    cancel: "Cancel"
+    no_activity: "You haven't planned any activity !"
+    create: "Create"
+    search: "Search"
+
   navbar:
     logout: "Log out"
     profile: "Profile"
     invit: "Invitation and info"
+
+
+

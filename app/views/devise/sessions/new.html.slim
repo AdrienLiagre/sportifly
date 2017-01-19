@@ -2,7 +2,7 @@
   .main-banner--content
     .text-center
       h1
-        'Bienvenue sur
+        = t 'users.sign_in.welcome'
         span.lobster-style
           'Sportifly
   .main-banner--shadow
@@ -12,7 +12,8 @@
 
     .col-sm-4.col-sm-offset-4
       .log-in
-        h2 Log in
+        h2
+          = t 'users.sign_in.log_in'
         hr
         = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .form-inputs
@@ -31,19 +32,23 @@
     .row
       .col-xs-12
         .text-center
-          h1 Créez du lien et défoulez vous après ce meeting !
+          h1
+            = t 'home.sub_title_two'
           .divider
 
     .row
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
           i.fa.fa-sign-in
-        p 1. Je m'inscris et suis redirigé sur le groupe associé à mon entreprise ou école
+        p
+          = t 'home.sub_title_two_firstbloc'
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
           i.fa.fa-bicycle
-        p 2. Je rejoins ou propose une activité sportive
+        p
+          = t 'home.sub_title_two_secondbloc'
       .col-xs-12.col-sm-4.text-center.reinssurance-item
         .icon-container
           i.fa.fa-comments-o
-        p 3. Je trouve de nouveaux partenaires et fais connaissance avec Régis de la compta
+        p
+          = t 'home.sub_title_two_thirdbloc'

@@ -5,7 +5,8 @@
         .panel-heading
           .row
             .col-xs-8
-              h2 Ton profil
+              h2
+                = t 'profil.title'
             .col-xs-4
                 / .badge-fly.pull-right
                 /   - @user.badges.each do |badge|
@@ -35,21 +36,25 @@
                 li
                   - if @user.age
                     => @user.age
-                    ' ans
+                    '
+                    = t 'profil.age'
                   - else
-                    'Age non indiqué
+                    '
+                    = t 'profil.age_not_present'
                 li = @user.phone_number
-              = link_to "Mettre à jour", edit_account_dashboard_users_path, class: "btn btn-primary-inverted btn-block"
+              = link_to t('profil.update'), edit_account_dashboard_users_path, class: "btn btn-primary-inverted btn-block"
     .col-xs-12.col-sm-6
       .panel.panel-second
         .panel-heading
-          h2 Tes statistiques
+          h2
+            = t 'profil.statistic'
         .panel-content
           - if @user.bookings.any?
             ul.dashboard--list
               li
                 strong
-                  'Nombre de fly :
+                  '
+                  = t 'profil.number_of_fly'
                 => @user.bookings.where(status: :confirmed).count
               - stats_per_user(@user).each do |key, value|
                 li
@@ -58,10 +63,11 @@
                     ':
                   = value
             .text-center
-              => link_to "Fais monter tes stats!", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
+              => link_to t('profil.improve'), group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
           - else
-            p Pas encore de statistiques disponibles
-            => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
+            p
+              = t 'profil.no_stat'
+            => link_to t('profil.check_the_fly'), group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
           li.dashboard--list
             strong
               / ' Tu as
@@ -85,7 +91,8 @@
           .panel-heading
             h4
               .fa.fa-bell.notif
-              '  Tes invitations
+              '
+              = t 'profil.invitation'
           .panel-content
             .row
               - @bookings_planned.pending.each do |booking|
@@ -95,11 +102,12 @@
                        = l(booking.activity.sport)
                     li
                       = link_to group_activity_path(@user.group, booking.activity)
-                        'Invité par
+                        '
+                        = t 'profil.invit_by'
                         => booking.inviter
-                  = link_to "Accepter", group_activity_booking_path(@user.group, booking.activity, booking, edit: booking ), method: :patch, class: 'btn btn-default'
+                  = link_to t('profil.accept_invit'), group_activity_booking_path(@user.group, booking.activity, booking, edit: booking ), method: :patch, class: 'btn btn-default'
 
-                  = link_to "Décliner",  group_activity_booking_path(@user.group, booking.activity, booking, referral: 'dashboard-page'), method: :delete, class: "btn btn-red"
+                  = link_to t('profil.refuse_invit'),  group_activity_booking_path(@user.group, booking.activity, booking, referral: 'dashboard-page'), method: :delete, class: "btn btn-red"
 
 
   .row
@@ -107,7 +115,8 @@
       .panel.panel-third
         .panel-heading
           h4
-            'Tes prochaines activités avec la team
+            '
+            = t'profil.next_activities'
             = @user.group.name
         .panel-content
           - if @bookings_planned.confirmed.exists?
@@ -117,17 +126,19 @@
                   ul.dashboard--list
                     li = l(booking.activity.date, format: :short)
                     li
-                      'Tu fly avec
+                      '
+                      = t 'profil.fly_with'
                       => booking.activity.captain.name
 
-                  = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
-                  = link_to "Annuler",  group_activity_booking_path(@user.group, booking.activity, booking, referral: 'dashboard-page'), method: :delete, class: "btn btn-red"
+                  = link_to t('profil.detail'), group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+                  = link_to t('profil.cancel'),  group_activity_booking_path(@user.group, booking.activity, booking, referral: 'dashboard-page'), method: :delete, class: "btn btn-red"
           - else
-            p Tu n'as pas encore prévu d'activité !
             p
-             => link_to "Créer", new_group_activity_path(@user.group)
+              = t'profil.no_activity'
+            p
+             => link_to t('profil.create'), new_group_activity_path(@user.group)
              ' ou
-             => link_to "Chercher", group_root_path(@user.group)
+             => link_to t('profil.search'), group_root_path(@user.group)
              ' une activité
 
 
