@@ -63,7 +63,9 @@ en:
     update:
       button: "Update profile"
       title: "Update your profile"
-
+      name: "Name"
+      phone_number: "Phone number"
+      picture: "Picture"
     statistic: "Your statistics"
     number_of_fly: "Number of fly : "
     improve: "Improve your stats ! "
@@ -83,7 +85,8 @@ en:
     past_activities: "Your past activities with team "
     flied_with: "You flied with "
     no_fly: "You have never flied yet ?? Hurry up !"
-
+    show:
+      title: "Profile of "
 
 
   navbar:

@@ -5,7 +5,8 @@
         .panel-heading
           - if @user.name
             h2
-              'Profil de
+              '
+              = t'profil.show.title'
               = @user.name
           - else
             h2

@@ -62,6 +62,9 @@ fr:
     update:
       button: "Mettre à jour"
       title: "Mets à jour ton profil"
+      name: "Nom"
+      phone_number: "Téléphone"
+      picture: "Image"
     statistic: "Tes statistiques"
     number_of_fly: "Nombre de fly : "
     improve: "Fais monter tes stats ! "
@@ -81,6 +84,10 @@ fr:
     past_activities: "Tes activités passées avec la team "
     flied_with: "Tu as flyé avec "
     no_fly: "Tu n'as pas encore flyé ??? Dépêche-toi !"
+    show:
+      title: "Profile of "
+
+
 
 
   navbar:
