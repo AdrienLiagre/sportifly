@@ -60,7 +60,10 @@ en:
     title: "Your profile"
     age: "years old"
     age_not_present: "Age missing"
-    update: "Update profile"
+    update:
+      button: "Update profile"
+      title: "Update your profile"
+
     statistic: "Your statistics"
     number_of_fly: "Number of fly : "
     improve: "Improve your stats ! "
@@ -77,6 +80,11 @@ en:
     no_activity: "You haven't planned any activity !"
     create: "Create"
     search: "Search"
+    past_activities: "Your past activities with team "
+    flied_with: "You flied with "
+    no_fly: "You have never flied yet ?? Hurry up !"
+
+
 
   navbar:
     logout: "Log out"

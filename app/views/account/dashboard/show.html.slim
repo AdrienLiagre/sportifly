@@ -42,7 +42,7 @@
                     '
                     = t 'profil.age_not_present'
                 li = @user.phone_number
-              = link_to t('profil.update'), edit_account_dashboard_users_path, class: "btn btn-primary-inverted btn-block"
+              = link_to t('profil.update.button'), edit_account_dashboard_users_path, class: "btn btn-primary-inverted btn-block"
     .col-xs-12.col-sm-6
       .panel.panel-second
         .panel-heading
@@ -147,7 +147,8 @@
       .panel.panel-third
         .panel-heading
           h4
-            'Tes activités passées avec la team
+            '
+            = t'profil.past_activities'
             = @user.group.name
         .panel-content
           - if @bookings_passed.exists?
@@ -157,10 +158,12 @@
                   ul.dashboard--list
                     li = l(booking.activity.date, format: :short)
                     li
-                      'Tu as flyé avec
+                      '
+                      = t 'profil.flied_with'
                       => booking.activity.captain.name
 
-                  = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+                  = link_to t('profil.detail'), group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
           - else
-            p Tu n'as pas encore flyé ??? Dépêche-toi !
-            => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
+            p
+              = t'profil.no_fly'
+            => link_to t('profil.check_the_fly'), group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'

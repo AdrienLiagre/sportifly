@@ -56,10 +56,12 @@ fr:
       price: "Prix par personne : "
 
   profil:
-    title: "Your profile"
+    title: "Ton profil"
     age: "ans"
     age_not_present: "Age non indiqué"
-    update: "Mettre à jour"
+    update:
+      button: "Mettre à jour"
+      title: "Mets à jour ton profil"
     statistic: "Tes statistiques"
     number_of_fly: "Nombre de fly : "
     improve: "Fais monter tes stats ! "
@@ -76,6 +78,9 @@ fr:
     no_activity: "Tu n'as pas encore prévu d'activité !"
     create: "Créer"
     search: "Chercher"
+    past_activities: "Tes activités passées avec la team "
+    flied_with: "Tu as flyé avec "
+    no_fly: "Tu n'as pas encore flyé ??? Dépêche-toi !"
 
 
   navbar:
