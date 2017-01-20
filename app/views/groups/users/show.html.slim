@@ -10,7 +10,8 @@
               = @user.name
           - else
             h2
-              'Profil de
+              '
+              = t'profil.show.title'
               = @user.email
         .panel-content
           .row
@@ -32,24 +33,29 @@
                     'Crew:
                     = @user.crew
                   - else
-                    'Crew non renseigné
+                    '
+                    = t'profil.show.crew'
                 li
                   - if @user.age
                     => @user.age
-                    ' ans
+                    '
+                    = t'profil.show.age_n'
                   - else
-                    'Age non indiqué
+                    '
+                    = t'profil.show.age'
 
     .col-xs-12.col-sm-6
       .panel.panel-second
         .panel-heading
-          h2 Ses statistiques
+          h2
+            = t'profil.show.statistic'
         .panel-content
           - if @user.bookings.any?
             ul.dashboard--list
               li
                 strong
-                  'Nombre de fly :
+                  '
+                  = t'profil.show.number_of_fly'
                 => @user.bookings.count
               - stats_per_user(@user).each do |key, value|
                 li
@@ -58,8 +64,9 @@
                     ':
                   = value
           - else
-            p Pas encore de statistiques disponibles
-            => link_to "Voir les fly !", group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
+            p
+              = t 'profil.show.no_stat'
+            => link_to t('profil.check_the_fly'), group_root_path(@user.group), class: 'btn btn-default btn-primary-inverted'
           li.dashboard--list
             strong
               / ' Tu as
@@ -80,7 +87,8 @@
       .panel.panel-third
         .panel-heading
           h4
-            'Ses prochaines activités avec la team
+            '
+            = t'profil.show.next_activities'
             = @user.group.name
         .panel-content
           - if @user.bookings.planned.confirmed.exists?
@@ -90,20 +98,23 @@
                   ul.dashboard--list
                     li = l(booking.activity.date, format: :short)
                     li
-                      'Fly avec
+                      '
+                      = t'profil.show.fly_with'
                       => booking.activity.captain.name
 
-                  = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+                  = link_to t('profil.detail'), group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
 
           - else
-            p Pas d'activité prévue.
+            p
+              = t'profil.show.no_activity'
 
   .row
     .col-xs-12
       .panel.panel-third
         .panel-heading
           h4
-            'Ses activités passées avec la team
+            '
+            = t'profil.show.past_activities'
             = @user.group.name
       .panel-content
         - if @user.bookings.passed.exists?
@@ -113,9 +124,10 @@
                   ul.dashboard--list
                     li = l(booking.activity.date, format: :short)
                     li
-                      'A flyé avec
+                      '
+                      = t'profil.show.flied_with'
                       => booking.activity.captain.name
 
-                  = link_to 'Détails', group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
+                  = link_to t('profil.detail'), group_activity_path(@user.group, booking.activity ), class: 'btn btn-default'
 
 

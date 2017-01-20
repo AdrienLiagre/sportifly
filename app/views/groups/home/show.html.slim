@@ -42,13 +42,15 @@ header.masthead
                       - if activity.user_booked?(current_user)
                         = button_to t('group.unfly'), group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'btn btn-block btn-red'
                       - elsif activity.full?
-                        p Complet, mais reste là en cas de désistement !
+                        p
+                          = t'activity.show.full'
                       - elsif activity.bookings.find{|booking| booking[:user_id] == current_user.id }.present?
                         .text-center
-                          p Vous êtes invité(e)!
+                          p
+                            = t'activity.show.invitation'
                         .badge-notif-home
                           .i.fa.fa-bell.fa-2x
-                        = link_to "Accepter", group_activity_booking_path(@group, activity, activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-block btn-primary-inverted'
+                        = link_to t('activity.show.accept_invit'), group_activity_booking_path(@group, activity, activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-block btn-primary-inverted'
                       - else
                         = button_to t('group.fly'), group_activity_bookings_path(@group, activity), class: 'btn btn-block btn-primary-inverted'
                 .col-xs-12

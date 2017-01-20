@@ -8,6 +8,10 @@ en:
       welcome: "Welcome on "
       log_in: "Log in"
 
+  helpers:
+    submit:
+      comment:
+        create: "Post my comment"
 
 
   hello: "Hello world"
@@ -55,6 +59,17 @@ en:
       or: "or"
       no_location: "No location chosen yet by"
       price: "Price per person : "
+      invite_2: "Invit this colleague !"
+      invite_3: "This person is already invited !"
+      player_n:
+        one: 'There is one spot available.'
+        other: 'There are %{count} spots available.'
+      full: "Full, but stay there if someone drops out !"
+      invitation: "You are invited !"
+      accept_invit: "Accept"
+      refuse_invit: "Decline"
+      edit: "Edit activity"
+      delete: "Delete activity"
 
   profil:
     title: "Your profile"
@@ -87,7 +102,17 @@ en:
     no_fly: "You have never flied yet ?? Hurry up !"
     show:
       title: "Profile of "
-
+      crew: "Crew not provided"
+      age: "Age not filled"
+      age_n: " years old"
+      statistic: "Statistics"
+      number_of_fly: "Number of fly : "
+      no_stat: "No statistics available yet"
+      next_activities: "Next activities with team "
+      fly_with: "Flying with "
+      no_activity: "No activity planned."
+      past_activities: "Past activities with team "
+      flied_with: "Flied with "
 
   navbar:
     logout: "Log out"
