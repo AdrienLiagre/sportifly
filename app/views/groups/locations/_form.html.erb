@@ -1,15 +1,15 @@
 
 <%= form.error_notification %>
 
-<%= form.input :name, label: :'Nom du club' %>
-<%= form.input :address, label: :'Numéro et rue', label_method: :name, value_method: :id %>
-<%= form.input :city, label: :'Ville' %>
-<%= form.input :postcode %>
+<%= form.input :name, label: t('club.name') %>
+<%= form.input :address, label: t('club.street'), label_method: :name, value_method: :id %>
+<%= form.input :city, label: t('club.city') %>
+<%= form.input :postcode, label: t('club.postcode') %>
 
 <%= form.simple_fields_for :location_sports do |sport_form| %>
  <%= sport_form.association :sport %>
 <% end %>
 
 <%= form.button :button do %>
- <div class="btn btn-activity-creation">Référencer</div>
+ <div class="btn btn-activity-creation"><%= t'club.add'%></div>
 <% end %>

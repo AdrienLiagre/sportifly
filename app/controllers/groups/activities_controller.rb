@@ -47,7 +47,7 @@ module Groups
 
       if @activity.save
         redirect_to group_activity_path(@group, @activity)
-        flash[:notice] = "C'est fait ! Ajoute un lieu de rendez-vous !"
+        flash[:notice] = t'activity.new.notice_location'
       else
         render :new
       end

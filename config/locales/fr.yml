@@ -38,6 +38,8 @@ fr:
     button_newsfeed: "Je veux partager cette folie"
     picture: "Photo"
     content: "Contenu"
+    alert_no_sport: "Désolé, il n'y a rien de prévu pour le moment à %{city} "
+
 
   activity:
     new:
@@ -47,6 +49,7 @@ fr:
       time: "Date et heure"
       price: "Prix par personne"
       creation: "Je crée l'activité"
+      notice_location: "C'est fait ! Ajoute un lieu de rendez-vous !"
     show:
       info: "On parle de quoi?"
       people: "Qui participe?"
@@ -70,6 +73,24 @@ fr:
       refuse_invit: "Refuser"
       edit: "Editer l'activité"
       delete: "Supprimer l'activité"
+
+
+  booking:
+    full: "Activité complète!"
+    already_flied: "Tu fly déjà cette activité"
+    send_invit: "Invitation envoyée"
+    confirm: "Booking confirmé"
+    problem: "Un problème a été détecté"
+
+  club:
+    title: "Ajouter un club pour l'activité "
+    name: "Nom du club"
+    street: "Numéro et rue"
+    city: "Ville"
+    postcode: "Code postal"
+    add: "Référencer"
+
+
 
   profil:
     title: "Ton profil"

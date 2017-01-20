@@ -24,17 +24,17 @@ module Groups
       end
 
       if @activity.full?
-        flash[:error] = 'Activité complète!'
+        flash[:error] = t'booking.full'
       elsif @activity.user_booked?(current_user)
-        flash[:error] = "Tu fly déjà cette activité"
+        flash[:error] = t'booking.already_flied'
       elsif @activity.save
         if params[:user]
-          flash[:notice] = "Invitation envoyée"
+          flash[:notice] = t'booking.send_invit'
         else
-          flash[:notice] = "Booking confirmé"
+          flash[:notice] = t'booking.confirm'
         end
       else
-        flash[:error] = 'Un problème a été détecté'
+        flash[:error] = t'booking.problem'
       end
 
       if params[:referral] == 'activity-page'

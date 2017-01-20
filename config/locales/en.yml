@@ -27,6 +27,8 @@ en:
     sub_title_two_secondbloc: "2. I join or suggest a sport activity"
     sub_title_two_thirdbloc: "3. I find new patners and get know John from comptability"
 
+
+
   group:
     creation: "Create an activity"
     next_sport_title: "Next sport activities"
@@ -38,6 +40,7 @@ en:
     button_newsfeed: "I want to share this dope"
     picture: "Picture"
     content: "Content"
+    alert_no_sport: "Sorry, so far there is no activity planned in %{city}"
 
   activity:
     new:
@@ -47,6 +50,7 @@ en:
       time: "Day and time"
       price: "Price per person"
       creation: "I create the activity"
+      notice_location: "Done, add a location to the activity!"
     show:
       info: "What is it about?"
       people: "Who is joining?"
@@ -70,6 +74,23 @@ en:
       refuse_invit: "Decline"
       edit: "Edit activity"
       delete: "Delete activity"
+
+  booking:
+    full: "Activity full!"
+    already_flied: "You have already flied this activity"
+    send_invit: "Invitation sent"
+    confirm: "Booking confirmed"
+    problem: "Something is wrong"
+
+  club:
+    title: "Add a club for activity "
+    name: "Name of the club"
+    street: "Address"
+    city: "City"
+    postcode: "Postcode"
+    add: "Add"
+
+
 
   profil:
     title: "Your profile"

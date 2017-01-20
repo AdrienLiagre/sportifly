@@ -14,7 +14,7 @@ module Groups
         @activities = @activities.joins(:location).where(locations: { id: @locations.map(&:id) })
 
         if @activities.empty?
-          flash[:alert] = "Désolé, il n'y a rien de prévu à #{@city} pour le moment !"
+          flash[:alert] = t('group.alert_no_sport', city: @city)
           redirect_to group_root_path(current_user.group)
         end
       end
