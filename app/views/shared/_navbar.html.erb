@@ -1,10 +1,7 @@
 <% if current_user %>
-  <nav class="navbar navbar-static">
+  <nav id="mainNav" class="navbar-default x-navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <%= link_to group_root_path(current_user.group), class: 'navbar-brand hover' do%>
-          <%= image_tag 'logoofficielinversecolorblueoff.png', class: "size-logo"%>
-        <%end%>
         <%= link_to group_root_path(current_user.group), class: 'navbar-brand hover' do%>
           <b> Sportifly </b>
         <% end %>
@@ -16,10 +13,14 @@
           <% end %>
         </a>
       </div>
-      <div class="navbar-collapse collapse">
+
+
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <%= link_to t('group.creation'), new_group_activity_path(current_user.group), class: 'hover' %>
+            <%= link_to t('group.creation'), new_group_activity_path(current_user.group), class: 'text-navbar btn-primary-inverted btn-activity' %>
           </li>
           <li class='visible-xs'>
             <%= link_to account_dashboard_path do %>
@@ -34,7 +35,7 @@
             <% if user_signed_in? %>
               <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete %>
             <% else %>
-              <%= link_to 'Log in', new_user_session_path %>
+              <%= link_to 'Log in', new_user_session_path, class: 'text-navbar' %>
             <% end %></li>
           <li class="divider"></li>
           <li class='visible-xs'>
@@ -55,8 +56,9 @@
               <%end%>
             <%end%>
           </li>
-
         </ul>
+
+
 
         <ul class="nav navbar-right navbar-nav hidden-xs">
           <li class="dropdown">
@@ -80,7 +82,7 @@
               <li><% if user_signed_in? %>
                     <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete %>
                   <% else %>
-                    <%= link_to 'Log in', new_user_session_path %>
+                    <%= link_to 'Log in',  new_user_session_path, class: 'text-navbar' %>
                   <% end %></li>
               <li class="divider"></li>
               <li><%= link_to t('navbar.invit'), group_users_path(current_user.group) %></li>
@@ -102,7 +104,6 @@
               <%end%>
             <%end%>
          </li>
-
         </ul>
       </div>
     </div>
@@ -110,12 +111,10 @@
 
 <% else %> <!-- /.navbar if not signed-in-->
 
-  <nav class="navbar navbar-static">
+<nav id="mainNav" class=" navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-          <%= link_to root_path, class: 'navbar-brand hover' do%>
-            <%= image_tag 'logoofficielinversecolorblueoff.png', class: "size-logo"%>
-          <%end%>
+
           <%= link_to root_path, class: 'navbar-brand hover' do%>
             <b> Sportifly </b>
           <% end %>
@@ -124,10 +123,24 @@
         </a>
       </div>
 
-      <div class="navbar-collapse collapse">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+          <% if current_page?(root_path) %>
           <li>
-            <%= link_to 'Log in', new_user_session_path, class: 'hover' %>
+              <a class="page-scroll" href="#services">Services</a>
+          </li>
+          <li>
+              <a class="page-scroll" href="#about">About</a>
+          </li>
+          <li>
+              <a class="page-scroll" href="#portfolio">Portfolio</a>
+          </li>
+          <li>
+              <a class="page-scroll" href="#contact">Contact</a>
+          </li>
+          <% end %>
+          <li>
+            <%= link_to 'Log in', new_user_session_path, class: 'hover text-navbar' %>
           </li>
 
           <li>
@@ -145,11 +158,10 @@
               <%end%>
             <%end%>
           </li>
-
-
         </ul>
       </div>
     </div>
   </nav>
 <% end %>
+
 

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_filter :authenticate_user!
+  layout "creative"
 
   def home
     if user_signed_in?
