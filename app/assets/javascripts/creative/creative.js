@@ -51,3 +51,13 @@ $(document).ready(function(){
 
 })
 
+jQuery(document).ready(function($){
+      $('.x-navbar-fixed-top').css("background-color", "transparent");
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 600) {
+      $('.x-navbar-fixed-top').css("background-color", "#fff");
+    } else {
+      $('.x-navbar-fixed-top').css("background-color", "transparent");
+    }
+  });
+});

@@ -90,10 +90,10 @@ h3.highlight  {
     color:#fff;
     padding-left:20px;
     padding-right:20px;
-    border-left:1px solid #66BBCC;
+    border-left:0px solid #66BBCC;
 }
 .navbar-nav > li:last-child > a {
-    border-right:1px solid #66BBCC;
+    border-right:0px solid #66BBCC;
 }
 
 .navbar-nav li a:hover {
