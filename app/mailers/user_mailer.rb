@@ -19,6 +19,11 @@ class UserMailer < ApplicationMailer
     mail to: email, subject: "Invitation à rejoindre Sportifly !"
   end
 
+  def contact(contact)
+    @contact = contact
+    mail to: @contact.email, from:"adrien.liagre@edhec.com", subject: "test"
+  end
+
   def activity(email, user, activity, group)
     @greeting = "Chanceux !"
     @user = user

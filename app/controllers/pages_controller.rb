@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   layout "creative"
 
   def home
+    @contact = Contact.new
     if user_signed_in?
       redirect_to group_root_path(current_user.group)
     end
@@ -18,5 +19,19 @@ class PagesController < ApplicationController
     end
 
   end
+
+  def contact
+    @contact = Contact.new(params[:contact])
+    @contact.request = request
+    if @contact.valid?
+        UserMailer.contact(@contact).deliver_now
+        flash.now[:error] = nil
+        redirect_to root_path
+    else
+      flash[:alert] = 'Cannot send message'
+      render :home
+    end
+  end
+
 
 end

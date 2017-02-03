@@ -1,6 +1,10 @@
 ActiveAdmin.register Group do
   permit_params :name, :description, :email_domain_name, :slug, :picture
-
+  controller do
+   def find_resource
+     scoped_collection.friendly.find(params[:id])
+   end
+  end
   form html: { enctype: "multipart/form-data" } do |f|
     f.inputs "Details" do
       f.input :name

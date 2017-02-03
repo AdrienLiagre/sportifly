@@ -30,6 +30,7 @@ gem 'sinatra'
 gem 'slim'
 gem 'uglifier'
 gem 'postmark-rails'
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
 gem 'merit'
 gem 'acts_as_votable', '~> 0.10.0'
