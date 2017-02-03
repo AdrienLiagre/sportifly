@@ -13,6 +13,12 @@ fr:
       comment:
         create: "Poster le commentaire"
 
+  contact:
+    title: "Contactez nous pour la création du groupe de votre entreprise"
+    name: "Nom"
+    button: "Envoyer le message"
+
+
   hello: "Hello world"
   home:
     welcome: "Bienvenue sur"
