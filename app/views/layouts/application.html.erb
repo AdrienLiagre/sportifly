@@ -32,6 +32,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= favicon_link_tag 'flyviconoff.png' %>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91497604-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -41,7 +51,7 @@
 
 
 
-    <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
 
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC-Ugr5CLM31RnMsQb4om2p9M4ajl1UTBs" %>
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
