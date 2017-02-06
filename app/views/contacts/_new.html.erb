@@ -8,7 +8,9 @@
         <br>
         <%= f.input :email, :required => true %>
         <br>
-        <%= f.input :message, :as => :text, :required => true %>
+        <%= f.input :phone_number, :required => true %>
+        <br>
+        <%= f.input :message, :as => :text, :input_html => {:style=> 'height: 95px'}, :required => true %>
         <div class= "hidden">
           <%= f.input :nickname, :hint => 'Leave this field blank!' %>
         </div>

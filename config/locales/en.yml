@@ -22,14 +22,24 @@ en:
   home:
     welcome: "Welcome on"
     sub_title: "The sport plateform that demystifies professional relationships"
+    demo: "Request a demo"
+    create_links: "Create links"
+    create_links_text: "Meet your fellow colleagues and develop your network"
+    sub_title_firstbloc_title: "Pratice sport"
     sub_title_firstbloc: "Practice your favorite sport, find partners within your company or school, and meet them for some fun!"
+    sub_title_secondbloc_text: "Totally secure"
     sub_title_secondbloc: "Our platform is totally secured. Your identified with your email address. Only members of your community have access to your meeting proposals or can invite you"
+    sub_title_thirdbloc_text: "Worldwide"
     sub_title_thirdbloc: "Have a worldwide access to sport activities from your community! Meet expatriates during your trips!"
     sub_title_two: "Create connections and unwind yourself !"
     button_subscription: "Great, i sign in!"
-    sub_title_two_firstbloc: "1. I sign in and i am being redirected to the group of my company or school"
-    sub_title_two_secondbloc: "2. I join or suggest a sport activity"
-    sub_title_two_thirdbloc: "3. I find new patners and get know John from comptability"
+    sub_title_two_firstbloc: "1. I sign in with my professional address email"
+    sub_title_two_secondbloc: "2. On sportifly, i create an activity: foot, yoga, badminton"
+    sub_title_two_thirdbloc: "3. Or i join an activity from one of my colleague"
+    sub_title_two_text: "Next thursday, with my colleagues registered on Sportifly, i will relax with the yoga activity after the meeting"
+    creation_group: "Contact us to create your company's group"
+    creation_group_done: "You have already your group created !"
+    how_work: "How does it work ?"
 
 
 

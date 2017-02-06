@@ -21,7 +21,7 @@ class UserMailer < ApplicationMailer
 
   def contact(contact)
     @contact = contact
-    mail to: @contact.email, from:"adrien.liagre@edhec.com", subject: "test"
+    mail to: "arthur@sportifly.fr", from: @contact.email, subject: "test"
   end
 
   def activity(email, user, activity, group)

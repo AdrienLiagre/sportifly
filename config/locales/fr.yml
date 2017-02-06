@@ -23,15 +23,24 @@ fr:
   home:
     welcome: "Bienvenue sur"
     sub_title: "La plateforme de sport qui démystifie les relations professionnelles"
+    demo: "En savoir plus"
+    create_links: "Créer des liens"
+    create_links_text: "Rencontrer ses collègues et développer son réseau"
+    sub_title_firstbloc_title: "Faire du sport"
     sub_title_firstbloc: "Pratiquez votre activité sportive, trouvez des partenaires au sein de l'entreprise et réunissez-les en quelques clics!"
+    sub_title_secondbloc_text: "Totalement sécurisée"
     sub_title_secondbloc: "Notre plateforme est sécurisée, nous vous identifions avec votre adresse mail. Seuls les membres de votre communauté ont accès à vos propositions et peuvent vous inviter"
+    sub_title_thirdbloc_text: "Mondiale"
     sub_title_thirdbloc: "Accédez à des activités n'importe où dans le monde, rencontrez des expatriés lors de vos déplacements !"
     sub_title_two: "Créez du lien et défoulez vous après ce meeting !"
     button_subscription: "Ok, je m'inscris!"
-    sub_title_two_firstbloc: "1. Je m'inscris et suis redirigé sur le groupe associé à mon entreprise ou école"
-    sub_title_two_secondbloc: "2. Je rejoins ou propose une activité sportive"
-    sub_title_two_thirdbloc: "3. Je trouve de nouveaux partenaires et fais connaissance avec Régis de la compta"
-
+    sub_title_two_firstbloc: "1. Je m'inscris avec mon adresse mail professionelle"
+    sub_title_two_secondbloc: "2. Sur sportifly, je crée une activité, foot, yoga, badminton"
+    sub_title_two_thirdbloc: "3. Ou je rejoins une activité d'un ou une de mes collègues"
+    sub_title_two_text: "Jeudi prochain, avec mes collègues inscrits sur Sportifly, je me détends au yoga parès notre réunion"
+    creation_group: "Contactez nous pour la création de votre groupe"
+    creation_group_done: "Votre groupe est déjà créé"
+    how_work: "Comment ça marche ?"
 
   group:
     creation: "Créer une activité"
