@@ -26,11 +26,15 @@ class PagesController < ApplicationController
     if @contact.valid?
         UserMailer.contact(@contact).deliver_now
         flash.now[:error] = nil
-        redirect_to root_path
+        redirect_to :controller => 'pages', :action => 'create'
     else
       flash[:alert] = 'Cannot send message'
       render :home
     end
+  end
+
+  def create
+
   end
 
 

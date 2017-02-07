@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
     post '/contact', to: 'pages#contact'
+    get '/pages', to: 'pages#create'
 
     namespace :account do
       resource :dashboard, only: :show, controller: 'dashboard' do
