@@ -1,7 +1,7 @@
 <section id="contact">
   <div align="center">
     <h3><%= t'contact.title'%></h3>
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3">
       <%= simple_form_for @contact, :html => {:class => 'form-horizontal' }, url: "/contact#contact" do |f| %>
         <br>
         <%= f.input :name, label: t('contact.name'), :required => true %>
