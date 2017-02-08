@@ -20,9 +20,15 @@ en:
     sent: "Thanks you for the message, we will reach you back as soon as possible"
     back: "Come back on"
 
+  navbar:
+    services: "Services"
+    about: "About"
+
+
   hello: "Hello world"
   home:
     welcome: "Welcome on"
+    about: "About"
     sub_title: "The sport plateform that demystifies professional relationships"
     demo: "Request a demo"
     create_links: "Create links"

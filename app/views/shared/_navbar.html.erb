@@ -125,12 +125,11 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <% if current_page?(root_path) %>
           <li>
-              <a class="page-scroll" href="#services">Services</a>
+              <a class="page-scroll" href="#services"><%= t('navbar.services')%> </a>
           </li>
           <li>
-              <a class="page-scroll" href="#about">About</a>
+              <a class="page-scroll" href="#about"><%= t('home.about')%></a>
           </li>
 <!--           <li>
               <a class="page-scroll" href="#portfolio">Portfolio</a>
@@ -138,7 +137,6 @@
           <li>
               <a class="page-scroll" href="#contact">Contact</a>
           </li>
-          <% end %>
           <li>
             <%= link_to 'Log in', new_user_session_path, class: 'hover text-navbar' %>
           </li>

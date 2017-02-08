@@ -20,10 +20,14 @@ fr:
     sent: "Merci pour votre message, nous vous recontacterons dès que possible"
     back: "Retourner sur"
 
+  navbar:
+    services: "Services"
+    about: "A propos"
 
   hello: "Hello world"
   home:
     welcome: "Bienvenue sur"
+    about: "A propos"
     sub_title: "La plateforme de sport qui démystifie les relations professionnelles"
     demo: "En savoir plus"
     create_links: "Créer des liens"
@@ -39,7 +43,7 @@ fr:
     sub_title_two_firstbloc: "1. Je m'inscris avec mon adresse mail professionelle"
     sub_title_two_secondbloc: "2. Sur sportifly, je crée une activité, foot, yoga, badminton"
     sub_title_two_thirdbloc: "3. Ou je rejoins une activité d'un ou une de mes collègues"
-    sub_title_two_text: "Jeudi prochain, avec mes collègues inscrits sur Sportifly, je me détends au yoga parès notre réunion"
+    sub_title_two_text: "Jeudi prochain, avec mes collègues inscrits sur Sportifly, je me détends au yoga après notre réunion"
     creation_group: "Créez votre groupe"
     creation_group_done: "Votre groupe est déjà créé"
     how_work: "Comment ça marche ?"
