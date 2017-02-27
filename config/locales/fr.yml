@@ -35,9 +35,9 @@ fr:
     create_links_text: "Rencontrer ses collègues et développer son réseau"
     sub_title_firstbloc_title: "Faire du sport"
     sub_title_firstbloc: "Pratiquez votre activité sportive, trouvez des partenaires au sein de l'entreprise et réunissez-les en quelques clics!"
-    sub_title_secondbloc_text: "Totalement sécurisée"
-    sub_title_secondbloc: "Notre plateforme est sécurisée, nous vous identifions avec votre adresse mail. Seuls les membres de votre communauté ont accès à vos propositions et peuvent vous inviter"
-    sub_title_thirdbloc_text: "Mondiale"
+    sub_title_secondbloc_text: "En sécurité"
+    sub_title_secondbloc: "Notre plateforme est sécurisée. Seuls les membres de votre communauté ont accès à vos propositions et peuvent vous inviter"
+    sub_title_thirdbloc_text: "Partout dans le monde"
     sub_title_thirdbloc: "Accédez à des activités n'importe où dans le monde, rencontrez des expatriés lors de vos déplacements !"
     sub_title_two: "Créez du lien et défoulez vous après ce meeting !"
     button_subscription: "Ok, je m'inscris!"
@@ -48,6 +48,8 @@ fr:
     creation_group: "Créez votre groupe"
     creation_group_done: "Votre groupe est déjà créé"
     how_work: "Comment ça marche ?"
+    portfolio: "Ils utilisent Sportifly"
+
 
   group:
     creation: "Créer une activité"
