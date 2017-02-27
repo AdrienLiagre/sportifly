@@ -8,7 +8,7 @@
         <br>
         <%= f.input :email, :required => true %>
         <br>
-        <%= f.input :phone_number, :required => true %>
+        <%= f.input :phone_number, label: t('contact.tel'), :required => true %>
         <br>
         <%= f.input :message, :as => :text, :input_html => {:style=> 'height: 95px'}, :required => true %>
         <div class= "hidden">

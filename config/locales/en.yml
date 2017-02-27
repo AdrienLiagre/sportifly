@@ -19,6 +19,7 @@ en:
     button: "Send message"
     sent: "Thanks you for the message, we will reach you back as soon as possible"
     back: "Come back on"
+    tel: "Phone number"
 
   navbar:
     services: "Services"
