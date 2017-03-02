@@ -1,5 +1,5 @@
 # config/meta.yml
 default_title: "Sportifly"
 meta_description: "Sport et fun pour l'afterwork !"
-meta_image: "backgroundhome.png" # Une image dans votre dossier app/assets/images/
+meta_image: "logo_fdblanc.png" # Une image dans votre dossier app/assets/images/
 twitter_account: "@TheoLemaitre" #indispensable pour les Twitter Cards
