@@ -82,7 +82,7 @@
               <li><% if user_signed_in? %>
                     <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete %>
                   <% else %>
-                    <%= link_to 'Log in',  new_user_session_path, class: 'text-navbar' %>
+                    <%= link_to t('users.sign_in.log_in'),  new_user_session_path, class: 'text-navbar' %>
                   <% end %></li>
               <li class="divider"></li>
               <li><%= link_to t('navbar.invit'), group_users_path(current_user.group) %></li>
@@ -141,7 +141,7 @@
               <a target="_blank" href="https://medium.com/@sportifly_">Blog</a>
           </li>
           <li>
-            <%= link_to 'Log in', new_user_session_path, class: 'hover text-navbar' %>
+            <%= link_to t('users.sign_in.log_in'), new_user_session_path, class: 'hover text-navbar' %>
           </li>
 
           <li>
@@ -181,7 +181,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <%= link_to 'Log in', new_user_session_path, class: 'hover text-navbar' %>
+            <%= link_to t('users.sign_in.log_in'), new_user_session_path, class: 'hover text-navbar' %>
           </li>
 
           <li>
