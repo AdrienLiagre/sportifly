@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def check_group_domain_name
     unless Group.find_by(email_domain_name: Mail::Address.new(params[:user][:email]).domain)
-      flash[:notice] = "Votre groupe n'est pas créé, contactez nous"
+      flash[:notice] = t('users.sign_in.invalid')
     end
   end
 
