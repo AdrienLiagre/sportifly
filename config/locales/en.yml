@@ -30,8 +30,10 @@ en:
   home:
     welcome: "Welcome on"
     about: "About"
-    sub_title: "The sport platform that demystifies professional relationships"
+    sub_title: "Bound with your colleagues through sports"
+    demo_text: "Create your community"
     demo: "Request a demo"
+    sign_in_text: "Your community is live"
     create_links: "Create links"
     create_links_text: "Meet your fellow colleagues and develop your network"
     sub_title_firstbloc_title: "Pratice sport"

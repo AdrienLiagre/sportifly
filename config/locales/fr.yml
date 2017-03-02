@@ -29,8 +29,10 @@ fr:
   home:
     welcome: "Bienvenue sur"
     about: "A propos"
-    sub_title: "La plateforme de sport qui démystifie les relations professionnelles"
+    sub_title: "Créer du lien au travail, grâce au sport"
+    demo_text: "Inscrivez votre communauté"
     demo: "En savoir plus"
+    sign_in_text: "Votre communauté fly déjà"
     create_links: "Créer des liens"
     create_links_text: "Rencontrer ses collègues et développer son réseau"
     sub_title_firstbloc_title: "Faire du sport"
