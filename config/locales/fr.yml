@@ -7,6 +7,16 @@ fr:
     sign_in:
       welcome: "Bienvenue sur "
       log_in: "Se connecter"
+      sign_up: "Inscription"
+      sign_up_2: "S'inscrire"
+      sign_up_warning: "Pensez à vous connecter avec votre email professionnel"
+      password: "Mot de passe"
+      password_remember: "Se rappeler"
+      password_confirmation: "Confirmer le mot de passe"
+      forgot_password: "Mot de passe oublié?"
+      confirmation: "Vous n'avez pas reçu l'email de confirmation?"
+      invalid: "Utilisez votre email professionnel ex: @microsoft.fr . Si votre groupe n'est pas créé, contactez nous!"
+
 
   helpers:
     submit:
@@ -34,13 +44,13 @@ fr:
     demo: "En savoir plus"
     sign_in_text: "Votre communauté fly déjà"
     create_links: "Créer des liens"
-    create_links_text: "Rencontrer ses collègues et développer son réseau"
+    create_links_text: "Rencontrez votre communauté étudiante ou professionelle et développez votre réseau"
     sub_title_firstbloc_title: "Faire du sport"
-    sub_title_firstbloc: "Pratiquez votre activité sportive, trouvez des partenaires au sein de l'entreprise et réunissez-les en quelques clics!"
+    sub_title_firstbloc: "Pratiquez votre activité sportive, trouvez des partenaires et réunissez-les en quelques clics"
     sub_title_secondbloc_text: "En sécurité"
-    sub_title_secondbloc: "Notre plateforme est sécurisée. Seuls les membres de votre communauté ont accès à vos propositions et peuvent vous inviter"
+    sub_title_secondbloc: "La plateforme est sécurisée. Seuls les membres de votre communauté ont accès à vos propositions"
     sub_title_thirdbloc_text: "Partout dans le monde"
-    sub_title_thirdbloc: "Accédez à des activités n'importe où dans le monde, rencontrez des expatriés lors de vos déplacements !"
+    sub_title_thirdbloc: "Accédez à des activités n'importe où dans le monde, rencontrez des expatriés lors de vos déplacements"
     sub_title_two: "Créez du lien et défoulez vous après ce meeting !"
     button_subscription: "Ok, je m'inscris!"
     sub_title_two_firstbloc: "1. Je m'inscris avec mon adresse mail professionelle"

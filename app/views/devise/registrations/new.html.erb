@@ -2,20 +2,23 @@
 <div class="container main-content">
   <div class="col-sm-4 col-sm-offset-4">
 
-    <h2>Sign up</h2>
+    <h2><%= t('users.sign_in.sign_up') %></h2>
+    <div class="panel panel-sign">
+      <h5><%= t('users.sign_in.sign_up_warning') %></h5>
+    </div>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :name, required: true, autofocus: true %>
+        <%= f.input :name, label: t('contact.name'), required: true, autofocus: true %>
         <%= f.input :email, required: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
+        <%= f.input :password, label: t('users.sign_in.password'), required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        <%= f.input :password_confirmation, label: t('users.sign_in.password_confirmation'),required: true %>
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+        <%= f.button :submit, t('users.sign_in.sign_up') %>
       </div>
     <% end %>
 

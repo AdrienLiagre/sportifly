@@ -7,6 +7,15 @@ en:
     sign_in:
       welcome: "Welcome on "
       log_in: "Log in"
+      sign_up: "Sign up"
+      sign_up_2: "Sign up"
+      sign_up_warning: "Sign up with your professional email address"
+      password: "Password"
+      password_remember: "Remember me"
+      password_confirmation: "Password confirmation"
+      forgot_password: "Forgot your password?"
+      confirmation: "Didn't receive confirmation instructions?"
+      invalid: "Use your professional email address ex: @microsoft.com . If your group is not created yet, contact us!"
 
   helpers:
     submit:
@@ -30,7 +39,7 @@ en:
   home:
     welcome: "Welcome on"
     about: "About"
-    sub_title: "Bound with your colleagues through sports"
+    sub_title: "Bond with your colleagues through sports"
     demo_text: "Create your community"
     demo: "Request a demo"
     sign_in_text: "Your community is live"
