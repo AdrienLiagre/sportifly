@@ -109,6 +109,8 @@ fr:
       refuse_invit: "Refuser"
       edit: "Editer l'activité"
       delete: "Supprimer l'activité"
+      deciplus: "N'oublie pas de réserver le créneau sur "
+
 
 
   booking:

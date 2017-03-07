@@ -109,6 +109,7 @@ en:
       refuse_invit: "Decline"
       edit: "Edit activity"
       delete: "Delete activity"
+      deciplus: "Don't forget to book with "
 
   booking:
     full: "Activity full!"
