@@ -37,12 +37,13 @@
               => link_to group_user_path(@group, @activity.captain) do
                 => @activity.captain.name
         li
-        - if @activity.location.address.capitalize.include?("rue verte")
-            strong id="color-deciplus"
-              ' Nota bene:
-            = t 'activity.show.deciplus'
-            '
-            a href= 'http://resa.edhec.deciplus.pro/index.html' target='_blank' Deciplus
+        - if @activity.location
+          - if @activity.location.address.capitalize.include?("rue verte")
+              strong id="color-deciplus"
+                ' Nota bene:
+              = t 'activity.show.deciplus'
+              '
+              a href= 'http://resa.edhec.deciplus.pro/index.html' target='_blank' Deciplus
 
         li
           strong
