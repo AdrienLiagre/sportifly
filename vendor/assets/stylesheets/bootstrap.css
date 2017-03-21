@@ -6778,6 +6778,12 @@ button.close {
   padding-bottom: 33.25%;
   max-width: 59%;
 }
+
+.video-taille {
+  padding-bottom: 33.25%;
+  max-width: 60%;
+}
+
 .embed-responsive-4by3 {
   padding-bottom: 75%;
 }
