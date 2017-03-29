@@ -9,7 +9,7 @@ ActiveAdmin.register Group do
     f.inputs "Details" do
       f.input :name
       f.input :description
-      f.input :email_domain_name
+      f.input :email_domain_name, uniqueness: true
       f.input :slug
       f.input :picture, as: :file
     end
