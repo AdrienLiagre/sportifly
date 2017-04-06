@@ -2,6 +2,18 @@ fr:
   devise:
     sessions:
       signed_in: Nous sommes ravis de te revoir
+      change_password: Changer son mot de passe
+      edit: Editer son compte
+      password: Mot de passe
+      password_confirmation: Confirmer le mot de passe
+      password_confirmation_hint: Laissez le champ vide si vous ne souhaitez pas le modifier
+      current_password: Mot de passe actuel
+      current_password_hint: Nous avons besoin de votre mot de passe actuel pour confirmer les changements
+      update_password: Mettre à jour
+      cancel_account: Supprimer le compte
+      unhappy: Pas content ?
+      delete_confirm: Etes vous sur(e) ?
+      back: Retour
 
   users:
     sign_in:

@@ -17,4 +17,5 @@
         .form-actions
           = f.submit class: 'btn btn-primary btn-block', value: t('profil.update.button')
       .text-center
-        = link_to "Change your password", edit_user_registration_path, class: "change-password"
+      br
+        = link_to t('devise.sessions.change_password'), edit_user_registration_path, class: "change-password btn btn-primary btn-block"

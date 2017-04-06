@@ -2,6 +2,18 @@ en:
   devise:
     sessions:
       signed_in: We are happy to see you again
+      change_password: Change your password
+      edit: Edit your account
+      password: Password
+      password_confirmation: Password confirmation
+      password_confirmation_hint: leave it blank if you don't want to change it
+      current_password: Current password
+      current_password_hint: we need your current password to confirm your changes
+      update_password: Update
+      cancel_account: Cancel my account
+      unhappy: Unhappy ?
+      delete_confirm: Are you sure ?
+      back: Back
 
   users:
     sign_in:
