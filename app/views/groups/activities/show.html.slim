@@ -1,3 +1,7 @@
+= content_for :meta_title, "#{@activity.name} est sur #{DEFAULT_META["meta_product_name"]}"
+= content_for :meta_description, "#{@activity.description} est sur #{DEFAULT_META["meta_product_name"]}"
+= content_for :meta_image, sport_picture(@activity.sport)
+
 .main-banner-sport--small
   = sport_picture(@activity.sport)
   .main-banner-sport--content
