@@ -1,6 +1,4 @@
-= content_for :meta_title, @activity.name
-= content_for :meta_description, @activity.description
-= content_for :meta_image, sport_picture(@activity.sport.picture)
+= render 'meta'
 
 .main-banner-sport--small
   = sport_picture(@activity.sport)
