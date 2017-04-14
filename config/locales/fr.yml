@@ -83,10 +83,19 @@ fr:
     searchbar: "Où veux-tu flyer ?"
     filter: "Tu peux trier par sport"
     allsports: "Tous les sports"
+    newsfeed: "Le vestiaire"
     button_newsfeed: "Je veux partager cette folie"
     picture: "Photo"
     content: "Contenu"
     alert_no_sport: "Désolé, il n'y a rien de prévu pour le moment à %{city} "
+    invite: "Invite tes collègues de la team "
+    invite_two: "à s'inscire sur Sportifly !"
+    invite_placeholder: "Inviter un(e) collègue où ami(e) sur Sportifly, renseigner son email pro"
+    invite_button: "Inviter"
+
+  invitation:
+    contact: "Nous contacter"
+
 
 
   activity:

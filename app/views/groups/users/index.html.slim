@@ -15,14 +15,16 @@ br
   .col-xs-12.col-sm-6.col-sm-offset-3
     .text-center
       h2
-        'Invite tes amis de la Team
+        '
+        = t'group.invite'
         => current_user.group.name
-        ' à s'inscrire sur Sportifly !
+        '
+        = t'group.invite_two'
     = form_tag group_users_path(current_user.group), :method => :get
         .input-group
-          = text_field_tag :email, params[:email], class: "form-control", placeholder: "Entre le mail de ton ami(e)"
+          = text_field_tag :email, params[:email], class: "form-control", placeholder: t('group.invite_placeholder')
           span.input-group-btn
-            = submit_tag "Inviter", class: 'btn btn-primary-inverted'
+            = submit_tag t('group.invite_button'), class: 'btn btn-primary-inverted'
 
 br
 .row
@@ -38,7 +40,8 @@ br
   .col-xs-12.col-md-6
     .panel.panel-first
       .panel-heading.text-center
-        h2 Nous contacter
+        h2
+          = t ('invitation.contact')
       .panel-body.panel-body-padding.text-center
         h3 bonjour@sportifly.fr
         br

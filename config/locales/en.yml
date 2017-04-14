@@ -84,10 +84,18 @@ en:
     searchbar: "Where do you to fly?"
     filter: "You can sort by sports"
     allsports: "All sports"
+    newsfeed: "Newsfeed"
     button_newsfeed: "I want to share this dope"
     picture: "Picture"
     content: "Content"
     alert_no_sport: "Sorry, so far there is no activity planned in %{city}"
+    invite: "Invite your colleagues from "
+    invite_two: "to join you on Sportifly !"
+    invite_placeholder: "Invite a colleague or friend on Sportifly. Write down the email"
+    invite_button: "Invite"
+
+  invitation:
+    contact: "To contact us"
 
   activity:
     new:

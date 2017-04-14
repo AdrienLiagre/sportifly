@@ -16,11 +16,11 @@ module Groups
         if @email.include?(@group.name.downcase)
           UserMailer.invitation(@email, @user).deliver_now
           flash[:notice] = "Invitation envoyée"
-          redirect_to group_users_path(@group)
+          redirect_to :back
 
         else
           flash[:alert] = "Erreur, vérifiez l'adresse email"
-          redirect_to group_users_path(@group)
+          redirect_to :back
         end
 
       end
