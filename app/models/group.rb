@@ -13,6 +13,6 @@ class Group < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
-  validates :email_domain_name, presence: true, input_html: { multiple: true }
+  validates :email_domain_name, presence: true
 end
 
