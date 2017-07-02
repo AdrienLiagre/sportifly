@@ -9,14 +9,14 @@ class UserMailer < ApplicationMailer
     @user = @booking.user
     @greeting = "Hello !"
 
-    mail to: @user.email, subject: "C'est l'heure du Sportifly !"
+    mail to: @user.email, subject: "C'est l'heure du Meetemps !"
   end
 
   def invitation(email, user)
     @greeting = "Hello !"
     @user = user
 
-    mail to: email, subject: "Invitation à rejoindre Sportifly !"
+    mail to: email, subject: "Invitation à rejoindre Meetemps !"
   end
 
   def contact(contact)
@@ -30,6 +30,6 @@ class UserMailer < ApplicationMailer
     @activity = activity
     @group = group
 
-    mail to: email, subject: "Tu es invité(e) à flyer une activité sur Sportifly!"
+    mail to: email, subject: "Tu es invité(e) à flyer une activité sur Meetemps!"
   end
 end

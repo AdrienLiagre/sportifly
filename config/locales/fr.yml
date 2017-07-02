@@ -66,13 +66,13 @@ fr:
     sub_title_two: "Créez du lien et défoulez vous après ce meeting !"
     button_subscription: "Ok, je m'inscris!"
     sub_title_two_firstbloc: "1. Je m'inscris avec mon adresse mail professionelle"
-    sub_title_two_secondbloc: "2. Sur sportifly, je crée une activité, foot, yoga, badminton"
+    sub_title_two_secondbloc: "2. Sur Meetemps, je crée une activité, foot, yoga, badminton"
     sub_title_two_thirdbloc: "3. Ou je rejoins une activité d'un ou une de mes collègues"
-    sub_title_two_text: "Jeudi prochain, avec mes collègues inscrits sur Sportifly, je me détends au yoga après notre réunion"
+    sub_title_two_text: "Jeudi prochain, avec mes collègues inscrits sur Meetemps, je me détends au yoga après notre réunion"
     creation_group: "Créez votre groupe"
     creation_group_done: "Votre groupe est déjà créé"
     how_work: "Comment ça marche ?"
-    portfolio: "Ils utilisent Sportifly"
+    portfolio: "Ils utilisent Meetemps"
 
 
   group:
@@ -89,8 +89,8 @@ fr:
     content: "Contenu"
     alert_no_sport: "Désolé, il n'y a rien de prévu pour le moment à %{city} "
     invite: "Invite tes collègues de la team "
-    invite_two: "à s'inscire sur Sportifly !"
-    invite_placeholder: "Inviter un(e) collègue où ami(e) sur Sportifly, renseigner son email pro"
+    invite_two: "à s'inscire sur Meetemps !"
+    invite_placeholder: "Inviter un(e) collègue où ami(e) sur Meetemps, renseigner son email pro"
     invite_button: "Inviter"
 
   invitation:
