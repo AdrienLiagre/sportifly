@@ -21,7 +21,7 @@ class UserMailer < ApplicationMailer
 
   def contact(contact)
     @contact = contact
-    mail to: "adrien@meetemps.io", subject: "test"
+    mail to: "bonjour@sportifly.fr", subject: "test"
   end
 
   def activity(email, user, activity, group)
@@ -32,12 +32,5 @@ class UserMailer < ApplicationMailer
 
     mail to: email, subject: "Tu es invité(e) à flyer une activité sur Meetemps!"
   end
-  def message
-    mail(
-      :subject => 'Hello from Postmark',
-      :to  => 'adrien@meetemps.io',
-      :from => 'adrien@meetemps.io',
-      :html_body => '<strong>Hello</strong> dear Postmark user.',
-      :track_opens => 'true')
-  end
+
 end
