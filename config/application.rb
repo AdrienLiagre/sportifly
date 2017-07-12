@@ -33,5 +33,7 @@ module Sportifly
     config.active_record.raise_in_transactional_callbacks = true
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.active_job.queue_adapter = :sidekiq
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { :api_token => "f758f11d-51a0-4cd0-85a3-cfca31122eef" }
   end
 end
