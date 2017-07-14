@@ -18,8 +18,17 @@ end
 
 edhec_lille = Group.create!(name: 'Edhec', description: "Groupe des étudiants de l'Edhec Grande Ecole et Msc, pour plus de fun et de sport !", email_domain_name: 'edhec.com')
 hec = Group.create!(name: 'HEC', description: "Groupe des étudiants de HEC", email_domain_name: 'hec.com')
+stationf = Group.create!(name: 'HEC', description: "Groupe des étudiants de HEC", email_domain_name: 'stationf.co')
 
 samir = User.new(name: "Samir Benflouka", group: edhec_lille, phone_number: '0675847374', age: 22, crew: "Ad’lib", email: "samir.benflouka@edhec.com", password: 'kikoulol')
+samir.skip_confirmation!
+samir.save!
+
+samir = User.new(name: "Samir ee", group: stationf, phone_number: '0675847374', age: 22, crew: "Ad’lib", email: "samir.benflouka@edhec.stationf.co", password: 'kikoulol')
+samir.skip_confirmation!
+samir.save!
+
+samir = User.new(name: "Adri ee", group: stationf, phone_number: '0675847374', age: 22, crew: "Ad’lib", email: "adri@stationf.co", password: 'kikoulol')
 samir.skip_confirmation!
 samir.save!
 
