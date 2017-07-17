@@ -13,7 +13,7 @@ module Groups
       @group   = Group.friendly.find(params[:group])
 
       if @email
-        if @email.include?(@group.name.downcase)
+        if @email.include?(@group.email_domain_name.downcase)
           UserMailer.invitation(@email, @user).deliver_now
           flash[:notice] = "Invitation envoyée"
           redirect_to :back
