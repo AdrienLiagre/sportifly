@@ -1,0 +1,1531 @@
+Searching 312 files for "sportifly"
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/app/views/pages/_contact.html.erb:
+   13              <div class="col-lg-4 text-center">
+   14                  <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+   15:                 <p><a href="mailto:your-email@your-domain.com">bonjour@sportifly.fr</a></p>
+   16              </div>
+   17          </div>
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/app/views/shared/_footer.html.slim:
+    6        ul.social-links.list-inline.text-right
+    7          li
+    8:           = link_to 'https://twitter.com/sportifly_', target: 'blank'
+    9              i.fa.fa-twitter
+   10          li
+   11:           = link_to 'http://facebook.com/Sportifly-926740550696609/?ref=br_rs', target: 'blank'
+   12              i.fa.fa-facebook
+   13          li
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/app/views/shared/_navbar.html.erb:
+  139            </li>
+  140            <li>
+  141:               <a target="_blank" href="https://medium.com/@sportifly_">Blog</a>
+  142            </li>
+  143            <li>
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/config/application.rb:
+   16  Bundler.require(*Rails.groups)
+   17
+   18: module Sportifly
+   19    class Application < Rails::Application
+   20      # Settings in config/environments/* take precedence over those specified here.
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/config/application.yml:
+   12
+   13  GOOGLE_API_KEY: "AIzaSyC-Ugr5CLM31RnMsQb4om2p9M4ajl1UTBs"
+   14: S3_BUCKET_NAME: "sportifly"
+   15  AWS_ACCESS_KEY_ID: "AKIAIF4PXPWCQDOFQVRQ"
+   16  AWS_SECRET_ACCESS_KEY: "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"
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/config/database.yml:
+   24  development:
+   25    <<: *default
+   26:   database: sportifly_development
+   27
+   28    # The specified database role being used to connect to postgres.
+   ..
+   30    # When left blank, postgres will use the default role. This is
+   31    # the same name as the operating system user that initialized the database.
+   32:   #username: sportifly
+   33
+   34    # The password associated with the postgres role (username).
+   ..
+   58  test:
+   59    <<: *default
+   60:   database: sportifly_test
+   61
+   62  # As with config/secrets.yml, you never want to store sensitive information,
+   ..
+   81  production:
+   82    <<: *default
+   83:   database: sportifly_production
+   84:   username: sportifly
+   85:   password: <%= ENV['SPORTIFLY_DATABASE_PASSWORD'] %>
+   86
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/config/meta.yml:
+    3  meta_description: "Partager, autre chose"
+    4  meta_image: "creative/header2.jpg" # Une image dans votre dossier app/assets/images/
+    5: twitter_account: "@sportifly_" #indispensable pour les Twitter Cards
+    6
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/config/initializers/session_store.rb:
+    1  # Be sure to restart your server when you modify this file.
+    2
+    3: Rails.application.config.session_store :cookie_store, key: '_sportifly_session'
+    4
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/public/500.html:
+   92           <img class='main-banner banner-shadow' src="images/hazard.png">
+   93            <div class="main-banner-content">
+   94:             <h1> Sportifly </h1>
+   95                <p>Oups, il semble que quelque chose soit bloquant ! </p>
+   96                <p> Reviens sur <a href="http://meetemps.io">meetemps.io</a> </p>
+
+/Users/adrienliagre/code/AdrienLiagre/sportifly/public/assets/application-4c1936564ce0740488d0b3cb7c1e6b757e00aa68173e2ba3e626a91781256f5e.css:
+ 11416
+ 11417  /* bootstrap 3 helpers */
+ 11418: /* line 3, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11419  .navbar-form input, .form-inline input {
+ 11420    width: auto;
+ .....
+ 11423  /* end */
+ 11424  /* custom theme + Bootstrap resets */
+ 11425: /* line 12, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11426  header {
+ 11427    min-height: 180px;
+ .....
+ 11431  /* only apply sticky columns on wider screens */
+ 11432  @media (min-width: 1200px) {
+ 11433:   /* line 19, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11434    #sidebar {
+ 11435      margin-left: 15px;
+ 11436    }
+ 11437
+ 11438:   /* line 23, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11439    #content {
+ 11440      padding-right: 15px;
+ 11441    }
+ 11442
+ 11443:   /* line 27, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11444    #sidebar.affix-top {
+ 11445      position: static;
+ 11446    }
+ 11447
+ 11448:   /* line 31, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11449    #sidebar.affix {
+ 11450      position: fixed !important;
+ .....
+ 11453    }
+ 11454
+ 11455:   /* line 37, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11456    #midCol.affix-top {
+ 11457      position: static;
+ 11458    }
+ 11459
+ 11460:   /* line 41, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11461    #midCol.affix-bottom {
+ 11462      padding-top: 0;
+ 11463    }
+ 11464
+ 11465:   /* line 45, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11466    #midCol.affix {
+ 11467      position: fixed !important;
+ .....
+ 11470    }
+ 11471  }
+ 11472: /* line 52, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11473  .affix {
+ 11474    position: static;
+ 11475  }
+ 11476
+ 11477: /* line 56, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11478  body {
+ 11479    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+ .....
+ 11483  }
+ 11484
+ 11485: /* line 63, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11486  a, a:hover {
+ 11487    color: #77CCDD;
+ .....
+ 11489  }
+ 11490
+ 11491: /* line 68, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11492  .highlight-bk {
+ 11493    background-color: #77CCDD;
+ .....
+ 11496  }
+ 11497
+ 11498: /* line 74, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11499  .highlight {
+ 11500    color: #77CCDD;
+ 11501  }
+ 11502
+ 11503: /* line 78, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11504  h3.highlight {
+ 11505    padding-top: 13px;
+ .....
+ 11508  }
+ 11509
+ 11510: /* line 84, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11511  .navbar {
+ 11512    background-color: #77CCDD;
+ .....
+ 11515  }
+ 11516
+ 11517: /* line 89, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11518  .navbar-nav > li > a {
+ 11519    color: #fff;
+ .....
+ 11523  }
+ 11524
+ 11525: /* line 95, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11526  .navbar-nav > li:last-child > a {
+ 11527    border-right: 1px solid #66BBCC;
+ 11528  }
+ 11529
+ 11530: /* line 99, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11531  .navbar-nav li a:hover {
+ 11532    background-color: #66BBCC;
+ 11533  }
+ 11534
+ 11535: /* line 103, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11536  .navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+ 11537    color: #000;
+ .....
+ 11539  }
+ 11540
+ 11541: /* line 108, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11542  .navbar-brand {
+ 11543    color: #fff;
+ 11544  }
+ 11545
+ 11546: /* line 112, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11547  .accordion-group {
+ 11548    border-width: 0;
+ 11549  }
+ 11550
+ 11551: /* line 116, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11552  .dropdown-menu {
+ 11553    min-width: 250px;
+ 11554  }
+ 11555
+ 11556: /* line 120, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11557  .caret {
+ 11558    color: #fff;
+ 11559  }
+ 11560
+ 11561: /* line 124, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11562  .navbar-toggle {
+ 11563    color: #fff;
+ .....
+ 11565  }
+ 11566
+ 11567: /* line 129, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11568  .navbar-toggle:hover {
+ 11569    background-color: #fff;
+ 11570  }
+ 11571
+ 11572: /* line 133, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11573  .panel, .panel-heading {
+ 11574    border-radius: 0;
+ .....
+ 11577  }
+ 11578
+ 11579: /* line 140, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11580  .thumbnail {
+ 11581    margin-bottom: 8px;
+ .....
+ 11583  }
+ 11584
+ 11585: /* line 145, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11586  .well {
+ 11587    border-radius: 0;
+ 11588  }
+ 11589
+ 11590: /* line 149, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11591  .accordion-heading .accordion-toggle, .accordion-inner, .nav-stacked li > a {
+ 11592    padding-left: 1px;
+ 11593  }
+ 11594
+ 11595: /* line 153, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11596  footer {
+ 11597    height: 50px;
+ .....
+ 11602
+ 11603  @media (min-width: 992px) {
+ 11604:   /* line 161, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11605    .no-gutter.row > div[class*='col-md'] {
+ 11606      padding-left: 0;
+ .....
+ 11608    }
+ 11609
+ 11610:   /* line 165, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11611    .no-gutter.row > .col-md-12 {
+ 11612      width: 99.99999999999999%;
+ .....
+ 11614    }
+ 11615
+ 11616:   /* line 169, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11617    .no-gutter.row .col-md-11 {
+ 11618      width: 91.66666666666666%;
+ .....
+ 11620    }
+ 11621
+ 11622:   /* line 173, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11623    .no-gutter.row > .col-md-10 {
+ 11624      width: 83.33333333333331%;
+ .....
+ 11626    }
+ 11627
+ 11628:   /* line 177, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11629    .no-gutter.row > .col-md-9 {
+ 11630      width: 74.99999999999999%;
+ .....
+ 11632    }
+ 11633
+ 11634:   /* line 181, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11635    .no-gutter.row > .col-md-8 {
+ 11636      width: 66.66666666666666%;
+ .....
+ 11638    }
+ 11639
+ 11640:   /* line 185, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11641    .no-gutter.row > .col-md-7 {
+ 11642      width: 58.33333333333333%;
+ .....
+ 11644    }
+ 11645
+ 11646:   /* line 189, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11647    .no-gutter.row > .col-md-6 {
+ 11648      width: 49.99999999999999%;
+ 11649    }
+ 11650
+ 11651:   /* line 192, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11652    .no-gutter.row > .col-md-4 {
+ 11653      width: 33.33333333333333%;
+ 11654    }
+ 11655
+ 11656:   /* line 195, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11657    .no-gutter.row > .col-md-3 {
+ 11658      width: 24.999999999999996%;
+ .....
+ 11660    }
+ 11661
+ 11662:   /* line 199, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11663    .no-gutter.row > .col-md-2 {
+ 11664      width: 16.666666666666664%;
+ .....
+ 11666    }
+ 11667
+ 11668:   /* line 203, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/style.css */
+ 11669    .no-gutter.row > .col-md-1 {
+ 11670      width: 8.333333333333332%;
+ .....
+ 11673  }
+ 11674  /* end custom theme */
+ 11675: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11676  .checkbox label .toggle, .checkbox-inline .toggle {
+ 11677    margin-left: -20px;
+ .....
+ 11679  }
+ 11680
+ 11681: /* line 2, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11682  .toggle {
+ 11683    position: relative;
+ .....
+ 11685  }
+ 11686
+ 11687: /* line 3, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11688  .toggle input[type=checkbox] {
+ 11689    display: none;
+ 11690  }
+ 11691
+ 11692: /* line 4, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11693  .toggle-group {
+ 11694    position: absolute;
+ .....
+ 11703  }
+ 11704
+ 11705: /* line 5, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11706  .toggle.off .toggle-group {
+ 11707    left: -100%;
+ 11708  }
+ 11709
+ 11710: /* line 6, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11711  .toggle-on {
+ 11712    position: absolute;
+ .....
+ 11720  }
+ 11721
+ 11722: /* line 7, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11723  .toggle-off {
+ 11724    position: absolute;
+ .....
+ 11732  }
+ 11733
+ 11734: /* line 8, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11735  .toggle-handle {
+ 11736    position: relative;
+ .....
+ 11743  }
+ 11744
+ 11745: /* line 9, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11746  .toggle.btn {
+ 11747    min-width: 59px;
+ .....
+ 11749  }
+ 11750
+ 11751: /* line 10, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11752  .toggle-on.btn {
+ 11753    padding-right: 24px;
+ 11754  }
+ 11755
+ 11756: /* line 11, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11757  .toggle-off.btn {
+ 11758    padding-left: 24px;
+ 11759  }
+ 11760
+ 11761: /* line 12, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11762  .toggle.btn-lg, .btn-group-lg > .toggle.btn {
+ 11763    min-width: 79px;
+ .....
+ 11765  }
+ 11766
+ 11767: /* line 13, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11768  .toggle-on.btn-lg, .btn-group-lg > .toggle-on.btn {
+ 11769    padding-right: 31px;
+ 11770  }
+ 11771
+ 11772: /* line 14, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11773  .toggle-off.btn-lg, .btn-group-lg > .toggle-off.btn {
+ 11774    padding-left: 31px;
+ 11775  }
+ 11776
+ 11777: /* line 15, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11778  .toggle-handle.btn-lg, .btn-group-lg > .toggle-handle.btn {
+ 11779    width: 40px;
+ 11780  }
+ 11781
+ 11782: /* line 16, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11783  .toggle.btn-sm, .btn-group-sm > .toggle.btn {
+ 11784    min-width: 50px;
+ .....
+ 11786  }
+ 11787
+ 11788: /* line 17, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11789  .toggle-on.btn-sm, .btn-group-sm > .toggle-on.btn {
+ 11790    padding-right: 20px;
+ 11791  }
+ 11792
+ 11793: /* line 18, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11794  .toggle-off.btn-sm, .btn-group-sm > .toggle-off.btn {
+ 11795    padding-left: 20px;
+ 11796  }
+ 11797
+ 11798: /* line 19, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11799  .toggle.btn-xs, .btn-group-xs > .toggle.btn {
+ 11800    min-width: 35px;
+ .....
+ 11802  }
+ 11803
+ 11804: /* line 20, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11805  .toggle-on.btn-xs, .btn-group-xs > .toggle-on.btn {
+ 11806    padding-right: 12px;
+ 11807  }
+ 11808
+ 11809: /* line 21, /Users/adrienliagre/code/AdrienLiagre/sportifly/vendor/assets/stylesheets/bootstrap-toggle.min.css */
+ 11810  .toggle-off.btn-xs, .btn-group-xs > .toggle-off.btn {
+ 11811    padding-left: 12px;
+ .....
+ 11817   * Feel free to change them and create your own
+ 11818   * ------------------------------------- */
+ 11819: /* line 8, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11820  .padded {
+ 11821    padding-top: 3em;
+ .....
+ 11823  }
+ 11824
+ 11825: /* line 12, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11826  .right-btn {
+ 11827    right: 0px;
+ 11828  }
+ 11829
+ 11830: /* line 18, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11831  body {
+ 11832    background-color: #FFF;
+ .....
+ 11834  }
+ 11835
+ 11836: /* line 22, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11837  .bg-black {
+ 11838    background: #4a4a4a;
+ 11839  }
+ 11840
+ 11841: /* line 25, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11842  .bg-grey {
+ 11843    background: #aeaeae;
+ 11844  }
+ 11845
+ 11846: /* line 28, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11847  .bg-white {
+ 11848    background: white;
+ 11849  }
+ 11850
+ 11851: /* line 31, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11852  .bg-blue {
+ 11853    background: #77ccdd;
+ 11854  }
+ 11855
+ 11856: /* line 34, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11857  .bg-dark-blue {
+ 11858    background: #3b5998;
+ 11859  }
+ 11860
+ 11861: /* line 38, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11862  .bg-image {
+ 11863    background: url("/assets/backgroundpic-cfcc931816572399f53ddfb4f04dae827e8c3d2588b3944c4fd0ca6ec6fa7937.jpg") no-repeat center center fixed;
+ .....
+ 11867  }
+ 11868
+ 11869: /* line 46, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11870  .bg-football {
+ 11871    background: url("/assets/football2-3d5b8601d208609b084d5e7e4d9b5a3ce31ed924795649489726c17365251192.png") no-repeat center center;
+ .....
+ 11875  }
+ 11876
+ 11877: /* line 53, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11878  .sign-class {
+ 11879    margin-right: auto;
+ .....
+ 11883  }
+ 11884
+ 11885: /* line 60, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11886  .title-grey {
+ 11887    background-color: #555;
+ .....
+ 11889  }
+ 11890
+ 11891: /* line 65, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11892  .transbox {
+ 11893    margin: 30px;
+ .....
+ 11899  }
+ 11900
+ 11901: /* line 73, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11902  .lobster-style {
+ 11903    font-family: 'Lobster', cursive;
+ 11904  }
+ 11905
+ 11906: /* line 77, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11907  header {
+ 11908    min-height: 0;
+ .....
+ 11910  }
+ 11911
+ 11912: /* line 82, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_utilities.scss */
+ 11913  .main-content {
+ 11914    padding: 20px 0;
+ 11915  }
+ 11916
+ 11917: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_footer.scss */
+ 11918  .footer {
+ 11919    background-color: #ed6a5a;
+ .....
+ 11923    padding: 10px 0;
+ 11924  }
+ 11925: /* line 8, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_footer.scss */
+ 11926  .footer .social-links a {
+ 11927    color: #FFF;
+ .....
+ 11929  }
+ 11930
+ 11931: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 11932  .navbar-wagon {
+ 11933    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+ .....
+ 11936            transition: all 0.3s ease;
+ 11937  }
+ 11938: /* line 5, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 11939  .navbar-wagon-fixed {
+ 11940    position: fixed;
+ .....
+ 11944    width: 100%;
+ 11945  }
+ 11946: /* line 12, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 11947  .navbar-wagon-logo {
+ 11948    width: 50px;
+ 11949  }
+ 11950: /* line 15, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 11951  .navbar-wagon-container {
+ 11952    display: -webkit-box;
+ .....
+ 11960            align-items: center;
+ 11961  }
+ 11962: /* line 20, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 11963  .navbar-wagon-pusher {
+ 11964    -webkit-box-flex: 1;
+ .....
+ 11967            flex: 1 1 auto;
+ 11968  }
+ 11969: /* line 23, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 11970  .navbar-wagon-item {
+ 11971    -webkit-box-flex: 0;
+ .....
+ 11976    padding: 0 10px;
+ 11977  }
+ 11978: /* line 28, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 11979  .navbar-wagon-search {
+ 11980    -webkit-box-flex: 0;
+ .....
+ 11993    position: relative;
+ 11994  }
+ 11995: /* line 34, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 11996  .navbar-wagon-search-btn {
+ 11997    line-height: 40px;
+ .....
+ 12004    z-index: 1;
+ 12005  }
+ 12006: /* line 44, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12007  .navbar-wagon-search-input {
+ 12008    -webkit-box-flex: 0;
+ .....
+ 12021    outline: none;
+ 12022  }
+ 12023: /* line 56, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12024  .navbar-wagon-search-input:focus {
+ 12025    border: 1px solid #CCCCCC;
+ 12026  }
+ 12027: /* line 60, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12028  .navbar-wagon-link {
+ 12029    color: #616668;
+ 12030    font-size: 14px;
+ 12031  }
+ 12032: /* line 63, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12033  .navbar-wagon-link:hover {
+ 12034    color: #da552f;
+ 12035    text-decoration: none;
+ 12036  }
+ 12037: /* line 68, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12038  .navbar-wagon-button {
+ 12039    margin-left: 10px;
+ .....
+ 12046    border: 2px solid #D23333;
+ 12047  }
+ 12048: /* line 78, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12049  .navbar-wagon-button:hover {
+ 12050    color: white;
+ .....
+ 12052    border-color: #ac2626;
+ 12053  }
+ 12054: /* line 84, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12055  .navbar-wagon-dropdown-menu {
+ 12056    margin-top: 15px;
+ .....
+ 12058    border-color: #E6E6E6;
+ 12059  }
+ 12060: /* line 88, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12061  .navbar-wagon-dropdown-menu li > a {
+ 12062    -webkit-transition: color 0.3s ease;
+ .....
+ 12068    padding: 10px 20px;
+ 12069  }
+ 12070: /* line 95, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12071  .navbar-wagon-dropdown-menu li > a:hover {
+ 12072    background: transparent !important;
+ 12073    color: black !important;
+ 12074  }
+ 12075: /* line 100, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12076  .navbar-wagon-dropdown-menu:before {
+ 12077    content: ' ';
+ .....
+ 12088    border-top: 1px solid #E6E6E6;
+ 12089  }
+ 12090: /* line 114, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12091  .navbar-wagon hr {
+ 12092    height: 12px;
+ .....
+ 12097  }
+ 12098
+ 12099: /* line 123, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12100  .badge-notif {
+ 12101    position: absolute;
+ .....
+ 12105    height: 15px;
+ 12106  }
+ 12107: /* line 129, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12108  .badge-notif i {
+ 12109    color: red;
+ .....
+ 12111  }
+ 12112
+ 12113: /* line 135, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12114  .badge-notif-bis {
+ 12115    position: absolute;
+ .....
+ 12119    height: 15px;
+ 12120  }
+ 12121: /* line 141, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/layout/_navbar.scss */
+ 12122  .badge-notif-bis i {
+ 12123    color: red;
+ .....
+ 12128   * Your CSS code for flash notices and alerts
+ 12129  * ------------------------------------- */
+ 12130: /* line 5, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_alert.scss */
+ 12131  .alert {
+ 12132    margin: 0;
+ .....
+ 12135  }
+ 12136
+ 12137: /* line 10, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_alert.scss */
+ 12138  .alert-info {
+ 12139    background: #32B796;
+ 12140  }
+ 12141
+ 12142: /* line 13, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_alert.scss */
+ 12143  .alert-warning {
+ 12144    background: #EE5F5B;
+ 12145  }
+ 12146
+ 12147: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_avatars.scss */
+ 12148  .avatar {
+ 12149    width: 30px;
+ .....
+ 12151  }
+ 12152
+ 12153: /* line 6, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_avatars.scss */
+ 12154  .avatar-bordered {
+ 12155    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+ .....
+ 12157  }
+ 12158
+ 12159: /* line 10, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_avatars.scss */
+ 12160  .avatar-large {
+ 12161    width: 50px;
+ 12162  }
+ 12163
+ 12164: /* line 14, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_avatars.scss */
+ 12165  .dashboard-avatar {
+ 12166    margin: auto;
+ .....
+ 12170  }
+ 12171
+ 12172: /* line 21, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_avatars.scss */
+ 12173  .badge-fly {
+ 12174    margin-top: 25px;
+ 12175  }
+ 12176: /* line 24, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_avatars.scss */
+ 12177  .badge-fly i {
+ 12178    color: #00ffc5;
+ .....
+ 12180  }
+ 12181
+ 12182: /* line 36, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_avatars.scss */
+ 12183  .dashboard-sport-picture {
+ 12184    margin: auto;
+ .....
+ 12188  }
+ 12189
+ 12190: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_badges.scss */
+ 12191  .icon-badge-container {
+ 12192    position: relative;
+ .....
+ 12196  }
+ 12197
+ 12198: /* line 7, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_badges.scss */
+ 12199  .user-badge-container {
+ 12200    position: relative;
+ .....
+ 12202  }
+ 12203
+ 12204: /* line 11, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_badges.scss */
+ 12205  .icon-badge, .user-badge {
+ 12206    position: absolute;
+ .....
+ 12227    border-radius: 50%;
+ 12228  }
+ 12229: /* line 25, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_badges.scss */
+ 12230  .icon-badge-red, .user-badge-red {
+ 12231    background: #EE5F5B;
+ 12232  }
+ 12233: /* line 28, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_badges.scss */
+ 12234  .icon-badge-green, .user-badge-green {
+ 12235    background: #32B796;
+ 12236  }
+ 12237: /* line 31, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_badges.scss */
+ 12238  .icon-badge-blue, .user-badge-blue {
+ 12239    background: #469AE0;
+ 12240  }
+ 12241: /* line 34, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_badges.scss */
+ 12242  .icon-badge-black, .user-badge-black {
+ 12243    background: black;
+ 12244  }
+ 12245: /* line 37, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_badges.scss */
+ 12246  .icon-badge-bordered, .user-badge-bordered {
+ 12247    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+ .....
+ 12249  }
+ 12250
+ 12251: /* line 43, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_badges.scss */
+ 12252  .btn-circle {
+ 12253    width: 30px;
+ .....
+ 12261  }
+ 12262
+ 12263: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12264  .activity h2 {
+ 12265    color: #77CCDD;
+ 12266  }
+ 12267
+ 12268: /* line 5, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12269  .activity {
+ 12270    margin: 10px 0;
+ 12271  }
+ 12272
+ 12273: /* line 10, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12274  .box-activity {
+ 12275    border: 2px solid transparent;
+ .....
+ 12282  }
+ 12283
+ 12284: /* line 21, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12285  .row {
+ 12286    margin-left: 0px;
+ .....
+ 12288  }
+ 12289
+ 12290: /* line 27, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12291  .home-sport-avatar {
+ 12292    margin: auto;
+ .....
+ 12294  }
+ 12295
+ 12296: /* line 32, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12297  .group-pic {
+ 12298    background: no-repeat;
+ .....
+ 12300  }
+ 12301
+ 12302: /* line 37, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12303  .box-header {
+ 12304    border: 2px solid transparent;
+ .....
+ 12308  }
+ 12309
+ 12310: /* line 45, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12311  .btn-activity-creation {
+ 12312    color: #77CCDD;
+ 12313  }
+ 12314
+ 12315: /* line 49, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12316  .activity-item--captain-avatar {
+ 12317    display: inline-block;
+ .....
+ 12323  }
+ 12324
+ 12325: /* line 58, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12326  .activity-map {
+ 12327    width: 100%;
+ 12328  }
+ 12329
+ 12330: /* line 62, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12331  .activity-player {
+ 12332    display: inline-block;
+ .....
+ 12334    margin-right: 10px;
+ 12335  }
+ 12336: /* line 67, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12337  .activity-player .badge-captain {
+ 12338    position: absolute;
+ .....
+ 12342    height: 30px;
+ 12343  }
+ 12344: /* line 74, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12345  .activity-player .badge-captain i {
+ 12346    color: #00ffc5;
+ .....
+ 12348  }
+ 12349
+ 12350: /* line 82, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12351  .activity-presence-action {
+ 12352    width: auto;
+ .....
+ 12355  }
+ 12356
+ 12357: /* line 88, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12358  .activity-detailBox {
+ 12359    width: 100% !important;
+ 12360  }
+ 12361
+ 12362: /* line 92, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12363  .activity-info-list {
+ 12364    padding-left: 0;
+ .....
+ 12366  }
+ 12367
+ 12368: /* line 97, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12369  .activity-page--participants-avatar {
+ 12370    width: 100px;
+ .....
+ 12372  }
+ 12373
+ 12374: /* line 102, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12375  .wrapper .text {
+ 12376    position: relative;
+ .....
+ 12380  }
+ 12381
+ 12382: /* line 109, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12383  .wrapper:hover .text {
+ 12384    visibility: visible;
+ 12385  }
+ 12386
+ 12387: /* line 113, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_activity.scss */
+ 12388  .badge-notif-home {
+ 12389    position: absolute;
+ .....
+ 12396  }
+ 12397
+ 12398: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12399  .detailBox {
+ 12400    width: 300px;
+ .....
+ 12403  }
+ 12404
+ 12405: /* line 6, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12406  .titleBox {
+ 12407    background-color: #fdfdfd;
+ .....
+ 12409  }
+ 12410
+ 12411: /* line 10, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12412  .titleBox label {
+ 12413    color: #444;
+ .....
+ 12416  }
+ 12417
+ 12418: /* line 16, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12419  .commentBox {
+ 12420    padding: 10px;
+ .....
+ 12422  }
+ 12423
+ 12424: /* line 20, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12425  .commentBox .form-group:first-child, .actionBox .form-group:first-child {
+ 12426    width: 80%;
+ 12427  }
+ 12428
+ 12429: /* line 23, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12430  .commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+ 12431    width: 18%;
+ 12432  }
+ 12433
+ 12434: /* line 26, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12435  .actionBox .form-group * {
+ 12436    width: 100%;
+ 12437  }
+ 12438
+ 12439: /* line 29, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12440  .taskDescription {
+ 12441    margin-top: 10px 0;
+ 12442  }
+ 12443
+ 12444: /* line 32, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12445  .commentList {
+ 12446    padding: 0;
+ .....
+ 12450  }
+ 12451
+ 12452: /* line 38, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12453  .commentList li {
+ 12454    margin: 0;
+ .....
+ 12456  }
+ 12457
+ 12458: /* line 42, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12459  .commentList li > div {
+ 12460    display: table-cell;
+ 12461  }
+ 12462
+ 12463: /* line 45, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12464  .commenterImage {
+ 12465    width: 30px;
+ .....
+ 12469  }
+ 12470
+ 12471: /* line 51, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12472  .commenterImage img {
+ 12473    width: 100%;
+ .....
+ 12475  }
+ 12476
+ 12477: /* line 55, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12478  .commentText p {
+ 12479    margin: 0;
+ 12480  }
+ 12481
+ 12482: /* line 58, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12483  .sub-text {
+ 12484    color: #aaa;
+ .....
+ 12487  }
+ 12488
+ 12489: /* line 63, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_comment.scss */
+ 12490  .actionBox {
+ 12491    border-top: 1px dotted #bbb;
+ .....
+ 12493  }
+ 12494
+ 12495: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_navbar.scss */
+ 12496  .hover {
+ 12497    color: #FFFFFF;
+ 12498  }
+ 12499: /* line 3, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_navbar.scss */
+ 12500  .hover:hover {
+ 12501    color: #000000;
+ 12502  }
+ 12503
+ 12504: /* line 9, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_navbar.scss */
+ 12505  .navbar {
+ 12506    margin-bottom: 0;
+ 12507  }
+ 12508
+ 12509: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_newsfeed.scss */
+ 12510  .btn-newsfeed {
+ 12511    color: #77CCDD;
+ 12512  }
+ 12513
+ 12514: /* line 9, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_newsfeed.scss */
+ 12515  .newsfeed-item--user-avatar {
+ 12516    width: 30px;
+ .....
+ 12518  }
+ 12519
+ 12520: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_inscription.scss */
+ 12521  .sign-in-reinsurrance-container {
+ 12522    background-color: #77ccdd;
+ .....
+ 12526  }
+ 12527
+ 12528: /* line 8, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_inscription.scss */
+ 12529  .sign-in-reinsurrance-container .divider {
+ 12530    width: 140px;
+ .....
+ 12533  }
+ 12534
+ 12535: /* line 14, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_inscription.scss */
+ 12536  .sign-in-reinsurrance-container .reinssurance-item,
+ 12537  .home-incentive {
+ 12538    margin-top: 30px;
+ 12539  }
+ 12540: /* line 18, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_inscription.scss */
+ 12541  .sign-in-reinsurrance-container .reinssurance-item .icon-container,
+ 12542  .home-incentive .icon-container {
+ .....
+ 12549    margin-bottom: 10px;
+ 12550  }
+ 12551: /* line 27, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_inscription.scss */
+ 12552  .sign-in-reinsurrance-container .reinssurance-item .icon-container i,
+ 12553  .home-incentive .icon-container i {
+ .....
+ 12556  }
+ 12557
+ 12558: /* line 33, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_inscription.scss */
+ 12559  .home-incentive .icon-container i {
+ 12560    color: #676767;
+ 12561  }
+ 12562
+ 12563: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12564  .banner {
+ 12565    background-image: url(/assets/backgroundhome-657e888088429a5ea5064586e4676ed597f75b684ba304e9a380fddf4b14ca79.png);
+ .....
+ 12571  }
+ 12572
+ 12573: /* line 10, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12574  .banner-shadow {
+ 12575    position: absolute;
+ .....
+ 12581  }
+ 12582
+ 12583: /* line 19, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12584  .content {
+ 12585    padding: 0px;
+ .....
+ 12589  }
+ 12590
+ 12591: /* line 26, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12592  .banner-bottom {
+ 12593    background-color: #E9EAED;
+ .....
+ 12598  }
+ 12599
+ 12600: /* line 35, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12601  .main-banner {
+ 12602    position: relative;
+ .....
+ 12609  }
+ 12610
+ 12611: /* line 45, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12612  .main-banner--content {
+ 12613    color: #FFF;
+ .....
+ 12616  }
+ 12617
+ 12618: /* line 51, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12619  .main-banner--shadow {
+ 12620    position: absolute;
+ .....
+ 12627  }
+ 12628
+ 12629: /* line 62, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12630  .main-banner--small {
+ 12631    background-image: url(/assets/cover-basket-bd7b5ca343e913fd8a120931954e32100f47e93fde6a550c22acd95c6d9acf5c.jpg);
+ 12632    padding: 85px 0;
+ 12633  }
+ 12634: /* line 66, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12635  .main-banner--small .main-banner--shadow {
+ 12636    background-color: rgba(0, 0, 0, 0.3);
+ 12637  }
+ 12638
+ 12639: /* line 71, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12640  .main-banner-sport {
+ 12641    position: relative;
+ .....
+ 12652  }
+ 12653
+ 12654: /* line 83, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_banner.scss */
+ 12655  .main-banner-sport--content {
+ 12656    color: #FFF;
+ .....
+ 12661  }
+ 12662
+ 12663: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_forms.scss */
+ 12664  .form-actions  {
+ 12665    margin-top: 100px;
+ 12666  }
+ 12667
+ 12668: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_btns.scss */
+ 12669  .btn-primary {
+ 12670    background-color: #77ccdd;
+ 12671    border-color: #77ccdd;
+ 12672  }
+ 12673: /* line 5, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_btns.scss */
+ 12674  .btn-primary:hover, .btn-primary:focus {
+ 12675    background-color: #0075a2;
+ .....
+ 12677  }
+ 12678
+ 12679: /* line 12, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_btns.scss */
+ 12680  .btn-primary-inverted {
+ 12681    background-color: #0075a2;
+ .....
+ 12683    color: #FFF;
+ 12684  }
+ 12685: /* line 17, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_btns.scss */
+ 12686  .btn-primary-inverted:hover, .btn-primary-inverted:focus {
+ 12687    background-color: #77ccdd;
+ .....
+ 12689  }
+ 12690
+ 12691: /* line 24, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_btns.scss */
+ 12692  .btn-red {
+ 12693    background-color: #ed6a5a;
+ .....
+ 12695    color: #FFF;
+ 12696  }
+ 12697: /* line 29, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_btns.scss */
+ 12698  .btn-red:hover, .btn-red:focus {
+ 12699    background-color: #ed6a5a;
+ .....
+ 12701  }
+ 12702
+ 12703: /* line 36, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_btns.scss */
+ 12704  .btn-green {
+ 12705    background-color: #32b796;
+ .....
+ 12707    color: #FFF;
+ 12708  }
+ 12709: /* line 41, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_btns.scss */
+ 12710  .btn-green:hover, .btn-green:focus {
+ 12711    background-color: #77ccdd;
+ .....
+ 12713  }
+ 12714
+ 12715: /* line 49, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_btns.scss */
+ 12716  .btn + .btn {
+ 12717    margin-left: 5px;
+ 12718  }
+ 12719
+ 12720: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_panels.scss */
+ 12721  .panel-first {
+ 12722    border-color: #ed6a5a;
+ 12723  }
+ 12724: /* line 5, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_panels.scss */
+ 12725  .panel-first .panel-heading {
+ 12726    background-color: #ed6a5a;
+ .....
+ 12729  }
+ 12730
+ 12731: /* line 12, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_panels.scss */
+ 12732  .panel-second {
+ 12733    border-color: #0075a2;
+ 12734  }
+ 12735: /* line 16, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_panels.scss */
+ 12736  .panel-second .panel-heading {
+ 12737    background-color: #0075a2;
+ .....
+ 12740  }
+ 12741
+ 12742: /* line 23, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_panels.scss */
+ 12743  .panel .panel-content {
+ 12744    padding: 10px;
+ 12745  }
+ 12746
+ 12747: /* line 27, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_panels.scss */
+ 12748  .panel-third {
+ 12749    border-color: #77ccdd;
+ 12750  }
+ 12751: /* line 31, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_panels.scss */
+ 12752  .panel-third .panel-heading {
+ 12753    background-color: #77ccdd;
+ .....
+ 12756  }
+ 12757
+ 12758: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12759  .twitter-typeahead {
+ 12760    width: 100%;
+ .....
+ 12762  }
+ 12763
+ 12764: /* line 5, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12765  .twitter-typeahead .tt-query,
+ 12766  .twitter-typeahead .tt-hint {
+ .....
+ 12777  }
+ 12778
+ 12779: /* line 19, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12780  .has-warning .twitter-typeahead .tt-query,
+ 12781  .has-warning .twitter-typeahead .tt-hint {
+ .....
+ 12784  }
+ 12785
+ 12786: /* line 25, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12787  .has-error .twitter-typeahead .tt-query,
+ 12788  .has-error .twitter-typeahead .tt-hint {
+ .....
+ 12791  }
+ 12792
+ 12793: /* line 31, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12794  .has-success .twitter-typeahead .tt-query,
+ 12795  .has-success .twitter-typeahead .tt-hint {
+ .....
+ 12798  }
+ 12799
+ 12800: /* line 37, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12801  .twitter-typeahead .tt-query:focus,
+ 12802  .twitter-typeahead .tt-hint:focus {
+ .....
+ 12806  }
+ 12807
+ 12808: /* line 44, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12809  .has-warning .twitter-typeahead .tt-query:focus,
+ 12810  .has-warning .twitter-typeahead .tt-hint:focus {
+ .....
+ 12813  }
+ 12814
+ 12815: /* line 50, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12816  .has-error .twitter-typeahead .tt-query:focus,
+ 12817  .has-error .twitter-typeahead .tt-hint:focus {
+ .....
+ 12820  }
+ 12821
+ 12822: /* line 56, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12823  .has-success .twitter-typeahead .tt-query:focus,
+ 12824  .has-success .twitter-typeahead .tt-hint:focus {
+ .....
+ 12827  }
+ 12828
+ 12829: /* line 62, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12830  .twitter-typeahead .tt-hint {
+ 12831    color: #a1a1a1;
+ .....
+ 12834  }
+ 12835
+ 12836: /* line 67, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12837  .input-group .twitter-typeahead .tt-query {
+ 12838    z-index: 2;
+ 12839  }
+ 12840
+ 12841: /* line 70, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12842  .input-group .twitter-typeahead:first-child .tt-query,
+ 12843  .input-group .twitter-typeahead:first-child .tt-hint {
+ .....
+ 12845  }
+ 12846
+ 12847: /* line 74, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12848  .input-group .twitter-typeahead:last-child .tt-query,
+ 12849  .input-group .twitter-typeahead:last-child .tt-hint {
+ .....
+ 12851  }
+ 12852
+ 12853: /* line 78, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12854  .input-group .twitter-typeahead .tt-query,
+ 12855  .input-group .twitter-typeahead .tt-hint {
+ .....
+ 12860  }
+ 12861
+ 12862: /* line 85, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12863  .input-group.input-group-sm .twitter-typeahead:first-child .tt-query,
+ 12864  .input-group.input-group-sm .twitter-typeahead:first-child .tt-hint {
+ .....
+ 12866  }
+ 12867
+ 12868: /* line 89, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12869  .input-group.input-group-sm .twitter-typeahead:last-child .tt-query,
+ 12870  .input-group.input-group-sm .twitter-typeahead:last-child .tt-hint {
+ .....
+ 12872  }
+ 12873
+ 12874: /* line 93, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12875  .input-group.input-group-sm .tt-query,
+ 12876  .input-group.input-group-sm .tt-hint {
+ .....
+ 12881  }
+ 12882
+ 12883: /* line 100, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12884  .input-group.input-group-lg .twitter-typeahead:first-child .tt-query,
+ 12885  .input-group.input-group-lg .twitter-typeahead:first-child .tt-hint {
+ .....
+ 12887  }
+ 12888
+ 12889: /* line 104, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12890  .input-group.input-group-lg .twitter-typeahead:last-child .tt-query,
+ 12891  .input-group.input-group-lg .twitter-typeahead:last-child .tt-hint {
+ .....
+ 12893  }
+ 12894
+ 12895: /* line 108, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12896  .input-group.input-group-lg .tt-query,
+ 12897  .input-group.input-group-lg .tt-hint {
+ .....
+ 12902  }
+ 12903
+ 12904: /* line 115, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12905  .tt-dropdown-menu {
+ 12906    width: 100%;
+ .....
+ 12918  }
+ 12919
+ 12920: /* line 135, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12921  .tt-suggestion {
+ 12922    display: block;
+ .....
+ 12924  }
+ 12925
+ 12926: /* line 139, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12927  .tt-suggestion.tt-is-under-cursor {
+ 12928    color: #fff;
+ .....
+ 12935  }
+ 12936
+ 12937: /* line 150, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12938  .tt-suggestion.tt-is-under-cursor a {
+ 12939    color: #fff;
+ 12940  }
+ 12941
+ 12942: /* line 153, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_typeahead.css */
+ 12943  .tt-suggestion p {
+ 12944    margin: 0;
+ 12945  }
+ 12946
+ 12947: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_voting.scss */
+ 12948  .link-voting {
+ 12949    text-decoration: none;
+ .....
+ 12951  }
+ 12952
+ 12953: /* line 6, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_voting.scss */
+ 12954  .link-voting:link {
+ 12955    text-decoration: none;
+ .....
+ 12957  }
+ 12958
+ 12959: /* line 12, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_voting.scss */
+ 12960  .link-voting:hover {
+ 12961    text-decoration: none;
+ .....
+ 12963  }
+ 12964
+ 12965: /* line 18, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_voting.scss */
+ 12966  .link-voting:active {
+ 12967    text-decoration: none;
+ .....
+ 12969  }
+ 12970
+ 12971: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_contact.scss */
+ 12972  .contact-picture {
+ 12973    border-radius: 50%;
+ .....
+ 12977  }
+ 12978
+ 12979: /* line 9, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_contact.scss */
+ 12980  .panel-body-padding {
+ 12981    padding: 50px;
+ 12982  }
+ 12983
+ 12984: /* line 1, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_responsive.css */
+ 12985  .font-size-modal {
+ 12986    font-size: 15px;
+ .....
+ 12989  }
+ 12990
+ 12991: /* line 2, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_dashboard.scss */
+ 12992  .box-info {
+ 12993    border: 2px solid transparent;
+ .....
+ 12996  }
+ 12997
+ 12998: /* line 8, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_dashboard.scss */
+ 12999  .box-header-dash {
+ 13000    border: 2px solid transparent;
+ .....
+ 13005  }
+ 13006
+ 13007: /* line 17, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_dashboard.scss */
+ 13008  .btn-mise-a-jour {
+ 13009    background-color: #77CCDD;
+ .....
+ 13012  }
+ 13013
+ 13014: /* line 23, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_dashboard.scss */
+ 13015  .dashboard--list {
+ 13016    list-style: none;
+ .....
+ 13019  }
+ 13020
+ 13021: /* line 29, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_dashboard.scss */
+ 13022  .td-remove-border {
+ 13023    border: none;
+ 13024  }
+ 13025
+ 13026: /* line 33, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/components/_dashboard.scss */
+ 13027  .notif {
+ 13028    color: red;
+ .....
+ 13033   * (margin/padding adjustments, background image, etc..)
+ 13034   * ------------------------------------- */
+ 13035: /* line 6, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/pages/_home.scss */
+ 13036  .foo {
+ 13037    outline: 1px solid orange;
+ .....
+ 13056  ==============================================
+ 13057  */
+ 13058: /* line 22, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13059  .slideDown {
+ 13060    animation-name: slideDown;
+ .....
+ 13118  ==============================================
+ 13119  */
+ 13120: /* line 84, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13121  .slideUp {
+ 13122    animation-name: slideUp;
+ .....
+ 13180  ==============================================
+ 13181  */
+ 13182: /* line 146, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13183  .slideLeft {
+ 13184    animation-name: slideLeft;
+ .....
+ 13242  ==============================================
+ 13243  */
+ 13244: /* line 208, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13245  .slideRight {
+ 13246    animation-name: slideRight;
+ .....
+ 13304  ==============================================
+ 13305  */
+ 13306: /* line 270, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13307  .slideExpandUp {
+ 13308    animation-name: slideExpandUp;
+ .....
+ 13387  ==============================================
+ 13388  */
+ 13389: /* line 350, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13390  .expandUp {
+ 13391    animation-name: expandUp;
+ .....
+ 13435  ==============================================
+ 13436  */
+ 13437: /* line 399, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13438  .fadeIn {
+ 13439    animation-name: fadeIn;
+ .....
+ 13489  ==============================================
+ 13490  */
+ 13491: /* line 455, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13492  .expandOpen {
+ 13493    animation-name: expandOpen;
+ .....
+ 13544  ==============================================
+ 13545  */
+ 13546: /* line 511, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13547  .bigEntrance {
+ 13548    animation-name: bigEntrance;
+ .....
+ 13627  ==============================================
+ 13628  */
+ 13629: /* line 592, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13630  .hatch {
+ 13631    animation-name: hatch;
+ .....
+ 13699  ==============================================
+ 13700  */
+ 13701: /* line 665, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13702  .bounce {
+ 13703    animation-name: bounce;
+ .....
+ 13763  ==============================================
+ 13764  */
+ 13765: /* line 729, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13766  .pulse {
+ 13767    animation-name: pulse;
+ .....
+ 13809  ==============================================
+ 13810  */
+ 13811: /* line 776, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13812  .floating {
+ 13813    animation-name: floating;
+ .....
+ 13849  ==============================================
+ 13850  */
+ 13851: /* line 817, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13852  .tossing {
+ 13853    animation-name: tossing;
+ .....
+ 13889  ==============================================
+ 13890  */
+ 13891: /* line 858, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13892  .pullUp {
+ 13893    animation-name: pullUp;
+ .....
+ 13960  ==============================================
+ 13961  */
+ 13962: /* line 927, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 13963  .pullDown {
+ 13964    animation-name: pullDown;
+ .....
+ 14031  ==============================================
+ 14032  */
+ 14033: /* line 996, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 14034  .stretchLeft {
+ 14035    animation-name: stretchLeft;
+ .....
+ 14102  ==============================================
+ 14103  */
+ 14104: /* line 1065, /Users/adrienliagre/code/AdrienLiagre/sportifly/app/assets/stylesheets/vendor/_animation_cheat_sheet.scss */
+ 14105  .stretchRight {
+ 14106    animation-name: stretchRight;
+
+271 matches across 10 files
