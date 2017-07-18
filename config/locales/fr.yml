@@ -37,7 +37,7 @@ fr:
 
   contact:
     title: "Contactez nous pour la création du groupe de votre entreprise"
-    name: "Nom"
+    name: "Prénom nom"
     button: "Envoyer le message"
     sent: "Merci pour votre message, nous vous recontacterons dès que possible"
     back: "Retourner sur"
