@@ -118,7 +118,7 @@
             = link_to t('activity.show.refuse_invit'),  group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id), referral: 'activity-page'), method: :delete, class: "btn btn-red"
         - else
           .activity-presence-action
-            = button_to t('group.fly'), group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'btn btn-primary-inverted'
+            = button_to t('group.fly'), group_activity_bookings_path(@group, @activity), class: 'btn btn-primary-inverted'
         - if @activity.captain == current_user
           = link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: "btn btn-green"
           = link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: "btn btn-red"
