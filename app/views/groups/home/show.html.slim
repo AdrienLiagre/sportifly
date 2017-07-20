@@ -9,12 +9,6 @@ header.masthead
 .row
   .col-sm-6.col-sm-offset-1
 
-    p
-    = form_tag group_users_path(current_user.group), :method => :get
-    .input-group
-      = text_field_tag :email, params[:email], class: "form-control", placeholder: t('group.invite_placeholder')
-      span.input-group-btn
-        = submit_tag t('group.invite_button'), class: 'btn btn-primary-inverted'
 
 .container.main-content
   .row
