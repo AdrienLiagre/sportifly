@@ -61,7 +61,7 @@ header.masthead
                           .i.fa.fa-bell.fa-2x
                         = link_to t('activity.show.accept_invit'), group_activity_booking_path(@group, activity, activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-block btn-primary-inverted'
                       - else
-                        = button_to t('group.fly'), group_activity_bookings_path(@group, activity, referral: 'activity-page'), class: 'btn btn-block btn-primary-inverted'
+                        = button_to t('group.fly'), group_activity_bookings_path(@group, activity), class: 'btn btn-block btn-primary-inverted'
                 .col-xs-12
                   hr
       .panel
