@@ -40,7 +40,9 @@ class User < ActiveRecord::Base
   def assign_to_group
     if self.email.include?("stationf")
       self.group = Group.find_by(email_domain_name: "stationf.co")
-    elsif
+    elsif self.email.include?("thalasseo")
+      self.group = Group.find_by(email_domain_name: "voyageprive.com")
+    else
       self.group = Group.find_by(email_domain_name: Mail::Address.new(self.email).domain)
     end
   end
