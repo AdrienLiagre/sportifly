@@ -5,21 +5,21 @@
   <div class="container">
     <div class="row">`
       <div class="col-sm-4 col-sm-offset-4">
-      <h3> Modification des infos de l'activité </h3>
+      <h3> <%= t'activity.edit.info'%> </h3>
 
       <div>
         Sport :
         <%= @activity.sport.name %>
       </div>
 
-      <%= f.association :location, label: :'Club', collection: @activity.sport.locations %>
-      <%= f.input :number_of_players, label: :'Nombre de joueurs' %>
-      <%= f.input :price, label: :'Prix par personne' %>
-      <%= f.input :date, :minute_step => 15, label: :'Date et heure' %>
+      <%= f.association :location, label: t('activity.edit.location'), collection: @activity.sport.locations %>
+      <%= f.input :number_of_players, label: t('activity.edit.players') %>
+      <%= f.input :price, label: t('activity.edit.price') %>
+      <%= f.input :date, :minute_step => 15, label: t('activity.edit.date') %>
 
       <div class='text-center'>
         <%= f.button :button do %>
-        <div class="btn btn-activity-creation">Mettre à jour</div>
+        <div class="btn btn-activity-creation"><%= t'activity.edit.update'%></div>
         <% end %>
       </div>
       </div>

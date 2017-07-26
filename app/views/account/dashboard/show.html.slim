@@ -25,14 +25,17 @@
                     - else
                       = @user.email
                 li
-                  'Team:
+                  'Groupe:
                   = @user.group.name
                 li
                   - if @user.crew != ""
-                    'Crew:
+                    '
+                    = t'profil.show.crew_two'
+                    ':
                     = @user.crew
                   - else
-                    'Crew non renseigné
+                    '
+                    = t'profil.show.crew'
                 li
                   - if @user.age
                     => @user.age

@@ -26,11 +26,13 @@
                     - else
                       = @user.email
                 li
-                  'Team:
+                  'Groupe:
                   = @user.group.name
                 li
                   - if @user.crew != ""
-                    'Crew:
+                    '
+                    = t'profil.show.crew_two'
+                    ':
                     = @user.crew
                   - else
                     '

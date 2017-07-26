@@ -27,7 +27,7 @@ fr:
       password_confirmation: "Confirmer le mot de passe"
       forgot_password: "Mot de passe oublié?"
       confirmation: "Vous n'avez pas reçu l'email de confirmation?"
-      invalid: "Utilisez votre email professionnel ex: @microsoft.fr . Si votre groupe n'est pas créé, contactez nous!"
+      invalid: " Utilisez votre email pro ex: @microsoft.com, @founders.stationf.co. Si votre groupe n'est pas créé, contactez nous !"
 
 
   helpers:
@@ -102,11 +102,11 @@ fr:
     new:
       title: "Créer une activité"
       name: "Le pti nom"
-      players: "Combien de joueurs"
+      players: "Combien de participants"
       time: "Date et heure"
       price: "Prix par personne"
       creation: "Je crée l'activité"
-      notice_location: "C'est fait ! Ajoute un lieu de rendez-vous !"
+      notice_location: "C'est fait ! Ajoute un point de rendez-vous !"
     show:
       info: "On parle de quoi?"
       people: "Qui participe?"
@@ -115,9 +115,9 @@ fr:
       fly_comment: "Fly et commente cette activité !"
       choose_location: "Choisir"
       create_location: "Créer"
-      location: "Lieu"
+      location: "Point de rdv"
       or: "ou"
-      no_location: "Pas encore de lieu prévu par"
+      no_location: "Pas encore de point de rdv donné par"
       price: "Prix par personne : "
       invite_2: "invite cette charmante personne !"
       invite_3: "Cette charmante personne est déja invitée à l'activité !"
@@ -131,7 +131,13 @@ fr:
       edit: "Editer l'activité"
       delete: "Supprimer l'activité"
       deciplus: "N'oublie pas de réserver le créneau sur "
-
+    edit:
+      info: "Modification des infos de l'activité"
+      location: "Lieu"
+      players: "Nombre de participants"
+      price: "Prix par personne"
+      date: "Date et heure"
+      update: "Mettre à jour"
 
 
   booking:
@@ -142,8 +148,8 @@ fr:
     problem: "Un problème a été détecté"
 
   club:
-    title: "Ajouter un club pour l'activité "
-    name: "Nom du club"
+    title: "Ajouter un lieu pour l'activité "
+    name: "Nom du lieu"
     street: "Numéro et rue"
     city: "Ville"
     postcode: "Code postal"
@@ -182,7 +188,8 @@ fr:
     no_fly: "Tu n'as pas encore flyé ??? Dépêche-toi !"
     show:
       title: "Profile of "
-      crew: "Crew non renseigné"
+      crew: "Equipe non renseignée"
+      crew_two: "Equipe"
       age: "Age non indiqué"
       age_n: " ans"
       statistic: "Ses statistiques"
