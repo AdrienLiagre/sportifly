@@ -39,13 +39,16 @@ module Groups
     def new
       @activity = @group.activities.new
       @activity.captain = current_user
+      @booking = Booking.new
     end
 
     def create
       @activity = @group.activities.new(activity_params)
       @activity.captain = current_user
+      @activity.bookings.new(user: @activity.captain)
 
       if @activity.save
+
         redirect_to group_activity_path(@group, @activity)
         flash[:notice] = t'activity.new.notice_location'
       else
