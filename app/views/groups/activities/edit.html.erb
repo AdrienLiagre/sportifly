@@ -15,7 +15,9 @@
       <%= f.association :location, label: t('activity.edit.location'), collection: @activity.sport.locations %>
       <%= f.input :number_of_players, label: t('activity.edit.players') %>
       <%= f.input :price, label: t('activity.edit.price') %>
+      <%= f.input :description %>
       <%= f.input :date, :minute_step => 15, label: t('activity.edit.date') %>
+
 
       <div class='text-center'>
         <%= f.button :button do %>
