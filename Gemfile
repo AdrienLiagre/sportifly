@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
-
+ruby '2.3.3'
 
 gem "autoprefixer-rails"
 gem 'activeadmin', github: 'activeadmin'
@@ -38,14 +37,14 @@ gem 'searchkick'
 gem 'kaminari'
 gem 'pg_search'
 gem 'frontend-generators'
-
+gem 'cancancan'
 
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'quiet_assets'
-  gem 'pry-byebug'
-  gem 'pry-rails'
+  #gem 'pry-byebug'
+  #gem 'pry-rails'
   gem 'spring'
   gem 'letter_opener'
 end
