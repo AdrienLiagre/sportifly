@@ -3,6 +3,22 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+@font-face {
+    font-family: 'big_johnregular';
+    src: font-url('big_john-webfont.woff2') format('woff2'),
+         font-url('big_john-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'slim_joeregular';
+    src: font-url('slim_joe-webfont.woff2') format('woff2'),
+         font-url('slim_joe-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 html,
 body {
@@ -42,7 +58,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: 'Open Sans','Helvetica Neue','big_johnregular','slim_joeregular',Arial,sans-serif;
 }
 
 
@@ -53,6 +69,14 @@ h6 {
   margin: auto;
   border-radius: 50%;
   padding-top: 20px;
+}
+
+.big-john {
+  font-family: 'big_johnregular';
+}
+
+.slim-joe {
+  font-family: 'slim_joeregular';
 }
 
 .margin {
@@ -204,7 +228,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #77CCDD;
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), asset-data-url("creative/header2.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), asset-data-url("creative/header3.jpg");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -224,6 +248,7 @@ header .header-content .header-content-inner h1 {
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 700;
+    color: rgba(255,255,255,1);
 }
 
 header .header-content .header-content-inner h2 {

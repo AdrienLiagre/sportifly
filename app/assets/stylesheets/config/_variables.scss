@@ -7,13 +7,23 @@ $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Raleway", "Helvetica", "sans-serif";
 
 // Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
+@font-face {
+    font-family: 'big_johnregular';
+    src: font-url('big_john-webfont.woff2') format('woff2'),
+         font-url('big_john-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'slim_joeregular';
+    src: font-url('slim_joe-webfont.woff2') format('woff2'),
+         font-url('slim_joe-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 // $my-font: "Font Name";
 
 // Font-size and line-height
