@@ -42,6 +42,7 @@ module Groups
       @booking = Booking.new
     end
 
+
     def create
       @activity = @group.activities.new(activity_params)
       @activity.captain = current_user
