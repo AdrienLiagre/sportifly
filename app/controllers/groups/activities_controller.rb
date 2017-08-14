@@ -46,6 +46,7 @@ module Groups
     def create
       @activity = @group.activities.new(activity_params)
       @activity.captain = current_user
+      @activity.pinned = false
       @activity.bookings.new(user: @activity.captain)
 
       if @activity.save

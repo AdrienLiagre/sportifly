@@ -1,0 +1,82 @@
+/*!
+ * Start Bootstrap - 3 Col Portfolio (http://startbootstrap.com/template-overviews/3-col-portfolio)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-3-col-portfolio/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.pagination {
+    margin-bottom: 30px;
+}
+
+.hard-border {
+	border-radius: 0 !important;
+}
+
+.card-img-top {
+	border-radius: 0 !important;	
+}
+
+.card-body {
+	flex: initial !important;
+}
+
+#create-act {
+	background-color: rgb(237, 106, 90);
+}
+
+#create-btn {
+	color: white !important;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1340px !important;
+  }
+}
+
+.card-text {
+	color: #00b494;
+}
+
+.head-icon {
+	width:70px;
+	float:left;
+	margin-right: 10px;
+}
+
+.ibelieveicanfly {
+	position:absolute;
+	right:5px;
+	padding: 5px 10px;
+	background-color: rgb(237, 106, 90);
+	color:white;
+	cursor: pointer;
+}
+
+.participants {
+	float:left;
+	padding-left: 10px;
+}
+
+.bottom-fly {
+	height: 50px;
+}
+
+.margin-fly {
+	margin-top: 10px;
+	font-size: 14px;
+}
