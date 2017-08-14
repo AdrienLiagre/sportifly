@@ -3,6 +3,7 @@
             @activities = pinned + @activities
 
             for ac in @activities
+              activity = @group.activities.find(ac.id)
               nbr_participants = Booking.where(activity_id: ac.id).count.to_s
       %>
         <div class="col-lg-4 col-sm-6 portfolio-item">
@@ -21,7 +22,11 @@
               <div class="margin-fly">
                 <div class="participants"><%= nbr_participants %> participants sur <%= ac.number_of_players %></div>
                 <div class="ibelieveicanfly">
-                  Je fly                  
+                  <% if activity.user_booked?(current_user) %>
+                    <%= button_to t('group.unfly'), group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'ibelieve-f' %>
+                  <% else %>
+                    <%= button_to t('group.fly'), group_activity_bookings_path(@group, activity), class: 'ibelieve-f' %>
+                  <% end %>              
                 </div>
               </div>
             </div>

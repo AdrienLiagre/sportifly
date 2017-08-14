@@ -61,10 +61,14 @@ body {
 .ibelieveicanfly {
 	position:absolute;
 	right:5px;
+}
+
+.ibelieve-f {
 	padding: 5px 10px;
 	background-color: rgb(237, 106, 90);
 	color:white;
 	cursor: pointer;
+	border: medium none;
 }
 
 .participants {
