@@ -8,6 +8,8 @@ class ActivitiesController < ApplicationController
     else
     	Activity.update(params[:id], pinned:false)
     end
-    render :nothing => true
+    respond_to do |format|
+      format.js {render js: 'window.location.reload();'}
+    end
   end
 end

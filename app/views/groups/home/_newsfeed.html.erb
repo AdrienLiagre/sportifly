@@ -16,6 +16,13 @@
                 <%= ac.name %>
               </h4>
               </span>
+              <div style="position:absolute;right:10px;top:10px">
+                <% if current_user.admin == true and ac.pinned == false %>
+                  <%= link_to image_tag("pin.png", class:"pin", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.transform = 'scale(1)'"), pin_path(ac.id), :remote => true %>
+                <% else current_user.admin == true and ac.pinned == true %>
+                  <%= link_to image_tag("pin.png", class:"pin pinned", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.filter = 'invert(100%)';this.style.transform = 'scale(1)'",style:"filter:invert(100%)"), pin_path(ac.id), :remote => true %>
+                <% end %>
+              </div>
             </div>
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="bottom-fly">
@@ -33,3 +40,4 @@
           </div>
         </div>
       <% end %>
+
