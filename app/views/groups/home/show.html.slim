@@ -19,17 +19,8 @@ header.masthead
             = t 'group.next_sport_title'
         .panel-body
           .row
-            - pinned = @group.activities.where(pinned: true)
-            - @activities = @group.activities.where("date > ? AND pinned = ?", Time.now, false)  
-            - @activities = pinned + @activities
-
             - @activities.each do |activity|
-              .activity-list-el
-                .wrap-pin
-                  - if current_user.admin == true and activity.pinned == false
-                    = link_to image_tag("pin.png", class:"pin", onmouseover:"this.style.filter = 'grayscale(50%)';this.style.transform = 'scale(1.1)'", onmouseout:"this.style.filter = 'grayscale(0%)';this.style.transform = 'scale(1)'"), pin_path(activity.id), :remote => true
-                  - else current_user.admin == true and activity.pinned == true
-                    = link_to image_tag("pin.png", class:"pin pinned", onmouseover:"this.style.filter = 'grayscale(50%)';this.style.transform = 'scale(1.1)'", onmouseout:"this.style.filter = 'invert(100%)';this.style.transform = 'scale(1)'"), pin_path(activity.id), :remote => true
+              - if activity.date > Date.yesterday
                 .col-xs-12
                   .activity-item
                     .activity-item--title
@@ -40,7 +31,7 @@ header.masthead
                           - else
                             = image_tag 'default_profile_300.png', class: "activity-item--captain-avatar"
                           = activity.name
-                          span.label.label-default.pull-right.pull-bot = activity.sport.name
+                          span.label.label-default.pull-right = activity.sport.name
                 .col-xs-8
                     .activity-item--date
                       = l(activity.date, format: :short)
@@ -65,8 +56,8 @@ header.masthead
                         = link_to t('activity.show.accept_invit'), group_activity_booking_path(@group, activity, activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-block btn-primary-inverted'
                       - else
                         = button_to t('group.fly'), group_activity_bookings_path(@group, activity), class: 'btn btn-block btn-primary-inverted'
-              .col-xs-12
-                hr
+                .col-xs-12
+                  hr
       .panel
         = render 'map'
 
