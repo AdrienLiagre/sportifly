@@ -109,8 +109,24 @@ body {
     margin-bottom: 8px;
     padding: 0.3125rem;
     width: 100%;
+    color: #212529;
 }
 
 .btn-folie{
 	cursor: pointer;
+}
+
+#btn-profile{
+	border-radius: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  #profile-btn{
+  	position: absolute;
+  	right: 25px;
+  }
+  .dropdown-menu{
+  	right: 0 !important;
+  	left: initial !important;
+  }
 }
