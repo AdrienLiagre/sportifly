@@ -84,7 +84,7 @@ fr:
     filter: "Tu peux trier par sport"
     allsports: "Tous les sports"
     newsfeed: "Le vestiaire"
-    button_newsfeed: "Je veux partager cette folie"
+    button_newsfeed: "Partager"
     picture: "Photo"
     content: "Contenu"
     alert_no_sport: "Désolé, il n'y a rien de prévu pour le moment à %{city} "

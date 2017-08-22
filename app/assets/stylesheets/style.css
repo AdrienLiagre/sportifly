@@ -17,3 +17,15 @@
 .wrap-pin{
 	text-align:right;
 }
+
+.card{
+	border-radius: 0 !important;
+}
+
+.link_bar{
+	color:black;
+}
+
+.text_area_form{
+	width:100%;
+}

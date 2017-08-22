@@ -3,11 +3,11 @@
       <!-- Page Heading -->
       <div style="text-align:right;height:50px">
         <div style="margin-top:6px">
-          Classer : date | activité
+          Classer : <%= link_to 'date', '?filter=1', class:'link_bar' %> | <%= link_to 'défaut', root_path, class:'link_bar' %>
         </div>
       </div>
 
-      <div class="row">
+      <div class="card-columns">
       <%= render 'newsfeed' %>
       </div>
 
