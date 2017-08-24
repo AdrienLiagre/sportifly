@@ -1,0 +1,36 @@
+<% groupe_name = Group.where(id:current_user.group_id).first.name 
+   points_a = Activity.where(captain_id:current_user.id).count * 10
+   points_b = Booking.where(user_id:current_user.id).count * 2
+   points = points_a + points_b
+%>
+<div class="row">
+  <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 header-profile">
+    <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
+      <div class="card-body">
+        <%= image_tag("tete.png", height: '70', width: '70', class:'head-icon') %>
+        <span>
+          <p class="card-text profile-head"><%= current_user.name %></p>
+          <h6 class="card-title info-profile"><%= groupe_name %></h6>
+          <h6 class="card-title info-profile"><%= points.to_s + " points" %></h6>
+        </span>
+        <%= link_to ("<i class=\"fa fa-pencil-square-o edit-btn\" aria-hidden=\"true\"></i>").html_safe, edit_account_dashboard_users_path %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-8 offset-md-2"> 
+  <% uri = URI.parse(request.original_url)
+     user_list = []
+     uris = uri.to_s
+       
+     if uris.include? "?dash=vestiaire" %>
+    <%= render 'account/dashboard/dashtab/vestiaire' %>
+  <% elsif uris.include? "?dash=futur" %>
+    <%= render 'account/dashboard/dashtab/futur' %>
+  <% elsif uris.include? "?dash=passees" %>
+    <%= render 'account/dashboard/dashtab/passee' %>
+  <% else %>
+    <%= render 'account/dashboard/dashtab/general' %>
+  <% end %>
+</div>

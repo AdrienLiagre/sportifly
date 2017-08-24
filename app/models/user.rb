@@ -42,7 +42,12 @@ class User < ActiveRecord::Base
       self.group = Group.find_by(email_domain_name: "stationf.co")
     elsif self.email.include?("thalasseo")
       self.group = Group.find_by(email_domain_name: "voyageprive.com")
+    elsif Token.where(mail:params[:user][:email]).count > 0
+      puts("énorme pénis")
+      user_t = Token.where(mail:params[:user][:email]).first.group_id
+      self.group = Group.find_by(id:user_t)
     else
+      puts("armée de veaux")
       self.group = Group.find_by(email_domain_name: Mail::Address.new(self.email).domain)
     end
   end

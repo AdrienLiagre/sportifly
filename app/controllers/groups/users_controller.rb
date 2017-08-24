@@ -20,7 +20,7 @@ module Groups
 
         else
 
-          flash[:alert] = "Erreur, vérifiez l'adresse email"
+          flash[:alert] = "Il faut me modifier dans controllers/groups/users_controller.rb"
           redirect_to :back
         end
 

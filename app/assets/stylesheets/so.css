@@ -130,3 +130,33 @@ body {
   	left: initial !important;
   }
 }
+
+.dropdown-menu-droit{
+	border-radius:0 !important;
+}
+
+.header-profile{
+	height:110px;
+	margin: 10px;
+}
+
+.profile-head{
+	font-size: 20px;
+	color:black !important;
+	line-height: 10px !important;
+}
+
+.info-profile{
+	margin-bottom: 10px !important;
+}
+
+.edit-btn{
+	position:absolute;
+	right:10px;
+	top:10px;
+	cursor:pointer;
+}
+
+.tab-profile{
+	color:#D4D4D4;
+}

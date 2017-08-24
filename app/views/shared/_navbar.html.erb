@@ -42,7 +42,7 @@ $(function () {
             <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="btn-profile" type="button" class="btn btn-primary dropdown-toggle">
               Vous
             </button>
-            <div aria-labelledby="about-us" class="dropdown-menu">
+            <div aria-labelledby="about-us" class="dropdown-menu dropdown-menu-droit">
               <%= link_to account_dashboard_path, class:'dropdown-item' do %>
                 <% if current_user.bookings.planned.pending.any? %>
                   <%= t('navbar.profile')%><i class="fa fa-bell"></i>
