@@ -30,6 +30,8 @@
     <%= render 'account/dashboard/dashtab/futur' %>
   <% elsif uris.include? "?dash=passees" %>
     <%= render 'account/dashboard/dashtab/passee' %>
+  <% elsif uris.include? "?dash=corpo" %>
+    <%= render 'account/dashboard/dashtab/stat' %>
   <% else %>
     <%= render 'account/dashboard/dashtab/general' %>
   <% end %>

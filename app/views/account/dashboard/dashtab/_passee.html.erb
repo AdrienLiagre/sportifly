@@ -5,7 +5,7 @@
 </small></h6>
 <div class="row">
 <%
-activites = Activity.where(group_id:current_user.group_id).where("date <?", Time.now)
+activites = Activity.where(group_id:current_user.group_id).where("date <?", Time.now).order(:date => 'desc') 
 for a in activites
 %>
 <div class="col-md-6 portfolio-item">
@@ -13,7 +13,7 @@ for a in activites
       <div class="card-body">
         <%= image_tag("tete.png", class:'head-icon') %>
         <span>
-          <p class="card-text"><%= a.name + " - " + a.date.to_s %></p>
+          <p class="card-text"><%= a.name + " - " + a.date.to_formatted_s(:short) %></p>
 
         </span>
       </div>
