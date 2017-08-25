@@ -1,4 +1,4 @@
-<h6 class="my-4"><small><%= link_to 'Général', account_dashboard_path, class:'link_bar' %> | <%= link_to 'Vestiaire', '?dash=vestiaire', class:'link_bar' %> | <%= link_to 'Activités à venir', '?dash=futur', class:'link_bar' %> | <%= link_to 'Activités passées', '?dash=passees', class:'link_bar' %>
+<h6 class="my-4"><small><%= link_to 'Activités à venir', account_dashboard_path, class:'link_bar' %> | <%= link_to 'Activités passées', '?dash=passees', class:'link_bar' %> | <%= link_to 'Vestiaire', '?dash=vestiaire', class:'link_bar' %>
 <% if current_user.admin == true %>
  | <b><%= link_to 'Groupe', '?dash=corpo', class:'link_bar' %></b>
 <% end %>

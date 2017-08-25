@@ -24,15 +24,14 @@
      user_list = []
      uris = uri.to_s
        
-     if uris.include? "?dash=vestiaire" %>
+  if uris.include? "?dash=vestiaire" %>
     <%= render 'account/dashboard/dashtab/vestiaire' %>
-  <% elsif uris.include? "?dash=futur" %>
-    <%= render 'account/dashboard/dashtab/futur' %>
+
   <% elsif uris.include? "?dash=passees" %>
     <%= render 'account/dashboard/dashtab/passee' %>
   <% elsif uris.include? "?dash=corpo" %>
     <%= render 'account/dashboard/dashtab/stat' %>
   <% else %>
-    <%= render 'account/dashboard/dashtab/general' %>
+    <%= render 'account/dashboard/dashtab/futur' %>
   <% end %>
 </div>

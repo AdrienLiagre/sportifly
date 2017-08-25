@@ -1,4 +1,4 @@
-<h6 class="my-4"><small><%= link_to 'Général', account_dashboard_path, class:'link_bar' %> | <%= link_to 'Vestiaire', '?dash=vestiaire', class:'link_bar' %> | <%= link_to 'Activités à venir', '?dash=futur', class:'link_bar' %> | <b><%= link_to 'Activités passées', '?dash=passees', class:'link_bar' %></b>
+<h6 class="my-4"><small><%= link_to 'Activités à venir', account_dashboard_path, class:'link_bar' %> | <b><%= link_to 'Activités passées', '?dash=passees', class:'link_bar' %></b> | <%= link_to 'Vestiaire', '?dash=vestiaire', class:'link_bar' %>
 <% if current_user.admin == true %>
  | <%= link_to 'Groupe', '?dash=corpo', class:'link_bar' %>
 <% end %>
@@ -14,7 +14,11 @@ for a in activites
         <%= image_tag("tete.png", class:'head-icon') %>
         <span>
           <p class="card-text"><%= a.name + " - " + a.date.to_formatted_s(:short) %></p>
-
+          <% if Booking.where(activity_id:a.id,user_id:current_user.id).count == 1 %>
+            <p>J'ai participé</p>
+          <% else %>
+            <p>Je n'ai pas participé</p>
+          <% end %>
         </span>
       </div>
       <div class="card-body" style="margin-top: -30px">

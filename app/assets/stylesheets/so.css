@@ -163,7 +163,7 @@ body {
 
 /* Graph css */
 @media screen and (max-width: 1000px) {
-  #contain-svg{
+  #q-graph{
   	display: none;
   }
 }
@@ -339,3 +339,7 @@ body {
 }
 
 /* End graph css */
+
+.control-label{
+  display: none !important;
+}

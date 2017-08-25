@@ -1,0 +1,27 @@
+<% groupe_name = Group.where(id:current_user.group_id).first.name 
+%>
+<div class="container main-content">
+<div class="row">
+  <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 header-profile">
+    <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
+      <div class="card-body">
+        <%= image_tag("tete.png", height: '70', width: '70', class:'head-icon') %>
+        <span>
+          <%= simple_form_for([:account, :dashboard, @user], url: account_dashboard_users_path, html: { multipart: true }) do |f| %>
+            <%= f.input :name, label: t('profil.update.name'), placeholder:"Nom", :required => true %>
+            <%= f.input :crew, placeholder:"Crew" %>
+            <%= f.input :age, placeholder:"Age" %>
+            <%= f.input :phone_number, label: t('profil.update.phone_number'), placeholder:"Téléphone" %>
+            <%= f.input :picture, label: t('profil.update.picture') %>
+            <%= f.submit class: 'btn btn-primary btn-block', value: t('profil.update.button') %>
+            <%= link_to t('devise.sessions.change_password'), edit_user_registration_path, class: "change-password btn btn-primary btn-block" %>
+          <% end %>
+          <p class="card-text profile-head"></p>
+          <h6 class="card-title info-profile"></h6>
+          <h6 class="card-title info-profile"></h6>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
