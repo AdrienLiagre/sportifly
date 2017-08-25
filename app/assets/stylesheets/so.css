@@ -350,3 +350,37 @@ body {
   margin-top: 15px;
 
 }
+
+.big-profile-apart{
+  color:black;
+}
+
+.hard-corner{
+  border-radius: 0 !important;
+  margin-bottom: -10px;
+}
+
+.profil-good{
+  text-align: center!important;
+  margin-bottom: 10px;
+}
+
+select{
+    -moz-appearance: none;
+    border: 1px solid #d9d9d9 !important;
+    height: 100% !important;
+    padding: 0.3125rem !important;
+    position: relative !important;
+    z-index: 0 !important;
+    font-size: 100% !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+    display: inline-block !important;
+    height: 2.125rem !important;
+    line-height: 1 !important;
+    margin: 0.325rem 0 !important;
+    min-height: 2.125rem !important;
+    position: relative !important;
+    vertical-align: middle !important;
+    border-radius: 0 !important;
+}

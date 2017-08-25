@@ -7,7 +7,7 @@
 
 .container.main-content
   .row
-    .col-xs-12.col-sm-6.col-sm-offset-3
+    .col-xs-12.col-sm-6.offset-sm-3
       = simple_form_for([:group, @activity], html: { multipart: true }) do |f|
         = f.error_notification
         = f.input :name, label: t('activity.new.name'), input_html: {maxlength: 20}
@@ -15,7 +15,9 @@
         / = f.association :location, label: :'A quel endroit ?', label_method: :name, value_method: :id
         = f.input :description
         = f.input :number_of_players, label: t('activity.new.players')
+        <div class="col-md-8 offset-md-2">
         = f.input :date, :minute_step => 15, label: t('activity.new.time')
+        </div>
         = f.input :price, label: t('activity.new.price')
         .form-actions
           = f.submit class: 'btn btn-primary btn-block', value: t('activity.new.creation')

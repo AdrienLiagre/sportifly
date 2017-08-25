@@ -1,6 +1,6 @@
 
 .row
-  .col-xs-12.col-sm-6.col-sm-offset-3
+  .col-xs-12.col-sm-6.offset-sm-3
     .text-center
     /   h2 Recherche des team mates pour le prochain fly
 
@@ -12,14 +12,13 @@
 
 br
 .row
-  .col-xs-12.col-sm-6.col-sm-offset-3
+  .col-xs-12.col-sm-6.offset-sm-3
     .text-center
       h2
         '
         = t'group.invite'
         => current_user.group.name
         '
-        = t'group.invite_two'
     = form_tag group_users_path(current_user.group), :method => :get
         .input-group
           = text_field_tag :email, params[:email], class: "form-control", placeholder: t('group.invite_placeholder')
@@ -28,7 +27,7 @@ br
 
 br
 .row
-  .col-xs-12.col-md-6
+  .col-xs-12.col-md-6.offset-md-3
     .panel.panel-first
       .panel-heading.text-center
         h2 Meetemps, qui sommes-nous ?
@@ -37,7 +36,8 @@ br
         p Nous sommes étudiants en école de commerce et nous sommes découvert un appétit pour le développement web. Convaincus du besoin de liant en entreprise à travers nos expériences, nous y avons associé notre fort intérêt pour le sport pour faire naître Meetemps.
         h3 Créer du lien facilement
         p Connaissez-vous vraiment votre voisin de bureau ? La bonne ambiance est pour nous primordiale au sein d'une organisation professionnelle ou étudiante. Nous souhaitons grâce à cette plateforme, faciliter les rapports humains et la constitution d'un réseau, à travers une partie de tennis en afterwork par exemple.
-  .col-xs-12.col-md-6
+  <div style="display:none">
+  .col-xs-12.col-md-6.
     .panel.panel-first
       .panel-heading.text-center
         h2
@@ -56,7 +56,7 @@ br
               #photo-group2
                 = image_tag 'arturo-1.png', class: 'img-responsive contact-picture', id: 'picture2'
                 = image_tag 'arturo-2.png', class: 'img-responsive contact-picture hidden', id: 'picture2b'
-
+</div>
 
 
 

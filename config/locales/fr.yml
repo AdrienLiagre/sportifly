@@ -90,7 +90,7 @@ fr:
     alert_no_sport: "Désolé, il n'y a rien de prévu pour le moment à %{city} "
     invite: "Invite tes collègues de la team "
     invite_two: "à s'inscire sur Meetemps !"
-    invite_placeholder: "Inviter un(e) collègue où ami(e) sur Meetemps, renseigner son email pro"
+    invite_placeholder: "Envoyer une invitation"
     invite_button: "Inviter"
 
   invitation:
