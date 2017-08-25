@@ -343,3 +343,10 @@ body {
 .control-label{
   display: none !important;
 }
+
+.sep-profil{
+  width:100%;
+  text-align:center;
+  margin-top: 15px;
+
+}
