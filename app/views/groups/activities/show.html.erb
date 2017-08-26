@@ -1,0 +1,65 @@
+    <div class="container">
+      <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+        <div class="card" style="border:none">
+          <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125);margin-top:10px">   
+            <div class="card-body">
+              <%= image_tag("tete.png", class:'head-icon') %>
+              <span>
+                <p class="card-text"><%= @activity.date.to_formatted_s(:short) + " - " + number_to_currency(@activity.price) %></p>
+                <h4 class="card-title">
+                  <%= @activity.name %>
+                </h4>
+              </span>
+            </div>
+            <div class="card-body" style="margin-top: -30px">
+              <%= @activity.description %>
+            </div>
+            <div class="card-body" style="margin-top: -30px">
+              <% if @activity.location %>
+                <%= @activity.location.full_address %>
+              <% else %>
+                <% if current_user == @activity.captain %>
+                  <%= link_to t('activity.show.choose_location'), edit_group_activity_path(@group, @activity) %>
+                    ou 
+                  <%= link_to t('activity.show.create_location'), new_group_activity_location_path(@group, @activity) %>
+                    un point de rendez-vous.
+                  <% else %>
+                    Aucun endroit n'a été indiqué pour le moment.
+                  <% end %>
+              <% end %>
+            </div> 
+            <div class="bottom-fly">
+              <div class="margin-fly">
+                <div class="participants"></div>
+                <div class="ibelieveicanfly">
+                  <% if @activity.user_booked?(current_user) %>
+                    <%= button_to t('group.unfly'), group_activity_booking_path(@group, @activity, @activity.bookings), method: :delete, class: 'ibelieve-f' %>
+                  <% else %>
+                    <%= button_to t('group.fly'), group_activity_bookings_path(@group, @activity), class: 'ibelieve-f' %>
+                  <% end %>                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 offset-md-3 col-sm-12 row">
+        <% if @activity.bookings.confirmed.any? %>
+          <% @activity.bookings.confirmed.each do |booking| %>
+            <div class="col-md-2 hey-i-am-paul col-sm-4">
+              <%= image_tag("tete.png", class:'head-icon') %>
+              <% if @activity.captain == booking.user %>
+                <i class="fa fa-star"></i>
+              <% end %>
+              <%= link_to booking.user.name, group_user_path(@group, booking.user) %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-6 offset-md-3 col-sm-12 row" style="position: absolute; right: 0;margin-top: 10px">
+        <% if @activity.captain == current_user %>
+          <%= link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: 'ibelieve-f', style:"margin-right:6px" %>
+          <%= link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: 'ibelieve-f' %>
+        <% end %>
+      </div>   
+    </div>

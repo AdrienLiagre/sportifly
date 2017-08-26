@@ -4,7 +4,7 @@
   <%= f.error_notification %>
   <div class="container">
     <div class="row">`
-      <div class="col-sm-4 col-sm-offset-4">
+      <div class="col-sm-4 offset-sm-4">
       <h3> <%= t'activity.edit.info'%> </h3>
 
       <div>
@@ -13,9 +13,9 @@
       </div>
 
       <%= f.association :location, label: t('activity.edit.location'), collection: @activity.sport.locations %>
-      <%= f.input :number_of_players, label: t('activity.edit.players') %>
-      <%= f.input :price, label: t('activity.edit.price') %>
-      <%= f.input :description %>
+      <%= f.input :number_of_players, label: t('activity.edit.players'), :input_html => { :class => "hard-corner" } %>
+      <%= f.input :price, label: t('activity.edit.price'), :input_html => { :class => "hard-corner" } %>
+      <%= f.input :description, :input_html => { :class => "hard-corner" } %>
       <%= f.input :date, :minute_step => 15, label: t('activity.edit.date') %>
 
 
