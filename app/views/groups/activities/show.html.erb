@@ -7,7 +7,7 @@
               <span>
                 <p class="card-text"><%= @activity.date.to_formatted_s(:short) + " - " + number_to_currency(@activity.price).to_s %></p>
                 <h4 class="card-title">
-                  <%= @activity.name %>
+                  <%= link_to @activity.name, group_activity_path(@group, @activity) %>
                 </h4>
               </span>
             </div>

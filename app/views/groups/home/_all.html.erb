@@ -1,6 +1,38 @@
     <% uri = URI.parse(request.original_url)
         user_list = []
         uris = uri.to_s
+        users = User.where(group_id:current_user.group_id).all
+        c = 0
+        if uris.include? "?filter=1"
+          for u in users
+            if c == 0
+              @vestiaires = Newsfeed.where(user_id:u.id)
+              zero = Newsfeed.where(user_id:u.id)
+              c = c + 1
+            else
+              @vestiaires = Newsfeed.where(user_id:u.id)
+              zero = zero + @vestiaires
+            end
+          end
+          @vestiaires = zero.order(:created_at => 'desc')
+          @vestiaires = @vestiaires.last(15)
+        else
+          for u in users
+            if c == 0
+              @vestiaires = Newsfeed.where(user_id:u.id)
+              zero = Newsfeed.where(user_id:u.id)
+              c = c + 1
+            else
+              @vestiaires = Newsfeed.where(user_id:u.id)
+              zero = zero + @vestiaires
+            end
+          end
+          @vestiaires = zero.order(:created_at => 'desc')
+        end
+          vest_lgt = @vestiaires.count
+
+        user_list = []
+        uris = uri.to_s
         if uris.include? "?filter=1" 
           @activities = @group.activities.where("date > ?", Time.now)
           @activities = @activities.sort_by &:date
@@ -9,11 +41,45 @@
           @activities = @group.activities.where("date > ? AND pinned != ?", Time.now, true)  
           @activities = pinned + @activities
         end
-          count = 0
-          for ac in @activities
+        @activities = @activities.last(15)
+        acti_lgt = @activities.count
+
+        alli = @activities + @vestiaires
+        alli = alli.shuffle()
+        count = 0
+        for ac in alli
+
+        if count == 0 %>
+         <%= render 'map' %>
+        <div style="border:none" class="card">
+            <div style="border:1px solid rgba(0, 0, 0, 0.125)" class="card hard-border">   
+              <div class="card-body">          
+                <span>
+                  <p class="card-text">A quoi pensez-vous ?</p>
+                    <h4 class="card-title">
+                        
+    <%= simple_form_for @newsfeed, url: group_newsfeeds_path(@group), class: 'form-inline', remote: true do |f| %>
+        <%= f.text_area :content, label: t('group.content'), class: "text_area_form" %>
+        <% #f.input :picture, label: t('group.picture') %>
+        <%= f.submit class: 'btn btn-primary-inverted btn-block btn-folie', value: t('group.button_newsfeed'), onclick:"if (document.getElementById('newsfeed_content').value != ''){window.location.reload()}" %>
+    <% end %>
+
+                    </h4>
+                </span>      
+              </div>      
+            </div>
+        </div>
+      <% 
+      count = 1
+      end
+
+
+
+
+          if ac.class.name == 'Activity'
             activity = @group.activities.find(ac.id)
             nbr_participants = Booking.where(activity_id: ac.id).count.to_s
-    %>
+        %>
         <div class="card" style="border:none">
           <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
             <div class="card-body">
@@ -58,27 +124,30 @@
             </div>
           </div>
         </div>
-      <% if count == 0 %>
-        <div style="border:none" class="card">
-            <div style="border:1px solid rgba(0, 0, 0, 0.125)" class="card hard-border">   
-              <div class="card-body">          
-                <span>
-                  <p class="card-text">A quoi pensez-vous ?</p>
-                    <h4 class="card-title">
-                        
-    <%= simple_form_for @newsfeed, url: group_newsfeeds_path(@group), class: 'form-inline', remote: true do |f| %>
-        <%= f.text_area :content, label: t('group.content'), class: "text_area_form" %>
-        <% #f.input :picture, label: t('group.picture') %>
-        <%= f.submit class: 'btn btn-primary-inverted btn-block btn-folie', value: t('group.button_newsfeed'), onclick:"if (document.getElementById('newsfeed_content').value != ''){window.location.reload()}" %>
-    <% end %>
 
-                    </h4>
-                </span>      
-              </div>      
+
+        <%
+          elsif ac.class.name == 'Newsfeed'
+            user_name = User.where(id:ac.user_id).first.name
+        %>
+        <div class="card" style="border:none">
+          <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
+            <div class="card-body">
+              <%= image_tag("tete.png", class:'head-icon') %>
+              <span>
+              <p class="card-text">
+                <%= link_to user_name, group_user_path(@group, ac.user_id), style:"color:black" %> - <%= ac.created_at.to_formatted_s(:short) %>
+              </p>
+              <h6 class="card-title">
+                <%= ac.content %>
+              </h6>
+              </span>
             </div>
+          </div>
         </div>
-      <% 
-      count = 1
-      end %>
-      <% end %>
 
+        <%
+
+          end
+        end
+    %>

@@ -30,10 +30,10 @@ $(function () {
             <%= link_to 'tous', root_path, class:'nav-link' %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">activités</a>
+            <%= link_to 'activités',  "/group/" + current_user.group.name.downcase + "?style=activ", class:'nav-link' %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">vestiaire</a>
+            <%= link_to 'activités',  "/group/" + current_user.group.name.downcase + "?style=vestiaire", class:'nav-link' %>
           </li>
           <li class="nav-item">
             
