@@ -5,7 +5,7 @@
             <div class="card-body">
               <%= image_tag("tete.png", class:'head-icon') %>
               <span>
-                <p class="card-text"><%= @activity.date.to_formatted_s(:short) + " - " + number_to_currency(@activity.price) %></p>
+                <p class="card-text"><%= @activity.date.to_formatted_s(:short) + " - " + number_to_currency(@activity.price).to_s %></p>
                 <h4 class="card-title">
                   <%= @activity.name %>
                 </h4>
