@@ -56,7 +56,7 @@ module Groups
           bonhomme.push(User.where(id:u.id).first)
           email = bonhomme[0].email
           bonhomme.push(Sport.where(id:@activity.sport_id).first.name)
-          UserMailer.invitation(email, bonhomme).deliver_now
+          UserMailer.favorite(email, bonhomme).deliver_now
         end
         redirect_to group_activity_path(@group, @activity)
         flash[:notice] = t'activity.new.notice_location'
