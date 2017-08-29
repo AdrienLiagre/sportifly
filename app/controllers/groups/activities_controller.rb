@@ -50,7 +50,12 @@ module Groups
       @activity.bookings.new(user: @activity.captain)
 
       if @activity.save
-
+        users = Favorite.where(sport_id: @activity.sport_id, group_id:@activity.group_id)
+        for u in users
+          bonhomme = User.where(id:u.id).first
+          email = bonhomme.email
+          UserMailer.invitation(email, bonhomme).deliver_now
+        end
         redirect_to group_activity_path(@group, @activity)
         flash[:notice] = t'activity.new.notice_location'
       else
