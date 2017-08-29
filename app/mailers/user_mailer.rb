@@ -34,6 +34,7 @@ class UserMailer < ApplicationMailer
   end
 
   def favorite(email, user)
+    @user = user
     mail to: email, subject: "Nouvelle activité pour vous !"    
   end
 
