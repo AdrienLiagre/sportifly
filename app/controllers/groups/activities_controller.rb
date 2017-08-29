@@ -52,9 +52,10 @@ module Groups
       if @activity.save
         users = Favorite.where(sport_id: @activity.sport_id, group_id:@activity.group_id)
         for u in users
-          bonhomme = User.where(id:u.id).first
-          email = bonhomme.email
-          bonhomme = bonhomme + Sport.where(id:@activity.sport_id).first.name
+          bonhomme = []
+          bonhomme.push(User.where(id:u.id).first)
+          email = bonhomme[0].email
+          bonhomme.push(Sport.where(id:@activity.sport_id).first.name)
           UserMailer.invitation(email, bonhomme).deliver_now
         end
         redirect_to group_activity_path(@group, @activity)
