@@ -54,6 +54,7 @@ module Groups
         for u in users
           bonhomme = User.where(id:u.id).first
           email = bonhomme.email
+          bonhomme = bonhomme + Sport.where(id:@activity.sport_id).first.name
           UserMailer.invitation(email, bonhomme).deliver_now
         end
         redirect_to group_activity_path(@group, @activity)
