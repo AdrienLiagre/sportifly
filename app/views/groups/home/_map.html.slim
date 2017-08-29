@@ -1,5 +1,5 @@
 - if @activities.count == 1
-  #map style=("width: 100%; height: 300px;")
+  #map style=("width: 100%; height: 300px;margin-bottom:23px")
     - content_for(:after_js)
       javascript:
         $(document).on('ready', function() {
@@ -16,7 +16,7 @@
         })
 - elsif @activities.count == 0
 - else
-  #map style=("width: 100%; height: 300px;")
+  #map style=("width: 100%; height: 300px;margin-bottom:23px")
     - content_for(:after_js)
       javascript:
         $(document).on('ready', function() {

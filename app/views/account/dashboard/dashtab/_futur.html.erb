@@ -1,0 +1,32 @@
+<h6 class="my-4"><small><b><%= link_to 'Activités à venir', account_dashboard_path, class:'link_bar' %></b> | <%= link_to 'Activités passées', '?dash=passees', class:'link_bar' %> | <%= link_to 'Vestiaire', '?dash=vestiaire', class:'link_bar' %>
+<% if current_user.admin == true %>
+ | <%= link_to 'Groupe', '?dash=corpo', class:'link_bar' %>
+<% end %>
+</small></h6>
+<div class="row">
+<%
+activites = Activity.where(group_id:current_user.group_id).where("date >?", Time.now).sort_by &:date
+for a in activites
+%>
+<div class="col-md-6 portfolio-item">
+  <div class="card h-100">
+      <div class="card-body">
+        <%= image_tag("tete.png", class:'head-icon') %>
+        <span>
+          <p class="card-text"><%= a.name + " - " + a.date.to_formatted_s(:short) %></p>
+          <% if Booking.where(activity_id:a.id,user_id:current_user.id).count == 1 %>
+            <p>J'ai réservé</p>
+          <% else %>
+            <p>Je n'ai pas réservé</p>
+          <% end %>
+        </span>
+      </div>
+      <div class="card-body" style="margin-top: -30px">
+        <%= a.description %>
+      </div>     
+  </div>
+</div>
+<%
+end
+%>
+</div>

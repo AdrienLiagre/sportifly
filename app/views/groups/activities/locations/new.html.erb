@@ -1,6 +1,6 @@
 <div class="container panel-heading text-center">
   <div class="row">`
-    <div class="col-sm-5 col-sm-offset-3">
+    <div class="col-sm-6 col-sm-offset-3 col-md-4 offset-md-4">
       <%= simple_form_for(@location, url: group_activity_locations_path(current_user.group, @activity), html: { multipart: true }) do |f| %>
         <h1><%= t'club.title'%> <%= @activity.sport.name %></h1>
         <%= render 'groups/locations/form', form: f %>
