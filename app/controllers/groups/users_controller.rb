@@ -19,8 +19,9 @@ module Groups
           redirect_to :back
 
         else
-
-          flash[:alert] = "Il faut me modifier dans controllers/groups/users_controller.rb"
+          Token.create(group_id:current_user.group_id,mail:@email,token:"trololo")
+          UserMailer.invitation(@email, @user).deliver_now
+          flash[:alert] = "Invitation envoyée"
           redirect_to :back
         end
 
