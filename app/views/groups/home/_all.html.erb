@@ -44,7 +44,22 @@
         @activities = @activities.last(15)
         acti_lgt = @activities.count
 
-        alli = @activities + @vestiaires
+        #On recupère les sports pour lesquels le gars a pas dit s'il voulait être prévenu
+        tous_les_sports = Sport.all.shuffle()
+        favorite = Favorite.where(user_id:current_user.id)
+        compteur = 0
+        @sports = []
+        for t in tous_les_sports
+          if Favorite.where(user_id:current_user.id,sport_id:t.id) == [] and compteur < 3
+            @sports.push(Sport.where(id:t.id).first)
+            compteur = compteur + 1
+          elsif compteur == 3
+            break
+          end
+        end
+        #end 
+        puts("zob10" + @sports.to_s)
+        alli = @activities + @vestiaires + @sports
         alli = alli.shuffle()
         count = 0
         for ac in alli
@@ -147,7 +162,32 @@
         </div>
 
         <%
+          elsif ac.class.name == 'Sport'
+        %>
+        <div class="card" style="border:none">
+          <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
+            <div class="card-body">
+              <span>
+              <h6 class="card-title">
+                Souhaitez-vous recevoir des notifications pour le sport suivant : <b><%= ac.name %></b> ?
+              </h6>
+              <h4 style="width: 100%;text-align: center">
+                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+              </h4>
+              </span>
+            </div>
+            <div class="bottom-fly">
+              <div class="margin-fly">
+                <div class="ibelieveicanfly2">
+                  <%= link_to 'Oui', faddy_path(ac.id), :remote => true, class: 'ibelieve-f' %>
+                  <%= link_to 'Non', faddn_path(ac.id), :remote => true, class: 'ibelieve-f' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <%  
           end
         end
     %>

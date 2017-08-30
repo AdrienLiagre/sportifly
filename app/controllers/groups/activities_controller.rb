@@ -50,7 +50,7 @@ module Groups
       @activity.bookings.new(user: @activity.captain)
 
       if @activity.save
-        users = Favorite.where(sport_id: @activity.sport_id, group_id:@activity.group_id)
+        users = Favorite.where(sport_id: @activity.sport_id, group_id:@activity.group_id,response:1).where('id <> ?' , current_user.id)
         for u in users
           bonhomme = []
           bonhomme.push(User.where(id:u.id).first)
