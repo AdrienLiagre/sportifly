@@ -1,33 +1,13 @@
     <% uri = URI.parse(request.original_url)
         user_list = []
         uris = uri.to_s
-        users = User.where(group_id:current_user.group_id).all
+
         c = 0
         if uris.include? "?filter=1"
-          for u in users
-            if c == 0
-              @vestiaires = Newsfeed.where(user_id:u.id)
-              zero = Newsfeed.where(user_id:u.id)
-              c = c + 1
-            else
-              @vestiaires = Newsfeed.where(user_id:u.id)
-              zero = zero + @vestiaires
-            end
-          end
-          @vestiaires = zero.order(:created_at => 'desc')
+          @vestiaires = Newsfeed.joins(:user).where("users.group_id = 1").order(:created_at => 'desc')
           @vestiaires = @vestiaires.last(15)
         else
-          for u in users
-            if c == 0
-              @vestiaires = Newsfeed.where(user_id:u.id)
-              zero = Newsfeed.where(user_id:u.id)
-              c = c + 1
-            else
-              @vestiaires = Newsfeed.where(user_id:u.id)
-              zero = zero + @vestiaires
-            end
-          end
-          @vestiaires = zero
+          @vestiaires = Newsfeed.joins(:user).where("users.group_id = 1").last(15)
         end
           vest_lgt = @vestiaires.count
 
