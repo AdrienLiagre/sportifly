@@ -4,29 +4,10 @@
         users = User.where(group_id:current_user.group_id).all
         c = 0
         if uris.include? "?filter=1"
-          for u in users
-            if c == 0
-              @vestiaires = Newsfeed.where(user_id:u.id)
-              zero = Newsfeed.where(user_id:u.id)
-              c = c + 1
-            else
-              @vestiaires = Newsfeed.where(user_id:u.id)
-              zero = zero + @vestiaires
-            end
-          end
-          @vestiaires = zero.order(:created_at => 'desc')
+          @vestiaires = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id).order(:created_at => 'desc')
+          @vestiaires = @vestiaires.last(15)
         else
-          for u in users
-            if c == 0
-              @vestiaires = Newsfeed.where(user_id:u.id)
-              zero = Newsfeed.where(user_id:u.id)
-              c = c + 1
-            else
-              @vestiaires = Newsfeed.where(user_id:u.id)
-              zero = zero + @vestiaires
-            end
-          end
-          @vestiaires = zero
+          @vestiaires = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id).last(15)
         end
           count = 0
           for ac in @vestiaires
