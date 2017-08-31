@@ -19,7 +19,7 @@ module Groups
           redirect_to :back
 
         else
-          Token.create(group_id:current_user.group_id,mail:@email,token_string:"trololo")
+          Token.create(group_id:current_user.group_id,mail:@email,token_string:"trololo",original_id:current_user.id)
           UserMailer.invitation(@email, @user).deliver_now
           flash[:alert] = "Invitation envoyée"
           redirect_to :back

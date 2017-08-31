@@ -4,10 +4,10 @@
 
         c = 0
         if uris.include? "?filter=1"
-          @vestiaires = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id).order(:created_at => 'desc')
+          @vestiaires = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id.to_s).order(:created_at => 'desc')
           @vestiaires = @vestiaires.last(15)
         else
-          @vestiaires = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id).last(15)
+          @vestiaires = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id.to_s).last(15)
         end
           vest_lgt = @vestiaires.count
 
@@ -39,7 +39,21 @@
         end
         #end 
 
-        alli = @activities + @vestiaires + @sports
+        #On récupère les derniers invités inscrits.
+        @invites = []
+        time = Time.now.strftime("%d/%m/%Y %H:%M")
+        d1 = Date.parse(time)
+        d2 = (d1<<2).to_s
+        derniers = User.where(group_id:current_user.group_id).where("created_at >?", d2)
+        for d in derniers
+          tok = Token.where(mail:d.email).count
+          if tok > 0
+            @invites.push(d)
+          end
+        end
+        #end
+
+        alli = @activities + @vestiaires + @sports + @invites
         alli = alli.shuffle()
         count = 0
         for ac in alli
@@ -163,6 +177,26 @@
                   <%= link_to 'Non', faddn_path(ac.id), :remote => true, class: 'ibelieve-f' %>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <%
+          elsif ac.class.name == 'User'
+            hote = Token.where(mail:ac.email).first.original_id
+            hote = User.where(id:hote).first.name
+        %>
+        <div class="card" style="border:none">
+          <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
+            <div class="card-body">
+              <span>
+              <h6 class="card-title">
+                <%= link_to 'Invitation envoyée par ' + hote, group_users_path(current_user.group), style:'color:black' %>
+              </h6>
+              <h4 style="width: 100%;text-align: right">
+                Bienvenue à : <b><%= link_to ac.name, group_user_path(@group, ac.id) %></b>
+              </h4>
+              </span>
             </div>
           </div>
         </div>
