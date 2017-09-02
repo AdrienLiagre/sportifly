@@ -1,0 +1,25 @@
+<h6 class="my-4"><small><%= link_to 'Activités à venir', group_user_path(@user.group_id, @user.id), class:'link_bar' %> | <%= link_to 'Activités passées', '?dash=passees', class:'link_bar' %> | <b><%= link_to 'Vestiaire', '?dash=vestiaire', class:'link_bar' %></b>
+</small></h6>
+<div class="row">
+<%
+vestiaire = Newsfeed.where(user_id:@user.id)
+for v in vestiaire
+%>
+<div class="col-md-6 portfolio-item">
+  <div class="card h-100">
+      <div class="card-body">
+      <%= image_tag("tete.png", class:'head-icon') %>
+      <span>
+      <p class="card-text"><%= v.created_at.to_formatted_s(:short) %></p>
+      <h4 class="card-title">
+          <%= v.content %>
+      </h4>
+      </span>
+      </div>
+   <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>       
+  </div>
+</div>
+<%
+end
+%>
+</div>

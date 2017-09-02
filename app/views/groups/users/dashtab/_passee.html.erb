@@ -1,0 +1,29 @@
+<h6 class="my-4"><small><%= link_to 'Activités à venir', group_user_path(@user.group_id, @user.id), class:'link_bar' %> | <b><%= link_to 'Activités passées', '?dash=passees', class:'link_bar' %></b> | <%= link_to 'Vestiaire', '?dash=vestiaire', class:'link_bar' %>
+</small></h6>
+<div class="row">
+<%
+activites = Activity.where(group_id:@user.group_id).where("date <?", Time.now).order(:date => 'desc') 
+for a in activites
+%>
+<div class="col-md-6 portfolio-item">
+  <div class="card h-100">
+      <div class="card-body">
+        <%= image_tag("tete.png", class:'head-icon') %>
+        <span>
+          <p class="card-text"><%= a.name + " - " + a.date.to_formatted_s(:short) %></p>
+          <% if Booking.where(activity_id:a.id,user_id:@user.id).count == 1 %>
+            <p>A participé</p>
+          <% else %>
+            <p>N'a pas participé</p>
+          <% end %>
+        </span>
+      </div>
+      <div class="card-body" style="margin-top: -30px">
+        <%= a.description %>
+      </div>     
+  </div>
+</div>
+<%
+end
+%>
+</div>
