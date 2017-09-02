@@ -128,43 +128,41 @@ $(function () {
 
 <% else %> <!-- /.navbar if not signed-in but user is not on home page-->
 
-<nav id="mainNav" class=" navbar-default">
-    <div class="container">
-      <div class="navbar-header">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar" style="border: 2px solid #77ccdd;background-color: #77ccdd">
+      <div class="container">
+      <%= link_to root_path, class: 'navbar-brand', style: 'font-size:16px;color:white' do%>
+        <b> Meetemps </b>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div style="width:100%">
+          <ul class="nav navbar-nav navbar-right-bis navbar-brand" style='font-size:16px'>
+            <li>
+              <%= link_to t('users.sign_in.log_in'), new_user_session_path, class: 'hover text-navbar',style:'color:white;font-weight:bold;margin-right: 20px;' %>
+            </li>
 
-          <%= link_to root_path, class: 'navbar-brand hover' do%>
-            <b> Meetemps </b>
-          <% end %>
-        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="glyphicon glyphicon-chevron-down"></span>
-        </a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to t('users.sign_in.log_in'), new_user_session_path, class: 'hover text-navbar' %>
-          </li>
-
-          <li>
-            <% if params[:locale] == "en"%>
-              <%= link_to url_for( :locale => 'fr' ) do %>
-                <%= image_tag 'france.png'%>
-            <%end%>
-            <% elsif params[:locale] == "fr" %>
-              <%= link_to url_for( :locale => 'en' ) do %>
-                <%= image_tag 'united-kingdom.png'%>
+            <li>
+              <% if params[:locale] == "en"%>
+                <%= link_to url_for( :locale => 'fr' ) do %>
+                  <%= image_tag 'france.png'%>
               <%end%>
-            <% else %>
-              <%= link_to url_for( :locale => 'en' ) do %>
-                <%= image_tag 'united-kingdom.png'%>
+              <% elsif params[:locale] == "fr" %>
+                <%= link_to url_for( :locale => 'en' ) do %>
+                  <%= image_tag 'united-kingdom.png'%>
+                <%end%>
+              <% else %>
+                <%= link_to url_for( :locale => 'en' ) do %>
+                  <%= image_tag 'united-kingdom.png'%>
+                <%end%>
               <%end%>
-            <%end%>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+      </div>
+    </nav>
 <% end %>
 
 
