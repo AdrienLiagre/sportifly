@@ -1,0 +1,19 @@
+<div class="col-md-12 row" style="margin-bottom: 5px">
+  <div class="commenterImage">
+  	<% if comment.booking.user.picture.exists? %>
+  		<%= image_tag comment.booking.user.picture(:thumb), class: "newsfeed-item--user-avatar" %>
+  	<% else %>
+  		<%= image_tag("tete.png", class:'head-icon') %>
+  	<% end %>
+  </div>
+  <div class="commentText">
+    <span class="date.sub-text" style="color:#657786">
+  		<b style="color:black"><%= comment.booking.user.name %></b> - <%= l(comment.created_at, format: :short) %>
+  	</span>
+  	<% if comment.content.presence %>
+  		<p>
+  		<%= comment.content %>
+  		</p>
+  	<% end %>
+  </div>
+</div>

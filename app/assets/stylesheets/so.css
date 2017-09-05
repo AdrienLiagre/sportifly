@@ -559,10 +559,14 @@ a:hover{
   text-decoration: none !important;
 }
 
-.ibelieve-f-b{
+.ibelieve-f-b {
   padding: 5px 10px;
   background-color: rgb(0, 117, 162);
   color:white;
   cursor: pointer;
   border: medium none;
+}
+
+.margin-bottom-i {
+  margin-bottom: 15px;
 }

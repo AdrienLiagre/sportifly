@@ -33,7 +33,7 @@ fr:
   helpers:
     submit:
       comment:
-        create: "Poster le commentaire"
+        create: "Publier"
 
   contact:
     title: "Contactez nous pour la création du groupe de votre entreprise"
@@ -112,7 +112,7 @@ fr:
       people: "Qui participe?"
       invite: "Inviter des collaborateurs"
       time: "Horaire"
-      fly_comment: "Fly et commente cette activité !"
+      fly_comment: "On en parle"
       choose_location: "Choisir"
       create_location: "Créer"
       location: "Point de rdv"

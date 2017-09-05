@@ -62,10 +62,31 @@
           <% end %>
         <% end %>
       </div>
+      <% if @activity.captain == current_user %>
       <div class="col-md-6 offset-md-3 col-sm-12 row" style="position: absolute; right: 0;margin-top: 10px">
-        <% if @activity.captain == current_user %>
           <%= link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: 'ibelieve-f', style:"margin-right:6px" %>
           <%= link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: 'ibelieve-f' %>
-        <% end %>
-      </div>   
+      </div>
+      <% end %>
+      <div class="col-md-6 offset-md-3 col-sm-12 row" style="margin-top: 10px">
+        <div class="activity-detailBox detailBox col-md-12">
+          <div clas="commentBox">
+            <div class="actionBox">
+              <ul class="commentList">
+                <div id="commentsajax">
+                <%= simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), :html => {:class => 'form-inline margin-bottom-i' }, remote: true do |f| %>
+                  <%= f.text_area :content, as: :text, label: t('group.content'), class: "hard-border text_area_form", placeholder: "A quoi penses-tu?" %>
+                  <%= f.submit class: 'btn btn-primary btn-block' %>
+                <% end %>
+                <% if @comments.exists? %>
+                  <% @comments.each do |comment| %>
+                    <%= render 'showcomments', comment: comment %>
+                  <% end %>
+                <% end %>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> 
     </div>
