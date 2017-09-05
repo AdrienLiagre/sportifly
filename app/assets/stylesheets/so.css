@@ -544,3 +544,25 @@ body {
   padding-bottom: 6rem;
   min-height: 100%;
 }
+
+.navbar-brand {
+  font-family: "big_johnregular";
+}
+
+.head-icon-sm {
+  width:20px;
+  float:left;
+  margin-right: 10px;
+}
+
+a:hover{
+  text-decoration: none !important;
+}
+
+.ibelieve-f-b{
+  padding: 5px 10px;
+  background-color: rgb(0, 117, 162);
+  color:white;
+  cursor: pointer;
+  border: medium none;
+}

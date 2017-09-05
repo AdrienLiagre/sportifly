@@ -35,6 +35,14 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
+  def active_for_authentication?
+    super and self.allowed_to_log_in?
+  end
+
+  def inactive_message
+    "Compte désactivé."
+  end
+  
   private
 
   def assign_to_group

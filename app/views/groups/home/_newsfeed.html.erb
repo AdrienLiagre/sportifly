@@ -39,11 +39,11 @@
                 <% if current_user.admin == true and ac.pinned == false %>
                   <%= link_to image_tag("pin.png", class:"pin", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.transform = 'scale(1)'"), pin_path(ac.id), :remote => true %>
                 <% elsif current_user.admin == true and ac.pinned == true %>
-                  <%= link_to image_tag("pin.png", class:"pin pinned", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.filter = 'invert(100%)';this.style.transform = 'scale(1)'",style:"filter:invert(100%)"), pin_path(ac.id), :remote => true %>
+                  <%= link_to image_tag("pin2.png", class:"pin pinned", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.filter = 'invert(100%)';this.style.transform = 'scale(1)'",style:"filter:invert(100%)"), pin_path(ac.id), :remote => true %>
                 <% end %>
               </div>
             </div>
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <%= link_to image_tag("cover-basket.jpeg", class:"card-img-top"), group_activity_path(@group, ac) %>
             <div class="bottom-fly">
               <div class="margin-fly">
                 <div class="participants"><%= nbr_participants %> participants sur <%= ac.number_of_players %></div>
@@ -51,7 +51,7 @@
                   <% if activity.user_booked?(current_user) %>
                     <%= button_to t('group.unfly'), group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'ibelieve-f' %>
                   <% else %>
-                    <%= button_to t('group.fly'), group_activity_bookings_path(@group, activity), class: 'ibelieve-f' %>
+                    <%= button_to t('group.fly'), group_activity_bookings_path(@group, activity), class: 'ibelieve-f-b' %>
                   <% end %>              
                 </div>
               </div>

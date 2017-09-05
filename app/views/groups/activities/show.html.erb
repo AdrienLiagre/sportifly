@@ -1,8 +1,11 @@
     <div class="container">
-      <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+      <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3" style="margin-top: 10px; max-height: 200px;">
+        <img class="card-img-top" src="/assets/cover-basket-bd7b5ca343e913fd8a120931954e32100f47e93fde6a550c22acd95c6d9acf5c.jpg" alt="Cover basket bd7b5ca343e913fd8a120931954e32100f47e93fde6a550c22acd95c6d9acf5c">
+      </div>
+      <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3">
         <div class="card" style="border:none">
           <div class="card hard-border" style="border:none;margin-top:10px">   
-            <div class="card-body">
+            <div class="card-body col-md-6 offset-md-3" style="">
               <%= image_tag("tete.png", class:'head-icon') %>
               <span>
                 <p class="card-text"><%= @activity.date.to_formatted_s(:short) + " - " + number_to_currency(@activity.price).to_s %></p>
@@ -14,7 +17,7 @@
             <div class="card-body" style="margin-top: -30px">
               <%= @activity.description %>
             </div>
-            <div class="card-body" style="margin-top: -30px">
+            <div class="card-body" style="margin-top: -30px;text-align: center">
               <% if @activity.location %>
                 <%= @activity.location.full_address %>
               <% else %>
@@ -35,13 +38,16 @@
                   <% if @activity.user_booked?(current_user) %>
                     <%= button_to t('group.unfly'), group_activity_booking_path(@group, @activity, @activity.bookings), method: :delete, class: 'ibelieve-f' %>
                   <% else %>
-                    <%= button_to t('group.fly'), group_activity_bookings_path(@group, @activity), class: 'ibelieve-f' %>
+                    <%= button_to t('group.fly'), group_activity_bookings_path(@group, @activity), class: 'ibelieve-f-b' %>
                   <% end %>                
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-md-6 offset-md-3 col-sm-12 row">
+        <div style="margin-left:15px"> Participent : </div>
       </div>
       <div class="col-md-6 offset-md-3 col-sm-12 row">
         <% if @activity.bookings.confirmed.any? %>
