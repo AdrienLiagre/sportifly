@@ -43,8 +43,11 @@ body {
 }
 
 #create-act:hover {
-  background-color: #ed6a5a;
-  color: white !important;
+  background-color: #ed6a5a;;
+}
+
+#create-btn {
+  color: white;
 }
 
 @media (min-width: 1200px) {
