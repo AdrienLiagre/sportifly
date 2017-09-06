@@ -500,17 +500,17 @@ select{
     font-family: "big_johnregular";
     font-style: normal;
     font-weight: normal;
-    src: url("/assets/big_john-webfont.woff2") format("woff2"), url("/assets/big_john-webfont.woff") format("woff");
+    src: url("big_john-webfont.woff2") format("woff2"), url("big_john-webfont.woff") format("woff");
 }
 @font-face {
     font-family: "slim_joeregular";
     font-style: normal;
     font-weight: normal;
-    src: url("/assets/slim_joe-webfont.woff2") format("woff2"), url("/assets/slim_joe-webfont.woff") format("woff");
+    src: url("slim_joe-webfont.woff2") format("woff2"), url("slim_joe-webfont.woff") format("woff");
 }
 
 .main-banner {
-    background-image: url("/assets/backgroundhome.png");
+    background-image: url("/assets/images/backgroundhome.png");
     background-position: 20% 75%;
     background-size: cover;
     padding: 150px 0;
