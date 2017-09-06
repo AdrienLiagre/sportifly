@@ -17,9 +17,10 @@ module ApplicationHelper
      end
   end
 
-  def sport_picture(sport)
+  def sport_picture(sport, group, ac)
+    @group = group
     if @activity.sport.picture.exists?
-       image_tag @activity.sport.picture, class: "main-banner-sport"
+       link_to image_tag(@activity.sport.picture, class:"card-img-top"), group_activity_path(@group, ac)
      else
        # image_tag 'avatar.png', class: "dashboard-sport-picture img-responsive"
      end
