@@ -497,7 +497,7 @@ select{
 }
 
 .main-banner {
-    background-image: url("/assets/images/backgroundhome.png");
+    background-image: url(backgroundhome.png);
     background-position: 20% 75%;
     background-size: cover;
     padding: 150px 0;
