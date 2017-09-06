@@ -23,8 +23,8 @@ $header-font: "Raleway", "Helvetica", "sans-serif";
 // Local fonts (uncomment following lines)
 @font-face {
     font-family: 'big_johnregular';
-    src: asset-url('fonts/big_john-webfont.woff2') format('woff2'),
-         asset-url('fonts/big_john-webfont.woff') format('woff');
+    src: asset-url('big_john-webfont.woff2') format('woff2'),
+         asset-url('big_john-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -32,8 +32,8 @@ $header-font: "Raleway", "Helvetica", "sans-serif";
 
 @font-face {
     font-family: 'slim_joeregular';
-    src: font-url('fonts/slim_joe-webfont.woff2') format('woff2'),
-         font-url('fonts/slim_joe-webfont.woff') format('woff');
+    src: font-url('slim_joe-webfont.woff2') format('woff2'),
+         font-url('slim_joe-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
