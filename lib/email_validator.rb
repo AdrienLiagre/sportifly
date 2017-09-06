@@ -3,11 +3,17 @@ require 'mail'
 class EmailValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     domain_names = Group.all.pluck(:email_domain_name)
-    begin
+    
       m = Mail::Address.new(value)
       # We must check that value contains a domain, the domain has at least
       # one '.' and that value is an email address
-      r = m.domain!=nil && m.domain.match(Regexp.union(domain_names)) && m.address == value
+      if (m.domain!=nil && m.domain.match(Regexp.union(domain_names)) && m.address == value) == true
+        r = true
+      elsif Token.where(mail:m.address).count > 0
+        r = true
+      else
+        r = false
+      end
 
       # Update 2015-Mar-24
       # the :tree method was private and is no longer available.
@@ -19,9 +25,7 @@ class EmailValidator < ActiveModel::EachValidator
       # We exclude valid email values like <user@localhost.com>
       # Hence we use m.__send__(tree).domain
       # r &&= (t.domain.dot_atom_text.elements.size > 1)
-    rescue Exception => e
-      r = false
-    end
-    record.errors[attribute] << (options[:message] || "is invalid") unless r
+      
+    record.errors[attribute] << (options[:message] || "est invalide") unless r
   end
 end

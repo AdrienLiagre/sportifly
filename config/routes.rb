@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users, controllers: { registrations: "registrations" }
   devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :users, controllers: { registrations: "registrations" }
   ActiveAdmin.routes(self)
 
   require "sidekiq/web"
   authenticate :admin_user do
     mount Sidekiq::Web => '/sidekiq'
   end
+
+  #New routes
+  get "activities/:id/pin", :to => "activities#pin", as: 'pin'
+  get "favorites/:id/addy", :to => "favorites#addy", as:"faddy"
+  get "favorites/:id/addn", :to => "favorites#addn", as:"faddn"
+  #end new routes
 
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
@@ -38,6 +44,7 @@ Rails.application.routes.draw do
           end
         end
         resources :users,     only: [:show, :index] do
+            get "block", :to => "users#block", as: "block"
           collection do
             get :autocomplete
           end

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151206181110) do
+=======
+ActiveRecord::Schema.define(version: 20170905125746) do
+>>>>>>> b0cc8668462ad70aa67cacb85ed0c7e92a36027a
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +49,7 @@ ActiveRecord::Schema.define(version: 20151206181110) do
     t.integer  "user_id"
     t.integer  "captain_id"
     t.integer  "group_id"
+    t.boolean  "pinned"
   end
 
   add_index "activities", ["captain_id"], name: "index_activities_on_captain_id", using: :btree
@@ -112,6 +117,15 @@ ActiveRecord::Schema.define(version: 20151206181110) do
 
   add_index "favorite_sports", ["sport_id"], name: "index_favorite_sports_on_sport_id", using: :btree
   add_index "favorite_sports", ["user_id"], name: "index_favorite_sports_on_user_id", using: :btree
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "sport_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "response"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -236,6 +250,15 @@ ActiveRecord::Schema.define(version: 20151206181110) do
     t.datetime "picture_updated_at"
   end
 
+  create_table "tokens", force: :cascade do |t|
+    t.string   "token_string"
+    t.string   "mail"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "group_id"
+    t.integer  "original_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -264,6 +287,8 @@ ActiveRecord::Schema.define(version: 20151206181110) do
     t.string   "unconfirmed_email"
     t.integer  "sash_id"
     t.integer  "level",                  default: 0
+    t.boolean  "admin"
+    t.boolean  "allowed_to_log_in"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

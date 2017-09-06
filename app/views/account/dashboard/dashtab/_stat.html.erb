@@ -1,0 +1,91 @@
+<h6 class="my-4"><small><%= link_to 'Activités à venir', account_dashboard_path, class:'link_bar' %> | <%= link_to 'Activités passées', '?dash=passees', class:'link_bar' %> | <%= link_to 'Vestiaire', '?dash=vestiaire', class:'link_bar' %>
+<% if current_user.admin == true %>
+ | <b><%= link_to 'Groupe', '?dash=corpo', class:'link_bar' %></b>
+ | <%= link_to 'Membres', '?dash=membres', class:'link_bar' %>
+<% end %>
+</small></h6>
+
+<div class="row">
+</div>
+
+<%
+
+pix_activ_month1 = @activities_previous.to_i + 1
+pix_activ_month = @activities_month.to_i + 1
+corr_act = (pix_activ_month + pix_activ_month1.to_f)/300
+pix_activ_month1 = pix_activ_month1*(1/corr_act.to_f)
+pix_activ_month = pix_activ_month*(1/corr_act.to_f)
+pix_activ_month = pix_activ_month
+pix_activ_month1 = pix_activ_month1.to_s
+
+pix_book_month1 = @bookings_previous.to_i + 1
+pix_book_month = @bookings_month.to_i + 1
+corr_book = (pix_book_month + pix_book_month1.to_f)/300
+pix_book_month1 = pix_book_month1*(1/corr_book.to_f)
+pix_book_month = pix_book_month*(1/corr_book.to_f)
+pix_book_month = pix_book_month.to_s
+pix_book_month1 = pix_book_month1.to_s
+
+pix_comm_month1 = @comments_previous.to_i + 1
+pix_comm_month = @comments_month.to_i + 1
+corr_comm = (pix_comm_month + pix_comm_month1.to_f)/300
+pix_comm_month1 = pix_comm_month1*(1/corr_comm.to_f)
+pix_comm_month = pix_comm_month*(1/corr_comm.to_f)
+pix_comm_month = pix_comm_month.to_s
+pix_comm_month1 = pix_comm_month1.to_s
+
+pix_sign_month1 = @signin_previous.to_i + 1
+pix_sign_month = @signin_month.to_i + 1
+corr_sign = (pix_sign_month + pix_sign_month1.to_f)/300
+pix_sign_month1 = pix_sign_month1*(1/corr_sign.to_f)
+pix_sign_month = pix_sign_month*(1/corr_sign.to_f)
+pix_sign_month = pix_sign_month.to_s
+pix_sign_month1 = pix_sign_month1.to_s
+
+
+%>
+<div id="contain-svg">
+	<table id="q-graph">
+		<!-- <caption>Quarterly Results</caption> -->
+		<thead>
+			<tr>
+				<th></th>
+				<% month = Time.now - 1.month 
+				   month = month.strftime("%B")
+				%>
+				<th class="sent"><%= month %></th>
+				<th class="paid"><%= Date.today.strftime("%B") %></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="qtr" id="q1">
+				<th scope="row">Activités créés</th>
+				<td class="sent bar" style="height: <%= pix_activ_month1 %>px;"><p><%= @activities_previous %></p></td>
+				<td class="paid bar" style="height: <%= pix_activ_month %>px;"><p><%= @activities_month %></p></td>
+			</tr>
+			<tr class="qtr" id="q2">
+				<th scope="row">Réservations</th>
+				<td class="sent bar" style="height: <%= pix_book_month1 %>px;"><p><%= @bookings_previous %></p></td>
+				<td class="paid bar" style="height: <%= pix_book_month %>px;"><p><%= @bookings_month %></p></td>
+			</tr>
+			<tr class="qtr" id="q3">
+				<th scope="row">Vestiaire</th>
+				<td class="sent bar" style="height: <%= pix_comm_month1 %>px;"><p><%= @comments_previous %></p></td>
+				<td class="paid bar" style="height: <%= pix_comm_month %>px;"><p><%= @comments_month %></p></td>
+			</tr>
+			<tr class="qtr" id="q4">
+				<th scope="row">Utisateurs actifs</th>
+				<td class="sent bar" style="height: <%= pix_sign_month1 %>px;"><p><%= @signin_previous %></p></td>
+				<td class="paid bar" style="height: <%= pix_sign_month %>px;"><p><%= @signin_month %></p></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div id="ticks">
+		<!-- <div class="tick" style="height: 59px;"><p>$50,000</p></div> -->
+		<!-- <div class="tick" style="height: 59px;"><p>$40,000</p></div> -->
+		<!-- <div class="tick" style="height: 59px;"><p>$30,000</p></div> -->
+		<!-- <div class="tick" style="height: 59px;"><p>$20,000</p></div> -->
+		<!-- <div class="tick" style="height: 59px;"><p>$10,000</p></div> -->
+	</div>
+</div>

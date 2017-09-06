@@ -1,0 +1,31 @@
+.pull-bot{
+	position: absolute;
+	bottom: 10px;
+	right: 16px;
+}
+
+.pin{
+	width:10px;
+	height: 15px;
+	cursor: pointer;
+}
+
+.pinned{
+	filter: invert(100%);
+}
+
+.wrap-pin{
+	text-align:right;
+}
+
+.card{
+	border-radius: 0 !important;
+}
+
+.link_bar{
+	color:black;
+}
+
+.text_area_form{
+	width:100%;
+}

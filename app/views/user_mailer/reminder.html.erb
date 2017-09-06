@@ -1,6 +1,12 @@
+<%
+@group = User.where(email:@email).first.group_id
+
+heure = @activity.date.strftime("%H:%M")
+%>
+
 <h1>UserMailer#reminder</h1>
 
-<p> <%= @greeting %>, vous avez une activité dans 30 minutes ! </p>
+<p> <%= @greeting %>, vous avez une activité à <%= heure %> ! </p>
+<p> <%= link_to "Lien vers l'activité", group_activity_path(@group, @activity.id) %> </p>
 
-<p> <%= @user %> </p>
-<p> Organisé par <%= @user %> </p>
+<p> Bonne séance !</p>

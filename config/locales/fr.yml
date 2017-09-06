@@ -33,7 +33,7 @@ fr:
   helpers:
     submit:
       comment:
-        create: "Poster le commentaire"
+        create: "Publier"
 
   contact:
     title: "Contactez nous pour la création du groupe de votre entreprise"
@@ -76,7 +76,7 @@ fr:
 
 
   group:
-    creation: "Créer une activité"
+    creation: "+ Créer une activité"
     next_sport_title: "Prochains sports"
     fly: "Je fly"
     unfly: "Je defly"
@@ -84,13 +84,13 @@ fr:
     filter: "Tu peux trier par sport"
     allsports: "Tous les sports"
     newsfeed: "Le vestiaire"
-    button_newsfeed: "Je veux partager cette folie"
+    button_newsfeed: "Partager"
     picture: "Photo"
     content: "Contenu"
     alert_no_sport: "Désolé, il n'y a rien de prévu pour le moment à %{city} "
     invite: "Invite tes collègues de la team "
     invite_two: "à s'inscire sur Meetemps !"
-    invite_placeholder: "Inviter un(e) collègue où ami(e) sur Meetemps, renseigner son email pro"
+    invite_placeholder: "Envoyer une invitation"
     invite_button: "Inviter"
 
   invitation:
@@ -112,7 +112,7 @@ fr:
       people: "Qui participe?"
       invite: "Inviter des collaborateurs"
       time: "Horaire"
-      fly_comment: "Fly et commente cette activité !"
+      fly_comment: "On en parle"
       choose_location: "Choisir"
       create_location: "Créer"
       location: "Point de rdv"

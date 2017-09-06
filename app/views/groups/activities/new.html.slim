@@ -7,17 +7,21 @@
 
 .container.main-content
   .row
-    .col-xs-12.col-sm-6.col-sm-offset-3
+    .col-xs-12.col-sm-6.offset-sm-3.col-md-4.offset-md-4
       = simple_form_for([:group, @activity], html: { multipart: true }) do |f|
         = f.error_notification
-        = f.input :name, label: t('activity.new.name'), input_html: {maxlength: 20}
-        = f.association :sport
+        = f.input :name, label: t('activity.new.name'), input_html: {maxlength: 20}, :input_html => { :class => "hard-corner" }, placeholder:"Nom*"
+        = f.association :sport, prompt:"Sport*", required:true
         / = f.association :location, label: :'A quel endroit ?', label_method: :name, value_method: :id
-        = f.input :description
-        = f.input :number_of_players, label: t('activity.new.players')
-        = f.input :date, :minute_step => 15, label: t('activity.new.time')
-        = f.input :price, label: t('activity.new.price')
+        = f.input :description, placeholder:"Description", :input_html => { :class => "hard-corner" }
+        = f.input :number_of_players, label: t('activity.new.players'), placeholder:"Nombre de participants*", :input_html => { :class => "hard-corner" }
+        <div class="col-md-12 time-boring">
+          <div class="offset-md-2">
+        = f.input :date, :minute_step => 15, label: t('activity.new.time'), :input_html => { :class => "hard-corner" }
+        </div>
+        </div>
+        = f.input :price, label: t('activity.new.price'), :input_html => { :class => "hard-corner" }, placeholder:"Prix"
         .form-actions
-          = f.submit class: 'btn btn-primary btn-block', value: t('activity.new.creation')
+          = f.submit class: 'btn btn-primary btn-block hard-corner', value: t('activity.new.creation')
 
 

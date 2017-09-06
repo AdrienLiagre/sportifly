@@ -1,0 +1,30 @@
+<div class="container">
+<% uri = URI.parse(request.original_url)
+        user_list = []
+        uris = uri.to_s
+%>
+  <!-- Page Heading -->
+  <% if uris.include? "?style=vestiaire" %>
+    <div style="height:20px"></div>
+  <% else %>
+    <div style="text-align:right;height:50px">
+      <div style="margin-top:6px">
+      Classer : <%= link_to 'À la une', root_path, class:'link_bar' %> | <%= link_to 'date', '?filter=1', class:'link_bar' %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="card-columns">
+
+        <%
+        if uris.include? "?style=activ" %>
+          <%= render 'newsfeed' %>
+        <% elsif uris.include? "?style=vestiaire" %>  
+          <%= render 'vestiaire' %>
+        <% else %>
+          <%= render 'all' %>
+        <% end %>
+  </div>
+  <!-- /.row -->
+</div>
+    <!-- /.container -->

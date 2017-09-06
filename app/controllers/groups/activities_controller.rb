@@ -42,13 +42,24 @@ module Groups
       @booking = Booking.new
     end
 
+
     def create
       @activity = @group.activities.new(activity_params)
       @activity.captain = current_user
+      @activity.pinned = false
       @activity.bookings.new(user: @activity.captain)
 
       if @activity.save
-
+        users = Favorite.where(sport_id: @activity.sport_id, group_id:@activity.group_id,response:1).where('id <> ?' , current_user.id)
+        if users.count > 0 
+          for u in users
+            bonhomme = []
+            bonhomme.push(User.where(id:u.id).first)
+            email = bonhomme[0].email
+            bonhomme.push(Sport.where(id:@activity.sport_id).first.name)
+            UserMailer.favorite(email, bonhomme).deliver_now
+          end
+        end
         redirect_to group_activity_path(@group, @activity)
         flash[:notice] = t'activity.new.notice_location'
       else
