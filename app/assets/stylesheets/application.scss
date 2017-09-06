@@ -23,8 +23,8 @@ $header-font: "Raleway", "Helvetica", "sans-serif";
 // Local fonts (uncomment following lines)
 @font-face {
     font-family: 'big_johnregular';
-    src: asset-url('big_john-webfont.woff2') format('woff2'),
-         asset-url('big_john-webfont.woff') format('woff');
+    src: font-url('big_john-webfont.woff2') format('woff2'),
+         font-url('big_john-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
