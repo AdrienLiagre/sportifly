@@ -591,3 +591,11 @@ a:hover{
 .margin-t {
   margin-top: 10px;
 }
+
+.dashboard-avatar {
+  margin: auto;
+  border-radius: 50%;
+  width: 70px;
+  float: left;
+  margin-right: 10px;
+}
