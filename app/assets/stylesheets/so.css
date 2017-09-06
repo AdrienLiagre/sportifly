@@ -606,3 +606,7 @@ a:hover{
 .log_in { 
   font-family: "Open Sans","Helvetica Neue", Arial,sans-serif;
 }
+
+.alert-info {
+  margin-bottom: 0 !important;
+}
