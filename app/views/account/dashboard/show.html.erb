@@ -8,6 +8,7 @@
     <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
       <div class="card-body">
         <%= image_tag("tete.png", height: '70', width: '70', class:'head-icon') %>
+        <%= user_picture(current_user) %>
         <span>
           <p class="card-text profile-head"><%= current_user.name %></p>
           <h6 class="card-title info-profile"><%= groupe_name %></h6>
