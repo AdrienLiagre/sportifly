@@ -73,10 +73,18 @@ body {
 
 .ibelieve-f {
 	padding: 5px 10px;
-	background-color: rgb(237, 106, 90);
-	color:white;
+	background-color: transparent;
+	color:rgb(237, 106, 90);
 	cursor: pointer;
-	border: medium none;
+	border: 1px solid rgb(237, 106, 90);
+}
+
+.ibelieve-f:hover {
+  padding: 5px 10px;
+  background-color: rgb(237, 106, 90);
+  color:white;
+  cursor: pointer;
+  border: 1px solid rgb(237, 106, 90);
 }
 
 .participants {
@@ -573,10 +581,18 @@ a:hover{
 
 .ibelieve-f-b {
   padding: 5px 10px;
+  background-color: transparent;
+  color:rgb(0, 117, 162);
+  cursor: pointer;
+  border: 1px solid rgb(0, 117, 162);
+}
+
+.ibelieve-f-b:hover {
+  padding: 5px 10px;
   background-color: rgb(0, 117, 162);
   color:white;
   cursor: pointer;
-  border: medium none;
+  border: 1px solid rgb(0, 117, 162);
 }
 
 .margin-bottom-i {
