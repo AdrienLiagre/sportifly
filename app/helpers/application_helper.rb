@@ -18,6 +18,7 @@ module ApplicationHelper
   end
 
   def sport_picture(sport, group, ac)
+    @activity = @group.activities.find(ac.id)
     @group = group
     if @activity.sport.picture.exists?
        link_to image_tag(@activity.sport.picture, class:"card-img-top"), group_activity_path(@group, ac)
