@@ -46,7 +46,7 @@ body {
   background-color: #ed6a5a;;
 }
 
-#create-btn {
+#create-btn:hover {
   color: white;
 }
 
