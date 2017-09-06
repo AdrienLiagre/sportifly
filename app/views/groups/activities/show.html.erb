@@ -1,0 +1,92 @@
+    <div class="container">
+      <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3" style="margin-top: 10px; max-height: 200px;">
+        <img class="card-img-top" src="/assets/cover-basket-bd7b5ca343e913fd8a120931954e32100f47e93fde6a550c22acd95c6d9acf5c.jpg" alt="Cover basket bd7b5ca343e913fd8a120931954e32100f47e93fde6a550c22acd95c6d9acf5c">
+      </div>
+      <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3">
+        <div class="card" style="border:none">
+          <div class="card hard-border" style="border:none;margin-top:10px">   
+            <div class="card-body col-md-6 offset-md-3" style="">
+              <%= image_tag("tete.png", class:'head-icon') %>
+              <span>
+                <p class="card-text"><%= @activity.date.to_formatted_s(:short) + " - " + number_to_currency(@activity.price).to_s %></p>
+                <h4 class="card-title">
+                  <%= link_to @activity.name, group_activity_path(@group, @activity) %>
+                </h4>
+              </span>
+            </div>
+            <div class="card-body" style="margin-top: -30px">
+              <%= @activity.description %>
+            </div>
+            <div class="card-body" style="margin-top: -30px;text-align: center">
+              <% if @activity.location %>
+                <%= @activity.location.full_address %>
+              <% else %>
+                <% if current_user == @activity.captain %>
+                  <%= link_to t('activity.show.choose_location'), edit_group_activity_path(@group, @activity) %>
+                    ou 
+                  <%= link_to t('activity.show.create_location'), new_group_activity_location_path(@group, @activity) %>
+                    un point de rendez-vous.
+                  <% else %>
+                    Aucun endroit n'a été indiqué pour le moment.
+                  <% end %>
+              <% end %>
+            </div> 
+            <div class="bottom-fly">
+              <div class="margin-fly">
+                <div class="participants"></div>
+                <div class="ibelieveicanfly">
+                  <% if @activity.user_booked?(current_user) %>
+                    <%= button_to t('group.unfly'), group_activity_booking_path(@group, @activity, @activity.bookings), method: :delete, class: 'ibelieve-f' %>
+                  <% else %>
+                    <%= button_to t('group.fly'), group_activity_bookings_path(@group, @activity), class: 'ibelieve-f-b' %>
+                  <% end %>                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 offset-md-3 col-sm-12 row">
+        <div style="margin-left:15px"> Participent : </div>
+      </div>
+      <div class="col-md-6 offset-md-3 col-sm-12 row">
+        <% if @activity.bookings.confirmed.any? %>
+          <% @activity.bookings.confirmed.each do |booking| %>
+            <div class="col-md-2 hey-i-am-paul col-sm-4">
+              <%= image_tag("tete.png", class:'head-icon') %>
+              <% if @activity.captain == booking.user %>
+                <i class="fa fa-star"></i>
+              <% end %>
+              <%= link_to booking.user.name, group_user_path(@group, booking.user) %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <% if @activity.captain == current_user %>
+      <div class="col-md-6 offset-md-3 col-sm-12 row" style="position: absolute; right: 0;margin-top: 10px">
+          <%= link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: 'ibelieve-f', style:"margin-right:6px" %>
+          <%= link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: 'ibelieve-f' %>
+      </div>
+      <% end %>
+      <div class="col-md-6 offset-md-3 col-sm-12 row" style="margin-top: 10px">
+        <div class="activity-detailBox detailBox col-md-12">
+          <div clas="commentBox">
+            <div class="actionBox">
+              <ul class="commentList">
+                <div id="commentsajax">
+                <%= simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), :html => {:class => 'form-inline margin-bottom-i' }, remote: true do |f| %>
+                  <%= f.text_area :content, as: :text, label: t('group.content'), class: "hard-border text_area_form", placeholder: "A quoi penses-tu?" %>
+                  <%= f.submit class: 'btn btn-primary btn-block' %>
+                <% end %>
+                <% if @comments.exists? %>
+                  <% @comments.each do |comment| %>
+                    <%= render 'showcomments', comment: comment %>
+                  <% end %>
+                <% end %>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>

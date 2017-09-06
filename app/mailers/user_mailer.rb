@@ -33,4 +33,9 @@ class UserMailer < ApplicationMailer
     mail to: email, subject: "Tu es invité(e) à flyer une activité sur Meetemps!"
   end
 
+  def favorite(email, user)
+    @user = user
+    mail to: email, subject: "Nouvelle activité pour vous !"    
+  end
+
 end

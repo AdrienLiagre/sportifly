@@ -1,13 +1,13 @@
 
 <%= form.error_notification %>
 
-<%= form.input :name, label: t('club.name') %>
-<%= form.input :address, label: t('club.street'), label_method: :name, value_method: :id %>
-<%= form.input :city, label: t('club.city') %>
-<%= form.input :postcode, label: t('club.postcode') %>
+<%= form.input :name, label: t('club.name'), :input_html => { :class => "hard-corner" }, placeholder:"Nom du club" %>
+<%= form.input :address, label: t('club.street'), label_method: :name, value_method: :id, :input_html => { :class => "hard-corner" }, placeholder:"Adresse"  %>
+<%= form.input :city, label: t('club.city'), :input_html => { :class => "hard-corner" }, placeholder:"Ville"  %>
+<%= form.input :postcode, label: t('club.postcode'), :input_html => { :class => "hard-corner" }, placeholder:"Code postal"  %>
 
 <%= form.simple_fields_for :location_sports do |sport_form| %>
- <%= sport_form.association :sport %>
+ <%= sport_form.association :sport, :input_html => { :class => "hard-corner" }, prompt:"Sport" %>
 <% end %>
 
 <%= form.button :button do %>

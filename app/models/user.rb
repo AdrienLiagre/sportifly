@@ -35,6 +35,14 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
+  def active_for_authentication?
+    super and self.allowed_to_log_in?
+  end
+
+  def inactive_message
+    "Compte désactivé."
+  end
+  
   private
 
   def assign_to_group
@@ -42,6 +50,9 @@ class User < ActiveRecord::Base
       self.group = Group.find_by(email_domain_name: "stationf.co")
     elsif self.email.include?("thalasseo")
       self.group = Group.find_by(email_domain_name: "voyageprive.com")
+    elsif Token.where(mail: self.email).count > 0
+      user_t = Token.where(mail: self.email).first.group_id
+      self.group = Group.find_by(id:user_t)
     else
       self.group = Group.find_by(email_domain_name: Mail::Address.new(self.email).domain)
     end

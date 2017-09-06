@@ -17,8 +17,6 @@ module Account
       redirect_to account_dashboard_path
     end
 
-
-
     private
 
     def user_params
