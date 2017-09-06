@@ -623,3 +623,7 @@ a:hover{
   float: left;
   margin-right: 10px;
 }
+
+.log_in { 
+  font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+}
