@@ -10,7 +10,7 @@
         <%= image_tag("tete.png", height: '70', width: '70', class:'head-icon') %>
         <span>
           <p class="card-text profile-head"><%= @user.name %></p>
-          <h6 class="card-title info-profile"><%= groupe_name %></h6>
+          <h6 class="card-title info-profile"><%= groupe_name %><% if @user.crew != nil %> - <%= @user.crew %><% end %></h6>
           <h6 class="card-title info-profile"><%= points.to_s + " points" %></h6>
         </span>
       </div>

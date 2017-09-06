@@ -63,7 +63,7 @@
         <% end %>
       </div>
       <% if @activity.captain == current_user %>
-      <div class="col-md-6 offset-md-3 col-sm-12 row" style="position: absolute; right: 0;margin-top: 10px">
+      <div class="col-md-6 offset-md-3 col-sm-12 row" style="margin-top: 10px">
           <%= link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: 'ibelieve-f', style:"margin-right:6px" %>
           <%= link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: 'ibelieve-f' %>
       </div>
