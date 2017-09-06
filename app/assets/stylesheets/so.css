@@ -35,11 +35,16 @@ body {
 }
 
 #create-act {
-	background-color: rgb(237, 106, 90);
+  border: 1px solid #ed6a5a;
 }
 
 #create-btn {
-	color: white !important;
+	color: #ed6a5a;
+}
+
+#create-act:hover {
+  background-color: #ed6a5a;
+  color: white !important;
 }
 
 @media (min-width: 1200px) {
