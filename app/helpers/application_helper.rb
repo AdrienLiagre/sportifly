@@ -4,7 +4,7 @@ module ApplicationHelper
      if @user.picture.exists?
        image_tag @user.picture(:medium), class: "dashboard-avatar img-responsive"
      else
-       image_tag 'default_profile_300.png', class: "dashboard-avatar img-responsive"
+       image_tag("tete.png", class:'head-icon')
      end
   end
 

@@ -92,7 +92,11 @@
         <div class="card" style="border:none">
           <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
             <div class="card-body">
-              <%= image_tag("tete.png", class:'head-icon') %>
+              <% if User.where(id:activity.captain_id).first.picture_file_name != nil %>
+                <%= user_picture(activity.user_id) %>
+              <% else %>
+                <%= image_tag("tete.png", class:'head-icon') %>
+              <% end %>
               <span>
               <%  location = ac.location_id
                   if location != nil
