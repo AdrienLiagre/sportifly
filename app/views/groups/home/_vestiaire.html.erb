@@ -16,7 +16,7 @@
         <div class="card" style="border:none">
           <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
             <div class="card-body">
-              <%= image_tag("tete.png", class:'head-icon') %>
+              <%= user_picture(User.where(id:ac.user_id).first) %>
               <span>
               <p class="card-text">
                 <%= link_to user_name, group_user_path(@group, ac.user_id), style:"color:black" %> - <%= ac.created_at.to_formatted_s(:short) %>
