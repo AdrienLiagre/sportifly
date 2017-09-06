@@ -8,7 +8,7 @@ for a in activites
 <div class="col-md-6 portfolio-item">
   <div class="card h-100">
       <div class="card-body">
-        <%= image_tag("tete.png", class:'head-icon') %>
+        <%= user_picture(User.where(id:a.captain_id).first) %>
         <span>
           <p class="card-text"><%= a.name + " - " + a.date.to_formatted_s(:short) %></p>
           <% if Booking.where(activity_id:a.id,user_id:@user.id).count == 1 %>
