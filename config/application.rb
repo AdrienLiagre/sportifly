@@ -33,6 +33,7 @@ module Sportifly
     config.active_record.raise_in_transactional_callbacks = true
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.active_job.queue_adapter = :sidekiq
-
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    
   end
 end

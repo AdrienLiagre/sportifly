@@ -10,4 +10,4 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-Rails.application.config.assets.precompile += %w( creative/manifest.js creative/manifest.css style.css so.css vendor/bootstrap.css vendor/bootstrap.min.css vendor/bootstrap-grid.css vendor/bootstrap-grid.min.css vendor/bootstrap-reboot.css vendor/bootstrap-reboot.min.css)
+Rails.application.config.assets.precompile += %w( creative/manifest.js creative/manifest.css style.css so.css vendor/bootstrap.css vendor/bootstrap.min.css vendor/bootstrap-grid.css vendor/bootstrap-grid.min.css vendor/bootstrap-reboot.css vendor/bootstrap-reboot.min.css application.scss)

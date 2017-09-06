@@ -16,3 +16,25 @@
 //@import "pages/index";
 //@import "vendor/index";
 
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+$base-font: "Open Sans", "Helvetica", "sans-serif";
+$header-font: "Raleway", "Helvetica", "sans-serif";
+
+// Local fonts (uncomment following lines)
+@font-face {
+    font-family: 'big_johnregular';
+    src: asset-url('fonts/big_john-webfont.woff2') format('woff2'),
+         asset-url('fonts/big_john-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'slim_joeregular';
+    src: font-url('fonts/slim_joe-webfont.woff2') format('woff2'),
+         font-url('fonts/slim_joe-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
