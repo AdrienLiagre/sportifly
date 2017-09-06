@@ -47,7 +47,7 @@
                 <% end %>
               </div>
             </div>
-            <%= link_to image_tag("cover-basket.jpeg", class:"card-img-top"), group_activity_path(@group, ac) %>
+            <%= sport_picture(Sport.where(id:ac.sport_id).first, @group, ac) %>
             <div class="bottom-fly">
               <div class="margin-fly">
                 <div class="participants"><%= nbr_participants %> participants sur <%= ac.number_of_players %></div>

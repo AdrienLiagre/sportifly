@@ -5,7 +5,7 @@
         c = 0
         if uris.include? "?filter=1"
           @vestiaires = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id.to_s).order(:created_at => 'desc')
-          @vestiaires = @vestiaires.last(15)
+          @vestiaires = @vestiaires.last(10)
         else
           @vestiaires = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id.to_s).last(15)
         end
