@@ -1,10 +1,11 @@
 module ApplicationHelper
   def user_picture(user)
     @user = user
+    @group = current_user.group
      if @user.picture.exists?
-       image_tag @user.picture(:medium), class: "dashboard-avatar img-responsive"
+       link_to image_tag(@user.picture(:medium), class: "dashboard-avatar img-responsive"), group_user_path(@group, @user)
      else
-       image_tag("tete.png", class:'head-icon')
+       link_to image_tag("tete.png", class:'head-icon'), group_user_path(@group, @user)
      end
   end
 
