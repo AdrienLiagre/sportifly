@@ -562,7 +562,7 @@ body {
 }
 
 .head-icon-sm {
-  width: 40px;
+  width: 40px !important;
   float:left;
   margin-right: 10px;
 }
