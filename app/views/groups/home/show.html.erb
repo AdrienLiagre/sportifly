@@ -14,17 +14,20 @@
     </div>
   <% end %>
 
-  <div class="card-columns">
+    <div class="card-columns">
+      <%= render "top_left" %>
+      <%= render "top_middle" %>
+      <%= render "top_right" %>
+    </div>
 
-        <%
-        if uris.include? "?style=activ" %>
-          <%= render 'newsfeed' %>
-        <% elsif uris.include? "?style=vestiaire" %>  
-          <%= render 'vestiaire' %>
-        <% else %>
-          <%= render 'all' %>
-        <% end %>
-  </div>
+   <% if uris.include? "?style=activ" %>
+      <%= render 'newsfeed' %>
+   <% elsif uris.include? "?style=vestiaire" %>  
+      <%= render 'vestiaire' %>
+   <% else %>
+      <%= render 'all' %>
+   <% end %>
+ 
   <!-- /.row -->
 </div>
     <!-- /.container -->

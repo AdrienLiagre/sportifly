@@ -1,3 +1,4 @@
+  <div class="card-columns">  
     <% uri = URI.parse(request.original_url)
         user_list = []
         uris = uri.to_s
@@ -6,8 +7,8 @@
           @activities = @activities.sort_by &:date
         else
           pinned = @group.activities.where("date > ? AND pinned = ?", Time.now, true)
-          @activities = @group.activities.where("date > ? AND pinned != ?", Time.now, true)  
-          @activities = pinned + @activities
+          @activities = @group.activities.where("date > ? AND pinned != ?", Time.now, true)
+          @activities = @activities - pinned
         end
           count = 0
           for ac in @activities
@@ -58,27 +59,7 @@
             </div>
           </div>
         </div>
-      <% if count == 0 %>
-        <div style="border:none" class="card">
-            <div style="border:1px solid rgba(0, 0, 0, 0.125)" class="card hard-border">   
-              <div class="card-body">          
-                <span>
-                  <p class="card-text">A quoi pensez-vous ?</p>
-                    <h4 class="card-title">
-                        
-    <%= simple_form_for @newsfeed, url: group_newsfeeds_path(@group), class: 'form-inline', remote: true do |f| %>
-        <%= f.text_area :content, label: t('group.content'), class: "text_area_form" %>
-        <% #f.input :picture, label: t('group.picture') %>
-        <%= f.submit class: 'btn btn-primary-inverted btn-block btn-folie', value: t('group.button_newsfeed'), onclick:"if (document.getElementById('newsfeed_content').value != ''){window.location.reload()}" %>
-    <% end %>
 
-                    </h4>
-                </span>      
-              </div>      
-            </div>
-        </div>
-      <% 
-      count = 1
-      end %>
       <% end %>
 
+</div>

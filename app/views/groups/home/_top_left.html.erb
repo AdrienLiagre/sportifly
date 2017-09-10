@@ -1,0 +1,74 @@
+<% uri = URI.parse(request.original_url)
+        user_list = []
+        uris = uri.to_s
+%>
+
+<% if uris.include? "?filter=1"
+
+  ac = @group.activities.where("date > ?", Time.now)
+  ac = ac.sort_by &:date
+  ac = ac.first
+  activity = @group.activities.find(ac.id)
+  nbr_participants = Booking.where(activity_id: ac.id).count.to_s
+
+elsif @group.activities.where("date > ? AND pinned = ?", Time.now, true).first != nil
+        
+  ac = @group.activities.where("date > ? AND pinned = ?", Time.now, true).first
+  activity = @group.activities.find(ac.id)
+  nbr_participants = Booking.where(activity_id: ac.id).count.to_s
+        
+end
+
+if ac != nil %>
+<div class="card" style="border:none">
+  <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
+    <div class="card-body">
+      <%= user_picture(User.where(id:activity.captain_id).first) %>
+      <span>
+      <%  location = ac.location_id
+          if location != nil
+            location = Location.where(id:location).first.name
+          end
+      %>
+      <p class="card-text">
+        <% if location != nil %>
+          <%= location %>
+           - 
+        <% end %>
+        <%= ac.date.to_formatted_s(:short) %>
+      </p>
+      <h4 class="card-title">
+        <%= link_to ac.name, group_activity_path(@group, ac), style:"color:black" %>
+      </h4>
+      </span>
+      <div style="position:absolute;right:10px;top:10px">
+        <% if current_user.admin == true and ac.pinned == false %>
+          <%= link_to image_tag("pin.png", class:"pin", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.transform = 'scale(1)'"), pin_path(ac.id), :remote => true %>
+        <% elsif current_user.admin == true and ac.pinned == true %>
+          <%= link_to image_tag("pin2.png", class:"pin pinned", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.filter = 'invert(100%)';this.style.transform = 'scale(1)'",style:"filter:invert(100%)"), pin_path(ac.id), :remote => true %>
+        <% elsif ac.pinned == true %>
+          <%= image_tag("pin2.png", class:"pin pinned", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.filter = 'invert(100%)';this.style.transform = 'scale(1)'",style:"filter:invert(100%)") %>
+        <% end %>
+      </div>
+    </div>
+    <%= sport_picture(Sport.where(id:ac.sport_id).first, @group, ac) %>
+    <div class="bottom-fly">
+      <div class="margin-fly">
+        <div class="participants"><%= nbr_participants %> participants sur <%= ac.number_of_players %></div>
+        <div class="ibelieveicanfly">
+          <% if activity.user_booked?(current_user) %>
+            <%= button_to t('group.unfly'), group_activity_booking_path(@group, activity, activity.bookings), method: :delete, class: 'ibelieve-f' %>
+          <% else %>
+            <%= button_to t('group.fly'), group_activity_bookings_path(@group, activity), class: 'ibelieve-f-b' %>
+          <% end %>              
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% else %>
+<div class="card" style="border:none">
+</div>
+<% end %>
+

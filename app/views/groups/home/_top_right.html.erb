@@ -1,0 +1,30 @@
+<% uri = URI.parse(request.original_url)
+        user_list = []
+        uris = uri.to_s
+%>
+
+<%
+
+@vestiaires1 = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id.to_s).order(:created_at => 'desc').first
+ac = @vestiaires1     
+user_name = User.where(id:ac.user_id).first.name
+
+if ac != nil %>        
+
+        <div class="card" style="border:none">
+          <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
+            <div class="card-body">
+              <%= user_picture(User.where(id:ac.user_id).first) %>
+              <span>
+              <p class="card-text">
+                <%= link_to user_name, group_user_path(@group, ac.user_id), style:"color:black" %> - <%= ac.created_at.to_formatted_s(:short) %>
+              </p>
+              <h6 class="card-title">
+                <%= ac.content %>
+              </h6>
+              </span>
+            </div>
+          </div>
+        </div>
+
+<% end %>
