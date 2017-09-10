@@ -51,7 +51,6 @@ if ac != nil %>
         <% end %>
       </div>
     </div>
-    <%= sport_picture(Sport.where(id:ac.sport_id).first, @group, ac) %>
     <div class="bottom-fly">
       <div class="margin-fly">
         <div class="participants"><%= nbr_participants %> participants sur <%= ac.number_of_players %></div>
