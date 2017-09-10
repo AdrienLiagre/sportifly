@@ -5,12 +5,17 @@
         if uris.include? "?filter=1" 
           @activities = @group.activities.where("date > ?", Time.now)
           @activities = @activities.sort_by &:date
+          @activities = @activities.last(15)
+          acti_lgt = @activities.count
         else
           pinned = @group.activities.where("date > ? AND pinned = ?", Time.now, true)
-          @activities = @group.activities.where("date > ? AND pinned != ?", Time.now, true).shuffle()  
+          @activities = @group.activities.where("date > ? AND pinned != ?", Time.now, true).first(1)
+          id_first = @activities.first.id
+          @activities2 = @group.activities.where("date > ? AND pinned != ? AND id != ?", Time.now, true, id_first)
+          @activities2 = @activities2.last(15)
+          acti_lgt = @activities2.count
         end
-        @activities = @activities.last(15)
-        acti_lgt = @activities.count
+
 
 
         user_list = []
@@ -60,15 +65,15 @@
           alli = alli.shuffle()
           alli = @activities + alli
         else
-          alli = @activities + @vestiaires + @sports + @invites
+          alli = @vestiaires + @sports + @invites + @activities2
           alli = alli.shuffle()
-          alli = pinned + alli
+          alli = @activities + pinned + alli
         end
 
         count = 0
         for ac in alli
 
-        if count == 0 %>
+        if count == 0 and @activities.count > 0 %>
          <%= render 'map' %>
         <div style="border:none" class="card">
             <div style="border:1px solid rgba(0, 0, 0, 0.125)" class="card hard-border">   
