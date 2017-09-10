@@ -12,7 +12,6 @@ for a in activites
         <span>
           <p class="card-text"><%= a.name + " - " + a.date.to_formatted_s(:short) %></p>
           <% if Booking.where(activity_id:a.id,user_id:@user.id).count == 1 %>
-            <% zob = Booking.where(activity_id:a.id,user_id:@user.id).first.id %>
             <p>A participé</p>
           <% else %>
             <p>N'a pas participé</p>

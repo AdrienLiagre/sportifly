@@ -36,15 +36,15 @@ body {
 }
 
 #create-act {
-  border: 1px solid #ed6a5a;
+  border: 1px solid #0075a2;
 }
 
 #create-btn {
-	color: #ed6a5a;
+	color: #0075a2;
 }
 
 #create-act:hover {
-  background-color: #ed6a5a;;
+  background-color: #0075a2;
 }
 
 #create-btn:hover {

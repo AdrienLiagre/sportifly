@@ -1,4 +1,18 @@
     <% uri = URI.parse(request.original_url)
+
+        user_list = []
+        uris = uri.to_s
+        if uris.include? "?filter=1" 
+          @activities = @group.activities.where("date > ?", Time.now)
+          @activities = @activities.sort_by &:date
+        else
+          pinned = @group.activities.where("date > ? AND pinned = ?", Time.now, true)
+          @activities = @group.activities.where("date > ? AND pinned != ?", Time.now, true).shuffle()  
+        end
+        @activities = @activities.last(15)
+        acti_lgt = @activities.count
+
+
         user_list = []
         uris = uri.to_s
 
@@ -11,18 +25,7 @@
         end
           vest_lgt = @vestiaires.count
 
-        user_list = []
-        uris = uri.to_s
-        if uris.include? "?filter=1" 
-          @activities = @group.activities.where("date > ?", Time.now)
-          @activities = @activities.sort_by &:date
-        else
-          pinned = @group.activities.where("date > ? AND pinned = ?", Time.now, true)
-          @activities = @group.activities.where("date > ? AND pinned != ?", Time.now, true)  
-          @activities = pinned + @activities
-        end
-        @activities = @activities.last(15)
-        acti_lgt = @activities.count
+
 
         #On recupère les sports pour lesquels le gars a pas dit s'il voulait être prévenu
         tous_les_sports = Sport.all.shuffle()
@@ -52,9 +55,16 @@
           end
         end
         #end
+        if uris.include? "?filter=1"
+          alli = @vestiaires + @sports + @invites
+          alli = alli.shuffle()
+          alli = @activities + alli
+        else
+          alli = @activities + @vestiaires + @sports + @invites
+          alli = alli.shuffle()
+          alli = pinned + alli
+        end
 
-        alli = @activities + @vestiaires + @sports + @invites
-        alli = alli.shuffle()
         count = 0
         for ac in alli
 
@@ -115,6 +125,8 @@
                   <%= link_to image_tag("pin.png", class:"pin", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.transform = 'scale(1)'"), pin_path(ac.id), :remote => true %>
                 <% elsif current_user.admin == true and ac.pinned == true %>
                   <%= link_to image_tag("pin2.png", class:"pin pinned", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.filter = 'invert(100%)';this.style.transform = 'scale(1)'",style:"filter:invert(100%)"), pin_path(ac.id), :remote => true %>
+                <% elsif ac.pinned == true %>
+                  <%= image_tag("pin2.png", class:"pin pinned", onmouseover:"this.style.transform = 'scale(1.1)'", onmouseout:"this.style.filter = 'invert(100%)';this.style.transform = 'scale(1)'",style:"filter:invert(100%)") %>
                 <% end %>
               </div>
             </div>
