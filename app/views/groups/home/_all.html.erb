@@ -67,18 +67,10 @@
           alli = @activities + alli
         end
         count = 0
+        %>
+        <%= render 'map' %>
+        <%
         for ac in alli
-
-        if count == 0 %>
-         <%= render 'map' %>
-
-      <% 
-      count = 1
-      end
-
-
-
-
           if ac.class.name == 'Activity'
             activity = @group.activities.find(ac.id)
             nbr_participants = Booking.where(activity_id: ac.id).count.to_s
