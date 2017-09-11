@@ -36,19 +36,19 @@ body {
 }
 
 #create-act {
-  border: 1px solid #0075a2;
+  border: 1px solid white;
 }
 
 #create-btn {
-	color: #0075a2;
+	color: white;
 }
 
 #create-act:hover {
-  background-color: #0075a2;
+  background-color: white;
 }
 
 #create-btn:hover {
-  color: white;
+  color: #0075a2;
 }
 
 @media (min-width: 1200px) {
@@ -95,6 +95,7 @@ body {
 
 .bottom-fly {
 	height: 50px;
+  background-color: white;
 }
 
 .margin-fly {
@@ -609,4 +610,29 @@ a:hover{
 
 .alert-info {
   margin-bottom: 0 !important;
+}
+
+#navbar {
+  background-color: #0075a2 !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+body {
+  background-color: #E9EBEE !important;
+}
+
+.card-body {
+  background-color: white;
+}
+
+.card-columns .card {
+    background-color: transparent !important;
+    margin-bottom: 0.75rem;
 }
