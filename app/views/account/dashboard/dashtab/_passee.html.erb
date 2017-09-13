@@ -15,8 +15,8 @@ for a in activites
       <div class="card-body">
         <%= user_picture(User.where(id:a.captain_id).first) %>
         <span>
-          <p class="card-text"><%= link_to a.name + " - " + a.date.to_formatted_s(:short), group_activity_path(current_user.group_id, a.id) %></p>
-          <p><%= link_to a.name %></p>
+          <p class="card-text"><%= a.date.to_formatted_s(:short) %></p>
+          <p><%=link_to a.name, group_activity_path(current_user.group_id, a.id) %></p>
         </span>
       </div>
       <div class="card-body" style="margin-top: -30px">
