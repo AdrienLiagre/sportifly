@@ -652,3 +652,7 @@ body {
     max-height: 150px;
     width: 100%;
 }
+
+.activity-map {
+  width: 100%;
+}
