@@ -18,7 +18,7 @@ module ApplicationHelper
      end
   end
 
-  def sport_picture_head(sport, group, ac)
+  def sport_picture(sport, group, ac)
     @activity = @group.activities.find(ac.id)
     @group = group
     if @activity.sport.picture.exists?
