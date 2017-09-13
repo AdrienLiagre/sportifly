@@ -135,4 +135,4 @@
         = simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f|
           = f.input :content, as: :text, label: t('group.content'), :input_html => { :class => "hard-corner"}
           div.end-div
-            = f.submit class: 'btn btn-primary btn-block hard-corner btn-folie'
+            = f.submit class: 'btn btn-primary btn-block hard-corner btn-folie btn-folie-md'

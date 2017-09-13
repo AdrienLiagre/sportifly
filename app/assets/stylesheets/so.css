@@ -662,6 +662,10 @@ body {
   height: 22px;
 }
 
+.btn-folie-md {
+  position: initial !important
+} 
+
 .alignement {
   width: 100%; 
   float: right;
