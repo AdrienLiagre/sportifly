@@ -10,7 +10,7 @@
         else
           @vestiaires = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id.to_s).last(15)
         end
-        @vestiaires = @vestiaires - @vestiaires.last(1)
+        #@vestiaires = @vestiaires - @vestiaires.last(1)
 
           count = 0
           for ac in @vestiaires

@@ -14,11 +14,15 @@
     </div>
   <% end %>
 
+<% if uris.include? "?style=activ" or uris.include? "?style=vestiaire" %>
+  <% puts("ok") %>
+<% else %>
     <div class="card-columns card-columns-chrome">
       <%= render "top_left" %>
       <%= render "top_middle" %>
       <%= render "top_right" %>
     </div>
+<% end %>
 
    <% if uris.include? "?style=activ" %>
       <%= render 'newsfeed' %>
