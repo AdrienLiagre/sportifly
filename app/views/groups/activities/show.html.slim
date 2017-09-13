@@ -98,32 +98,32 @@
       - (@activity.number_of_players - @activity.bookings.confirmed.count).times
         .activity-player
           = image_tag('tete.png', class: "head-icon", style:"margin-bottom:10px")
+      div.alignement
+        hr
+        p
+          '
+          = I18n.t('activity.show.player_n', count: @activity.number_of_players - @activity.bookings.confirmed.count )
 
-      hr
-      p
-        '
-        = I18n.t('activity.show.player_n', count: @activity.number_of_players - @activity.bookings.confirmed.count )
-
-      .form-actions
-        - if @activity.user_booked?(current_user)
-          .activity-presence-action
-            = button_to t('group.unfly'), group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete, class: 'ibelieve-f'
-        - elsif @activity.full?
-          p
-            = t'activity.show.full'
-
-        - elsif @activity.bookings.find{|booking| booking[:user_id] == current_user.id }.present?
+        .form-actions
+          - if @activity.user_booked?(current_user)
+            .activity-presence-action
+              = button_to t('group.unfly'), group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete, class: 'ibelieve-f'
+          - elsif @activity.full?
             p
-              = t'activity.show.invitation'
-            = link_to t('activity.show.accept_invit'), group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-default'
+              = t'activity.show.full'
 
-            = link_to t('activity.show.refuse_invit'),  group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id), referral: 'activity-page'), method: :delete, class: "btn btn-red"
-        - else
-          .activity-presence-action
-            = button_to t('group.fly'), group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'ibelieve-f-b'
-        - if @activity.captain == current_user
-          = link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: "btn btn-green"
-          = link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: "btn btn-red"
+          - elsif @activity.bookings.find{|booking| booking[:user_id] == current_user.id }.present?
+              p
+                = t'activity.show.invitation'
+              = link_to t('activity.show.accept_invit'), group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-default'
+
+              = link_to t('activity.show.refuse_invit'),  group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id), referral: 'activity-page'), method: :delete, class: "btn btn-red"
+          - else
+            .activity-presence-action
+              = button_to t('group.fly'), group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'ibelieve-f-b'
+          - if @activity.captain == current_user
+            = link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: "btn btn-green"
+            = link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: "btn btn-red"
 
       hr
       .detailBox.activity-detailBox
