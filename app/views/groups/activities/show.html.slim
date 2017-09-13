@@ -107,7 +107,7 @@
       .form-actions
         - if @activity.user_booked?(current_user)
           .activity-presence-action
-            = button_to t('group.unfly'), group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete, class: 'btn btn-red'
+            = button_to t('group.unfly'), group_activity_booking_path(@group, @activity, @activity.bookings.for_user(current_user).first, referral: 'activity-page'), method: :delete, class: 'ibelieve-f'
         - elsif @activity.full?
           p
             = t'activity.show.full'
@@ -120,7 +120,7 @@
             = link_to t('activity.show.refuse_invit'),  group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id), referral: 'activity-page'), method: :delete, class: "btn btn-red"
         - else
           .activity-presence-action
-            = button_to t('group.fly'), group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'btn btn-primary-inverted'
+            = button_to t('group.fly'), group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'ibelieve-f-b'
         - if @activity.captain == current_user
           = link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: "btn btn-green"
           = link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: "btn btn-red"
@@ -131,11 +131,12 @@
           p.taskDescription
             = t ('activity.show.fly_comment')
         .actionBox
-          ul.commentList
+          div.commentList
             #commentsajax
             - if @comments.exists?
               - @comments.each do |comment|
                 = render 'showcomments', comment: comment
             = simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f|
-              = f.input :content, as: :text, label: t('group.content')
-              = f.submit class: 'btn btn-primary btn-block'
+              = f.input :content, as: :text, label: t('group.content'), :input_html => { :class => "hard-corner"}
+              div.end-div
+                = f.submit class: 'btn btn-primary btn-block hard-corner btn-folie'
