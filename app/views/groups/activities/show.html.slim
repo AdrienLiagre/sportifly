@@ -2,7 +2,7 @@
 
 .main-banner-sport--small
 
-  = sport_picture(@activity.sport, current_user.group, @activity)
+  = sport_picture_head(@activity.sport, current_user.group, @activity)
   .main-banner-sport--content
     .text-center
       h1 = @activity.name
