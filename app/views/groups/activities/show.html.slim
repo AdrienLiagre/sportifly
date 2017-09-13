@@ -48,10 +48,10 @@
               = t 'activity.show.deciplus'
               '
               a href= 'http://resa.edhec.deciplus.pro/index.html' target='_blank' Deciplus
-
-        li
-          strong
-            = t 'activity.show.price'
+        - if @activity.price
+          li
+            strong
+              = t 'activity.show.price'
           => number_to_currency(@activity.price)
       - if @activity.location
         = image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=1000x600&sensor=false&maptype=roadmap&markers=color:red|#{@activity.location.full_address}&key=AIzaSyC-Ugr5CLM31RnMsQb4om2p9M4ajl1UTBs", class: "activity-map"
