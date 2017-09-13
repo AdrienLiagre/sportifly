@@ -86,15 +86,11 @@
                       = t'activity.show.invite_3'
           br
 
-      hr
       - if @activity.bookings.confirmed.any?
         - @activity.bookings.confirmed.each do |booking|
           .activity-player
             = link_to group_user_path(@group, booking.user)
               = captain_picture(booking.user)
-              - if @activity.captain == booking.user
-                .badge-captain
-                  i.fa.fa-star
       - (@activity.number_of_players - @activity.bookings.confirmed.count).times
         .activity-player
           = image_tag('tete.png', class: "head-icon", style:"margin-bottom:10px")
