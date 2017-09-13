@@ -644,3 +644,15 @@ body {
     margin-bottom: 0.75rem;
 }
 
+.main-banner-sport--small {
+  // background-image: image-url('cover-basket.jpeg');
+  background-color: rgba(0,0,0,0.3);
+  z-index: 10;
+  opacity: 0.9;
+}
+
+.card-img-top-2 {
+    border-radius: 0 !important;
+    object-fit: cover;
+    max-height: 150px
+}

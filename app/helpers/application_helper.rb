@@ -18,11 +18,21 @@ module ApplicationHelper
      end
   end
 
-  def sport_picture(sport, group, ac)
+  def sport_picture_head(sport, group, ac)
     @activity = @group.activities.find(ac.id)
     @group = group
     if @activity.sport.picture.exists?
        link_to image_tag(@activity.sport.picture, class:"card-img-top"), group_activity_path(@group, ac)
+     else
+       # image_tag 'avatar.png', class: "dashboard-sport-picture img-responsive"
+     end
+  end
+
+  def sport_picture_head(sport, group, ac)
+    @activity = @group.activities.find(ac.id)
+    @group = group
+    if @activity.sport.picture.exists?
+       link_to image_tag(@activity.sport.picture, class:"card-img-top-2"), group_activity_path(@group, ac)
      else
        # image_tag 'avatar.png', class: "dashboard-sport-picture img-responsive"
      end
