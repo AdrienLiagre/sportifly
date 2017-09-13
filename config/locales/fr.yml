@@ -108,8 +108,8 @@ fr:
       creation: "Je crée l'activité"
       notice_location: "C'est fait ! Ajoute un point de rendez-vous !"
     show:
-      info: "On parle de quoi?"
-      people: "Qui participe?"
+      info: "Infos"
+      people: "Participants"
       invite: "Inviter des collaborateurs"
       time: "Horaire"
       fly_comment: "On en parle"
