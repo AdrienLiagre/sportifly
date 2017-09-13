@@ -649,5 +649,6 @@ body {
 .card-img-top-2 {
     border-radius: 0 !important;
     object-fit: cover;
-    max-height: 150px
+    max-height: 150px;
+    width: 100%;
 }
