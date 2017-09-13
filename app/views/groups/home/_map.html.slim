@@ -1,5 +1,4 @@
-- @activities3 = @group.activities.where("date > ?", Time.now)
-- if @activities3.count == 1
+- if @activities.count == 1
   #map style=("width: 100%; height: 300px;margin-bottom:23px")
     - content_for(:after_js)
       javascript:
@@ -15,7 +14,7 @@
             handler.getMap().setZoom(8);
           });
         })
-- elsif @activities3.count == 0
+- elsif @activities.count == 0
 - else
   #map style=("width: 100%; height: 300px;margin-bottom:23px")
     - content_for(:after_js)

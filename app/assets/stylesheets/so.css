@@ -13,6 +13,10 @@ body {
     body {
         padding-top: 56px;
     }
+
+    .card-columns-chrome {
+      max-height: 220px;
+    }
 }
 
 .portfolio-item {
@@ -131,7 +135,10 @@ body {
 }
 
 .btn-folie{
-	cursor: pointer;
+    cursor: pointer;
+    position: absolute;
+    right: 1.25rem;
+    width: 100px !important;
 }
 
 #btn-profile{
@@ -636,3 +643,4 @@ body {
     background-color: transparent !important;
     margin-bottom: 0.75rem;
 }
+

@@ -8,7 +8,9 @@
     <%= simple_form_for @newsfeed, url: group_newsfeeds_path(@group), class: 'form-inline', remote: true do |f| %>
         <%= f.text_area :content, label: t('group.content'), class: "text_area_form" %>
         <% #f.input :picture, label: t('group.picture') %>
-        <%= f.submit class: 'btn btn-primary-inverted btn-block btn-folie', value: t('group.button_newsfeed'), onclick:"if (document.getElementById('newsfeed_content').value != ''){window.location.reload()}" %>
+        <div style="width:100%;height:22px">
+        <%= f.submit class: 'btn btn-primary-inverted btn-block btn-folie hard-border', value: t('group.button_newsfeed'), onclick:"if (document.getElementById('newsfeed_content').value != ''){window.location.reload()}" %>
+        </div>
     <% end %>
 
                     </h4>
