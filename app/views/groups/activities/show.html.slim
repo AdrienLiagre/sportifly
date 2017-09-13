@@ -99,7 +99,6 @@
         .activity-player
           = image_tag('tete.png', class: "head-icon", style:"margin-bottom:10px")
       div.alignement
-        hr
         p
           '
           = I18n.t('activity.show.player_n', count: @activity.number_of_players - @activity.bookings.confirmed.count )
