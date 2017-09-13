@@ -9,17 +9,13 @@
 activites = Activity.where(group_id:current_user.group_id).where("date >?", Time.now).sort_by &:date
 for a in activites
 %>
+<% if Booking.where(activity_id:a.id,user_id:current_user.id).count == 1 %>
 <div class="col-md-6 portfolio-item">
   <div class="card h-100">
       <div class="card-body">
         <%= user_picture(User.where(id:a.captain_id).first) %>
         <span>
           <p class="card-text"><%= link_to a.name + " - " + a.date.to_formatted_s(:short), group_activity_path(current_user.group_id, a.id) %></p>
-          <% if Booking.where(activity_id:a.id,user_id:current_user.id).count == 1 %>
-            <p>J'ai réservé</p>
-          <% else %>
-            <p>Je n'ai pas réservé</p>
-          <% end %>
         </span>
       </div>
       <div class="card-body" style="margin-top: -30px">
@@ -27,6 +23,7 @@ for a in activites
       </div>     
   </div>
 </div>
+<% end %>
 <%
 end
 %>
