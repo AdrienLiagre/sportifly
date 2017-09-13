@@ -124,16 +124,16 @@
           - if @activity.captain == current_user
             = link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: "btn btn-green"
             = link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: "btn btn-red"
+          - else
+            a.btn.btn-red
 
       hr
-      .detailBox.activity-detailBox
-        .actionBox
-          div.commentList
-            #commentsajax
-            - if @comments.exists?
-              - @comments.each do |comment|
-                = render 'showcomments', comment: comment
-            = simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f|
-              = f.input :content, as: :text, label: t('group.content'), :input_html => { :class => "hard-corner"}
-              div.end-div
-                = f.submit class: 'btn btn-primary btn-block hard-corner btn-folie'
+      div.commentList
+        #commentsajax
+        - if @comments.exists?
+          - @comments.each do |comment|
+            = render 'showcomments', comment: comment
+        = simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f|
+          = f.input :content, as: :text, label: t('group.content'), :input_html => { :class => "hard-corner"}
+          div.end-div
+            = f.submit class: 'btn btn-primary btn-block hard-corner btn-folie'
