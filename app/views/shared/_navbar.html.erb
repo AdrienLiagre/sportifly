@@ -43,7 +43,7 @@ $(function () {
               <% if current_user.picture.exists? %>
                 <%= image_tag current_user.picture(:medium), class: "dashboard-avatar img-responsive head-icon-sm" %>
               <% else %>
-                <img class="head-icon-sm" alt="Tete 34fc74e9a73356b3297f7197e4c8abc79875883d388ffc04622c410637c917cb" src="/assets/tete-34fc74e9a73356b3297f7197e4c8abc79875883d388ffc04622c410637c917cb.png">
+                <%= image_tag("tete.png", class:'head-icon-sm') %>
               <% end %>
             </button>
             <div aria-labelledby="about-us" class="dropdown-menu dropdown-menu-droit">

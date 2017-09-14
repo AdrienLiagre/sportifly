@@ -5,7 +5,7 @@ module ApplicationHelper
      if @user.picture.exists?
        link_to image_tag(@user.picture(:medium), class: "dashboard-avatar img-responsive"), group_user_path(@group, @user)
      else
-       link_to image_tag("tete.png", class:'head-icon'), group_user_path(@group, @user)
+       link_to image_tag("tete.png", class:'head-icon dashboard-avatar'), group_user_path(@group, @user)
      end
   end
 
