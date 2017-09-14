@@ -32,7 +32,7 @@ en:
   helpers:
     submit:
       comment:
-        create: "Post my comment"
+        create: "Post"
 
   contact:
     title: "Send us a message to create your group!"
