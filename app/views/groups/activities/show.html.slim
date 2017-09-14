@@ -30,10 +30,10 @@
             => @activity.location.full_address
           - else
             - if current_user == @activity.captain
-              => link_to t('activity.show.choose_location'), edit_group_activity_path(@group, @activity)
+              => link_to t('activity.show.choose_location'), edit_group_activity_path(@group, @activity), style: 'color:#77ccdd;'
               = t 'activity.show.or'
               '
-              => link_to t('activity.show.create_location'), new_group_activity_location_path(@group, @activity)
+              => link_to t('activity.show.create_location'), new_group_activity_location_path(@group, @activity), style: 'color:#77ccdd;'
             - else
               = t 'activity.show.no_location'
               '
@@ -66,7 +66,7 @@
               = link_to "X", group_activity_path(@group, @activity), class: "btn btn-default"
           = text_field_tag :query, params[:query], class: "form-control hard-border", id: "user_search", autocomplete: "off", placeholder: t('activity.show.invite')
           .input-group-btn
-            = submit_tag "ok", class: "btn btn-primary hard-border"
+            = submit_tag "ok", class: "btn btn-primary hard-border", style:"border-color:#77ccdd;background-color:#77ccdd;"
       br
       .row
         - if @users
@@ -110,15 +110,15 @@
           - elsif @activity.bookings.find{|booking| booking[:user_id] == current_user.id }.present?
               p
                 = t'activity.show.invitation'
-              = link_to t('activity.show.accept_invit'), group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-default'
+              = link_to t('activity.show.accept_invit'), group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id).first), method: :patch, class: 'btn btn-default', style: 'color:#77ccdd;'
 
-              = link_to t('activity.show.refuse_invit'),  group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id), referral: 'activity-page'), method: :delete, class: "btn btn-red"
+              = link_to t('activity.show.refuse_invit'),  group_activity_booking_path(@user.group, @activity, @activity.bookings.where(user_id: current_user.id), referral: 'activity-page'), method: :delete, class: "btn btn-red", style: 'color:#77ccdd;'
           - else
             .activity-presence-action
               = button_to t('group.fly'), group_activity_bookings_path(@group, @activity, referral: 'activity-page'), class: 'ibelieve-f-b'
           - if @activity.captain == current_user
-            = link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: "btn btn-green"
-            = link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: "btn btn-red"
+            = link_to t('activity.show.edit'), edit_group_activity_path(@group, @activity), class: "btn btn-green", style: 'color:#77ccdd;'
+            = link_to t('activity.show.delete'), group_activity_path(@group, @activity), method: :delete, class: "btn btn-red", style: 'color:#77ccdd;'
           - else
             a.btn.btn-red
 
@@ -131,4 +131,4 @@
         = simple_form_for Comment.new, url: group_activity_comments_path(@group, @activity), class: 'form-inline', remote: true do |f|
           = f.input :content, as: :text, label: t('group.content'), :input_html => { :class => "hard-corner"}
           div.end-div
-            = f.submit class: 'btn btn-primary btn-block hard-corner btn-folie btn-folie-md'
+            = f.submit class: 'btn btn-primary btn-block hard-corner btn-folie btn-folie-md', style: 'border-color:#77ccdd;background-color:#77ccdd;'
