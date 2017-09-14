@@ -54,7 +54,7 @@ $(function () {
                   <%= t('navbar.profile')%>
                 <% end %>
               <% end %>
-              <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class:'dropdown-item' %>
+
               <%= link_to t('navbar.invit'), group_users_path(current_user.group), class:'dropdown-item' %>
               <% if params[:locale] == "en"%>
                 <%= link_to url_for( :locale => 'fr' ), class:'dropdown-item' do %>
@@ -69,6 +69,7 @@ $(function () {
                   Change language <%= image_tag 'united-kingdom.png'%>
                 <%end%>
               <%end%>
+              <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class:'dropdown-item' %>
             </div>
           </div>
         </ul>
