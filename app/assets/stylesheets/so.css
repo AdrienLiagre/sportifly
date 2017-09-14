@@ -670,3 +670,8 @@ body {
   width: 100%; 
   float: right;
 }
+
+.dashboard-activ-av {
+  object-fit: cover;
+  width: 70px;
+}

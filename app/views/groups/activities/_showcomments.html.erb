@@ -1,9 +1,9 @@
 <div class="col-md-12 row" style="margin-bottom: 5px">
   <div class="commenterImage">
   	<% if comment.booking.user.picture.exists? %>
-  		<%= image_tag comment.booking.user.picture(:thumb), class: "newsfeed-item--user-avatar" %>
+  		<%= image_tag comment.booking.user.picture(:thumb), class: "newsfeed-item--user-avatar dashboard-avatar dashboard-activ-av" %>
   	<% else %>
-  		<%= image_tag("tete.png", class:'head-icon') %>
+  		<%= image_tag("tete.png", class:'head-icon dashboard-avatar') %>
   	<% end %>
   </div>
   <div class="commentText">
