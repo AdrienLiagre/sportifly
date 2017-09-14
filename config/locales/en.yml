@@ -85,7 +85,7 @@ en:
     filter: "You can sort by sports"
     allsports: "All sports"
     newsfeed: "Newsfeed"
-    button_newsfeed: "I want to share this dope"
+    button_newsfeed: "Share"
     picture: "Picture"
     content: "Content"
     alert_no_sport: "Sorry, so far there is no activity planned in %{city}"
