@@ -62,14 +62,14 @@ body {
 }
 
 @media (min-width: 989px) and (max-width: 1200px) {
-  .mapWrap {
-    display:none;
+  .card-img-top-3 {
+    max-height: 100px !important;
   }
 }
 
 @media (min-width: 575px) and (max-width: 1200px) {
-  .card-img-top-3 {
-    max-height: 100px !important;
+  .mapWrap {
+    display:none;
   }
 }
 
