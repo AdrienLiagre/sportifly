@@ -61,7 +61,7 @@ body {
   }
 }
 
-@media (min-width: 989px and max-width: 1200px) {
+@media (min-width: 989px) and (max-width: 1200px) {
   .card-img-top-3 {
     max-height: 100px !important;
   }
