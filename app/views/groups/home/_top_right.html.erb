@@ -2,7 +2,7 @@
         user_list = []
         uris = uri.to_s
 %>
-
+<%= render 'map' %>
 <%
 
 @vestiaires1 = Newsfeed.joins(:user).where("users.group_id = " + current_user.group_id.to_s).order(:created_at => 'desc').first
