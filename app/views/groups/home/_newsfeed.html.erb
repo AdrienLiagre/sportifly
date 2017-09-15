@@ -1,5 +1,5 @@
-  <div class="card-columns">  
-    <% uri = URI.parse(request.original_url)
+  <%
+uri = URI.parse(request.original_url)
         user_list = []
         uris = uri.to_s
         if uris.include? "?filter=1" 
@@ -11,6 +11,14 @@
           @activities = pinned + @activities
         end
           count = 0
+
+  %>
+  <% if @activities.count < 4 %>
+<div class="card-columns" class="card-columns-chrome">
+  <% else %>
+  <div class="card-columns">
+  <% end %> 
+    <% 
           for ac in @activities
             activity = @group.activities.find(ac.id)
             nbr_participants = Booking.where(activity_id: ac.id).count.to_s
