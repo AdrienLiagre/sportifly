@@ -683,3 +683,7 @@ body {
   object-fit: cover;
   height: 70px;
 }
+
+.mapWrap {
+  margin-top: 20px;
+}
