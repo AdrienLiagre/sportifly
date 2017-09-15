@@ -15,7 +15,7 @@ body {
     }
 
     .card-columns-chrome {
-      max-height: 450px;
+      max-height: 330px;
     }
 }
 
@@ -651,6 +651,13 @@ body {
     border-radius: 0 !important;
     object-fit: cover;
     max-height: 150px;
+    width: 100%;
+}
+
+.card-img-top-3 {
+    border-radius: 0 !important;
+    object-fit: cover;
+    max-height: 130px;
     width: 100%;
 }
 

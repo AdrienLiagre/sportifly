@@ -38,6 +38,16 @@ module ApplicationHelper
      end
   end
 
+  def sport_picture_head2(sport, group, ac)
+    @activity = @group.activities.find(ac.id)
+    @group = group
+    if @activity.sport.picture.exists?
+       link_to image_tag(@activity.sport.picture, class:"card-img-top-3"), group_activity_path(@group, ac)
+     else
+       # image_tag 'avatar.png', class: "dashboard-sport-picture img-responsive"
+     end
+  end
+
   def stats_per_user(user)
     stats = {}
 
