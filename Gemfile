@@ -31,6 +31,12 @@ gem 'uglifier'
 gem 'postmark-rails'
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
+#oauth2
+gem 'oauth2'
+gem 'activerecord-session_store'
+gem 'microsoft_graph'
+#oauth2
+
 gem 'merit'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'searchkick'

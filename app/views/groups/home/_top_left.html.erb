@@ -17,7 +17,7 @@ elsif @group.activities.where("date > ? AND pinned = ?", Time.now, true).first !
   activity = @group.activities.find(ac.id)
   nbr_participants = Booking.where(activity_id: ac.id).count.to_s
 
-elsif @group.activities.where("date > ?", Time.now) != nil
+elsif @group.activities.where("date > ?", Time.now).count != 0
   ac = @group.activities.where("date > ?", Time.now)
   ac = ac.sort_by &:date
   ac = ac.first

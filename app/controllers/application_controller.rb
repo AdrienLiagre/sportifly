@@ -30,6 +30,7 @@ class ApplicationController < ActionController::Base
   def admin_area?
     controller_path.start_with?('admin')
   end
+
 end
 
 

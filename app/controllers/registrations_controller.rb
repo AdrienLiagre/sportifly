@@ -1,6 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
   before_action :check_group_domain_name, only: :create
+  include AuthHelper
 
+  def new
+    @login_url = get_login_url
+    @user = User.new
+  end
   protected
 
   def check_group_domain_name
@@ -27,5 +32,5 @@ class RegistrationsController < Devise::RegistrationsController
       "/users/sign_in"
   end
 
-end
 
+end
