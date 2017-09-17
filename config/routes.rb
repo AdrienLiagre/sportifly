@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
     post '/contact', to: 'pages#contact'
     get '/pages', to: 'pages#create'
+    get 'authorize' => 'auth#gettoken'
 
     namespace :account do
       resource :dashboard, only: :show, controller: 'dashboard' do
