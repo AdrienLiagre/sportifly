@@ -14,9 +14,9 @@ uri = URI.parse(request.original_url)
 
   %>
   <% if @activities.count < 4 %>
-<div class="card-columns" class="card-columns-chrome">
+    <div class="card-columns card-columns-chrome">
   <% else %>
-  <div class="card-columns">
+    <div class="card-columns">
   <% end %> 
     <% 
           for ac in @activities
