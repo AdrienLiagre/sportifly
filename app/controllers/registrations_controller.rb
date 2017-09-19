@@ -5,10 +5,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   def check_group_domain_name
     if Token.where(mail:params[:user][:email]).count > 0 
-      puts("pauvre con")
       flash[:notice] = "Vous avez été invité."
     elsif Group.where(email_domain_name: Mail::Address.new(params[:user][:email]).domain).count < 1
-      puts("pauvre con")
       flash[:notice] = t('users.sign_in.invalid')     
     end
   end

@@ -1,28 +1,28 @@
-  <%
+<%
 uri = URI.parse(request.original_url)
-        user_list = []
-        uris = uri.to_s
-        if uris.include? "?filter=1" 
-          @activities = @group.activities.where("date > ?", Time.now)
-          @activities = @activities.sort_by &:date
-        else
-          pinned = @group.activities.where("date > ? AND pinned = ?", Time.now, true)
-          @activities = @group.activities.where("date > ? AND pinned != ?", Time.now, true)
-          @activities = pinned + @activities
-        end
-          count = 0
+user_list = []
+uris = uri.to_s
+if uris.include? "?filter=1" 
+  @activities = @group.activities.where("date > ?", Time.now)
+  @activities = @activities.sort_by &:date
+else
+  pinned = @group.activities.where("date > ? AND pinned = ?", Time.now, true)
+  @activities = @group.activities.where("date > ? AND pinned != ?", Time.now, true)
+  @activities = pinned + @activities
+end
+count = 0
 
-  %>
-  <% if @activities.count < 4 %>
-    <div class="card-columns card-columns-chrome">
-  <% else %>
-    <div class="card-columns">
-  <% end %> 
-    <% 
-          for ac in @activities
-            activity = @group.activities.find(ac.id)
-            nbr_participants = Booking.where(activity_id: ac.id).count.to_s
-    %>
+%>
+<% if @activities.count < 4 %>
+  <div class="card-columns card-columns-chrome">
+<% else %>
+  <div class="card-columns">
+<% end %> 
+<% 
+for ac in @activities
+  activity = @group.activities.find(ac.id)
+  nbr_participants = Booking.where(activity_id: ac.id).count.to_s
+%>
         <div class="card" style="border:none">
           <div class="card hard-border" style="border:1px solid rgba(0, 0, 0, 0.125)">   
             <div class="card-body">
@@ -68,6 +68,6 @@ uri = URI.parse(request.original_url)
           </div>
         </div>
 
-      <% end %>
+<% end %>
 
 </div>

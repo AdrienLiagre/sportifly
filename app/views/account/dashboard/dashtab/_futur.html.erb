@@ -5,11 +5,13 @@
 <% end %>
 </small></h6>
 <div class="row">
-<%
+
+<% 
 activites = Activity.where(group_id:current_user.group_id).where("date >?", Time.now).sort_by &:date
-for a in activites
+for a in activites 
+  if Booking.where(activity_id:a.id,user_id:current_user.id).count == 1 
 %>
-<% if Booking.where(activity_id:a.id,user_id:current_user.id).count == 1 %>
+
 <div class="col-md-6 portfolio-item">
   <div class="card h-100">
       <div class="card-body">
@@ -24,8 +26,7 @@ for a in activites
       </div>     
   </div>
 </div>
+      
+  <% end %>
 <% end %>
-<%
-end
-%>
 </div>
