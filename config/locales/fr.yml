@@ -14,10 +14,10 @@ fr:
       unhappy: Pas content ?
       delete_confirm: Etes vous sur(e) ?
       back: Retour
-
     registrations:
       user:
         signed_up: Mail de confirmation envoyé. Merci de cliquer dans le lien du message
+        
   users:
     sign_in:
       welcome: "Bienvenue sur "

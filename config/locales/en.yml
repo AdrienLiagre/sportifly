@@ -14,7 +14,6 @@ en:
       unhappy: Unhappy ?
       delete_confirm: Are you sure ?
       back: Back
-
     registrations:
       user:
         signed_up: Confirmation mail sent. Please click on the link.
