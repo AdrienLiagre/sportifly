@@ -15,6 +15,10 @@ en:
       delete_confirm: Are you sure ?
       back: Back
 
+    registrations:
+      user:
+        signed_up: Confirmation mail sent. Please click on the link.
+
   users:
     sign_in:
       welcome: "Welcome on "
