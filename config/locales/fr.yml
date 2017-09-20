@@ -16,7 +16,7 @@ fr:
       back: Retour
     registrations:
       user:
-        signed_up_but: Mail de confirmation envoyé. Merci de cliquer dans le lien du message
+        signed_up_but_: Mail de confirmation envoyé. Activez le compte en cliquant sur le lien.
 
   users:
     sign_in:

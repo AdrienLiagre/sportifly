@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   end
 
   def inactive_message
-    "Mail de confirmation envoyé. Merci de cliquer dans le lien du message."
+    ""
   end
   
   private

@@ -16,7 +16,7 @@ en:
       back: Back
     registrations:
       user:
-        signed_up_but: Confirmation mail sent. Please click on the link.
+        signed_up_but_: Confirmation mail sent. Please click on the link.
 
   users:
     sign_in:
