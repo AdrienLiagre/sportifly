@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable #, :confirmable
 
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
   belongs_to :group
 
   before_create :assign_to_group
@@ -58,4 +59,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.from_google(auth)
+
+    where(google_id:auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.name = auth.info.name
+      user.password = Devise.friendly_token[0, 20]
+      user.skip_confirmation!
+    end
+
+  end
 end
